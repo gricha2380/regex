@@ -1,0 +1,16 @@
+{
+    "category": [
+        {
+            "name": "Pattern Name",
+            "nickname": "pattern syntax",
+            "description":"description",
+            "tips":[],
+            "examples":[
+                {
+                    "pattern":"syntax", 
+                    "matches": "<m>matches</m> does not match"
+                }
+            ]
+        }
+    ]
+}

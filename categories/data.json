@@ -1,0 +1,50 @@
+{
+    "characters": [
+        {
+            "name": "Match All",
+            "nickname": ".",
+            "description":"Match all characters except line break",
+            "tips":[],
+            "examples":[
+                {
+                    "pattern":".", 
+                    "matches": "<m>Th!s w0nd3rfu1 w0r1d</m>"
+                },
+                {
+                    "pattern":".",
+                    "matches":"<m>124.csv5t5@#$% w423</m>"
+                }
+            ]
+        },
+        {
+            "name": "Range",
+            "nickname": "A-Z",
+            "description":"Inclusively match sequence of characters in the given range",
+            "tips":["Case sensitive", "alphabet or numbers"],
+            "examples":[
+                {
+                    "pattern":"i-l", 
+                    "matches": "<m>j</m>et pac<m>k</m>"
+                },
+                {
+                    "pattern":"2-8",
+                    "matches":"1795<m>3</m> <m>32</m>0<m>8</m>"
+                }
+            ]
+        }
+    ],
+    "anchors": [
+        {
+            "name": "Beginning",
+            "nickname": "^",
+            "description":"Matches the beginning of a string",
+            "tips":[],
+            "examples":[
+                {
+                    "pattern":"^\\w+", 
+                    "matches": "<m>First</m> things first"
+                }
+            ]
+        }
+    ]
+}
