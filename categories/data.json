@@ -31,9 +31,51 @@
                     "matches":"1795<m>3</m> <m>32</m>0<m>8</m>"
                 }
             ]
+        },
+        {
+            "name": "Set",
+            "nickname": "ABC",
+            "description":"Match specific characters",
+            "tips":[],
+            "examples":[
+                {
+                    "pattern":"aeiou", 
+                    "matches": "Alw<m>a</m>y<m>s</m> <m>o</m>n t<m>i</m>m<m>e</m>"
+                },
+                {
+                    "pattern":"2-8",
+                    "matches":"1795<m>3</m> <m>32</m>0<m>8</m>"
+                }
+            ]
         }
     ],
-    "anchors": [
+    "boundaries": [
+        {
+            "name": "Start",
+            "nickname": "^",
+            "description":"Matches the beginning of a string",
+            "tips":["Matches position, not a character"],
+            "examples":[
+                {
+                    "pattern":"^\\w+", 
+                    "matches": "<m>First</m> things first"
+                }
+            ]
+        },
+        {
+            "name": "End",
+            "nickname": "$",
+            "description":"Matches the end of a string",
+            "tips":["Matches position, not a character"],
+            "examples":[
+                {
+                    "pattern":"^\\w+", 
+                    "matches": "<m>First</m> things first"
+                }
+            ]
+        }
+    ],
+    "logic": [
         {
             "name": "Beginning",
             "nickname": "^",
