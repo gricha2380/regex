@@ -1,3 +1,7 @@
 body {
     background:#4EEDD9;
 }
+
+.card span {
+    display: block;
+}

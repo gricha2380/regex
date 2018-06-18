@@ -1,18 +1,25 @@
+$(".card").on("click", function(e){
+    // console.log("hi",e)
+    console.log("hi",$(this).attr("value"));
+    $("#hand").attr("value", ($(this).attr("value")))
+    
+    // function(content) {
+    //     console.log("this is content", content)
+    //     return content += $(this).attr("value");
+    // }) 
+})
+
 document.querySelector("#attack").addEventListener("click", e=>{
     battle();    
 })
 
 let battle = ()=> {
-    // console.log(document.querySelector("#card").value)
-    console.log("battling")
     let enemies = document.querySelector('#enemies').innerHTML;
     console.log("enemies value",enemies)
     let newArray = enemies.split("")
     console.log(newArray)
     // let playerPattern = /\d/g; // static value
-    let playerPattern = new RegExp(document.querySelector("#card").value,"g");
-    console.log("playre pattern",playerPattern,typeof playerPattern)
-    // let results = playerPattern.test(enemies);
+    let playerPattern = new RegExp(document.querySelector("#hand").value,"g");
     let results = enemies.match(playerPattern)
     console.log("results",results);
     enemies = '';
