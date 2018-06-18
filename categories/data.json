@@ -1,6 +1,70 @@
 {
     "characters": [
         {
+            "name": "Any Word",
+            "nickname": "\\w",
+            "description":"Any alphanumeric character",
+            "tips":[],
+            "examples":[
+                {
+                    "pattern":"\\w", 
+                    "matches": "<m>Th!s</m> <m>w0nd3rfu1</m> <m>w0r1d</m>!"
+                },
+                {
+                    "pattern":"\\w", 
+                    "matches": "<m>1234</m> <m>09341</m>!"
+                }
+            ]
+        },
+        {
+            "name": "Not a Word",
+            "nickname": "\\W",
+            "description":"Any non-alphanumeric character",
+            "tips":["Equivalent to [^A-Za-z0-9_]"],
+            "examples":[
+                {
+                    "pattern":"\\W", 
+                    "matches": "Th!s<m> </m>w0nd3rfu1<m> </m>w0r1d<m>!</m>"
+                },
+                {
+                    "pattern":"\\W",
+                    "matches":"Well<m>, </m>where<m> </m>are<m> </m>we<m>?</m>"
+                }
+            ]
+        },
+        {
+            "name": "Any Digit",
+            "nickname": "\\d",
+            "description":"Any numerical character",
+            "tips":["Equivalent to [0-9]"],
+            "examples":[
+                {
+                    "pattern":"\\d", 
+                    "matches": "+<m>1</m>-<m>800</m>-<m>867</m>-<m>5309</m>"
+                },
+                {
+                    "pattern":"\\d",
+                    "matches":"I met <m>111</m> people today!"
+                }
+            ]
+        },
+        {
+            "name": "Not a Digit",
+            "nickname": "\\D",
+            "description":"Any non-numerical character",
+            "tips":["Equivalent to [^0-9]"],
+            "examples":[
+                {
+                    "pattern":"\\d", 
+                    "matches": "<m>+</m>1<m>-</m>800<m>-</m>867<m>-</m>5309"
+                },
+                {
+                    "pattern":"\\d",
+                    "matches":"<m>I met </m>111<m> people today!</m>"
+                }
+            ]
+        },
+        {
             "name": "Match All",
             "nickname": ".",
             "description":"Match all characters except line break",
@@ -18,38 +82,78 @@
         },
         {
             "name": "Range",
-            "nickname": "A-Z",
+            "nickname": "[A-Z]",
             "description":"Inclusively match sequence of characters in the given range",
             "tips":["Case sensitive", "alphabet or numbers"],
             "examples":[
                 {
-                    "pattern":"i-l", 
+                    "pattern":"[i-l]", 
                     "matches": "<m>j</m>et pac<m>k</m>"
                 },
                 {
-                    "pattern":"2-8",
+                    "pattern":"[2-8]",
                     "matches":"1795<m>3</m> <m>32</m>0<m>8</m>"
                 }
             ]
         },
         {
             "name": "Set",
-            "nickname": "ABC",
+            "nickname": "[ABC]",
             "description":"Match specific characters",
             "tips":[],
             "examples":[
                 {
-                    "pattern":"aeiou", 
-                    "matches": "Alw<m>a</m>y<m>s</m> <m>o</m>n t<m>i</m>m<m>e</m>"
+                    "pattern":"[aeiou]", 
+                    "matches": "Alw<m>a</m><m>ys</m> <m>o</m>n t<m>i</m>m<m>e</m>"
                 },
                 {
-                    "pattern":"2-8",
+                    "pattern":"[2-8]",
                     "matches":"1795<m>3</m> <m>32</m>0<m>8</m>"
+                }
+            ]
+        },
+        {
+            "name": "Exclue Set",
+            "nickname": "[^ABC]",
+            "description":"Match any characters not in this set",
+            "tips":[],
+            "examples":[
+                {
+                    "pattern":"[^aeiou]", 
+                    "matches": "<m>Alw</m>a<m>ys </m>o<m>n t</m>i<m>m</m>e"
+                },
+                {
+                    "pattern":"[^2-8]",
+                    "matches":"<m>1795</m>3<m> </m>32<m>0</m>8"
+                }
+            ]
+        },
+        {
+            "name": "White Space",
+            "nickname": "\\s",
+            "description":"Matches spaces, tabs, line breaks",
+            "tips":[],
+            "examples":[
+                {
+                    "pattern":"\\s", 
+                    "matches": "Always<m> </m>on<m> </m>time"
+                }
+            ]
+        },
+        {
+            "name": "Not White Space",
+            "nickname": "\\S",
+            "description":"Any character except spaces, tabs, line breaks",
+            "tips":[],
+            "examples":[
+                {
+                    "pattern":"\\S", 
+                    "matches": "<m>Always</m> <m>on</m> <m>time</m>"
                 }
             ]
         }
     ],
-    "boundaries": [
+    "anchors": [
         {
             "name": "Start",
             "nickname": "^",
@@ -73,18 +177,124 @@
                     "matches": "<m>First</m> things first"
                 }
             ]
+        },
+        {
+            "name": "Word Boundary",
+            "nickname": "\\b",
+            "description":"Beginning or end of word",
+            "tips":["Matches position, not a character"],
+            "examples":[
+                {
+                    "pattern":"[o]\b", 
+                    "matches": "Hell<m>o</m>, world!"
+                }
+            ]
+        },
+        {
+            "name": "Not Word Boundary",
+            "nickname": "\\B",
+            "description":"Beginning or end of word",
+            "tips":["Matches position, not a character"],
+            "examples":[
+                {
+                    "pattern":"[o]\b", 
+                    "matches": "Hell<m>o</m>, world!"
+                }
+            ]
         }
     ],
-    "logic": [
+    "quantifiers": [
         {
-            "name": "Beginning",
-            "nickname": "^",
-            "description":"Matches the beginning of a string",
+            "name": "One or More",
+            "nickname": "+",
+            "description":"Matches 1 or more of the preceding pattern",
             "tips":[],
             "examples":[
                 {
-                    "pattern":"^\\w+", 
-                    "matches": "<m>First</m> things first"
+                    "pattern":"g\\w+", 
+                    "matches": "g <m>good great generous</m> friend"
+                }
+            ]
+        },
+        {
+            "name": "Exactly x Times",
+            "nickname": "{x}",
+            "description":"Matches the specified quantity of the preceeding pattern",
+            "tips":[],
+            "examples":[
+                {
+                    "pattern":"g\\w{2}", 
+                    "matches": "g <m>goo</m>d <m>gre</m>at <m>gen</m>erous friend"
+                },
+                {
+                    "pattern":"g\\w{1,4}", 
+                    "matches": "g <m>good</m> <m>great</m> <m>gener</m>ous friend"
+                }
+            ]
+        },
+        {
+            "name": "x or More Times",
+            "nickname": "{x,}",
+            "description":"...",
+            "tips":[],
+            "examples":[
+                {
+                    "pattern":"{1,}", 
+                    "matches": "g <m>good</m> <m>great</m> <m>generous</m> friend"
+                }
+            ]
+        },
+        {
+            "name": "0 or More Times",
+            "nickname": "*",
+            "description":"...",
+            "tips":[],
+            "examples":[
+                {
+                    "pattern":"...", 
+                    "matches": "<m>g</m> <m>good</m> <m>great</m> <m>generous</m> friend"
+                }
+            ]
+        },
+        {
+            "name": "Optional",
+            "nickname": "?",
+            "description":"Matches 0 or 1 of the preceeding character",
+            "tips":[],
+            "examples":[
+                {
+                    "pattern":"labou?r", 
+                    "matches": "<m>labor</m> <m>labour</m>"
+                }
+            ]
+        },
+        {
+            "name": "Or",
+            "nickname": "(a|b)",
+            "description":"Match either value",
+            "tips":[],
+            "examples":[
+                {
+                    "pattern":"/(a|b)/g", 
+                    "matches": "b<m>a</m>gg<m>a</m>ge"
+                },
+                {
+                    "pattern":"b(e|a|u)d", 
+                    "matches": "<m>bad</m> <m>bed</m> bid"
+                }
+            ]
+        }
+    ],
+    "groups": [
+        {
+            "name": "Capture Group",
+            "nickname": "(abc)",
+            "description":"Group characters for comparison",
+            "tips":[],
+            "examples":[
+                {
+                    "pattern":"(lol)+", 
+                    "matches": "<m>lol</m> <m>lol</m>o lots <m>lol</m>a <m>lol</m>o<m>lol</m>"
                 }
             ]
         }
