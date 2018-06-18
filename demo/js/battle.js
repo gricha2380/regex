@@ -14,7 +14,7 @@ document.querySelector("#attack").addEventListener("click", e=>{
 })
 
 let battle = ()=> {
-    let enemies = document.querySelector('#enemies').innerHTML;
+    let enemies = document.querySelector('#enemies').innerText;
     console.log("enemies value",enemies)
     let newArray = enemies.split("")
     console.log(newArray)

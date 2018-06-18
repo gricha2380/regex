@@ -173,8 +173,8 @@
             "tips":["Matches position, not a character"],
             "examples":[
                 {
-                    "pattern":"^\\w+", 
-                    "matches": "<m>First</m> things first"
+                    "pattern":"\\w+$", 
+                    "matches": "First things <m>first</m>"
                 }
             ]
         },
