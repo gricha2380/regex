@@ -1,17 +1,19 @@
+const enemiesDefault = document.querySelector('#enemies').innerText;
+
 $(".card").on("click", function(e){
     let cardValue = $(this).attr("value");
-    // console.log("hi",$(this).attr("value"));
     // $("#hand").attr("value", ($(this).attr("value")))
 
     $('#hand').val(
         function() { 
-            return $(this).val() ? $(this).val() + `${cardValue}` : cardValue; 
+            return $(this).val() ? $(this).val() + `${cardValue}` : `${cardValue}`; 
         }
     );
 })
 
 $(".clear").on("click", function(e){
     $("#hand").val("");
+    document.querySelector('#enemies').innerText = enemiesDefault;
 })
 
 document.querySelector("#attack").addEventListener("click", e=>{
@@ -31,37 +33,20 @@ let battle = ()=> {
     console.log("enemyMatch",enemyMatch); //  ["1", "3", "3"]
     enemies = '';
     if (enemyMatch.length === 1) {
+        console.log("enemyMatch length",enemyMatch[0].length)
+
         enemyArray.forEach((element,x) => {
-            console.log("element char", element)
-            
-            for(let i = 0;i<enemyArray.length;i++){
-                console.log("itterator",i)
-                if (enemyMatch[i]) console.log(enemyMatch[i]) 
-                // console.log("enemyMatch char", enemyMatch[i])
-                if (enemyMatch[0][i] == enemyArray[element]) {
-                    console.log(`match ${element}`);
+            for(let i=0;i<enemyMatch[0].length;i++) {
+                if(enemyMatch[0][i]===enemyArray[x]){
                     enemyArray[x] = `<b>${element}</b>`;
                 }
             }
-            enemies += enemyArray[x];
+        enemies += enemyArray[x];
         });
 
     }
     else {
-        enemyArray.forEach((element,x) => {
-            console.log("element char", element)
-            
-            for(let i = 0;i<enemyArray.length;i++){
-                console.log("itterator",i)
-                if (enemyMatch[i]) console.log(enemyMatch[i]) 
-                // console.log("enemyMatch char", enemyMatch[i])
-                if (enemyMatch[i] && enemyArray[element]==enemyMatch[i]) {
-                    console.log(`match ${element}`);
-                    enemyArray[x] = `<b>${element}</b>`;
-                }
-            }
-            enemies += enemyArray[x];
-        });
+       console.log("enemy match longer than 1")
     }
     console.log("all of it",enemyArray);
     document.querySelector('#enemies').innerHTML = enemies;
