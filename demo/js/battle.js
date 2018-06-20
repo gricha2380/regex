@@ -1,7 +1,9 @@
 const enemiesDefault = document.querySelector('#enemies').innerText;
+const alert = document.querySelector("#alert");
 
 $(".card").on("click", function(e){
     let cardValue = $(this).attr("value");
+    alert.innerText = "";
     // $("#hand").attr("value", ($(this).attr("value")))
 
     $('#hand').val(
@@ -12,6 +14,7 @@ $(".card").on("click", function(e){
 })
 
 $(".clear").on("click", function(e){
+    alert.innerText = "";
     $("#hand").val("");
     document.querySelector('#enemies').innerText = enemiesDefault;
 })
@@ -19,8 +22,7 @@ $(".clear").on("click", function(e){
 document.querySelector("#attack").addEventListener("click", e=>{
     battle();    
 })
-//current problem: when full string is returned inside enemyMatch it's all stored in index 0.
-// possible solution: conditional for if enemyMatach.length = 0;
+
 let battle = ()=> {
     let enemies = document.querySelector('#enemies').innerText;
     console.log("enemies value",enemies);
@@ -30,6 +32,10 @@ let battle = ()=> {
     let playerPattern = new RegExp(document.querySelector("#hand").value,"g");
     console.log("playerpattern",playerPattern); //  /\d/g
     let enemyMatch = enemies.match(playerPattern);
+    if (!enemyMatch) {
+        alert.innerText = "No matches...";
+        return;
+    }
     console.log("enemyMatch",enemyMatch); //  ["1", "3", "3"]
     enemies = '';
     if (enemyMatch.length === 1) {
@@ -43,7 +49,6 @@ let battle = ()=> {
             }
         enemies += enemyArray[x];
         });
-
     }
     else {
        console.log("enemy match longer than 1")

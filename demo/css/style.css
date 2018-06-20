@@ -5,3 +5,71 @@ body {
 .card span {
     display: block;
 }
+
+.container {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+.card {
+    background: yellow;
+    color: #D82262;
+}
+
+.health {
+    background: #D82262;
+    padding: 0;
+    color: white;
+    font-size: .8rem;
+}
+#deck {
+    /* background: grey; */
+}
+
+#cards {
+    background: #D8D8D8;
+    border: 2px solid #979797;
+    padding: 1rem;
+}
+.main {
+    background: #D82262;
+    color: white;
+    padding: .5rem 10rem;
+    border: none;
+}
+
+.clear {
+    background: #4B4B4B;
+    color: rgba(255, 255, 255, .5);
+    padding: .5rem 3rem;
+    border: none;
+}
+
+#hand {
+    border: 2px dashed #151aa7;
+    background: rgba(29, 59, 129, .5);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    width: calc(100% - 36px);
+    padding: .5rem 1rem;
+    display: block;
+}
+
+#enemies {
+    font-size: 4rem;
+}
+#enemies b {
+    color: green;
+}
+
+.actionButtons {
+    display: flex;
+}
+.actionButtons #attack {
+    flex-grow: 2;
+}
+.actionButtons .clear{
+    flex-grow: 1;
+}

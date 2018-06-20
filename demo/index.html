@@ -8,17 +8,24 @@
     <title>Battle</title>
 </head>
 <body>
-    <div id="enemies">abe133</div>
     <div class="container">
+        <div class="field">
+            <div id="enemies">abe133</div>
+        </div>
         <div id="deck">
             <input id="hand" value="\d+">
+            <div class="health"><span class="value">100/100</span></div>
         </div>
-        <button class="card" value="\d+">Any Digit<span>\d</span></button>
-        <button class="card" value="\D+">Not Digit<span>\D</span></button>
-        <button class="clear">Clear</button>
-        <div>
-            <button id="attack">Attack!</button>
+        <div id="cards">
+            <button class="card" value="\d+">Any Digit<span>\d</span></button>
+            <button class="card" value="\D+">Not Digit<span>\D</span></button>
         </div>
+        <div class="actionButtons">
+            <!-- <button id="info">Info</button> -->
+            <button class="clear">Clear</button>
+            <button id="attack" class="main">Attack!</button>
+        </div>
+        <div id="alert"></div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
