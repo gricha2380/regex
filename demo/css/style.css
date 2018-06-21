@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    width: 500px;
+    max-width: 500px;
     margin: auto;
     text-align: center;
 }
@@ -35,14 +35,14 @@ body {
 .main {
     background: #D82262;
     color: white;
-    padding: .5rem 10rem;
+    padding: .5rem 6rem;
     border: none;
 }
 
 .clear {
     background: #4B4B4B;
     color: rgba(255, 255, 255, .5);
-    padding: .5rem 3rem;
+    padding: .5rem 2rem;
     border: none;
 }
 

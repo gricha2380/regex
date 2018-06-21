@@ -37,21 +37,21 @@ let battle = ()=> {
     }
     console.log("enemyMatch",enemyMatch); // e.g.:["1", "3", "3"]
     enemies = '';
-    if (enemyMatch.length === 1) {
-        console.log("enemyMatch length",enemyMatch[0].length)
-
+    enemyMatch.forEach(matchSet=>{
+        console.log("matchSet contents",matchSet,matchSet.length);
+        console.log("enemy array before action",enemyArray,enemyArray.length)
         enemyArray.forEach((element,x) => {
-            for(let i=0;i<enemyMatch[0].length;i++) {
-                if(enemyMatch[0][i]===enemyArray[x]){
+            for(let i=0;i<matchSet.length;i++) {
+                if(matchSet[i]===enemyArray[x]){
                     enemyArray[x] = `<b>${element}</b>`;
                 }
             }
-        enemies += enemyArray[x];
+            console.log("About to add enemyArray[x]",enemyArray[x])
+            enemies += enemyArray[x];
         });
-    }
-    else {
-       console.log("enemy match longer than 1")
-    }
+    })
     console.log("all of enemyArray",enemyArray);
-    document.querySelector('#enemies').innerHTML = enemies;
+    let stringy = enemyArray.toString().replace(/,+/g,'');
+    console.log("stringy", stringy)
+    document.querySelector('#enemies').innerHTML = stringy;
 }    
