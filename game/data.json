@@ -1,0 +1,35 @@
+{
+    "score":0,
+    "mode":{
+        "arcade":{
+            "levels":[
+                {
+                    "name":"Level 1",
+                    "description":"",
+                    "tutorial":[],
+                    "cutScene":{
+                        "enabled":true,
+                        "dialouge":[
+                            {"title":"","description":""}
+                        ]
+                    },
+                    "randomizeEnemies":true,
+                    "enemyMax":0,
+                    "enemies":[],
+                    "cards":{
+                        "available": 0,
+                        "categories": 0
+                    },
+                    "deck":{
+                        "max":0,
+                        "active":[]
+                    }
+                }
+            ]
+        },
+        "tutorial":{},
+        "countdown":{},
+        "quiz":{},
+        "workshop":{}
+    }
+}
