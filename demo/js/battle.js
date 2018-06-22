@@ -1,5 +1,14 @@
+let random = ()=>{
+    $("#enemies").text(Math.random().toString(36).slice(6))
+}
+random();
 const enemiesDefault = document.querySelector('#enemies').innerText;
 const alert = document.querySelector("#alert");
+
+$("#random").on("click", function(e){
+    random();
+})
+
 
 $(".card").on("click", function(e){
     let cardValue = $(this).attr("value");
