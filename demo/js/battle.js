@@ -1,19 +1,20 @@
+let enemiesDefault;
+let alert;
+
 let random = ()=>{
-    $("#enemies").text(Math.random().toString(36).slice(6))
+    $("#enemies").text(Math.random().toString(36).slice(6));
+    enemiesDefault = document.querySelector('#enemies').innerText;
+    alert = document.querySelector("#alert");
 }
 random();
-const enemiesDefault = document.querySelector('#enemies').innerText;
-const alert = document.querySelector("#alert");
 
 $("#random").on("click", function(e){
     random();
 })
 
-
 $(".card").on("click", function(e){
     let cardValue = $(this).attr("value");
     alert.innerText = "";
-    // $("#hand").attr("value", ($(this).attr("value")))
 
     $('#hand').val(
         function() { 
@@ -33,9 +34,9 @@ document.querySelector("#attack").addEventListener("click", e=>{
 })
 
 let battle = ()=> {
-    let enemies = document.querySelector('#enemies').innerText;
+    let enemies = document.querySelector("#enemies").innerText;
     console.log("enemies value",enemies);
-    let enemyArray = enemies.split(""); // e.g.:["a", "b", "e", "1", "3", "3"]
+    let enemyArray = document.querySelector("#enemies").innerText.split(""); // e.g.:["a", "b", "e", "1", "3", "3"]
     console.log("enemyArray content",enemyArray);
     let playerPattern = new RegExp($("#hand").val(),"g"); //let playerPattern = /\d/g; // static test
     console.log("playerpattern",playerPattern); //  e.g.:/\d/g
@@ -45,7 +46,6 @@ let battle = ()=> {
         return;
     }
     console.log("enemyMatch",enemyMatch); // e.g.:["1", "3", "3"]
-    enemies = '';
     enemyMatch.forEach(matchSet=>{
         console.log("matchSet contents",matchSet,matchSet.length);
         console.log("enemy array before action",enemyArray,enemyArray.length)
@@ -56,11 +56,10 @@ let battle = ()=> {
                 }
             }
             console.log("About to add enemyArray[x]",enemyArray[x])
-            enemies += enemyArray[x];
         });
     })
     console.log("all of enemyArray",enemyArray);
-    let stringy = enemyArray.toString().replace(/,+/g,'');
-    console.log("stringy", stringy)
-    document.querySelector('#enemies').innerHTML = stringy;
+    enemies = enemyArray.toString().replace(/,+/g,'');
+    console.log("returning enemies", enemies)
+    document.querySelector('#enemies').innerHTML = enemies;
 }    
