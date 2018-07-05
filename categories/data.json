@@ -65,7 +65,7 @@
             ]
         },
         {
-            "name": "Match All",
+            "name": "Any Char",
             "nickname": ".",
             "description":"Match all characters except line break",
             "tips":[],
@@ -93,6 +93,22 @@
                 {
                     "pattern":"[2-8]",
                     "matches":"1795<m>3</m> <m>32</m>0<m>8</m>"
+                }
+            ]
+        },
+        {
+            "name": "Single Char",
+            "nickname": "x",
+            "description":"Explicitly match the given characters",
+            "tips":["Can contain multiple characters"],
+            "examples":[
+                {
+                    "pattern":"et", 
+                    "matches": "j<m>et</m> pack"
+                },
+                {
+                    "pattern":"%",
+                    "matches":"42<m>%</m> true"
                 }
             ]
         },
