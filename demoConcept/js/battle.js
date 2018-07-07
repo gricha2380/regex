@@ -21,8 +21,6 @@ $(".card").on("click", function(e){
             return $(this).val() ? $(this).val() + `${cardValue}` : `${cardValue}`; 
         }
     );
-
-    battle();
 })
 
 $(".clear").on("click", function(e){

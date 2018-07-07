@@ -12,16 +12,16 @@
         <div class="field">
             <div id="enemies"></div>
         </div>
-        <div id="arena">
+        <div id="deck">
             <input id="hand" value="">
             <div class="health"><span class="value">100/100</span></div>
         </div>
-        <div id="deck">
-            <div id="categories"></div>
+        <div id="cards">
             <button class="card" value="\d+">Any Digit<span>\d</span></button>
             <button class="card" value="\D+">Not Digit<span>\D</span></button>
         </div>
         <div class="actionButtons">
+            <!-- <button id="info">Info</button> -->
             <button class="clear">Clear</button>
             <button id="attack" class="main">Attack!</button>
         </div>
@@ -29,8 +29,7 @@
         <a id="random" href="">Random Enemy</a>
     </div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/deck.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="js/battle.js"></script>
 </body>
 </html>

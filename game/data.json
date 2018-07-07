@@ -22,6 +22,7 @@
                     },
                     "deck":{
                         "max":0,
+                        "default":"",
                         "active":[]
                     }
                 }
