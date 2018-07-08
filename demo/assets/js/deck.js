@@ -1,20 +1,13 @@
 let deckRender = $("#deck");
 let deckData = {};
-let gameState = {};
-
 
 fetch("../../categories/data.json")
 .then((resp) => resp.json()) 						// Transform the data into json
 .then( (res) => {
     deckData = res;
     console.log("deckData here", deckData);
-    gamePrep();
-})
-
-
-let gamePrep = ()=>{
     loadCategories();
-}
+})
 
 let loadCategories = (input) => {
     gameState.activeCategory = "characters";
@@ -37,19 +30,6 @@ let loadCategories = (input) => {
             </button>
         `)
     }
-    // for (let i = 0; i < deckData[gameState.activeCategory].length; i++) {
-    //     $("#cards").append(`
-    //         <button class="card" value="${deckData[gameState.activeCategory][i].nickname}">
-    //             ${deckData[gameState.activeCategory][i].name}
-    //             <span>${deckData[gameState.activeCategory][i].nickname}</span>
-    //             ${deckData[gameState.activeCategory][i].type == "auto" ? 
-    //                     '<span class="cardClass" value="auto">⚡️</span>' :
-    //                     '<span class="cardClass" value="manual">...</span>'}
-
-    //         </button>
-    //     `)
-
-    // }
-    processCards()
+    processCards() // listen for click on cards in battle.js
     console.log("done loading categories")
 }

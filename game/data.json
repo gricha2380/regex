@@ -9,7 +9,7 @@
                     "tutorial":[],
                     "cutScene":{
                         "enabled":true,
-                        "dialouge":[
+                        "dialogue":[
                             {"title":"","description":""}
                         ]
                     },
