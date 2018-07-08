@@ -1,9 +1,7 @@
+$main: yellow;
+$highlight: yellow;
 body {
     background:#4EEDD9;
-}
-
-.card span {
-    display: block;
 }
 
 .container {
@@ -13,8 +11,20 @@ body {
 }
 
 .card {
-    background: yellow;
+    background: $highlight;
     color: #D82262;
+    max-width: 70px;
+    height: 70px;
+    width: 70px;
+    vertical-align: bottom;
+    
+    span {
+        display: block;
+    }
+    &:hover {
+        cursor: pointer;
+        background: darken($highlight, 10%)
+    }
 }
 
 .health {
@@ -61,6 +71,7 @@ body {
 }
 #enemies b {
     color: green;
+    text-decoration: underline;
 }
 
 .actionButtons {
@@ -86,4 +97,7 @@ body {
     display: flex;
     justify-content: space-between;
     list-style: none;
+    li.active {
+        color: white;
+    }
 }

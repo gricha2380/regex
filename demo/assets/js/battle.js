@@ -2,7 +2,15 @@ let enemiesDefault;
 let alert;
 
 let random = ()=>{
-    $("#enemies").text(Math.random().toString(36).slice(6));
+    // random for number of words 1 - 3
+    // Math.random().toString(36).slice(6)
+    
+    let enemyTotal = Math.floor(Math.random()*2) + 1;
+    console.log("enemy total", enemyTotal)
+    for (let i = 0; i < enemyTotal; i++) {
+        // console.log("inside enemy totals")
+        $("#enemies").append(Math.random().toString(36).slice(6)+" ");
+    }
     enemiesDefault = document.querySelector('#enemies').innerText;
     alert = document.querySelector("#alert");
 }
@@ -12,18 +20,27 @@ $("#random").on("click", function(e){
     random();
 })
 
-$(".card").on("click", function(e){
-    let cardValue = $(this).attr("value");
-    alert.innerText = "";
-
-    $('#hand').val(
-        function() { 
-            return $(this).val() ? $(this).val() + `${cardValue}` : `${cardValue}`; 
+let processCards = (cardValue) => {
+    console.log('processing cards')
+    $(".card").on("click", function(e){
+        // 
+        if ($(this).find("span.cardClass").attr("value")=="manual") {
+             cardValue = prompt("Type your value");
+            console.log("cardValue",cardValue)
+        } else {
+             cardValue = $(this).attr("value");
         }
-    );
-
-    battle();
-})
+        alert.innerText = "";
+    
+        $('#hand').val(
+            function() { 
+                return $(this).val() ? $(this).val() + `${cardValue}` : `${cardValue}`; 
+            }
+        );
+    
+        battle();
+    })
+}
 
 $(".clear").on("click", function(e){
     alert.innerText = "";

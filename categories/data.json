@@ -3,6 +3,7 @@
         {
             "name": "Any Word",
             "nickname": "\\w",
+            "type":"auto",
             "description":"Any alphanumeric character",
             "tips":[],
             "examples":[
@@ -19,6 +20,7 @@
         {
             "name": "Not a Word",
             "nickname": "\\W",
+            "type":"auto",
             "description":"Any non-alphanumeric character",
             "tips":["Equivalent to [^A-Za-z0-9_]"],
             "examples":[
@@ -35,6 +37,7 @@
         {
             "name": "Any Digit",
             "nickname": "\\d",
+            "type":"auto",
             "description":"Any numerical character",
             "tips":["Equivalent to [0-9]"],
             "examples":[
@@ -51,6 +54,7 @@
         {
             "name": "Not a Digit",
             "nickname": "\\D",
+            "type":"auto",
             "description":"Any non-numerical character",
             "tips":["Equivalent to [^0-9]"],
             "examples":[
@@ -67,6 +71,7 @@
         {
             "name": "Any Char",
             "nickname": ".",
+            "type":"auto",
             "description":"Match all characters except line break",
             "tips":[],
             "examples":[
@@ -83,6 +88,7 @@
         {
             "name": "Range",
             "nickname": "[A-Z]",
+            "type":"manual",
             "description":"Inclusively match sequence of characters in the given range",
             "tips":["Case sensitive", "alphabet or numbers"],
             "examples":[
@@ -99,6 +105,7 @@
         {
             "name": "Single Char",
             "nickname": "x",
+            "type":"manual",
             "description":"Explicitly match the given characters",
             "tips":["Can contain multiple characters"],
             "examples":[
@@ -115,6 +122,7 @@
         {
             "name": "Set",
             "nickname": "[ABC]",
+            "type":"manual",
             "description":"Match specific characters",
             "tips":[],
             "examples":[
@@ -131,6 +139,7 @@
         {
             "name": "Exclue Set",
             "nickname": "[^ABC]",
+            "type":"manual",
             "description":"Match any characters not in this set",
             "tips":[],
             "examples":[
@@ -147,6 +156,7 @@
         {
             "name": "White Space",
             "nickname": "\\s",
+            "type":"auto",
             "description":"Matches spaces, tabs, line breaks",
             "tips":[],
             "examples":[
@@ -159,6 +169,7 @@
         {
             "name": "Not White Space",
             "nickname": "\\S",
+            "type":"auto",
             "description":"Any character except spaces, tabs, line breaks",
             "tips":[],
             "examples":[
@@ -173,6 +184,7 @@
         {
             "name": "Start",
             "nickname": "^",
+            "type":"auto",
             "description":"Matches the beginning of a string",
             "tips":["Matches position, not a character"],
             "examples":[
@@ -185,6 +197,7 @@
         {
             "name": "End",
             "nickname": "$",
+            "type":"auto",
             "description":"Matches the end of a string",
             "tips":["Matches position, not a character"],
             "examples":[
@@ -197,6 +210,7 @@
         {
             "name": "Word Boundary",
             "nickname": "\\b",
+            "type":"auto",
             "description":"Beginning or end of word",
             "tips":["Matches position, not a character"],
             "examples":[
@@ -209,6 +223,7 @@
         {
             "name": "Not Word Boundary",
             "nickname": "\\B",
+            "type":"auto",
             "description":"Beginning or end of word",
             "tips":["Matches position, not a character"],
             "examples":[
