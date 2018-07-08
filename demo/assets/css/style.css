@@ -21,6 +21,10 @@ body {
   display: block;
 }
 
+.card span.name {
+  height: 1.8rem;
+}
+
 .card:hover {
   cursor: pointer;
   background: #cccc00;

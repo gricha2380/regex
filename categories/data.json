@@ -1,6 +1,6 @@
 {
-    "characters": [
-        {
+    "characters": {
+        "Any Word":{
             "name": "Any Word",
             "nickname": "\\w",
             "type":"auto",
@@ -17,7 +17,7 @@
                 }
             ]
         },
-        {
+        "Not a Word":{
             "name": "Not a Word",
             "nickname": "\\W",
             "type":"auto",
@@ -34,7 +34,7 @@
                 }
             ]
         },
-        {
+        "Any Digit":{
             "name": "Any Digit",
             "nickname": "\\d",
             "type":"auto",
@@ -51,7 +51,7 @@
                 }
             ]
         },
-        {
+        "Not a Digit":{
             "name": "Not a Digit",
             "nickname": "\\D",
             "type":"auto",
@@ -68,7 +68,7 @@
                 }
             ]
         },
-        {
+        "Any Char":{
             "name": "Any Char",
             "nickname": ".",
             "type":"auto",
@@ -85,7 +85,7 @@
                 }
             ]
         },
-        {
+        "Range":{
             "name": "Range",
             "nickname": "[A-Z]",
             "type":"manual",
@@ -102,7 +102,7 @@
                 }
             ]
         },
-        {
+        "Single Char":{
             "name": "Single Char",
             "nickname": "x",
             "type":"manual",
@@ -119,7 +119,7 @@
                 }
             ]
         },
-        {
+        "Set":{
             "name": "Set",
             "nickname": "[ABC]",
             "type":"manual",
@@ -136,8 +136,8 @@
                 }
             ]
         },
-        {
-            "name": "Exclue Set",
+        "Exclude Set":{
+            "name": "Exclude Set",
             "nickname": "[^ABC]",
             "type":"manual",
             "description":"Match any characters not in this set",
@@ -153,7 +153,7 @@
                 }
             ]
         },
-        {
+        "White Space":{
             "name": "White Space",
             "nickname": "\\s",
             "type":"auto",
@@ -166,7 +166,7 @@
                 }
             ]
         },
-        {
+        "Not White Space":{
             "name": "Not White Space",
             "nickname": "\\S",
             "type":"auto",
@@ -179,9 +179,9 @@
                 }
             ]
         }
-    ],
-    "anchors": [
-        {
+    },
+    "anchors": {
+        "Start":{
             "name": "Start",
             "nickname": "^",
             "type":"auto",
@@ -194,7 +194,7 @@
                 }
             ]
         },
-        {
+        "End":{
             "name": "End",
             "nickname": "$",
             "type":"auto",
@@ -207,7 +207,7 @@
                 }
             ]
         },
-        {
+        "Word Boundary":{
             "name": "Word Boundary",
             "nickname": "\\b",
             "type":"auto",
@@ -220,7 +220,7 @@
                 }
             ]
         },
-        {
+        "Not Word Boundary":{
             "name": "Not Word Boundary",
             "nickname": "\\B",
             "type":"auto",
@@ -233,9 +233,9 @@
                 }
             ]
         }
-    ],
-    "quantifiers": [
-        {
+    },
+    "quantifiers": {
+        "One Or More":{
             "name": "One or More",
             "nickname": "+",
             "description":"Matches 1 or more of the preceding pattern",
@@ -247,7 +247,7 @@
                 }
             ]
         },
-        {
+        "Exactly x Times":{
             "name": "Exactly x Times",
             "nickname": "{x}",
             "description":"Matches the specified quantity of the preceeding pattern",
@@ -263,7 +263,7 @@
                 }
             ]
         },
-        {
+        "x or More Times":{
             "name": "x or More Times",
             "nickname": "{x,}",
             "description":"...",
@@ -275,7 +275,7 @@
                 }
             ]
         },
-        {
+        "0 or More Times":{
             "name": "0 or More Times",
             "nickname": "*",
             "description":"...",
@@ -287,7 +287,7 @@
                 }
             ]
         },
-        {
+        "Optional":{
             "name": "Optional",
             "nickname": "?",
             "description":"Matches 0 or 1 of the preceeding character",
@@ -299,7 +299,7 @@
                 }
             ]
         },
-        {
+       "Or": {
             "name": "Or",
             "nickname": "(a|b)",
             "description":"Match either value",
@@ -315,9 +315,9 @@
                 }
             ]
         }
-    ],
-    "groups": [
-        {
+    },
+    "groups": {
+        "Capture Group":{
             "name": "Capture Group",
             "nickname": "(abc)",
             "description":"Group characters for comparison",
@@ -329,5 +329,5 @@
                 }
             ]
         }
-    ]
+    }
 }

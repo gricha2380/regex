@@ -23,12 +23,13 @@ $("#random").on("click", function(e){
 let processCards = (cardValue) => {
     console.log('processing cards')
     $(".card").on("click", function(e){
-        // 
+        let cardName = $(this)[0].id;
         if ($(this).find("span.cardClass").attr("value")=="manual") {
-             cardValue = prompt("Type your value");
+            cardValue = prompt(`Type your input. Example:${deckData[gameState.activeCategory][cardName].examples[0].pattern}`);
             console.log("cardValue",cardValue)
+            if (!cardValue) return;
         } else {
-             cardValue = $(this).attr("value");
+            cardValue = $(this).attr("value");
         }
         alert.innerText = "";
     

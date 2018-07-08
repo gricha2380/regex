@@ -20,6 +20,9 @@ body {
     
     span {
         display: block;
+        &.name {
+            height: 1.8rem;
+        }
     }
     &:hover {
         cursor: pointer;

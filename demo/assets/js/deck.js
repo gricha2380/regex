@@ -25,19 +25,31 @@ let loadCategories = (input) => {
             $("#categories").append(`<li>${category.charAt(0).toUpperCase()+category.substr(1)}</li>`)
     }
     
-    for (let i = 0; i < deckData[gameState.activeCategory].length; i++) {
+    for (card in deckData[gameState.activeCategory]) {
         $("#cards").append(`
-            <button class="card" value="${deckData[gameState.activeCategory][i].nickname}">
-                ${deckData[gameState.activeCategory][i].name}
-                <span>${deckData[gameState.activeCategory][i].nickname}</span>
-                ${deckData[gameState.activeCategory][i].type == "auto" ? 
+            <button class="card" value="${deckData[gameState.activeCategory][card].nickname}" id="${card}">
+                <span class="name">${deckData[gameState.activeCategory][card].name}</span>
+                <span>${deckData[gameState.activeCategory][card].nickname}</span>
+                ${deckData[gameState.activeCategory][card].type == "auto" ? 
                         '<span class="cardClass" value="auto">⚡️</span>' :
                         '<span class="cardClass" value="manual">...</span>'}
 
             </button>
         `)
-
     }
+    // for (let i = 0; i < deckData[gameState.activeCategory].length; i++) {
+    //     $("#cards").append(`
+    //         <button class="card" value="${deckData[gameState.activeCategory][i].nickname}">
+    //             ${deckData[gameState.activeCategory][i].name}
+    //             <span>${deckData[gameState.activeCategory][i].nickname}</span>
+    //             ${deckData[gameState.activeCategory][i].type == "auto" ? 
+    //                     '<span class="cardClass" value="auto">⚡️</span>' :
+    //                     '<span class="cardClass" value="manual">...</span>'}
+
+    //         </button>
+    //     `)
+
+    // }
     processCards()
     console.log("done loading categories")
 }
