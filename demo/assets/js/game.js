@@ -1,5 +1,24 @@
 let gameState = {};
 let enemyData = {};
+let levelData = {};
+
+fetch("../../enemies/data.json")
+.then((resp) => resp.json())
+.then( (res) => {
+    enemyData = res;
+    console.log("enemyData here", enemyData);
+})
+
+let loadLevelData = ()=>{
+    fetch("../../game/data.json")
+    .then((resp) => resp.json())
+    .then( (res) => {
+        levelData = res;
+        console.log("levelData here", enemyData);
+        resetLevels();
+    })
+}
+loadLevelData();
 
 let resetHealth = () => {
     gameState.health = 100;
@@ -27,19 +46,28 @@ let random = ()=>{
     enemiesDefault = document.querySelector('#enemies').innerText;
 }
 
+let resetLevels = () => {
+    gameState.mode = "arcade"; //TODO: Let user pick mode from start screen
+    gameState.level = levelData.mode[gameState.mode].levels[0];
+    document.querySelector("#level .value").innerHTML = `${gameState.level.name}: ${gameState.level.description}`;
+}
+
+let restartLevel = ()=> {
+}
+
+let nextLevel = ()=> {
+    gameState.level = levelData.mode[gameState.mode].levels[gameState.level.number+1];
+    document.querySelector("#level .value").innerText = gameState.level.name;
+}
+
 let newGame = ()=> {
     resetHealth();
     resetScore();
+    loadLevelData();
     random();
 }
 newGame();
 
-fetch("../../enemies/data.json")
-.then((resp) => resp.json())
-.then( (res) => {
-    enemyData = res;
-    console.log("enemyData here", enemyData);
-})
 
 let gameOver = ()=> {
     window.alert("Game over!");

@@ -1,4 +1,4 @@
-let enemiesDefault; //holds original enemy array to allow resetting
+let enemiesDefault = document.querySelector('#enemies').innerText; //holds original enemy array to allow resetting
 let alert = document.querySelector("#alert"); // notification field
 
 $("#random").on("click", function(){
@@ -86,9 +86,11 @@ let clearEnemies = (totalEnemyMatch)=> {
     $("#hand").val(""); // clear hand
     
     totalEnemyMatch = document.querySelector("#enemies").innerHTML; // use document.querySelector("#enemies").innerText for plain characters
-    let matched = new RegExp("[^<b>]+[^<\/b>]","g");
-    console.log("regex results",totalEnemyMatch.match(matched));
-    document.querySelector('#enemies').innerText = totalEnemyMatch.match(matched).toString().replace(/,+/g,'');// set dom to regex results
+    let matched = new RegExp("<b>(.*?)<\/b>","g");
+    // console.log("match formula", matched)
+    totalEnemyMatch = totalEnemyMatch.replace(matched, "");  
+    console.log('regex results', totalEnemyMatch)
+    document.querySelector('#enemies').innerText = totalEnemyMatch;// set dom to regex results
     enemiesDefault = document.querySelector('#enemies').innerText;
     enemyAttack();
 }
@@ -114,6 +116,7 @@ let enemyAttack = ()=>{
 }
 
 let doDamage = (min,max)=> {
+    console.log(`min:${min} max:${max}`)
     // random damage is calculated
     let damage = Math.floor(Math.random()*max-1) + min;
     gameState.damage += damage;

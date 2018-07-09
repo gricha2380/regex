@@ -140,3 +140,15 @@ body {
   color: rgba(0, 0, 0, 0.5);
   text-decoration: none;
 }
+
+#level {
+  display: inline-block;
+  padding: 1rem 0;
+  font-size: .8rem;
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+
+#header {
+  text-align: left;
+}

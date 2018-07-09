@@ -4,8 +4,9 @@
         "arcade":{
             "levels":[
                 {
-                    "name":"Level 1",
-                    "description":"",
+                    "name":"1",
+                    "number":0,
+                    "description":"Humble Beginnings...",
                     "tutorial":[],
                     "cutScene":{
                         "enabled":true,

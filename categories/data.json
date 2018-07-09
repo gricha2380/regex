@@ -277,7 +277,7 @@
         },
         "0 or More Times":{
             "name": "0 or More Times",
-            "nickname": "*",
+            "nickname": "{0,}",
             "description":"...",
             "tips":[],
             "examples":[
@@ -290,7 +290,7 @@
         "Optional":{
             "name": "Optional",
             "nickname": "?",
-            "description":"Matches 0 or 1 of the preceeding character",
+            "description":"Matches 0 or 1 of the preceding character",
             "tips":[],
             "examples":[
                 {
