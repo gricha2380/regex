@@ -59,37 +59,37 @@ let beatLevel = ()=> {
     //level cleared
     console.log("level cleared!");
     let newDiv = document.createElement('div');
-    newDiv.id = "gameOver";
+    newDiv.id = "beatLevel";
     newDiv.classList.add("modal");
     newDiv.innerHTML =
         `<div class="inner">
             <div>Level Cleared!</div>
-            <div class="row" id="time">
+            <div class="row" id="timeModal">
                 <label>Time</label>
                 <div class="value">
                     00:00
                     <span class="record">New Record!</span>
                 </div>
             </div>
-            <div class="row" id="time">
+            <div class="row" id="scoreModal">
                 <label>Score</label>
                 <div class="value">
                     ${gameState.score}
                     <span class="record">New Record!</span>
                 </div>
             </div>
-            <button id="newGameModal">New Game</button>
+            <button id="continueGameModal">Continue</button>
             <button id="goHomeModal">Home</button>
         </div>`
     document.querySelector(".container").appendChild(newDiv);
-    document.querySelector("#newGameModal").addEventListener("click", ()=>{
-        console.log("new game");
-        document.querySelector('.container').removeChild(document.querySelector("#gameOver"));
+    document.querySelector("#continueGameModal").addEventListener("click", ()=>{
+        console.log("continue game...");
+        document.querySelector('.container').removeChild(document.querySelector("#beatLevel"));
         newGame();
     })
     document.querySelector("#goHomeModal").addEventListener("click", ()=>{
         console.log("going home");
-        document.querySelector('.container').removeChild(document.querySelector("#gameOver"));
+        document.querySelector('.container').removeChild(document.querySelector("#beatLevel"));
         newGame();
     })
 }
@@ -110,15 +110,40 @@ newGame();
 
 let gameOver = ()=> {
     console.log("game over!");
-    window.alert("Game over!");
-    document.querySelector(".container").appendChild(`
-        <div id="gameOver" class="modal">
-        <div class="inner">
-                <div>Game Over!</div>
-                <button id="newGame">New Game</button>
+    let newDiv = document.createElement('div');
+    newDiv.id = "gameOver";
+    newDiv.classList.add("modal");
+    newDiv.innerHTML =
+        `<div class="inner">
+            <div>Game Over!</div>
+            <div class="row" id="levelsModal">
+                <label>Levels</label>
+                <div class="value">
+                    ##
+                    <span class="record">New Record!</span>
+                </div>
             </div>
-        </div>
-    `);
+            <div class="row" id="scoreModal">
+                <label>Score</label>
+                <div class="value">
+                    ${gameState.score}
+                    <span class="record">New Record!</span>
+                </div>
+            </div>
+            <button id="newGameModal">New Game</button>
+            <button id="goHomeModal">Home</button>
+        </div>`
+    document.querySelector(".container").appendChild(newDiv);
+    document.querySelector("#newGameModal").addEventListener("click", ()=>{
+        console.log("new game");
+        document.querySelector('.container').removeChild(document.querySelector("#gameOver"));
+        newGame();
+    })
+    document.querySelector("#goHomeModal").addEventListener("click", ()=>{
+        console.log("going home");
+        document.querySelector('.container').removeChild(document.querySelector("#gameOver"));
+        newGame();
+    });
     // give oh no message
     // showScoreScreen()
     // save score data

@@ -37,6 +37,7 @@ $(".clear").on("click", function(e){
 document.querySelector("#attack").addEventListener("click", e=>{
     increaseScore(gameState.holdPoints);
     endTurn(); 
+    
 })
 
 let matchEnemies = ()=> {
@@ -79,6 +80,7 @@ let matchEnemies = ()=> {
 
 let endTurn = ()=>{
     clearEnemies();
+    gameState.holdPoints = 0;
 }
 
 let clearEnemies = (totalEnemyMatch)=> {
@@ -125,7 +127,7 @@ let enemyAttack = ()=>{
 let doDamage = (min,max)=> {
     console.log(`min:${min} max:${max}`)
     // random damage is calculated
-    let damage = Math.floor(Math.random()*max-1) + min;
+    let damage = Math.floor(Math.random()*max) + min;
     gameState.damage += damage;
     // damage is subtracted from player health
     document.querySelector("#health .value").innerText = gameState.health - gameState.damage;
@@ -138,6 +140,7 @@ let doDamage = (min,max)=> {
 }
 
 let checkHealth = ()=>{
+    console.log("checking health");
     if (gameState.damage >= gameState.health) gameOver();
 }
 
