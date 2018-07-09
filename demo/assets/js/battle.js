@@ -84,15 +84,22 @@ let endTurn = ()=>{
 let clearEnemies = (totalEnemyMatch)=> {
     
     $("#hand").val(""); // clear hand
-    
-    totalEnemyMatch = document.querySelector("#enemies").innerHTML; // use document.querySelector("#enemies").innerText for plain characters
+    totalEnemyMatch = document.querySelector("#enemies").innerHTML; // use ("#enemies").innerText for plain characters
     let matched = new RegExp("<b>(.*?)<\/b>","g");
     // console.log("match formula", matched)
-    totalEnemyMatch = totalEnemyMatch.replace(matched, "");  
-    console.log('regex results', totalEnemyMatch)
-    document.querySelector('#enemies').innerText = totalEnemyMatch;// set dom to regex results
+    let remainingEnemies = totalEnemyMatch.replace(matched, ""); //remove matched enemies
+    console.log('regex results', remainingEnemies,remainingEnemies.length);
+    document.querySelector('#enemies').innerText = remainingEnemies;// set dom to regex results
     enemiesDefault = document.querySelector('#enemies').innerText;
-    enemyAttack();
+    if (remainingEnemies=='' || remainingEnemies==' ') {
+        console.log("no enemies left")
+        document.querySelector("#enemies").innerText = "All Clear!";
+        setTimeout(function() {
+            document.querySelector("#enemies").innerText = "";
+            beatLevel();
+          }, 1000);
+    }
+    else {enemyAttack()}
 }
 
 
