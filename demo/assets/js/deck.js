@@ -1,7 +1,7 @@
 let deckRender = $("#deck");
 let deckData = {};
 
-fetch("../../categories/data.json")
+fetch("../categories/data.json")
 .then((resp) => resp.json()) 						// Transform the data into json
 .then( (res) => {
     deckData = res;

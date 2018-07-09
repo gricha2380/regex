@@ -2,7 +2,7 @@ let gameState = {};
 let enemyData = {};
 let levelData = {};
 
-fetch("../../enemies/data.json")
+fetch("../enemies/data.json")
 .then((resp) => resp.json())
 .then( (res) => {
     enemyData = res;
@@ -10,7 +10,7 @@ fetch("../../enemies/data.json")
 })
 
 let loadLevelData = ()=>{
-    fetch("../../game/data.json")
+    fetch("../game/data.json")
     .then((resp) => resp.json())
     .then( (res) => {
         levelData = res;
