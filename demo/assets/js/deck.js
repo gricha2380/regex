@@ -2,7 +2,7 @@ let deckRender = $("#deck");
 let deckData = {};
 
 fetch("../categories/data.json")
-.then((resp) => resp.json()) 						// Transform the data into json
+.then((resp) => resp.json())
 .then( (res) => {
     deckData = res;
     console.log("deckData here", deckData);
@@ -14,10 +14,18 @@ let loadCategories = (input) => {
     for (category in deckData) {
         console.log(`category is ${category}`,category == gameState.activeCategory);
         category == gameState.activeCategory ? 
-            $("#categories").append(`<li class="active">${category.charAt(0).toUpperCase()+category.substr(1)}</li>`) :
-            $("#categories").append(`<li>${category.charAt(0).toUpperCase()+category.substr(1)}</li>`)
+            $("#categories").append(`<li class="active" value="${category}">${category.charAt(0).toUpperCase()+category.substr(1)}</li>`) :
+            $("#categories").append(`<li value="${category}">${category.charAt(0).toUpperCase()+category.substr(1)}</li>`)
     }
     
+    loadActiveCategory();
+    categoryEventListeners();
+    processCards(); // listen for click on cards in battle.js
+    console.log("done loading categories")
+}
+
+let loadActiveCategory = ()=> {
+    $("#cards").html('');
     for (card in deckData[gameState.activeCategory]) {
         $("#cards").append(`
             <button class="card" value="${deckData[gameState.activeCategory][card].nickname}" id="${card}">
@@ -30,6 +38,17 @@ let loadCategories = (input) => {
             </button>
         `)
     }
-    processCards() // listen for click on cards in battle.js
-    console.log("done loading categories")
+}
+
+let categoryEventListeners = ()=>{
+    $("#categories li").on("click", function(e){
+        console.log("you clicked a list itemm",this.getAttribute("value"));
+        // find value attr
+        $("#categories li").removeClass("active");
+        this.classList.add("active");
+        gameState.activeCategory = this.getAttribute("value"); // set gameState.activeCategory to whatver category was clicked
+        loadActiveCategory();
+        processCards();
+        // remove active class from li & set to new li
+    })
 }

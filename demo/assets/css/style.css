@@ -7,6 +7,7 @@ body {
   max-width: 500px;
   margin: auto;
   text-align: center;
+  position: relative;
 }
 
 .card {
@@ -29,6 +30,14 @@ body {
 .card:hover {
   cursor: pointer;
   background: #cccc00;
+}
+
+#alert {
+  position: absolute;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  margin-top: -.5rem;
 }
 
 #health {
@@ -134,8 +143,22 @@ body {
   list-style: none;
 }
 
+#categories li {
+  width: 100%;
+}
+
+#categories li:hover {
+  cursor: pointer;
+  color: #4B4B4B;
+}
+
 #categories li.active {
   color: white;
+}
+
+#categories li.active:hover {
+  color: white;
+  cursor: auto;
 }
 
 #score {

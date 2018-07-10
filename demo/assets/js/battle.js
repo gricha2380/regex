@@ -5,6 +5,12 @@ $("#random").on("click", function(){
     random();
 })
 
+let alertMessage=(message)=> {
+    alert.innerText = message;
+    clearAlert();
+}
+
+
 // load value for selected card
 let processCards = (cardValue) => {
     $(".card").on("click", function(e){
@@ -59,8 +65,10 @@ let matchEnemies = ()=> {
         console.log("enemy array before action",enemyArray,enemyArray.length)
         enemyArray.forEach((element,x) => {
             for(let i=0;i<matchSet.length;i++) {
-                if(matchSet[i]===enemyArray[x]){
+                if(matchSet[i]===enemyArray[x] && enemyArray[x]!==" "){
                     // go into game object, find score value for enemry type, call increaseScore(passvalue)
+                    console.log(`element type is${element}.`)
+                    console.log("element at index",enemyData.enemies[element])
                     let enemyType = enemyData.enemies[element].type;
                     enemyType = enemyType.toLowerCase();
                     gameState.holdPoints += enemyData[enemyType].points.normal;
@@ -81,6 +89,7 @@ let matchEnemies = ()=> {
 let endTurn = ()=>{
     clearEnemies();
     gameState.holdPoints = 0;
+    // alertMessage("Your Turn!");
 }
 
 let clearEnemies = (totalEnemyMatch)=> {
@@ -109,18 +118,98 @@ let enemyAttack = ()=>{
     // remaining enemies attack back  
     let enemyString = document.querySelector("#enemies").innerText.replace(/\s/g, ''); // remove blank spaces
     // loop through each character
-    for (let i=0;i<enemyString.length;i++){
-        // each character looks up damage properties from enemy object
+    //new loop v2
+    // console.log("enemy string length", enemyString.length)
+    console.log("enemy string length", enemyString.length);
+    var i = 0;
+    function f() {
+        // find the current letter in the dom document.querySelector("#enemies").innerText.charAt(0).setAttribute("style", "color:green");
+        
+        // let enemyStringHighlight = enemyString.map((x,e) => {
+        //     if (e == i) {
+        //         return `<span style={color:"green"}>${x}</span>`;
+        //     } else {return x}
+        // })
+        // for(x=0;x<enemyString.length;x++){
+
+        // }
+
+        document.querySelector("#enemies").innerHTML = enemyString
+        console.log("i value", i)
         let enemyType = enemyData.enemies[enemyString[i]].type;
         enemyType = enemyType.toLowerCase();
         console.log("enemy type is", enemyType);
         let damageRange = enemyData[enemyType].damage;
         let damage = doDamage(damageRange.min,damageRange.max);
-        console.log(`enemy ${enemyString[i]} does ${damage} damage`,);
-        alert.innerText += `Enemy "${enemyString[i]}" does ${damage} damage!
+        alert.innerText = `Enemy "${enemyString[i]}" did ${damage} damage!
         `;
+        console.log(`enemy ${enemyString[i]} did ${damage} damage!`,);
+        i++;
+        if( i < enemyString.length ){
+            setTimeout( f, 3000 );
+        }
+        else {
+            console.log("loop finisheed")
+            clearAlert();
+            alertMessage("Your Turn!");
+        }
     }
-    clearAlert();
+    f();
+
+
+    // (function delayLoop (i) {          
+    //     setTimeout(function () {   
+    //         console.log("i value", i)
+    //         let enemyType = enemyData.enemies[enemyString[i]].type;
+    //         enemyType = enemyType.toLowerCase();
+    //         console.log("enemy type is", enemyType);
+    //         let damageRange = enemyData[enemyType].damage;
+    //         let damage = doDamage(damageRange.min,damageRange.max);
+    //         alert.innerText += `Enemy "${enemyString[i]}" did ${damage} damage!
+    //         `;
+    //         console.log(`enemy ${enemyString[i]} did ${damage} damage!`,);
+    //        if (--i) delayLoop(i);
+    //     }, 3000)
+    //  })(enemyString.length);  
+    //end new lop v2
+
+
+    //new loop
+    // var i = 1; 
+    // function delayLoop () {
+    //    setTimeout(function () {
+    //     let enemyType = enemyData.enemies[enemyString[i]].type;
+    //     enemyType = enemyType.toLowerCase();
+    //     console.log("enemy type is", enemyType);
+    //     let damageRange = enemyData[enemyType].damage;
+    //     let damage = doDamage(damageRange.min,damageRange.max);
+    //     alert.innerText += `Enemy "${enemyString[i]}" did ${damage} damage!
+    //     `;
+    //     console.log(`enemy ${enemyString[i]} did ${damage} damage!`,);
+    //       i++;
+    //       if (i < enemyString.length) {
+    //          delayLoop();
+    //       }
+    //    }, 1000)
+    // }
+    // delayLoop(); 
+    //end new loop
+
+
+    // for (let i=0;i<enemyString.length;i++){
+    //     // each character looks up damage properties from enemy object
+    //     setTimeout(function() {
+    //         let enemyType = enemyData.enemies[enemyString[i]].type;
+    //         enemyType = enemyType.toLowerCase();
+    //         console.log("enemy type is", enemyType);
+    //         let damageRange = enemyData[enemyType].damage;
+    //         let damage = doDamage(damageRange.min,damageRange.max);
+    //         alert.innerText += `Enemy "${enemyString[i]}" did ${damage} damage!
+    //         `;
+    //         console.log(`enemy ${enemyString[i]} did ${damage} damage!`,);
+    //       }, 1000);
+    // }
+    // clearAlert();
     // document.querySelector("#attack").disabled = true;
 }
 
