@@ -67,7 +67,7 @@ let matchEnemies = ()=> {
             for(let i=0;i<matchSet.length;i++) {
                 if(matchSet[i]===enemyArray[x] && enemyArray[x]!==" "){
                     // go into game object, find score value for enemry type, call increaseScore(passvalue)
-                    console.log(`element type is${element}.`)
+                    console.log(`element type is"${element}".`)
                     console.log("element at index",enemyData.enemies[element])
                     let enemyType = enemyData.enemies[element].type;
                     enemyType = enemyType.toLowerCase();
@@ -123,18 +123,14 @@ let enemyAttack = ()=>{
     console.log("enemy string length", enemyString.length);
     var i = 0;
     function f() {
-        // find the current letter in the dom document.querySelector("#enemies").innerText.charAt(0).setAttribute("style", "color:green");
-        
-        // let enemyStringHighlight = enemyString.map((x,e) => {
-        //     if (e == i) {
-        //         return `<span style={color:"green"}>${x}</span>`;
-        //     } else {return x}
-        // })
-        // for(x=0;x<enemyString.length;x++){
+        console.log("0,i position",enemyString.substring(0,i))
+        console.log("i+2 position",enemyString.substring(i+2))
+        console.log("enemystring[i]",enemyString[i])
+        console.log("full enemystring",enemyString)
+        let split = `${enemyString.substring(0,i)}<span style="color:blue">${enemyString[i]}</span>${enemyString.substring(i+1)}`;
+        console.log("split",split)
+        document.querySelector("#enemies").innerHTML = split;
 
-        // }
-
-        document.querySelector("#enemies").innerHTML = enemyString
         console.log("i value", i)
         let enemyType = enemyData.enemies[enemyString[i]].type;
         enemyType = enemyType.toLowerCase();
@@ -151,66 +147,11 @@ let enemyAttack = ()=>{
         else {
             console.log("loop finisheed")
             clearAlert();
+            document.querySelector("#enemies").innerHTML = enemyString;
             alertMessage("Your Turn!");
         }
     }
     f();
-
-
-    // (function delayLoop (i) {          
-    //     setTimeout(function () {   
-    //         console.log("i value", i)
-    //         let enemyType = enemyData.enemies[enemyString[i]].type;
-    //         enemyType = enemyType.toLowerCase();
-    //         console.log("enemy type is", enemyType);
-    //         let damageRange = enemyData[enemyType].damage;
-    //         let damage = doDamage(damageRange.min,damageRange.max);
-    //         alert.innerText += `Enemy "${enemyString[i]}" did ${damage} damage!
-    //         `;
-    //         console.log(`enemy ${enemyString[i]} did ${damage} damage!`,);
-    //        if (--i) delayLoop(i);
-    //     }, 3000)
-    //  })(enemyString.length);  
-    //end new lop v2
-
-
-    //new loop
-    // var i = 1; 
-    // function delayLoop () {
-    //    setTimeout(function () {
-    //     let enemyType = enemyData.enemies[enemyString[i]].type;
-    //     enemyType = enemyType.toLowerCase();
-    //     console.log("enemy type is", enemyType);
-    //     let damageRange = enemyData[enemyType].damage;
-    //     let damage = doDamage(damageRange.min,damageRange.max);
-    //     alert.innerText += `Enemy "${enemyString[i]}" did ${damage} damage!
-    //     `;
-    //     console.log(`enemy ${enemyString[i]} did ${damage} damage!`,);
-    //       i++;
-    //       if (i < enemyString.length) {
-    //          delayLoop();
-    //       }
-    //    }, 1000)
-    // }
-    // delayLoop(); 
-    //end new loop
-
-
-    // for (let i=0;i<enemyString.length;i++){
-    //     // each character looks up damage properties from enemy object
-    //     setTimeout(function() {
-    //         let enemyType = enemyData.enemies[enemyString[i]].type;
-    //         enemyType = enemyType.toLowerCase();
-    //         console.log("enemy type is", enemyType);
-    //         let damageRange = enemyData[enemyType].damage;
-    //         let damage = doDamage(damageRange.min,damageRange.max);
-    //         alert.innerText += `Enemy "${enemyString[i]}" did ${damage} damage!
-    //         `;
-    //         console.log(`enemy ${enemyString[i]} did ${damage} damage!`,);
-    //       }, 1000);
-    // }
-    // clearAlert();
-    // document.querySelector("#attack").disabled = true;
 }
 
 let doDamage = (min,max)=> {
