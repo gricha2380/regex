@@ -34,7 +34,6 @@ let loadActiveCategory = ()=> {
                 ${deckData[gameState.activeCategory][card].type == "auto" ? 
                         '<span class="cardClass" value="auto">⚡️</span>' :
                         '<span class="cardClass" value="manual">...</span>'}
-
             </button>
         `)
     }

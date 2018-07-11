@@ -5,11 +5,11 @@ $("#random").on("click", function(){
     random();
 })
 
+// method for displying alerts
 let alertMessage=(message)=> {
     alert.innerText = message;
     clearAlert();
 }
-
 
 // load value for selected card
 let processCards = (cardValue) => {
@@ -113,34 +113,15 @@ let clearEnemies = (totalEnemyMatch)=> {
     else {enemyAttack()}
 }
 
-
+// enemy attacks player
 let enemyAttack = ()=>{
-    // remaining enemies attack back  
     let enemyString = document.querySelector("#enemies").innerText.replace(/\s/g, ''); // remove blank spaces
+    
     // loop through each character
-    //new loop v2
-    // console.log("enemy string length", enemyString.length)
+    // custom loop to allow timeout
     console.log("enemy string length", enemyString.length);
     var i = 0;
     function f() {
-        console.log("0,i position",enemyString.substring(0,i))
-        console.log("i+2 position",enemyString.substring(i+2))
-        console.log("enemystring[i]",enemyString[i])
-        console.log("full enemystring",enemyString)
-        let split = `${enemyString.substring(0,i)}<span style="color:blue">${enemyString[i]}</span>${enemyString.substring(i+1)}`;
-        console.log("split",split)
-        document.querySelector("#enemies").innerHTML = split;
-
-        console.log("i value", i)
-        let enemyType = enemyData.enemies[enemyString[i]].type;
-        enemyType = enemyType.toLowerCase();
-        console.log("enemy type is", enemyType);
-        let damageRange = enemyData[enemyType].damage;
-        let damage = doDamage(damageRange.min,damageRange.max);
-        alert.innerText = `Enemy "${enemyString[i]}" did ${damage} damage!
-        `;
-        console.log(`enemy ${enemyString[i]} did ${damage} damage!`,);
-        i++;
         if( i < enemyString.length ){
             setTimeout( f, 3000 );
         }
@@ -150,16 +131,39 @@ let enemyAttack = ()=>{
             document.querySelector("#enemies").innerHTML = enemyString;
             alertMessage("Your Turn!");
         }
+        if (enemyData.enemies[enemyString[i]]) {
+
+            console.log("0,i position",enemyString.substring(0,i))
+            console.log("i+2 position",enemyString.substring(i+2))
+            console.log("enemystring[i]",enemyString[i])
+            console.log("full enemystring",enemyString)
+            // split & mend string to place style on current character
+            let split = `${enemyString.substring(0,i)}<span style="color:blue">${enemyString[i]}</span>${enemyString.substring(i+1)}`;
+            console.log("split",split)
+            console.log("i value", i)
+            document.querySelector("#enemies").innerHTML = split;
+    
+            // determine enemy damage based on character type min & max
+            let enemyType = enemyData.enemies[enemyString[i]].type;
+            enemyType = enemyType.toLowerCase();
+            console.log("enemy type is", enemyType);
+            let damageRange = enemyData[enemyType].damage;
+            let damage = doDamage(damageRange.min,damageRange.max);
+            alert.innerText = `Enemy "${enemyString[i]}" did ${damage} damage!`;
+            console.log(`enemy ${enemyString[i]} did ${damage} damage!`,);
+        }
+        i++;
+        
     }
     f();
 }
 
+// random damage is calculated & sent back
 let doDamage = (min,max)=> {
     console.log(`min:${min} max:${max}`)
-    // random damage is calculated
     let damage = Math.floor(Math.random()*max) + min;
-    gameState.damage += damage;
     // damage is subtracted from player health
+    gameState.damage += damage;
     document.querySelector("#health .value").innerText = gameState.health - gameState.damage;
     document.querySelector("#health .healthBar").setAttribute("style", `width:${gameState.health - gameState.damage}%`);
 
@@ -169,11 +173,13 @@ let doDamage = (min,max)=> {
     return damage;
 }
 
+// make sure player's still alive
 let checkHealth = ()=>{
     console.log("checking health");
     if (gameState.damage >= gameState.health) gameOver();
 }
 
+// clear notification area
 let clearAlert = ()=> {
     setTimeout(() =>{
         console.log("clearing alert")
