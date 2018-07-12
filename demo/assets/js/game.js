@@ -1,5 +1,6 @@
 let gameState = {};
 let enemyData = {};
+let savedSessions;
 
 fetch("../enemies/data.json")
 .then((resp) => resp.json())
@@ -18,6 +19,8 @@ let loadGameState = ()=>{
     }).then(res => {
         resetHealth();
         resetScore();
+        gameState.current.timer.global.start = new Date();
+            console.log("start timetamp",gameState.current.timer.global.start) // remove later
         random();
     })
 }
@@ -73,7 +76,7 @@ let beatLevel = ()=> {
             <div class="row" id="timeModal">
                 <label>Time Spent</label>
                 <div class="holder">
-                    <div class="value">${gameState.current.timer.global}</div>
+                    <div class="value">${calculateTime(gameState.current.timer.current.start,gameState.current.timer.current.end)}</div>
                     <span class="record">New Record!</span>
                 </div>
             </div>
@@ -115,6 +118,7 @@ newGame();
 
 let gameOver = ()=> {
     console.log("game over!");
+    saveSession();
     let newDiv = document.createElement('div');
     newDiv.id = "gameOver";
     newDiv.classList.add("modal");
@@ -126,6 +130,14 @@ let gameOver = ()=> {
                 <div class="holder">
                     <div class="value">${gameState.current.level.number+1}</div>
                     <span class="record">New Record!</span>
+                </div>
+            </div>
+            <div class="row" id="timeModal">
+                <label>Time Spent</label>
+                <div class="holder">
+                    <div class="value">${calculateTime(gameState.current.timer.global.start,gameState.current.timer.global.end,"pretty")}</div>
+                    <span class="record">New Record!</span>
+                </div>
             </div>
             <div class="row" id="scoreModal">
                 <label>Score</label>
@@ -161,3 +173,56 @@ let restart = ()=> {
     //TODO: NEW Game(); // make new game prprotype
 }
 
+
+// if saved game data exits, load it
+if (window.localStorage.getItem('savedSessions')) {
+    console.log('Found existing localstorage values.',JSON.parse(window.localStorage.getItem('savedSessions')));
+    savedSessions = JSON.parse(window.localStorage.getItem('savedSessions'));
+  } 
+// otherwise make a blank array
+else {
+    console.log('No local storage, starting fresh.');
+    savedSessions = [];
+}
+
+
+  let saveSession = () => {
+      console.log("saving game data");
+      
+      gameState.current.timer.global.end = new Date();
+      console.log("end time", gameState.current.timer.global.end)
+      // calculate game duration
+
+    savedSessions.push(
+        {
+            "score":gameState.current.score,
+            "date":gameState.current.timer.global.start,
+            "time":calculateTime(gameState.current.timer.global.start, gameState.current.timer.global.end),
+            "enemies":gameState.current.counter.enemies,
+            "patterns":gameState.current.counter.patterns,
+            "mode":gameState.current.mode,
+            "level":gameState.current.level.number,
+        }
+    );
+    window.localStorage.setItem('savedSessions', JSON.stringify(savedSessions));
+}
+
+
+/* Utilities */
+let calculateTime = (start, end, pretty) => {
+    // subtract unix time stamps
+    // convert result
+    if (pretty) {
+        let difference = new Date(end - start);
+        console.log("here's the diffrernce calc", difference)
+        return `${addZero(difference.getUTCHours())}:${addZero(difference.getUTCMinutes())}:${addZero(difference.getUTCSeconds())}`;
+    }
+    else return new Date(end - start);
+}
+
+let addZero = (x)=> {
+    if (x < 10) {
+        x = "0" + x;
+    }
+    return x;
+}

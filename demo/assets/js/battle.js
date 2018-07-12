@@ -100,6 +100,7 @@ let clearEnemies = (totalEnemyMatch)=> {
     let matched = new RegExp("<b>(.*?)<\/b>","g");
     // console.log("match formula", matched)
     let remainingEnemies = totalEnemyMatch.replace(matched, ""); //remove matched enemies
+    gameState.current.counter.enemies += totalEnemyMatch.match(matched).length; // save into global enemy counter
     console.log('regex results', remainingEnemies,remainingEnemies.length);
     document.querySelector('#enemies').innerText = remainingEnemies;// set dom to regex results
     enemiesDefault = document.querySelector('#enemies').innerText;
@@ -164,9 +165,9 @@ let doDamage = (min,max)=> {
     console.log(`min:${min} max:${max}`)
     let damage = Math.floor(Math.random()*max) + min;
     // damage is subtracted from player health
-    gameState.damage += damage;
-    document.querySelector("#health .value").innerText = gameState.health - gameState.damage;
-    document.querySelector("#health .healthBar").setAttribute("style", `width:${gameState.health - gameState.damage}%`);
+    gameState.current.damage += damage;
+    document.querySelector("#health .value").innerText = gameState.current.health - gameState.current.damage;
+    document.querySelector("#health .healthBar").setAttribute("style", `width:${gameState.current.health - gameState.current.damage}%`);
 
     // TODO: install Vue.js & have health bar synced for free
 
