@@ -15,8 +15,7 @@ let loadGameState = ()=>{
         gameState = res;
         console.log("gameState here", enemyData);
         resetLevels();
-    })
-    .then( res => {
+    }).then(res => {
         resetHealth();
         resetScore();
         random();
@@ -33,7 +32,7 @@ let resetHealth = () => {
 
 let resetScore = () => {
     gameState.current.score = 0;
-    gameState.current.level = 0;
+    // gameState.current.level = 0;
     document.querySelector("#score .value").innerText = 0;
 }
 
