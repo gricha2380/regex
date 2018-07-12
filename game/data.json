@@ -1,5 +1,14 @@
 {
-    "score":0,
+    "current":{
+        "score":0,
+        "health":100,
+        "damage":0,
+        "level":{},
+        "timer":{
+            "global":0,
+            "current":0
+        }
+    },
     "mode":{
         "arcade":{
             "levels":[

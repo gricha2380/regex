@@ -1,7 +1,8 @@
 let enemiesDefault = document.querySelector('#enemies').innerText; //holds original enemy array to allow resetting
 let alert = document.querySelector("#alert"); // notification field
 
-$("#random").on("click", function(){
+$("#random").on("click", function(event){
+    event.preventDefault();
     random();
 })
 
@@ -186,3 +187,18 @@ let clearAlert = ()=> {
         alert.innerText="";
       }, 3000);
 }
+
+$("#endGame").on("click", function(event){
+    event.preventDefault();
+    endGame();
+})
+
+// endGame
+// capture current score
+// save in local storage (also add local storage code to regular end game process)
+// show end game screen
+let endGame = ()=>{
+    gameOver();
+}
+
+// what should go to local storage? score, date, time spent, enemies matched, cards played

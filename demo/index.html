@@ -9,38 +9,14 @@
     <title>Regex Battle</title>
 </head>
 <body>
-    <div class="container">
-        <div id="header">
-            <div id="level">Level <span class="value"></span></div>
-            <div id="score">Score: <span class="value"></span></div>
+    <div class="container" id="homeContainer">
+        <h1>Regex.</h1>
+       <div id="buttonHolder">
+           <a href="battle.html"><button id="play" class="main button" >Play</button></a>
         </div>
-        <div id="alert"></div>
-        <div class="field">
-            <div id="enemies"></div>
-        </div>
-        <div id="arena">
-            <input id="hand" value="">
-            <div id="health">
-                <span class="healthBar"></span>
-                <div class="healthText">
-                    <span class="value"></span>/<span class="max"></span></div>
-                </div>
-        </div>
-        <div id="deck">
-            <div id="categories"></div>
-            <div id="cards">
-            </div>
-        </div>
-        <div class="actionButtons">
-            <button class="clear">Clear</button>
-            <button id="attack" class="main button" disabled>Attack!</button>
-        </div>
-        <a id="random" href="">Random Enemy</a>
+        <div><a id="achievements">Achievements</a></div>
     </div>
 
     <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/game.js"></script>
-    <script src="assets/js/deck.js"></script>
-    <script src="assets/js/battle.js"></script>
 </body>
 </html>

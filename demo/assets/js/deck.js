@@ -1,6 +1,14 @@
 let deckRender = $("#deck");
 let deckData = {};
 
+// fetch("../categories/data2.json")
+// .then((resp) => resp.json())
+// .then( (res) => {
+//     deckData = res;
+//     console.log("new deckData here", deckData);
+//     loadCategories();
+// })
+
 fetch("../categories/data.json")
 .then((resp) => resp.json())
 .then( (res) => {

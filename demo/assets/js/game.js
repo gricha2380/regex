@@ -1,6 +1,5 @@
 let gameState = {};
 let enemyData = {};
-let levelData = {};
 
 fetch("../enemies/data.json")
 .then((resp) => resp.json())
@@ -9,36 +8,42 @@ fetch("../enemies/data.json")
     console.log("enemyData here", enemyData);
 })
 
-let loadLevelData = ()=>{
+let loadGameState = ()=>{
     fetch("../game/data.json")
     .then((resp) => resp.json())
     .then( (res) => {
-        levelData = res;
-        console.log("levelData here", enemyData);
+        gameState = res;
+        console.log("gameState here", enemyData);
         resetLevels();
     })
+    .then( res => {
+        resetHealth();
+        resetScore();
+        random();
+    })
 }
-loadLevelData();
+loadGameState();
 
 let resetHealth = () => {
-    gameState.health = 100;
-    gameState.damage = 0;
-    document.querySelector("#health .max").innerText = gameState.health;
-    document.querySelector("#health .value").innerText = gameState.health - gameState.damage;
+    gameState.current.health = 100;
+    gameState.current.damage = 0;
+    document.querySelector("#health .max").innerText = gameState.current.health;
+    document.querySelector("#health .value").innerText = gameState.current.health - gameState.current.damage;
 }
 
 let resetScore = () => {
-    gameState.score = 0;
-    gameState.level = 0;
+    gameState.current.score = 0;
+    gameState.current.level = 0;
     document.querySelector("#score .value").innerText = 0;
 }
 
 let increaseScore = (increase) => {
-    gameState.score += increase;
-    document.querySelector("#score .value").innerText = gameState.score;
+    gameState.current.score += increase;
+    document.querySelector("#score .value").innerText = gameState.current.score;
 }
 
 let random = ()=>{
+    document.querySelector('#enemies').innerText = '';
     let enemyTotal = Math.floor(Math.random()*2) + 1; // number of words between 1 & 3
     for (let i = 0; i < enemyTotal; i++) {
         $("#enemies").append(Math.random().toString(36).slice(6)+" "); // 6 random alphanumeric characters per word
@@ -47,12 +52,14 @@ let random = ()=>{
 }
 
 let resetLevels = () => {
-    gameState.mode = "arcade"; //TODO: Let user pick mode from start screen
-    gameState.level = levelData.mode[gameState.mode].levels[0];
-    document.querySelector("#level .value").innerHTML = `${gameState.level.name}: ${gameState.level.description}`;
+    // restart from first level
+    gameState.current.mode = "arcade"; //TODO: Let user pick mode from start screen
+    gameState.current.level = gameState.mode[gameState.current.mode].levels[0];
+    document.querySelector("#level .value").innerHTML = `${gameState.current.level.name}: ${gameState.current.level.description}`;
 }
 
 let restartLevel = ()=> {
+    //restart current level
 }
 
 let beatLevel = ()=> {
@@ -63,23 +70,25 @@ let beatLevel = ()=> {
     newDiv.classList.add("modal");
     newDiv.innerHTML =
         `<div class="inner">
-            <div>Level Cleared!</div>
+            <div class="title">Level Cleared!</div>
             <div class="row" id="timeModal">
-                <label>Time</label>
-                <div class="value">
-                    00:00
+                <label>Time Spent</label>
+                <div class="holder">
+                    <div class="value">${gameState.current.timer.global}</div>
                     <span class="record">New Record!</span>
                 </div>
             </div>
             <div class="row" id="scoreModal">
                 <label>Score</label>
-                <div class="value">
-                    ${gameState.score}
+                <div class="holder">
+                    <div class="value">${gameState.current.score}</div>
                     <span class="record">New Record!</span>
                 </div>
             </div>
-            <button id="continueGameModal">Continue</button>
-            <button id="goHomeModal">Home</button>
+            <div class="actions">
+            <a href="battle.html"><button id="newGameModal">Continue</button></a>
+                <a href="index.html"><button id="goHomeModal">End Game</button></a>
+            </div>
         </div>`
     document.querySelector(".container").appendChild(newDiv);
     document.querySelector("#continueGameModal").addEventListener("click", ()=>{
@@ -95,15 +104,12 @@ let beatLevel = ()=> {
 }
 
 let nextLevel = ()=> {
-    gameState.level = levelData.mode[gameState.mode].levels[gameState.level.number+1];
-    document.querySelector("#level .value").innerText = gameState.level.name;
+    gameState.current.level = gameState.mode[gameState.mode].levels[gameState.current.level.number+1];
+    document.querySelector("#level .value").innerText = gameState.current.level.name;
 }
 
 let newGame = ()=> {
-    resetHealth();
-    resetScore();
-    loadLevelData();
-    random();
+    loadGameState();
 }
 newGame();
 
@@ -115,23 +121,22 @@ let gameOver = ()=> {
     newDiv.classList.add("modal");
     newDiv.innerHTML =
         `<div class="inner">
-            <div>Game Over!</div>
+            <div class="title">Game Over!</div>
             <div class="row" id="levelsModal">
-                <label>Levels</label>
-                <div class="value">
-                    ##
+                <label>Levels Completed</label>
+                <div class="holder">
+                    <div class="value">${gameState.current.level.number+1}</div>
                     <span class="record">New Record!</span>
-                </div>
             </div>
             <div class="row" id="scoreModal">
                 <label>Score</label>
-                <div class="value">
-                    ${gameState.score}
+                <div class="holder">
+                    <div class="value">${gameState.current.score}</div>
                     <span class="record">New Record!</span>
                 </div>
             </div>
-            <button id="newGameModal">New Game</button>
-            <button id="goHomeModal">Home</button>
+            <a href="battle.html"><button id="newGameModal">New Game</button></a>
+            <a href="index.html"><button id="goHomeModal">Home</button></a>
         </div>`
     document.querySelector(".container").appendChild(newDiv);
     document.querySelector("#newGameModal").addEventListener("click", ()=>{

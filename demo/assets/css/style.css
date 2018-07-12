@@ -129,12 +129,23 @@ body {
   flex-grow: 1;
 }
 
-#random {
-  float: left;
+.button:hover {
+  cursor: pointer;
+}
+
+.smallLink {
   padding: 1rem 0;
   font-size: .8rem;
   color: rgba(0, 0, 0, 0.5);
   text-decoration: none;
+}
+
+.smallLink.left {
+  float: left;
+}
+
+.smallLink.right {
+  float: right;
 }
 
 #categories {
@@ -182,7 +193,7 @@ body {
 }
 
 .modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -194,5 +205,56 @@ body {
 }
 
 .modal .inner {
+  margin: auto;
+}
+
+.modal .inner label {
+  width: 14rem;
+  display: inline-block;
+  text-align: right;
+  margin-right: 1rem;
+}
+
+.modal .inner .holder {
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+.modal .inner .holder .value {
+  display: inline-block;
+}
+
+.modal .inner .record {
+  color: darkorange;
+  font-size: 1rem;
+  vertical-align: .1rem;
+}
+
+.modal .inner .title {
+  color: darkorange;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.modal .inner .actions {
+  margin-top: 1rem;
+}
+
+#homeContainer {
+  min-height: 500px;
+}
+
+#buttonHolder {
+  display: flex;
+  height: 200px;
+}
+
+#buttonHolder a {
+  margin: auto;
+}
+
+#buttonHolder #play {
   margin: auto;
 }
