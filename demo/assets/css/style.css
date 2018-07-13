@@ -1,3 +1,7 @@
+.plain {
+  text-decoration: none;
+}
+
 body {
   background: #4EEDD9;
   font-family: sans-serif;
@@ -8,6 +12,10 @@ body {
   margin: auto;
   text-align: center;
   position: relative;
+}
+
+.lowerNav a {
+  color: initial;
 }
 
 .card {
@@ -301,14 +309,17 @@ body {
 #achievementsContainer .right {
   width: 200px;
   display: table-cell;
+  text-align: left;
 }
 
 #achievementsContainer .num {
   display: inline-block;
+  margin-right: 1rem;
 }
 
 #achievementsContainer .score {
   display: inline-block;
+  margin-right: 1rem;
 }
 
 #achievementsContainer .date {
