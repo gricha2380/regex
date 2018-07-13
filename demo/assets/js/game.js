@@ -72,11 +72,11 @@ let beatLevel = ()=> {
     newDiv.classList.add("modal");
     newDiv.innerHTML =
         `<div class="inner">
-            <div class="title">Level Cleared!</div>
+            <div class="title">Level ${gameState.current.level.number+1} Cleared!</div>
             <div class="row" id="timeModal">
                 <label>Time Spent</label>
                 <div class="holder">
-                    <div class="value">${calculateTime(gameState.current.timer.current.start,gameState.current.timer.current.end)}</div>
+                    <div class="value">${calculateTime(gameState.current.timer.global.start,gameState.current.timer.global.end,"pretty")}</div>
                     <span class="record">New Record!</span>
                 </div>
             </div>

@@ -23,6 +23,7 @@ let processCards = (cardValue) => {
             if (!cardValue) return; // if user cancels
         } else {
             cardValue = $(this).attr("value"); // for auto card type
+            gameState.current.counter.patterns +=1; // Fture note: If cards are removed from hand, subtract from pattern counter
         }
         alert.innerText = "";
     

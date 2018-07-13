@@ -238,3 +238,52 @@ body {
     }
 }
 
+#achievementsContainer {
+    max-width: 800px;
+    .nav {
+        position: relative;
+        text-align: left;
+        margin-bottom: 2rem;
+
+        .active{
+            color: white;
+        }
+
+        #scores {
+            display: inline-block;
+            padding: 0 5rem;
+        }
+        #achievements {
+            display: inline-block;
+            padding: 0 5rem;
+        }
+        #back {
+            right: 0;
+            position: absolute;
+        }
+    }
+    .left {
+        width: 600px;
+        display: table-cell;
+        text-align: left;
+    }
+    .right {
+        width: 200px;
+        display: table-cell;
+    }
+    .num {
+        display: inline-block;
+    }
+
+    .score {
+        display: inline-block;
+    }
+
+    .date {
+        display: inline-block;
+    }
+
+    #achievementsBody {
+        display: none;
+    }
+}
