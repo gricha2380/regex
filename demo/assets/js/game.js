@@ -1,6 +1,6 @@
 let gameState = {};
 let enemyData = {};
-let savedSessions;
+let savedSessions = [];
 
 fetch("../enemies/data.json")
 .then((resp) => resp.json())
@@ -67,6 +67,10 @@ let restartLevel = ()=> {
 let beatLevel = ()=> {
     //level cleared
     console.log("level cleared!");
+
+    gameState.current.timer.global.end = new Date();
+    console.log("end time", gameState.current.timer.global.end);
+
     let newDiv = document.createElement('div');
     newDiv.id = "beatLevel";
     newDiv.classList.add("modal");
@@ -88,20 +92,22 @@ let beatLevel = ()=> {
                 </div>
             </div>
             <div class="actions">
-            <a href="battle.html"><button id="newGameModal">Continue</button></a>
+                <a href="battle.html"><button id="continueGameModal">Continue</button></a>
                 <a href="index.html"><button id="goHomeModal">End Game</button></a>
             </div>
         </div>`
     document.querySelector(".container").appendChild(newDiv);
-    document.querySelector("#continueGameModal").addEventListener("click", ()=>{
+    document.querySelector("#continueGameModal").addEventListener("click", (event)=>{
         console.log("continue game...");
-        document.querySelector('.container').removeChild(document.querySelector("#beatLevel"));
+        event.preventDefault();
         newGame();
+        document.querySelector('.container').removeChild(document.querySelector("#beatLevel"));
     })
-    document.querySelector("#goHomeModal").addEventListener("click", ()=>{
+    document.querySelector("#goHomeModal").addEventListener("click", (event)=>{
         console.log("going home");
-        document.querySelector('.container').removeChild(document.querySelector("#beatLevel"));
-        newGame();
+        event.preventDefault();
+        saveSession();
+        window.location.href = "index.html";
     })
 }
 
@@ -128,7 +134,7 @@ let gameOver = ()=> {
             <div class="row" id="levelsModal">
                 <label>Levels Completed</label>
                 <div class="holder">
-                    <div class="value">${gameState.current.level.number+1}</div>
+                    <div class="value">${gameState.current.level.number}</div>
                     <span class="record">New Record!</span>
                 </div>
             </div>
@@ -146,19 +152,22 @@ let gameOver = ()=> {
                     <span class="record">New Record!</span>
                 </div>
             </div>
-            <a href="battle.html"><button id="newGameModal">New Game</button></a>
-            <a href="index.html"><button id="goHomeModal">Home</button></a>
+            <a><button id="newGameModal">New Game</button></a>
+            <a><button id="goHomeModal">Home</button></a>
         </div>`
     document.querySelector(".container").appendChild(newDiv);
     document.querySelector("#newGameModal").addEventListener("click", ()=>{
         console.log("new game");
+        event.preventDefault();
+        saveSession();
         document.querySelector('.container').removeChild(document.querySelector("#gameOver"));
         newGame();
     })
-    document.querySelector("#goHomeModal").addEventListener("click", ()=>{
+    document.querySelector("#goHomeModal").addEventListener("click", (event)=>{
         console.log("going home");
-        document.querySelector('.container').removeChild(document.querySelector("#gameOver"));
-        newGame();
+        event.preventDefault();
+        saveSession();
+        window.location.href = "index.html";
     });
     // give oh no message
     // showScoreScreen()
@@ -176,24 +185,32 @@ let restart = ()=> {
 
 // if saved game data exits, load it
 if (window.localStorage.getItem('savedSessions')) {
-    console.log('Found existing localstorage values.',JSON.parse(window.localStorage.getItem('savedSessions')));
     savedSessions = JSON.parse(window.localStorage.getItem('savedSessions'));
+    console.log('Found existing localstorage values.',savedSessions);
   } 
 // otherwise make a blank array
 else {
     console.log('No local storage, starting fresh.');
-    savedSessions = [];
+    savedSessions = {};
 }
 
 
-  let saveSession = () => {
-      console.log("saving game data");
-      
-      gameState.current.timer.global.end = new Date();
-      console.log("end time", gameState.current.timer.global.end)
-      // calculate game duration
+let saveSession = () => {
+    console.log("saving game data");
+    
+    // gameState.current.timer.global.end = new Date();
+    // console.log("end time", gameState.current.timer.global.end)
 
-    savedSessions.push(
+    // calculate game duration
+    
+    // look for game mode inside savedSessions
+    console.log("is there a savedsession for category?", gameState.current.mode,savedSessions,typeof savedSessions, savedSessions[gameState.current.mode], typeof savedSessions[gameState.current.mode])
+    if (!savedSessions[gameState.current.mode]) {
+        console.log("no element exists. making one now for this mode",gameState.current.mode)
+        savedSessions[gameState.current.mode] = [];
+        console.log("now this exists", savedSessions[gameState.current.mode])
+    }
+    savedSessions[gameState.current.mode].push(
         {
             "score":gameState.current.score,
             "date":gameState.current.timer.global.start,
@@ -203,7 +220,7 @@ else {
             "mode":gameState.current.mode,
             "level":gameState.current.level.number,
         }
-    );
+    )
     window.localStorage.setItem('savedSessions', JSON.stringify(savedSessions));
 }
 
@@ -225,4 +242,8 @@ let addZero = (x)=> {
         x = "0" + x;
     }
     return x;
+}
+
+let goHome = () => {
+    // window.location.href = "index.html";
 }
