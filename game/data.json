@@ -49,9 +49,72 @@
                 }
             ]
         },
-        "tutorial":{},
+        "tutorial":{
+            "levels":[
+                {
+                    "name":"1",
+                    "number":0,
+                    "description":"Humble Beginnings...",
+                    "tutorial":[],
+                    "cutScene":{
+                        "enabled":true,
+                        "dialogue":[
+                            {"title":"","description":""}
+                        ]
+                    },
+                    "randomizeEnemies":true,
+                    "enemyMax":0,
+                    "enemies":[],
+                    "cards":{
+                        "available": 0,
+                        "categories": 0
+                    },
+                    "deck":{
+                        "max":0,
+                        "default":"",
+                        "active":[]
+                    }
+                }
+            ]
+        },
         "countdown":{},
         "quiz":{},
         "workshop":{}
+    },
+    "achievements":{
+        "highscores":{
+            "arcade":[],
+            "tutorial":[]
+        },
+        "quotes":[
+            "*** trembles in awe at your pattern matching abilities.",
+            "*** hesitates to show its face when it knows you're matching digit sets.",
+            "No text string is safe while you're on duty.",
+            "*** isn't fast enough to escape your deck building prowess."
+        ],
+        "names":[
+            {"name":"Capital letter A","image":"./assets/images/letters/c.png"},
+            {"name":"Capital letter E","image":"./assets/images/letters/t.png"},
+            {"name":"Number 7","image":"./assets/images/letters/c.png"},
+            {"name":"Number 2","image":"./assets/images/letters/t.png"},
+            {"name":"Lowercase p","image":"./assets/images/letters/c.png"},
+            {"name":"Lowercase g","image":"./assets/images/letters/t.png"}
+        ],
+        "achievements":[
+            {
+                "name":"One card is all I need",
+                "description":"coming soon...",
+                "progress":0,
+                "type":"",
+                "difficulty":"easy"
+            },
+            {
+                "name":"Email matching champ",
+                "description":"eventually...",
+                "progress":0,
+                "type":"",
+                "difficulty":"medium"
+            }
+        ]
     }
 }

@@ -246,18 +246,40 @@ body {
 
 #achievementsContainer {
     max-width: 800px;
+
+    #gameModes {
+        text-transform: capitalize;
+        .achievementCategory {
+            display: inline-block;
+            padding: 0 2rem 0 0;
+            &:hover {
+                cursor: pointer;
+            }
+            &.active {
+                color: grey;
+                &:hover {
+                    cursor: initial;
+                }
+            }
+        }
+    }
     .nav {
         position: relative;
         text-align: left;
         margin-bottom: 2rem;
 
+        div:hover {
+            cursor: pointer;
+        }
+
         .active{
-            color: white;
+            color: grey;
+            cursor: default;
         }
 
         #scores {
             display: inline-block;
-            padding: 0 5rem;
+            padding: 0 0 2rem;
         }
         #achievements {
             display: inline-block;
@@ -272,11 +294,28 @@ body {
         width: 600px;
         display: table-cell;
         text-align: left;
+
+        .row {
+            font-size: 1.5rem;
+            color: #77928e;
+            padding: .5rem 0;
+            .score {
+                color: darkslategrey;
+                width: 5rem;
+            }
+        }
     }
     .right {
         width: 200px;
         display: table-cell;
         text-align: left;
+        .image {
+            height: 8rem;
+            text-align: center;
+            img.achievementImage {
+                height: inherit;
+            }
+        }
     }
     .num {
         display: inline-block;

@@ -55,7 +55,7 @@ let random = ()=>{
 
 let resetLevels = () => {
     // restart from first level
-    gameState.current.mode = "arcade"; //TODO: Let user pick mode from start screen
+    gameState.current.mode = "tutorial"; //TODO: Let user pick mode from start screen
     gameState.current.level = gameState.mode[gameState.current.mode].levels[0];
     document.querySelector("#level .value").innerHTML = `${gameState.current.level.name}: ${gameState.current.level.description}`;
 }

@@ -279,19 +279,45 @@ body {
   max-width: 800px;
 }
 
+#achievementsContainer #gameModes {
+  text-transform: capitalize;
+}
+
+#achievementsContainer #gameModes .achievementCategory {
+  display: inline-block;
+  padding: 0 2rem 0 0;
+}
+
+#achievementsContainer #gameModes .achievementCategory:hover {
+  cursor: pointer;
+}
+
+#achievementsContainer #gameModes .achievementCategory.active {
+  color: grey;
+}
+
+#achievementsContainer #gameModes .achievementCategory.active:hover {
+  cursor: initial;
+}
+
 #achievementsContainer .nav {
   position: relative;
   text-align: left;
   margin-bottom: 2rem;
 }
 
+#achievementsContainer .nav div:hover {
+  cursor: pointer;
+}
+
 #achievementsContainer .nav .active {
-  color: white;
+  color: grey;
+  cursor: default;
 }
 
 #achievementsContainer .nav #scores {
   display: inline-block;
-  padding: 0 5rem;
+  padding: 0 0 2rem;
 }
 
 #achievementsContainer .nav #achievements {
@@ -310,10 +336,30 @@ body {
   text-align: left;
 }
 
+#achievementsContainer .left .row {
+  font-size: 1.5rem;
+  color: #77928e;
+  padding: .5rem 0;
+}
+
+#achievementsContainer .left .row .score {
+  color: darkslategrey;
+  width: 5rem;
+}
+
 #achievementsContainer .right {
   width: 200px;
   display: table-cell;
   text-align: left;
+}
+
+#achievementsContainer .right .image {
+  height: 8rem;
+  text-align: center;
+}
+
+#achievementsContainer .right .image img.achievementImage {
+  height: inherit;
 }
 
 #achievementsContainer .num {
