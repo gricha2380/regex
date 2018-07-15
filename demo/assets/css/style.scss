@@ -3,6 +3,7 @@ $highlight: yellow;
 $grey: grey;
 $modalBG: rgba(0, 0, 0, .8);
 
+
 .plain {text-decoration: none;}
 .capitalize{text-transform: capitalize;}
 .disabled{
@@ -15,6 +16,7 @@ $modalBG: rgba(0, 0, 0, .8);
 body {
     background:#4EEDD9;
     font-family: sans-serif;
+    margin: 0;
 }
 
 .container {
@@ -27,6 +29,7 @@ body {
 .lowerNav a {color: initial;}
 
 .auto {margin: auto;}
+
 
 
 .card {
@@ -54,6 +57,44 @@ body {
     background: rgba(0, 0, 0, .5);
     color: white;
     margin-top: -.5rem;
+}
+
+#tutorial {
+    position: absolute;
+    width: 100%;
+    background: rgba(0, 0, 0, .8);
+    color: white;
+    bottom: 0;
+    text-align: center;
+    z-index: 1;
+    .container {
+        background: url(../images/messageHead.png) no-repeat;
+        background-size: 35px;
+        background-position: left;
+        text-align: left;
+        position: relative;
+        padding: 1rem 0 1rem 3rem;
+        transition: .5s;
+        overflow: hidden;
+        &:hover {
+            padding: 2rem 0 2rem 3rem;
+        }
+        &.auto {
+            background: none;
+        }
+        .pagination {
+            position: absolute;
+            font-size: 1.5rem;
+            margin-top: -0.150rem;
+            width: 100%;
+            text-align: center;
+            color: grey;
+            line-height: .8rem;
+            .active {
+                color: white;
+            }
+        }
+    }
 }
 
 #health {

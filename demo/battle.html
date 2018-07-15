@@ -9,6 +9,7 @@
     <title>Regex Battle</title>
 </head>
 <body>
+    <div id="tutorial"><div class="container auto"><div class="message"></div><div class="pagination"></div></div></div>
     <div class="container">
         <div id="header">
             <div id="level">Level <span class="value"></span></div>
@@ -23,22 +24,23 @@
             <div id="health">
                 <span class="healthBar"></span>
                 <div class="healthText">
-                    <span class="value"></span>/<span class="max"></span></div>
+                    <span class="value"></span>/<span class="max"></span>
                 </div>
-        </div>
-        <div id="deck">
-            <div id="categories"></div>
-            <div id="cards">
             </div>
-        </div>
-        <div class="actionButtons">
-            <button class="clear">Clear</button>
-            <button id="attack" class="main button" disabled>Attack!</button>
-        </div>
-        <div>
-            <a id="random" href="" class="smallLink left">Random Enemy</a>
-            <a id="endGame" href="" class="smallLink right">End Game</a>
-        </div>
+            </div>
+            <div id="deck">
+                <div id="categories"></div>
+                <div id="cards">
+                </div>
+            </div>
+            <div class="actionButtons">
+                <button class="clear">Clear</button>
+                <button id="attack" class="main button" disabled>Attack!</button>
+            </div>
+            <div>
+                <a id="random" href="" class="smallLink left">Random Enemy</a>
+                <a id="endGame" href="" class="smallLink right">End Game</a>
+            </div>
     </div>
 
     <script src="assets/js/jquery.min.js"></script>

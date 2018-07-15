@@ -1,6 +1,8 @@
 let gameState = {};
 let enemyData = {};
 let savedSessions = [];
+let currentMode, currentLevel;
+let dialogue, counter;
 
 fetch("../enemies/data.json")
 .then((resp) => resp.json())
@@ -20,8 +22,11 @@ let loadGameState = ()=>{
         resetHealth();
         resetScore();
         gameState.current.timer.global.start = new Date();
-            console.log("start timetamp",gameState.current.timer.global.start) // remove later
+        console.log("start timetamp",gameState.current.timer.global.start) // remove later
         random();
+        tutorialText();
+        dialogue = gameState.mode[currentMode].levels[currentLevel].tutorial.dialogue;
+        counter = gameState.mode[currentMode].levels[currentLevel].tutorial.counter;
     })
 }
 loadGameState();
@@ -55,7 +60,7 @@ let random = ()=>{
 
 let resetLevels = () => {
     // restart from first level
-    gameState.current.mode = "tutorial"; //TODO: Let user pick mode from start screen
+    gameState.current.mode = "arcade"; //TODO: Let user pick mode from start screen
     gameState.current.level = gameState.mode[gameState.current.mode].levels[0];
     document.querySelector("#level .value").innerHTML = `${gameState.current.level.name}: ${gameState.current.level.description}`;
 }
@@ -223,6 +228,56 @@ let saveSession = () => {
     )
     window.localStorage.setItem('savedSessions', JSON.stringify(savedSessions));
 }
+
+let tutorialText = () => {
+    currentMode = gameState.current.mode;
+    currentLevel = gameState.current.level.number;
+    console.log("current mode is", currentMode);
+    dialogue = gameState.mode[currentMode].levels[currentLevel].tutorial.dialogue;
+    counter = gameState.mode[currentMode].levels[currentLevel].tutorial.counter;
+    console.log("dialouge length", dialogue, dialogue.length)
+    if (dialogue.length) {
+        let dots = '';
+        for (let i=0;i<dialogue.length;i++) {
+            i == counter ? dots += `<span class="active">&#8226; </span>` : dots += `&#8226; `;
+        }
+        console.log("all of dots", dots)
+        $("#tutorial .pagination").html(dots)
+        $("#tutorial .message").text(dialogue[counter]);
+        $("#tutorial .container").removeClass("auto");
+    }
+}
+
+$("#tutorial .container").on("click", ()=>{
+    // check length of gameState tutorial
+    // end if no tutorial length
+    // if all is good, remove auto class
+
+    // let counter =[gameState.mode[currentMode].levels.counter]
+    // let dialogue = gameState.mode[currentMode].levels.tutorial.dialogue
+    // set content of $("#tutorial .message") to [counter]
+    // if counter >= dialogue.length {counter = 0} else
+    // counter ++;
+    currentMode = gameState.current.mode;
+    currentLevel = gameState.current.level.number;
+    counter++
+    if (counter >= dialogue.length) {
+        console.log(`counter ${counter} greater or equal to dialouge length ${dialogue.length}`)
+        console.log("counter value before change", counter)
+        counter = 0
+        console.log("counter value after change", counter)
+    } else {
+        console.log(`counter ${counter} less than dialouge length ${dialogue.length}`)
+        console.log("counter value before change", counter)
+        console.log("counter value after change", counter)
+    }
+    let dots = '';
+    for (let i=0;i<dialogue.length;i++) {
+        i == counter ? dots += `<span class="active">&#8226; </span>` : dots += `&#8226; `;
+    }
+    $("#tutorial .pagination").html(dots)
+    $("#tutorial .message").text(dialogue[counter]);
+})
 
 
 /* Utilities */
