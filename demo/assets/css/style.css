@@ -6,6 +6,14 @@
   text-transform: capitalize;
 }
 
+.center {
+  text-align: center;
+}
+
+.auto {
+  margin: auto;
+}
+
 .disabled {
   opacity: .5;
 }
@@ -29,10 +37,6 @@ body {
 
 .lowerNav a {
   color: initial;
-}
-
-.auto {
-  margin: auto;
 }
 
 .card {
@@ -105,6 +109,7 @@ body {
   font-size: 1.5rem;
   margin-top: -0.150rem;
   width: 100%;
+  max-width: 500px;
   text-align: center;
   color: grey;
   line-height: .8rem;

@@ -80,7 +80,7 @@ let beatLevel = ()=> {
     newDiv.id = "beatLevel";
     newDiv.classList.add("modal");
     newDiv.innerHTML =
-        `<div class="inner">
+        `<div class="inner center">
             <div class="title">Level ${gameState.current.level.number+1} Cleared!</div>
             <div class="row" id="timeModal">
                 <label>Time Spent</label>
@@ -134,7 +134,7 @@ let gameOver = ()=> {
     newDiv.id = "gameOver";
     newDiv.classList.add("modal");
     newDiv.innerHTML =
-        `<div class="inner">
+        `<div class="inner center">
             <div class="title">Game Over!</div>
             <div class="row" id="levelsModal">
                 <label>Levels Completed</label>
