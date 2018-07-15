@@ -6,6 +6,14 @@
   text-transform: capitalize;
 }
 
+.disabled {
+  opacity: .5;
+}
+
+.disabled:hover {
+  cursor: not-allowed;
+}
+
 body {
   background: #4EEDD9;
   font-family: sans-serif;
@@ -20,6 +28,10 @@ body {
 
 .lowerNav a {
   color: initial;
+}
+
+.auto {
+  margin: auto;
 }
 
 .card {
@@ -275,6 +287,15 @@ body {
   margin: auto;
 }
 
+#buttonHolder #modes {
+  margin-top: .5rem;
+  display: inline-block;
+}
+
+#buttonHolder #modes:hover {
+  cursor: pointer;
+}
+
 #achievementsContainer {
   max-width: 800px;
 }
@@ -426,4 +447,48 @@ body {
 
 #achievementsContainer #achievementsBody .left .row .achievementPercent {
   float: right;
+}
+
+#gameModes {
+  display: none;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 2rem 1rem 8rem;
+  width: 100%;
+  position: absolute;
+  left: -1rem;
+  text-transform: capitalize;
+}
+
+#gameModes::after {
+  content: 'coming soon...';
+  position: absolute;
+  top: 5rem;
+  width: 100%;
+  left: 0rem;
+  font-size: 1.5rem;
+  color: aqua;
+}
+
+#gameModes.showModes {
+  display: flex;
+}
+
+#gameModes .closeModes {
+  width: 15px;
+  height: 15px;
+  background: url(../images/close.svg) no-repeat;
+  position: absolute;
+  right: .5rem;
+  top: .5rem;
+  background-size: contain;
+}
+
+#gameModes .closeModes:hover {
+  cursor: pointer;
+}
+
+#gameModes .mode {
+  display: inline-block;
+  margin: auto;
 }
