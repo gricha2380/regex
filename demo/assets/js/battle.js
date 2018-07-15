@@ -8,6 +8,7 @@ $("#random").on("click", function(event){
 
 // method for displying alerts
 let alertMessage=(message)=> {
+    $(alert).addClass("active");
     alert.innerText = message;
     clearAlert();
 }
@@ -132,7 +133,9 @@ let enemyAttack = ()=>{
             console.log("loop finisheed")
             clearAlert();
             document.querySelector("#enemies").innerHTML = enemyString;
-            alertMessage("Your Turn!");
+            let returnMessage = "Your Turn!";
+            alertMessage(returnMessage);
+            autoText(returnMessage);
         }
         if (enemyData.enemies[enemyString[i]]) {
 
@@ -152,6 +155,7 @@ let enemyAttack = ()=>{
             console.log("enemy type is", enemyType);
             let damageRange = enemyData[enemyType].damage;
             let damage = doDamage(damageRange.min,damageRange.max);
+            $(alert).addClass("active");
             alert.innerText = `Enemy "${enemyString[i]}" did ${damage} damage!`;
             console.log(`enemy ${enemyString[i]} did ${damage} damage!`,);
         }
@@ -187,6 +191,7 @@ let clearAlert = ()=> {
     setTimeout(() =>{
         console.log("clearing alert")
         alert.innerText="";
+        $(alert).removeClass("active");
       }, 3000);
 }
 

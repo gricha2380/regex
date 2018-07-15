@@ -2,7 +2,7 @@ $main: #D82262;
 $highlight: yellow;
 $grey: grey;
 $modalBG: rgba(0, 0, 0, .8);
-
+$transitionSpeed: 0.5s;
 
 .plain {text-decoration: none;}
 .capitalize{text-transform: capitalize;}
@@ -54,9 +54,14 @@ body {
 #alert {
     position: absolute;
     width: 100%;
-    background: rgba(0, 0, 0, .5);
+    background: $modalBG;
     color: white;
-    margin-top: -.5rem;
+    margin-top: 0px;
+    transition: $transitionSpeed;
+    &.active {
+        padding: 1rem 0;
+        text-align: center;
+    }
 }
 
 #tutorial {
@@ -101,7 +106,7 @@ body {
     background: $grey;
     padding: 0;
     color: white;
-    font-size: .8rem;
+    font-size: .9rem;
     position: relative;
     .healthBar {
         background: $main;

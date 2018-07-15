@@ -248,16 +248,13 @@ let tutorialText = () => {
     }
 }
 
-$("#tutorial .container").on("click", ()=>{
-    // check length of gameState tutorial
-    // end if no tutorial length
-    // if all is good, remove auto class
+let autoText = (message) => {
+    $("#tutorial .container").addClass("auto");
+    $("#tutorial .pagination").html(``);
+    $("#tutorial .message").text(message);
+}
 
-    // let counter =[gameState.mode[currentMode].levels.counter]
-    // let dialogue = gameState.mode[currentMode].levels.tutorial.dialogue
-    // set content of $("#tutorial .message") to [counter]
-    // if counter >= dialogue.length {counter = 0} else
-    // counter ++;
+$("#tutorial .container").on("click", ()=>{
     currentMode = gameState.current.mode;
     currentLevel = gameState.current.level.number;
     counter++
