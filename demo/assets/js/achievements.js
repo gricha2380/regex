@@ -16,7 +16,10 @@ let loadGameState = ()=>{
     .then((resp) => resp.json())
     .then( (res) => {
         gameState = res;
-    }).then( res => {randomCaptions();})
+    }).then( res => {
+        randomCaptions()
+        loadAchievements()
+    })
 }
 loadGameState();
 
@@ -33,10 +36,29 @@ else {
 }
 
 let listeners = ()=>{
-    $(".achievementCategory").on("click",(event)=>{
+    $(".achievementCategory").not(".active").on("click",(event)=>{
         console.log("current mode is now", event.target.attributes.value.nodeValue)
         currentmode = event.target.attributes.value.nodeValue;
         loadScores();
+        // loadAchievements();
+        randomCaptions();
+    })
+}
+
+let menuListeners = () => {
+    $(".nav div").on("click", (event)=>{
+        console.log("this is the event", event.currentTarget.id);
+        if (event.currentTarget.id === 'scores') {
+            $(".nav div").removeClass("active")
+            $("#scores").addClass("active");
+            $("#scoresBody").show();
+            $("#achievementsBody").hide();
+        } else {
+            $(".nav div").removeClass("active")
+            $("#achievements").addClass("active");
+            $("#scoresBody").hide();
+            $("#achievementsBody").show();
+        }
         randomCaptions();
     })
 }
@@ -70,21 +92,7 @@ let loadScores = () => {
         listeners();
     }
     
-    $(".nav div").on("click", (event)=>{
-        console.log("this is the event", event.currentTarget.id);
-        if (event.currentTarget.id === 'scores') {
-            $(".nav div").removeClass("active")
-            $("#scores").addClass("active");
-            $("#scoresBody").show();
-            $("#achievementsBody").hide();
-        } else {
-            $(".nav div").removeClass("active")
-            $("#achievements").addClass("active");
-            $("#scoresBody").hide();
-            $("#achievementsBody").show();
-        }
-        randomCaptions();
-    })
+    menuListeners();
 }
 loadScores();
 
@@ -107,6 +115,16 @@ let randomCaptions = () => {
     }
 }
 
+let loadAchievements = () => {
+    console.log('inside load acheivement processor')
+    rows = '';
+    for (entry in gameState.achievements.achievements) {
+        console.log("this is entry", entry)
+        rows += `<div class="row achievement"><div class="achievementName">${gameState.achievements.achievements[entry].name}</div><div class="achievementPercent">${gameState.achievements.achievements[entry].progress}%</div></div>`
+    }
+    console.log("this is rows",rows)
+    $("#achievementsBody .left").html(rows);
+}
 
 // todo: generate list for each category...
 // hard code sections for arcade, tutorial

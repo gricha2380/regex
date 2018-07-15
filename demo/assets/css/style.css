@@ -312,7 +312,10 @@ body {
 
 #achievementsContainer .nav .active {
   color: grey;
-  cursor: default;
+}
+
+#achievementsContainer .nav .active:hover {
+  cursor: initial;
 }
 
 #achievementsContainer .nav #scores {
@@ -332,8 +335,9 @@ body {
 
 #achievementsContainer .left {
   width: 600px;
-  display: table-cell;
+  display: inline-block;
   text-align: left;
+  vertical-align: top;
 }
 
 #achievementsContainer .left .row {
@@ -348,9 +352,13 @@ body {
 }
 
 #achievementsContainer .right {
-  width: 200px;
-  display: table-cell;
+  width: 195px;
+  display: inline-block;
   text-align: left;
+}
+
+#achievementsContainer .right h4 {
+  margin-top: 0;
 }
 
 #achievementsContainer .right .image {
@@ -378,4 +386,44 @@ body {
 
 #achievementsContainer #achievementsBody {
   display: none;
+}
+
+#achievementsContainer #achievementsBody .left .row {
+  font-size: 1.5rem;
+  color: #77928e;
+  border: 1px solid;
+  padding: .25rem;
+  max-width: 25rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+#achievementsContainer #achievementsBody .left .row::before {
+  content: '';
+  width: 30px;
+  height: 29px;
+  background: url(../images/trophy.png) no-repeat;
+  position: absolute;
+  left: -2.7rem;
+  top: .25rem;
+  background-size: contain;
+}
+
+#achievementsContainer #achievementsBody .left .row::after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  background: url(../images/locked.png) no-repeat;
+  position: absolute;
+  right: -2.7rem;
+  top: 0.1rem;
+  background-size: contain;
+}
+
+#achievementsContainer #achievementsBody .left .row .achievementName {
+  display: inline-block;
+}
+
+#achievementsContainer #achievementsBody .left .row .achievementPercent {
+  float: right;
 }
