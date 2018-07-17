@@ -10,14 +10,16 @@
 </head>
 <body>
     <div id="tutorial"><div class="container auto"><div class="message"></div><div class="pagination"></div></div></div>
-    <div class="container">
+    <div class="container static">
         <div id="health">
             <span class="healthBar"></span>
             <div class="healthText">
                 <span class="value"></span>/<span class="max"></span>
             </div>
         </div>
-        <div id="alert"></div>
+        <div class="relative">
+            <div id="alert"></div>
+        </div>
         <div id="header">
             <div id="level">Level <span class="value"></span></div>
             <div id="score">Score: <span class="value"></span></div>
@@ -26,8 +28,13 @@
             <div id="enemies"></div>
         </div>
         <div id="arena">
-            <input id="hand" value="">
-            <div class="simple-grid"></div>
+            <!-- <input id="hand" value=""> -->
+            <div id="hand">
+                <div class="simple-grid">
+                    <!-- <div class="pink z-depth-3 grid-item include" value="\w"><div class="remove">remove</div><div class="innerBlock auto"><div class="name">Any Digit</div><div>\d</div><div class="cardClass" value="auto">⚡️</div></div></div>
+                    <div class="light-blue z-depth-3 grid-item include" value="\d"><div class="remove">remove</div><div class="innerBlock auto"><div class="name">Any Digit</div><div>\d</div><div class="cardClass" value="auto">⚡️</div></div></div> -->
+                </div>
+            </div>
             </div>
             <div id="deck">
                 <div id="categories"></div>
@@ -43,20 +50,20 @@
                 <a id="endGame" href="" class="smallLink right">End Game</a>
             </div>
         </div>
-        <div id="deckTwo">
-            <div class="simple-grid">
+        <!-- <div id="deckTwo">
+            <div class="simple-grid"> -->
                 <!-- <div class="z-depth-3 grid-itema quantifier">+</div> -->
-                <div class="light-green z-depth-3 grid-item include" value="\d"><div class="remove">remove</div><div class="innerBlock auto"><div class="name">Any Digit</div><div>\d</div><div class="cardClass" value="auto">⚡️</div></div></div>
+                <!-- <div class="light-green z-depth-3 grid-item include" value="\d"><div class="remove">remove</div><div class="innerBlock auto"><div class="name">Any Digit</div><div>\d</div><div class="cardClass" value="auto">⚡️</div></div></div>
                 <div class="pink z-depth-3 grid-item include" value="\w"><div class="remove">remove</div><div class="innerBlock auto"><div class="name">Any Digit</div><div>\d</div><div class="cardClass" value="auto">⚡️</div></div></div>
                 <div class="deep-purple z-depth-3 grid-item include" value="\d"><div class="remove">remove</div><div class="innerBlock auto"><div class="name">Any Digit</div><div>\d</div><div class="cardClass" value="auto">⚡️</div></div></div>
                 <div class="light-blue z-depth-3 grid-item include" value="\d"><div class="remove">remove</div><div class="innerBlock auto"><div class="name">Any Digit</div><div>\d</div><div class="cardClass" value="auto">⚡️</div></div></div>
                 <div class="lime z-depth-3 grid-item include" value="\d"><div class="remove">remove</div><div class="innerBlock auto"><div class="name">Any Digit</div><div>\d</div><div class="cardClass" value="auto">⚡️</div></div></div>
                 <div class="teal z-depth-3 grid-item include" value="\d"><div class="remove">remove</div><div class="innerBlock auto"><div class="name">Any Digit</div><div>\d</div><div class="cardClass" value="auto">⚡️</div></div></div>
-                <div class="amber z-depth-3 grid-item include" value="\d"><div class="remove">remove</div><div class="innerBlock auto"><div class="name">Any Digit</div><div>\d</div><div class="cardClass" value="auto">⚡️</div></div></div>
+                <div class="amber z-depth-3 grid-item include" value="\d"><div class="remove">remove</div><div class="innerBlock auto"><div class="name">Any Digit</div><div>\d</div><div class="cardClass" value="auto">⚡️</div></div></div> -->
                 <!-- <div class="deep-orange z-depth-3 grid-item">Orange</div>
                 <div class="black z-depth-3 grid-item">Black</div> -->
-            </div>
-        </div>
+            <!-- </div>
+        </div> -->
 
     <div class="flex"><button id="addToHand" class="auto cardNew">Any Digit</button></div>
     <div class="flex"><button id="addQuantifiers" class="auto">Add Quantifiers</button></div>
@@ -76,7 +83,7 @@
             draggableItemClass: 'grid-item'
         }
         console.log("hi i'm a draggable")
-        lmdd.set(document.getElementById('deckTwo'),optionsObject);
+        lmdd.set(document.querySelector('#hand'),optionsObject);
     </script>
 
 </body>

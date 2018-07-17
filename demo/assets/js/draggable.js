@@ -4,13 +4,13 @@ $("#addToHand").on("click", ()=>{
 })
 
 let generateCard = ()=>{
-    $("#deckTwo .simple-grid")
+    $("#hand .simple-grid")
         .append(`
-            <div class="black z-depth-3 grid-item include" value="\d">
+            <div class="black z-depth-3 grid-item include" value="\\d">
                 <div class="remove">remove</div>
                 <div class="innerBlock auto">
                     <div class="name">Any Digit</div>
-                    <div>\d</div>
+                    <div>\\d</div>
                     <div class="cardClass" value="auto">⚡️</div>
                 </div>
             </div>`)
@@ -30,11 +30,11 @@ $(".cardNew").on("click", function(e){
     }
     alert.innerText = "";
 
-    $('#hand').val(
-        function() { 
-            return $(this).val() ? $(this).val() + `+${cardValue}` : `${cardValue}`; 
-        }
-    );
+    // $('#hand').val(
+    //     function() { 
+    //         return $(this).val() ? $(this).val() + `+${cardValue}` : `${cardValue}`; 
+    //     }
+    // );
     matchEnemies();
 })
 
@@ -48,18 +48,18 @@ $("#addQuantifiers").on("click", (event)=> {
 //     $('.quantifier').remove();
 // })
 
-$("#deckTwo").on("lmddstart", ()=>{
+$("#hand").on("lmddstart", ()=>{
     console.log("custom event found")
     $('.quantifier').remove();
 })
 
-$("#deckTwo").on("lmddend", ()=>{
+$("#hand").on("lmddend", ()=>{
     console.log("custom event found")
     $(".remove").css("opacity","1");
     addQuantifiers()
 })
 
-$("#deckTwo").on("lmddbeforestart", ()=>{
+$("#hand").on("lmddbeforestart", ()=>{
     console.log("hiding remove!")
     $(".remove").css("opacity","0");
 })

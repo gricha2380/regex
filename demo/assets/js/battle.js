@@ -17,6 +17,7 @@ let alertMessage=(message)=> {
 let processCards = (cardValue) => {
     $(".card").on("click", function(e){
         let cardName = $(this)[0].id; // jquery stores $(this) as an array
+        let mode = $(this).find(".cardClass").attr("value");
         if ($(this).find(".cardClass").attr("value")=="manual") {
             // manual cards require user input
             cardValue = prompt(`Type your input. Example:${deckData[gameState.activeCategory][cardName].examples[0].pattern}`);
@@ -24,16 +25,44 @@ let processCards = (cardValue) => {
             if (!cardValue) return; // if user cancels
         } else {
             cardValue = $(this).attr("value"); // for auto card type
-            gameState.current.counter.patterns +=1; // Fture note: If cards are removed from hand, subtract from pattern counter
         }
+        gameState.current.counter.patterns +=1; // Fture note: If cards are removed from hand, subtract from pattern counter
         alert.innerText = "";
     
+
+        // old generate card
         $('#hand').val(
             function() { 
                 return $(this).val() ? $(this).val() + `+${cardValue}` : `${cardValue}`; 
             }
         );
+
+        // let generateCard = ()=>{
+            $("#hand .simple-grid")
+                .append(`
+                    <div class="${"lime"} z-depth-3 grid-item include" value="${cardValue}">
+                        <div class="remove">remove</div>
+                        <div class="innerBlock auto">
+                            <div class="name">${cardName}</div>
+                            <div>${cardValue}</div>
+                            <div class="cardClass" value="auto">${(mode === "auto") ? "⚡️" : "..."}</div>
+                        </div>
+                    </div>`
+                )
+        // }
+        // generateCard();  
+        addQuantifiers();
+        removeListener();      
+
         matchEnemies();
+    })
+}
+
+let removeListener = () => {
+    $(".remove").on("click", function() {
+        console.log("this is my parent", $(this).parent())
+        $(this).parent().remove();
+        addQuantifiers();
     })
 }
 
