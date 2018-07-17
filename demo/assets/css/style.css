@@ -89,7 +89,7 @@ body {
 
 #tutorial {
   display: none;
-  position: absolute;
+  position: fixed;
   width: 100%;
   background: rgba(0, 0, 0, 0.8);
   color: white;
@@ -369,6 +369,7 @@ body {
 
 #achievementsContainer {
   max-width: 800px;
+  padding-top: 1rem;
 }
 
 #achievementsContainer #gameModes {
@@ -567,7 +568,7 @@ body {
 .simple-grid {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   width: 100%;
   margin: auto;
 }
@@ -648,4 +649,22 @@ body {
   color: black;
   font-size: 2rem;
   padding: 27px 0;
+}
+
+.closeButton {
+  width: 15px;
+  height: 15px;
+  background: url(../images/close.svg) no-repeat;
+  position: absolute;
+  right: .5rem;
+  top: .5rem;
+  background-size: contain;
+}
+
+.closeButton:hover {
+  cursor: pointer;
+}
+
+.tipHolder {
+  margin: 1rem 0;
 }

@@ -101,12 +101,12 @@ let beatLevel = ()=> {
                 <a href="index.html"><button id="goHomeModal">End Game</button></a>
             </div>
         </div>`
-    document.querySelector(".container").appendChild(newDiv);
+    document.querySelector("body").appendChild(newDiv);
     document.querySelector("#continueGameModal").addEventListener("click", (event)=>{
         console.log("continue game...");
         event.preventDefault();
         newGame();
-        document.querySelector('.container').removeChild(document.querySelector("#beatLevel"));
+        document.querySelector('body').removeChild(document.querySelector("#beatLevel"));
     })
     document.querySelector("#goHomeModal").addEventListener("click", (event)=>{
         console.log("going home");
@@ -160,12 +160,12 @@ let gameOver = ()=> {
             <a><button id="newGameModal">New Game</button></a>
             <a><button id="goHomeModal">Home</button></a>
         </div>`
-    document.querySelector(".container").appendChild(newDiv);
+    document.querySelector("body").appendChild(newDiv);
     document.querySelector("#newGameModal").addEventListener("click", ()=>{
         console.log("new game");
         event.preventDefault();
         saveSession();
-        document.querySelector('.container').removeChild(document.querySelector("#gameOver"));
+        document.querySelector('body').removeChild(document.querySelector("#gameOver"));
         newGame();
     })
     document.querySelector("#goHomeModal").addEventListener("click", (event)=>{
@@ -239,6 +239,7 @@ let tutorialText = () => {
     console.log("dialouge length", dialogue, dialogue.length)
     if (dialogue.length && enabled == true) {
         $("#tutorial").show();
+        tutorialToggle();
         let dots = '';
         for (let i=0;i<dialogue.length;i++) {
             i == counter ? dots += `<span class="active">&#8226; </span>` : dots += `&#8226; `;
@@ -278,6 +279,14 @@ $("#tutorial .container").on("click", ()=>{
     $("#tutorial .message").text(dialogue[counter]);
 })
 
+let tutorialToggle = ()=>{
+    console.log("tutoriaToggle activated")
+    $("#tutorialToggle,.closeButton").on("click", ()=>{
+        console.log("you clicked tutorial toggle")
+        $("#tutorial").toggle();
+    })
+}
+tutorialToggle();
 
 /* Utilities */
 let calculateTime = (start, end, pretty) => {

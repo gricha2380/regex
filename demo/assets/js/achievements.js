@@ -64,14 +64,14 @@ let menuListeners = () => {
 }
 
 let loadScores = () => {
-    savedSessions[currentmode].sort((a,b)=> b.score - a.score);
-    console.log("values after sort", savedSessions)
-    
-    if (savedSessions[currentmode].length < 1) {
+    // console.log("Savedsessions current",savedSessions,currentmode)
+    if (savedSessions[currentmode] == undefined || savedSessions[currentmode].length < 1) {
         console.log("No sessions found!");
         $("#scoresBody .left").html(`No sessions found. <br><a href="battle.html"><button id="play" class="main button" >Start Playing!</button></a>`);
     }
     else {
+        savedSessions[currentmode].sort((a,b)=> b.score - a.score);
+        console.log("values after sort", savedSessions)
         // dive into each category
         categoryHeaders='';
         for (category in savedSessions) {

@@ -31,11 +31,11 @@ let processCards = (cardValue) => {
     
 
         // old generate card
-        $('#hand').val(
-            function() { 
-                return $(this).val() ? $(this).val() + `+${cardValue}` : `${cardValue}`; 
-            }
-        );
+        // $('#hand').val(
+        //     function() { 
+        //         return $(this).val() ? $(this).val() + `+${cardValue}` : `${cardValue}`; 
+        //     }
+        // );
 
         // let generateCard = ()=>{
             $("#hand .simple-grid")
@@ -62,13 +62,15 @@ let removeListener = () => {
     $(".remove").on("click", function() {
         console.log("this is my parent", $(this).parent())
         $(this).parent().remove();
+
         addQuantifiers();
+        matchEnemies();
     })
 }
 
 $(".clear").on("click", function(e){
     alert.innerText = "";
-    $("#hand").val("");
+    $("#hand .simple-grid").html("");
     document.querySelector('#enemies').innerText = enemiesDefault;
 })
 
@@ -84,7 +86,8 @@ let matchEnemies = ()=> {
     console.log("enemies value",enemies);
     let enemyArray = document.querySelector("#enemies").innerText.split(""); // e.g.:["a", "b", "e", "1", "3", "3"]
     console.log("enemyArray content",enemyArray);
-    let playerPattern = new RegExp($("#hand").val(),"g"); //let playerPattern = /\d/g; // static test
+    // let playerPattern = new RegExp($("#hand").val(),"g"); //let playerPattern = /\d/g; // static test
+    let playerPattern = new RegExp(computeValues(),"g"); //let playerPattern = /\d/g; // static test
     console.log("playerpattern",playerPattern); //  e.g.:/\d/g
     let enemyMatch = enemies.match(playerPattern);
     if (!enemyMatch) {

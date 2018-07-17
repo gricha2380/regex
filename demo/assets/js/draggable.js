@@ -1,3 +1,12 @@
+// inititate Lean-Mean-Drag-and-Drop
+let optionsObject = {
+    containerClass: 'simple-grid',
+    draggableItemClass: 'grid-item'
+}
+console.log("hi i'm a draggable")
+lmdd.set(document.querySelector('#hand'),optionsObject);
+
+
 $("#addToHand").on("click", ()=>{
     console.log("clicked draggable")
     generateCard()
@@ -56,7 +65,8 @@ $("#hand").on("lmddstart", ()=>{
 $("#hand").on("lmddend", ()=>{
     console.log("custom event found")
     $(".remove").css("opacity","1");
-    addQuantifiers()
+    addQuantifiers();
+    matchEnemies();
 })
 
 $("#hand").on("lmddbeforestart", ()=>{
@@ -94,10 +104,11 @@ let computeValues = () => {
         values += value;
     })   
     console.log("all values",values)
+    return values;
 }
 
-$(".remove").on("click", function() {
-    console.log("this is my parent", $(this).parent())
-    $(this).parent().remove();
-    addQuantifiers();
-})
+// $(".remove").on("click", function() {
+//     console.log("this is my parent", $(this).parent())
+//     $(this).parent().remove();
+//     addQuantifiers();
+// })
