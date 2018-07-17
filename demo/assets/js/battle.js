@@ -17,7 +17,7 @@ let alertMessage=(message)=> {
 let processCards = (cardValue) => {
     $(".card").on("click", function(e){
         let cardName = $(this)[0].id; // jquery stores $(this) as an array
-        if ($(this).find("span.cardClass").attr("value")=="manual") {
+        if ($(this).find(".cardClass").attr("value")=="manual") {
             // manual cards require user input
             cardValue = prompt(`Type your input. Example:${deckData[gameState.activeCategory][cardName].examples[0].pattern}`);
             console.log("cardValue",cardValue)

@@ -27,6 +27,7 @@
         </div>
         <div id="arena">
             <input id="hand" value="">
+            <div class="simple-grid"></div>
             </div>
             <div id="deck">
                 <div id="categories"></div>
@@ -41,11 +42,42 @@
                 <a id="random" href="" class="smallLink left">Random Enemy</a>
                 <a id="endGame" href="" class="smallLink right">End Game</a>
             </div>
-    </div>
+        </div>
+        <div id="deckTwo">
+            <div class="simple-grid">
+                <!-- <div class="z-depth-3 grid-itema quantifier">+</div> -->
+                <div class="light-green z-depth-3 grid-item include" value="\d"><div class="remove">remove</div><div class="innerBlock auto"><div class="name">Any Digit</div><div>\d</div><div class="cardClass" value="auto">⚡️</div></div></div>
+                <div class="pink z-depth-3 grid-item include" value="\w"><div class="remove">remove</div><div class="innerBlock auto"><div class="name">Any Digit</div><div>\d</div><div class="cardClass" value="auto">⚡️</div></div></div>
+                <div class="deep-purple z-depth-3 grid-item include" value="\d"><div class="remove">remove</div><div class="innerBlock auto"><div class="name">Any Digit</div><div>\d</div><div class="cardClass" value="auto">⚡️</div></div></div>
+                <div class="light-blue z-depth-3 grid-item include" value="\d"><div class="remove">remove</div><div class="innerBlock auto"><div class="name">Any Digit</div><div>\d</div><div class="cardClass" value="auto">⚡️</div></div></div>
+                <div class="lime z-depth-3 grid-item include" value="\d"><div class="remove">remove</div><div class="innerBlock auto"><div class="name">Any Digit</div><div>\d</div><div class="cardClass" value="auto">⚡️</div></div></div>
+                <div class="teal z-depth-3 grid-item include" value="\d"><div class="remove">remove</div><div class="innerBlock auto"><div class="name">Any Digit</div><div>\d</div><div class="cardClass" value="auto">⚡️</div></div></div>
+                <div class="amber z-depth-3 grid-item include" value="\d"><div class="remove">remove</div><div class="innerBlock auto"><div class="name">Any Digit</div><div>\d</div><div class="cardClass" value="auto">⚡️</div></div></div>
+                <!-- <div class="deep-orange z-depth-3 grid-item">Orange</div>
+                <div class="black z-depth-3 grid-item">Black</div> -->
+            </div>
+        </div>
 
+    <div class="flex"><button id="addToHand" class="auto cardNew">Any Digit</button></div>
+    <div class="flex"><button id="addQuantifiers" class="auto">Add Quantifiers</button></div>
+    <div class="flex"><button id="computeValues" class="auto">Compute Values</button></div>
     <script src="assets/vendor/jquery.min.js"></script>
+    <link href="assets/vendor/lmdd.min.css" rel="stylesheet">
+    <script src="assets/vendor/lmdd.min.js"></script>
     <script src="assets/js/game.js"></script>
     <script src="assets/js/deck.js"></script>
     <script src="assets/js/battle.js"></script>
+    <script src="assets/js/draggable.js"></script>
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" rel="stylesheet"> -->
+
+    <script>
+        let optionsObject = {
+            containerClass: 'simple-grid',
+            draggableItemClass: 'grid-item'
+        }
+        console.log("hi i'm a draggable")
+        lmdd.set(document.getElementById('deckTwo'),optionsObject);
+    </script>
+
 </body>
 </html>

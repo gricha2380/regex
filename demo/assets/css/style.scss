@@ -14,6 +14,7 @@ $transitionSpeed: 0.5s;
         cursor: not-allowed;
     }
 }
+.flex{display: flex;}
 
 body {
     background:#4EEDD9;
@@ -64,6 +65,7 @@ body {
 }
 
 #tutorial {
+    display: none;
     position: absolute;
     width: 100%;
     background: rgba(0, 0, 0, .8);
@@ -483,3 +485,83 @@ body {
         margin: auto;
     }
 }
+
+// #deckTwo {
+    .simple-grid {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        width: 100%;
+        margin: auto;
+    }
+        .grid-item {
+            text-align: center;
+            vertical-align: middle;
+            margin: 5px;
+            width: 78px;
+            height: 78px;
+            color: white;
+            font-size: 15px;
+            border: 3px solid white;
+            cursor: move;
+            position: relative;
+            box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.3);
+            &:hover .remove{
+                // display: block!important;
+                display: block;
+            }
+        }
+
+        .remove {
+            display: none;
+            position: absolute;
+            width: 100%;
+            background: rgba(0,0,0,0.5);
+            padding: .1rem 0;
+            transition: .5s;
+            bottom: 0;
+            &:hover {
+                cursor: pointer;
+                background: rgba(0, 0, 0, .8);
+            }
+        }
+
+        .deep-purple {
+            background-color: #673ab7 !important;
+        }
+        .teal {
+            background-color: #009688 !important;
+        }
+        .pink {
+            background-color: #e91e63 !important;
+        }
+        .lime {
+            background-color: #cddc39 !important;
+        }
+        .light-green {
+            background-color: #8bc34a !important;
+        }
+        .light-blue {
+            background-color: #03a9f4 !important;
+        }
+        .amber {
+            background-color: #ffc107 !important;
+        }
+        .deep-orange {
+            background-color: #ff5722 !important;
+        }
+        .black {
+            background-color: #000 !important;
+        }
+    // }
+// }
+.quantifier {
+    width: initial;
+    border: none;
+    box-shadow: none;
+    color: black;
+    font-size: 2rem;
+    padding: 27px 0;
+}
+
+// if 

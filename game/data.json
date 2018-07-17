@@ -28,7 +28,7 @@
                     "number":0,
                     "description":"Humble Beginnings...",
                     "tutorial": {
-                        "enabled": true,
+                        "enabled": false,
                         "counter":  0,
                         "dialogue":[
                             "Use your deck of PATTERNS to match as many monsters as you can in a single turn.",

@@ -235,8 +235,10 @@ let tutorialText = () => {
     console.log("current mode is", currentMode);
     dialogue = gameState.mode[currentMode].levels[currentLevel].tutorial.dialogue;
     counter = gameState.mode[currentMode].levels[currentLevel].tutorial.counter;
+    enabled = gameState.mode[currentMode].levels[currentLevel].tutorial.enabled;
     console.log("dialouge length", dialogue, dialogue.length)
-    if (dialogue.length) {
+    if (dialogue.length && enabled == true) {
+        $("#tutorial").show();
         let dots = '';
         for (let i=0;i<dialogue.length;i++) {
             i == counter ? dots += `<span class="active">&#8226; </span>` : dots += `&#8226; `;
