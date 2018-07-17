@@ -129,7 +129,7 @@ let endTurn = ()=>{
 
 let clearEnemies = (totalEnemyMatch)=> {
     
-    $("#hand").val(""); // clear hand
+    $("#hand .simple-grid").html(""); // clear hand
     totalEnemyMatch = document.querySelector("#enemies").innerHTML; // use ("#enemies").innerText for plain characters
     let matched = new RegExp("<b>(.*?)<\/b>","g");
     // console.log("match formula", matched)
