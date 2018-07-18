@@ -257,7 +257,7 @@ let autoText = (message) => {
     $("#tutorial .message").text(message);
 }
 
-$("#tutorial .container").on("click", ()=>{
+$("#tutorial .container").on("click touchstart", ()=>{
     currentMode = gameState.current.mode;
     currentLevel = gameState.current.level.number;
     counter++
@@ -281,7 +281,7 @@ $("#tutorial .container").on("click", ()=>{
 
 let tutorialToggle = ()=>{
     console.log("tutoriaToggle activated")
-    $("#tutorialToggle,.closeButton").on("click", ()=>{
+    $("#tutorialToggle,.closeButton").on("click touchstart", ()=>{
         console.log("you clicked tutorial toggle")
         $("#tutorial").toggle();
     })

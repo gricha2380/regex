@@ -1,7 +1,7 @@
 let enemiesDefault = document.querySelector('#enemies').innerText; //holds original enemy array to allow resetting
 let alert = document.querySelector("#alert"); // notification field
 
-$("#random").on("click", function(event){
+$("#random").on("click touchstart", function(event){
     event.preventDefault();
     random();
 })
@@ -15,7 +15,7 @@ let alertMessage=(message)=> {
 
 // load value for selected card
 let processCards = (cardValue) => {
-    $(".card").on("click", function(e){
+    $(".card").on("click touchstart", function(e){
         let cardName = $(this)[0].id; // jquery stores $(this) as an array
         let mode = $(this).find(".cardClass").attr("value");
         if ($(this).find(".cardClass").attr("value")=="manual") {
@@ -59,7 +59,7 @@ let processCards = (cardValue) => {
 }
 
 let removeListener = () => {
-    $(".remove").on("click", function() {
+    $(".remove").on("click touchstart", function() {
         console.log("this is my parent", $(this).parent())
         $(this).parent().remove();
 
@@ -68,7 +68,7 @@ let removeListener = () => {
     })
 }
 
-$(".clear").on("click", function(e){
+$(".clear").on("click touchstart", function(e){
     alert.innerText = "";
     $("#hand .simple-grid").html("");
     document.querySelector('#enemies').innerText = enemiesDefault;
@@ -227,7 +227,7 @@ let clearAlert = ()=> {
       }, 3000);
 }
 
-$("#endGame").on("click", function(event){
+$("#endGame").on("click touchstart", function(event){
     event.preventDefault();
     endGame();
 })
