@@ -592,3 +592,23 @@ body {
 }
 
 .tipHolder {margin: 1rem 0;}
+
+@media only screen and (max-width: 600px) {
+    .modal .inner label {
+        width: auto;
+    }
+    .modal .inner .holder .value {
+        width: auto;
+    }
+
+    #achievementsContainer .nav {
+        #back {
+            position: relative;
+        }
+
+        #scores, #achievements {
+            display: block;
+            padding: 0 0 .5rem;
+        }
+    }
+}
