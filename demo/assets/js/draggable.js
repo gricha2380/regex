@@ -9,22 +9,8 @@ lmdd.set(document.querySelector('#hand'),optionsObject);
 
 $("#addToHand").on("click", ()=>{
     console.log("clicked draggable")
-    generateCard()
+    generateCard("Any Digit","\\d","auto")
 })
-
-let generateCard = ()=>{
-    $("#hand .simple-grid")
-        .append(`
-            <div class="black z-depth-3 grid-item include" value="\\d">
-                <div class="remove">remove</div>
-                <div class="innerBlock auto">
-                    <div class="name">Any Digit</div>
-                    <div>\\d</div>
-                    <div class="cardClass" value="auto">⚡️</div>
-                </div>
-            </div>`)
-}
-
 
 $(".cardNew").on("click", function(e){
     let cardName = $(this)[0].id; // jquery stores $(this) as an array
@@ -39,23 +25,13 @@ $(".cardNew").on("click", function(e){
     }
     alert.innerText = "";
 
-    // $('#hand').val(
-    //     function() { 
-    //         return $(this).val() ? $(this).val() + `+${cardValue}` : `${cardValue}`; 
-    //     }
-    // );
     matchEnemies();
 })
 
 $("#addQuantifiers").on("click", (event)=> {
-    let cardGrid = '';
     console.log("adding quantifiers")
     addQuantifiers();
 })
-
-// $(".grid-item").on("drag", ()=>{
-//     $('.quantifier').remove();
-// })
 
 $("#hand").on("lmddstart", ()=>{
     console.log("custom event found")

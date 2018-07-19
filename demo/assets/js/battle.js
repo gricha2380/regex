@@ -1,12 +1,14 @@
 let enemiesDefault = document.querySelector('#enemies').innerText; //holds original enemy array to allow resetting
 let alert = document.querySelector("#alert"); // notification field
 
+// dev tool: produce random enemy
 $("#random").on("click touchstart", function(event){
     event.preventDefault();
     random();
+    matchEnemies();
 })
 
-// method for displying alerts
+// method for displaying alerts
 let alertMessage=(message)=> {
     $(alert).addClass("active");
     alert.innerText = message;
@@ -26,89 +28,86 @@ let processCards = (cardValue) => {
         } else {
             cardValue = $(this).attr("value"); // for auto card type
         }
-        gameState.current.counter.patterns +=1; // Fture note: If cards are removed from hand, subtract from pattern counter
+        gameState.current.counter.patterns +=1; // Future note: If cards are removed from hand, subtract from pattern counter
         alert.innerText = "";
-    
-
-        // old generate card
-        // $('#hand').val(
-        //     function() { 
-        //         return $(this).val() ? $(this).val() + `+${cardValue}` : `${cardValue}`; 
-        //     }
-        // );
-
-        // let generateCard = ()=>{
-            $("#hand .simple-grid")
-                .append(`
-                    <div class="${"lime"} z-depth-3 grid-item include" value="${cardValue}">
-                        <div class="remove">remove</div>
-                        <div class="innerBlock auto">
-                            <div class="name">${cardName}</div>
-                            <div>${cardValue}</div>
-                            <div class="cardClass" value="auto">${(mode === "auto") ? "⚡️" : "..."}</div>
-                        </div>
-                    </div>`
-                )
-        // }
-        // generateCard();  
-        addQuantifiers();
-        removeListener();      
-
-        matchEnemies();
+        generateCard(cardValue, cardName, mode);  // add card to hand
+        addQuantifiers(); // add quantifiers between cards
+        removeListener(); // event listener for removing cards
+        matchEnemies(); // highlight matched enemies
     })
 }
 
+// visually add card into hand
+let generateCard = (cardValue, cardName, mode)=>{
+    $("#hand .simple-grid")
+    .append(`
+        <div class="${"lime"} z-depth-3 grid-item include" value="${cardValue}">
+            <div class="remove">remove</div>
+            <div class="innerBlock auto">
+                <div class="name">${cardName}</div>
+                <div>${cardValue}</div>
+                <div class="cardClass" value="auto">${(mode === "auto") ? "⚡️" : "..."}</div>
+            </div>
+        </div>`
+    )
+}
+
+// event listener to remove card
 let removeListener = () => {
     $(".remove").on("click touchstart", function() {
         console.log("this is my parent", $(this).parent())
         $(this).parent().remove();
-
         addQuantifiers();
         matchEnemies();
     })
 }
 
+// remove cards from hand
 $(".clear").on("click touchstart", function(e){
     alert.innerText = "";
     $("#hand .simple-grid").html("");
     document.querySelector('#enemies').innerText = enemiesDefault;
 })
 
+// event listener for attack button
 document.querySelector("#attack").addEventListener("click", e=>{
     increaseScore(gameState.holdPoints);
-    endTurn(); 
-    
+    endTurn();  
 })
 
+// produce regex to match enemies
 let matchEnemies = ()=> {
-    gameState.holdPoints = 0;
-    let enemies = document.querySelector("#enemies").innerText;
+    gameState.holdPoints = 0; // holds points awarded each turn
+    let enemies = document.querySelector("#enemies").innerText; // hold text based enemy string
     console.log("enemies value",enemies);
     let enemyArray = document.querySelector("#enemies").innerText.split(""); // e.g.:["a", "b", "e", "1", "3", "3"]
     console.log("enemyArray content",enemyArray);
-    // let playerPattern = new RegExp($("#hand").val(),"g"); //let playerPattern = /\d/g; // static test
     let playerPattern = new RegExp(computeValues(),"g"); //let playerPattern = /\d/g; // static test
     console.log("playerpattern",playerPattern); //  e.g.:/\d/g
-    let enemyMatch = enemies.match(playerPattern);
+    let enemyMatch = enemies.match(playerPattern); // match enemy string with player's regex pattern
     if (!enemyMatch) {
         alert.innerText = "No matches...";
         return;
     }
     console.log("enemyMatch",enemyMatch); // e.g.:["1", "3", "3"]
-    enemyMatch.forEach(matchSet=>{
-        console.log("matchSet contents",matchSet,matchSet.length);
+    
+    // match each word and tag the matches
+    enemyMatch.forEach(currentWord=>{
+        console.log("currentWord contents",currentWord,currentWord.length);
         console.log("enemy array before action",enemyArray,enemyArray.length)
-        enemyArray.forEach((element,x) => {
-            for(let i=0;i<matchSet.length;i++) {
-                if(matchSet[i]===enemyArray[x] && enemyArray[x]!==" "){
+        
+        // parse each character in the current word
+        enemyArray.forEach((currentLetter,x) => {
+            for(let i=0;i<currentWord.length;i++) {
+                // find current character in enemy array
+                if(currentWord[i]===enemyArray[x] && enemyArray[x]!==" "){
                     // go into game object, find score value for enemry type, call increaseScore(passvalue)
-                    console.log(`element type is"${element}".`)
-                    console.log("element at index",enemyData.enemies[element])
-                    let enemyType = enemyData.enemies[element].type;
-                    enemyType = enemyType.toLowerCase();
-                    gameState.holdPoints += enemyData[enemyType].points.normal;
+                    console.log(`currentLetter type is"${currentLetter}".`)
+                    console.log("currentLetter at index",enemyData.enemies[currentLetter])
+                    let enemyType = enemyData.enemies[currentLetter].type.toLowerCase(); // enemy classification
+                    gameState.holdPoints += enemyData[enemyType].points.normal; // points to be awarded for matching enemy
                     console.log("points added",enemyData[enemyType].points.normal)
-                    enemyArray[x] = `<b>${element}</b>`;
+                    enemyArray[x] = `<b>${currentLetter}</b>`; // flag enemy as matched
                 }
             }
             console.log("About to add enemyArray[x]",enemyArray[x])
@@ -124,7 +123,6 @@ let matchEnemies = ()=> {
 let endTurn = ()=>{
     clearEnemies();
     gameState.holdPoints = 0;
-    // alertMessage("Your Turn!");
 }
 
 let clearEnemies = (totalEnemyMatch)=> {
@@ -138,6 +136,8 @@ let clearEnemies = (totalEnemyMatch)=> {
     console.log('regex results', remainingEnemies,remainingEnemies.length);
     document.querySelector('#enemies').innerText = remainingEnemies;// set dom to regex results
     enemiesDefault = document.querySelector('#enemies').innerText;
+
+    // check for end of level conditions
     if (remainingEnemies=='' || remainingEnemies==' ') {
         console.log("no enemies left")
         document.querySelector("#enemies").innerText = "All Clear!";
@@ -146,7 +146,7 @@ let clearEnemies = (totalEnemyMatch)=> {
             beatLevel();
           }, 1000);
     }
-    else {enemyAttack()}
+    else {enemyAttack()} // otherwise let enemies attack
 }
 
 // enemy attacks player
@@ -239,5 +239,3 @@ $("#endGame").on("click touchstart", function(event){
 let endGame = ()=>{
     gameOver();
 }
-
-// what should go to local storage? score, date, time spent, enemies matched, cards played
