@@ -58,10 +58,11 @@ body {
 .card {
   background: yellow;
   color: #D82262;
-  max-width: 70px;
   height: 70px;
   width: 70px;
   vertical-align: bottom;
+  flex: 0 0 auto;
+  margin-right: .5rem;
 }
 
 .card span {
@@ -180,6 +181,16 @@ body {
   background: #D8D8D8;
   border: 2px solid #979797;
   padding: 1rem;
+  overflow-x: auto;
+}
+
+#deck #cards {
+  height: 4rem;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-overflow-scrolling: touch;
 }
 
 .main {
@@ -269,10 +280,14 @@ body {
   display: flex;
   justify-content: space-between;
   list-style: none;
+  text-align: left;
+  margin-bottom: .5rem;
+  font-weight: bold;
 }
 
 #categories li {
   width: 100%;
+  color: #4B4B4B;
 }
 
 #categories li:hover {
@@ -281,11 +296,11 @@ body {
 }
 
 #categories li.active {
-  color: white;
+  color: #D82262;
 }
 
 #categories li.active:hover {
-  color: white;
+  color: #D82262;
   cursor: auto;
 }
 
