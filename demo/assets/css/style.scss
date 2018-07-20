@@ -674,6 +674,30 @@ body {
     color: black;
     font-size: 2rem;
     padding: 27px 0;
+    opacity: .8;
+    &.disable {
+        opacity: .2;
+        line-height: .5rem;
+    }
+    &.include {
+        color: green;
+    }
+    &.onePlus {
+        color: #cddc39;
+    }
+    &.xTimes {
+        color: #673ab7;
+    }
+    &.xTimesRange {
+        color: #420ca0;
+    }
+    &.optional {
+        color: #ff5722;
+    }
+    &:hover {
+        cursor: pointer;
+        opacity: 1;
+    }
 }
 
 .tipHolder {margin: 1rem 0;}

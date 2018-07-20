@@ -50,11 +50,56 @@ $("#hand").on("lmddbeforestart", ()=>{
     $(".remove").css("opacity","0");
 })
 
+let quantifierEventListeners = ()=> {
+    $(".quantifier").on("click", function (event){
+        // allow value of quantifier to be toggled
+        // have quantifiers start disabled at 0 value
+        // off, one or more +, {x}, {x,}optional ?
+        let currentValue = $(this).attr("value");
+        if (currentValue == 0) {
+            // if disabled
+            $(this).removeClass("disable");
+            $(this).addClass("include");
+            $(this).addClass("onePlus");
+            $(this).text("+");
+            $(this).attr("value","+");
+        } else if (currentValue == "+") {
+            // if one or more
+            $(this).removeClass("onePlus");
+            $(this).addClass("xTimes");
+            $(this).text("{x}");
+            $(this).attr("value","{x}");
+        } else if (currentValue == "{x}") {
+            // if x times
+            $(this).removeClass("xTimes");
+            $(this).addClass("xTimesRange");
+            $(this).text("{x,}");
+            $(this).attr("value","{x,}");
+        } else if (currentValue == "{x,}") {
+            // if x times range
+            $(this).removeClass("xTimesRange");
+            $(this).addClass("optional");
+            $(this).text("?");
+            $(this).attr("value","?");
+        } else if (currentValue == "?") {
+            // if x times range
+            $(this).removeClass("optional");
+            $(this).removeClass("include");
+            $(this).addClass("disable");
+            $(this).text("+");
+            $(this).attr("value","0");
+        }
+        console.log("current quantifier value", $(this).attr("value"));
+        // matchEnemies();
+    })
+}
+
 let addQuantifiers = () => {
     $('.quantifier').remove();
     $(".simple-grid .grid-item").each(function (i, val){
-        $(`<div class="quantifier include" value="+">+</div>`).insertAfter($(this));
+        $(`<div class="quantifier disable" value="0">.<br>.<br>.</div>`).insertAfter($(this));
     })
+    quantifierEventListeners();
 }
 addQuantifiers()
 
@@ -65,12 +110,6 @@ $("#computeValues").on("click", ()=> {
     // compute Values and send to regex processor?
 })
 
-
-$(".quantifier").on("click", function (event){
-    // allow value of quantifier to be toggled
-    // have quantifiers start disabled at 0 value
-    // off, one or more +, {x}, {x,}optional ?
-})
 
 let computeValues = () => {
     let values = '';

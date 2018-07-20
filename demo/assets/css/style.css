@@ -757,6 +757,37 @@ body {
   color: black;
   font-size: 2rem;
   padding: 27px 0;
+  opacity: .8;
+}
+
+.quantifier.disable {
+  opacity: .2;
+  line-height: .5rem;
+}
+
+.quantifier.include {
+  color: green;
+}
+
+.quantifier.onePlus {
+  color: #cddc39;
+}
+
+.quantifier.xTimes {
+  color: #673ab7;
+}
+
+.quantifier.xTimesRange {
+  color: #420ca0;
+}
+
+.quantifier.optional {
+  color: #ff5722;
+}
+
+.quantifier:hover {
+  cursor: pointer;
+  opacity: 1;
 }
 
 .tipHolder {
