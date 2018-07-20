@@ -36,15 +36,19 @@ let loadActiveCategory = ()=> {
     $("#cards").html('');
     for (card in deckData[gameState.activeCategory]) {
         $("#cards").append(`
-            <button class="card" value="${deckData[gameState.activeCategory][card].nickname}" id="${card}">
-                <span class="name">${deckData[gameState.activeCategory][card].name}</span>
-                <span>${deckData[gameState.activeCategory][card].nickname}</span>
-                ${deckData[gameState.activeCategory][card].type == "auto" ? 
-                        '<span class="cardClass" value="auto">⚡️</span>' :
-                        '<span class="cardClass" value="manual">...</span>'}
-            </button>
+            <div class="cardHolder">
+                <button class="card" value="${deckData[gameState.activeCategory][card].nickname}" id="${card}" data-name="${card}">
+                    <span class="name">${deckData[gameState.activeCategory][card].name}</span>
+                    <span>${deckData[gameState.activeCategory][card].nickname}</span>
+                    ${deckData[gameState.activeCategory][card].type == "auto" ? 
+                            '<span class="cardClass" value="auto">⚡️</span>' :
+                            '<span class="cardClass" value="manual">...</span>'}
+                </button>
+                <div class="info">?</div>
+            </div>
         `)
     }
+    infoButtonListener();
 }
 
 let categoryEventListeners = ()=>{
@@ -57,5 +61,47 @@ let categoryEventListeners = ()=>{
         loadActiveCategory();
         processCards();
         // remove active class from li & set to new li
+    })
+}
+
+let infoButtonListener = () => {
+    $(".info").on("click",function(){
+        console.log("you clickedon info");
+        let cardName = $(this).prev().attr("data-name");
+        console.log(cardName);
+        let card = deckData[gameState.activeCategory][cardName];
+        generateInfoModal(card);
+    })
+    $(".info").hover(function(){
+        console.log("I see you hoverin...")
+        $(this).prev().addClass("hover");
+    }, function(){
+        $(this).prev().removeClass("hover");
+    })
+}
+
+let generateInfoModal = (card)=>{
+    $("#tutorial").hide();
+    let examples = '';
+    for (i=0;i<card.examples.length;i++){
+        examples += `<div><span class="patternExample">${card.examples[i].pattern}</span><span class="matchesWord">matches</span><span class="matchesResults">${card.examples[i].matches}</span></div>`
+    }
+    let newDiv = document.createElement('div');
+    newDiv.id = "infoModal";
+    newDiv.classList.add("modal");
+    newDiv.innerHTML =
+        `<div class="inner">
+            <div class="infoName">${card.name} <span class="infoNickname">${card.nickname}</span></div>
+            <div class="infoDescription">${card.description}</div>
+            ${card.tips ? '<div class="infoTips">'+card.tips+'</div>' : ''}
+            <div class="row infoExamples">
+                <div>Examples:</div>
+                <div>${examples}</div>
+            </div>
+        </div>
+        <div class="modalBG"></div>`
+    document.querySelector("body").appendChild(newDiv);
+    $(".modalBG").on("click",()=>{
+        document.querySelector('body').removeChild(document.querySelector("#infoModal"));
     })
 }

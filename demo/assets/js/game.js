@@ -69,8 +69,9 @@ let restartLevel = ()=> {
     //restart current level
 }
 
+//level cleared
 let beatLevel = ()=> {
-    //level cleared
+    $("#tutorial").hide();
     console.log("level cleared!");
 
     gameState.current.timer.global.end = new Date();
@@ -128,6 +129,7 @@ newGame();
 
 
 let gameOver = ()=> {
+    $("#tutorial").hide();
     console.log("game over!");
     saveSession();
     let newDiv = document.createElement('div');

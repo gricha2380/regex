@@ -26,7 +26,7 @@
             "examples":[
                 {
                     "pattern":"\\W", 
-                    "matches": "Th!s<m> </m>w0nd3rfu1<m> </m>w0r1d<m>!</m>"
+                    "matches": "Th<m>!</m>s<m> </m>w0nd3rfu1<m> </m>w0r1d<m>!</m>"
                 },
                 {
                     "pattern":"\\W",
