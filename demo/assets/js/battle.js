@@ -86,6 +86,7 @@ let matchEnemies = ()=> {
     console.log("playerpattern",playerPattern); //  e.g.:/\d/g
     let enemyMatch = enemies.match(playerPattern); // match enemy string with player's regex pattern
     if (!enemyMatch) {
+        document.querySelector('#enemies').innerText = enemiesDefault;// set dom to regex results
         alert.innerText = "No matches...";
         return;
     }

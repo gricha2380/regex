@@ -675,6 +675,8 @@ body {
     font-size: 2rem;
     padding: 27px 0;
     opacity: .8;
+    position: relative;
+
     &.disable {
         opacity: .2;
         line-height: .5rem;
@@ -698,6 +700,17 @@ body {
         cursor: pointer;
         opacity: 1;
     }
+}
+.quantifierHolder {
+    position: relative;
+}
+.howMany {
+    position: absolute;
+    width: 2.5rem;
+    text-align: center;
+    left: 0;
+    margin-top: 5px;
+    z-index: 1;
 }
 
 .tipHolder {margin: 1rem 0;}

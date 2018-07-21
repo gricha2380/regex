@@ -1,14 +1,6 @@
 let deckRender = $("#deck");
 let deckData = {};
 
-// fetch("../categories/data2.json")
-// .then((resp) => resp.json())
-// .then( (res) => {
-//     deckData = res;
-//     console.log("new deckData here", deckData);
-//     loadCategories();
-// })
-
 fetch("../categories/data.json")
 .then((resp) => resp.json())
 .then( (res) => {
@@ -105,3 +97,63 @@ let generateInfoModal = (card)=>{
         document.querySelector('body').removeChild(document.querySelector("#infoModal"));
     })
 }
+
+let quantifierEventListeners = ()=> {
+    $(".quantifier").on("click", function (event){
+        // allow value of quantifier to be toggled
+        // have quantifiers start disabled at 0 value
+        // off, one or more +, {x}, {x,}optional ?
+        let currentValue = $(this).attr("value");
+        if (currentValue === "q") {
+            // if disabled
+            $(this).removeClass("disable");
+            $(this).addClass("include");
+            $(this).addClass("onePlus");
+            $(this).text("+");
+            $(this).attr("value","+");
+        } else if (currentValue == "+") {
+            // if one or more
+            $(this).removeClass("onePlus");
+            $(this).addClass("xTimes");
+            // $(this).html("<input type='number' class='howMany' value='1'>{x}");
+            $(this).text("{1}");
+            let quant = 1;
+            // $(this)[0].outerHTML = `<div class="quantifierHolder"><input type='number' class='howMany' value='${quant}'><div class="quantifier include xTimesRange" value="{x,}">{x}</div></div>`
+            // TODO: Set value based on howMany field content
+            // TODO: Allow user to click on input without toggling
+            $(this).attr("value",`{${quant}}`);
+        } else if (/{\d+}/g.test(currentValue)) { // TODO: check for current value of howMany field
+            // if x times
+            $(this).removeClass("xTimes");
+            $(this).addClass("xTimesRange");
+            // $(this).html("<input type='number' class='howMany' value='1'>{x,}");
+            $(this).text("{1,}");
+            let quant = 1;
+            $(this).attr("value",`{${quant},}`);
+        } else if (/{\d+,}/g.test(currentValue)) {
+            // if x times range
+            $(this).removeClass("xTimesRange");
+            $(this).addClass("optional");
+            $(this).text("?");
+            $(this).attr("value","?");
+        } else if (currentValue == "?") {
+            // if optional
+            $(this).removeClass("optional");
+            $(this).removeClass("include");
+            $(this).addClass("disable");
+            $(this).html(".<br>.<br>.");
+            $(this).attr("value","q");
+        }
+        console.log("current quantifier value", $(this).attr("value"));
+        matchEnemies();
+    })
+}
+
+let addQuantifiers = () => {
+    $('.quantifier').remove();
+    $(".simple-grid .grid-item").each(function (i, val){
+        $(`<div class="quantifier disable" value="q">.<br>.<br>.</div>`).insertAfter($(this));
+    })
+    quantifierEventListeners();
+}
+addQuantifiers();
