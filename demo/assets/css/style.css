@@ -83,7 +83,7 @@ body {
   background: #cccc00;
 }
 
-.cardHolder .info {
+.infoIcon {
   width: 1rem;
   margin: .4rem auto;
   background: rgba(0, 0, 0, 0.5);
@@ -91,9 +91,10 @@ body {
   color: white;
   border-radius: 1rem;
   font-size: .8rem;
+  font-weight: normal;
 }
 
-.cardHolder .info:hover {
+.infoIcon:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -243,6 +244,7 @@ body {
 
 #hand .name {
   color: rgba(0, 0, 0, 0.5);
+  height: 2rem;
 }
 
 #enemies {
@@ -803,6 +805,13 @@ body {
 
 .quantifierHolder {
   position: relative;
+}
+
+.quantifierHolder .infoIcon {
+  display: none;
+  position: absolute;
+  bottom: .5rem;
+  left: 25%;
 }
 
 .howMany {

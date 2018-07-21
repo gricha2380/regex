@@ -88,6 +88,7 @@ let matchEnemies = ()=> {
     if (!enemyMatch) {
         document.querySelector('#enemies').innerText = enemiesDefault;// set dom to regex results
         alert.innerText = "No matches...";
+        clearAlert();
         return;
     }
     console.log("enemyMatch",enemyMatch); // e.g.:["1", "3", "3"]

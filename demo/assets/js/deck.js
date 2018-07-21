@@ -36,7 +36,7 @@ let loadActiveCategory = ()=> {
                             '<span class="cardClass" value="auto">⚡️</span>' :
                             '<span class="cardClass" value="manual">...</span>'}
                 </button>
-                <div class="info">?</div>
+                <div class="infoIcon">?</div>
             </div>
         `)
     }
@@ -56,16 +56,21 @@ let categoryEventListeners = ()=>{
     })
 }
 
-let infoButtonListener = () => {
-    $(".info").on("click",function(){
+let infoButtonListener = (category) => {
+    $(".infoIcon").off();
+    $(".infoIcon").on("click",function(){
         console.log("you clickedon info");
         let cardName = $(this).prev().attr("data-name");
-        console.log(cardName);
-        let card = deckData[gameState.activeCategory][cardName];
-        generateInfoModal(card);
+        if (category) {
+            let card = deckData[category][cardName];
+            generateInfoModal(card);
+        } else {
+            let card = deckData[gameState.activeCategory][cardName];
+            generateInfoModal(card);
+        }
     })
 
-    $(".info").hover(function(){
+    $(".infoIcon").hover(function(){
         console.log("I see you hoverin...")
         $(this).prev().addClass("hover");
     }, function(){
@@ -118,14 +123,17 @@ let quantifierEventListeners = ()=> {
     // values = disabled, one or more +, x times {x}, x times or more {x,}, optional optional ?
     $(".quantifier").on("click", function (event){
         howManyEventListener();
+        infoButtonListener("quantifiers");
         let currentValue = $(this).attr("value");
-        if (currentValue === "q") {
+        if (currentValue === "disable") {
             // if disabled
             $(this).removeClass("disable");
             $(this).addClass("include");
             $(this).addClass("onePlus");
             $(this).text("+");
             $(this).attr("value","+");
+            $(this).attr("data-name","One Or More");
+            $(this).next(".infoIcon").show();
         } else if (currentValue == "+") {
             // if one or more
             $(this).removeClass("onePlus");
@@ -134,6 +142,7 @@ let quantifierEventListeners = ()=> {
             let quant = 1;
             $(this).siblings(".howMany").attr("value",quant).val(quant).show();
             $(this).attr("value",`{${quant}}`);
+            $(this).attr("data-name","Exactly x Times");
         } else if (/{\d+}/g.test(currentValue)) { 
             // if x times
             $(this).removeClass("xTimes");
@@ -142,6 +151,7 @@ let quantifierEventListeners = ()=> {
             let quant = 1;
             $(this).siblings(".howMany").attr("value",quant).val(quant).show();
             $(this).attr("value",`{${quant},}`);
+            $(this).attr("data-name","x or More Times");
         } else if (/{\d+,}/g.test(currentValue)) {
             // if x times range
             $(this).siblings(".howMany").hide();
@@ -149,13 +159,16 @@ let quantifierEventListeners = ()=> {
             $(this).addClass("optional");
             $(this).text("?");
             $(this).attr("value","?");
+            $(this).attr("data-name","Optional");
         } else if (currentValue == "?") {
             // if optional
             $(this).removeClass("optional");
             $(this).removeClass("include");
             $(this).addClass("disable");
             $(this).html(".<br>.<br>.");
-            $(this).attr("value","q");
+            $(this).attr("value","disable");
+            $(this).attr("data-name","none");
+            $(this).next(".infoIcon").hide();
         }
         console.log("current quantifier value", $(this).attr("value"));
         matchEnemies();
@@ -166,7 +179,7 @@ let addQuantifiers = () => {
     $('.quantifierHolder').remove();
     $(".simple-grid .grid-item").each(function (i, val){
         let quant=1;
-        $(`<div class="quantifierHolder"><input type='number' class='howMany' value='${quant}' min='0' max='100'><div class="quantifier disable" value="q">.<br>.<br>.</div></div>`).insertAfter($(this));
+        $(`<div class="quantifierHolder"><input type='number' class='howMany' value='${quant}' min='0' max='100'><div class="quantifier disable" value="disable">.<br>.<br>.</div><div class="infoIcon">?</div></div>`).insertAfter($(this));
     })
     quantifierEventListeners();
 }

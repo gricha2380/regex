@@ -64,18 +64,20 @@ body {
         
     }
     
-    .info {
-        width: 1rem;
-        margin: .4rem auto;
-        background: rgba(0, 0, 0, .5);
-        background-color: rgba(0, 0, 0, .5);
-        color: white;
-        border-radius: 1rem;
-        font-size: .8rem;
-        &:hover {
-            cursor: pointer;
-            background-color: rgba(0, 0, 0, .8);
-        }
+}
+.infoIcon {
+    width: 1rem;
+    margin: .4rem auto;
+    background: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    border-radius: 1rem;
+    font-size: .8rem;
+    font-weight: normal;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, .8);
     }
 }
 #alert {
@@ -206,10 +208,12 @@ body {
     color: white;
     font-weight: bold;
     font-size: 1rem;
-    // width: calc(100% - 36px);
     padding: .5rem 1rem;
     display: block;
-    .name {color: rgba(0, 0, 0, .5);}
+    .name {
+        color: rgba(0, 0, 0, .5);
+        height: 2rem;
+    }
 }
 
 #enemies {
@@ -316,7 +320,7 @@ body {
     color: white;
     font-size: 1.5rem;
     z-index: 1;
-    
+
     .inner {
         margin: auto;    
         z-index: 1;
@@ -710,6 +714,12 @@ body {
 }
 .quantifierHolder {
     position: relative;
+    .infoIcon {
+        display: none;
+        position: absolute;
+        bottom: .5rem;
+        left: 25%;
+    }
 }
 .howMany {
     display: none;
