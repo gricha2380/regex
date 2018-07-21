@@ -64,6 +64,7 @@ let infoButtonListener = () => {
         let card = deckData[gameState.activeCategory][cardName];
         generateInfoModal(card);
     })
+
     $(".info").hover(function(){
         console.log("I see you hoverin...")
         $(this).prev().addClass("hover");
@@ -72,6 +73,7 @@ let infoButtonListener = () => {
     })
 }
 
+// card info modal
 let generateInfoModal = (card)=>{
     $("#tutorial").hide();
     let examples = '';
@@ -98,11 +100,24 @@ let generateInfoModal = (card)=>{
     })
 }
 
+// bind quantifier val to text input
+let howManyEventListener = function () {
+    $(".howMany").on("input", function(e){
+        console.log(e.target.value)
+        let currentValue = $(this).siblings(".quantifier").attr("value");
+        if (/{\d+}/g.test(currentValue)) {
+            $(this).siblings(".quantifier").attr("value", `{${e.target.value}}`).text(`{${e.target.value}}`);
+        } else if (/{\d+,}/g.test(currentValue)) {
+            $(this).siblings(".quantifier").attr("value", `{${e.target.value},}`).text(`{${e.target.value},}`);
+        }
+    })
+}
+
 let quantifierEventListeners = ()=> {
+    // toggle quantifier value on click
+    // values = disabled, one or more +, x times {x}, x times or more {x,}, optional optional ?
     $(".quantifier").on("click", function (event){
-        // allow value of quantifier to be toggled
-        // have quantifiers start disabled at 0 value
-        // off, one or more +, {x}, {x,}optional ?
+        howManyEventListener();
         let currentValue = $(this).attr("value");
         if (currentValue === "q") {
             // if disabled
@@ -115,23 +130,21 @@ let quantifierEventListeners = ()=> {
             // if one or more
             $(this).removeClass("onePlus");
             $(this).addClass("xTimes");
-            // $(this).html("<input type='number' class='howMany' value='1'>{x}");
             $(this).text("{1}");
             let quant = 1;
-            // $(this)[0].outerHTML = `<div class="quantifierHolder"><input type='number' class='howMany' value='${quant}'><div class="quantifier include xTimesRange" value="{x,}">{x}</div></div>`
-            // TODO: Set value based on howMany field content
-            // TODO: Allow user to click on input without toggling
+            $(this).siblings(".howMany").attr("value",quant).val(quant).show();
             $(this).attr("value",`{${quant}}`);
-        } else if (/{\d+}/g.test(currentValue)) { // TODO: check for current value of howMany field
+        } else if (/{\d+}/g.test(currentValue)) { 
             // if x times
             $(this).removeClass("xTimes");
             $(this).addClass("xTimesRange");
-            // $(this).html("<input type='number' class='howMany' value='1'>{x,}");
             $(this).text("{1,}");
             let quant = 1;
+            $(this).siblings(".howMany").attr("value",quant).val(quant).show();
             $(this).attr("value",`{${quant},}`);
         } else if (/{\d+,}/g.test(currentValue)) {
             // if x times range
+            $(this).siblings(".howMany").hide();
             $(this).removeClass("xTimesRange");
             $(this).addClass("optional");
             $(this).text("?");
@@ -150,9 +163,10 @@ let quantifierEventListeners = ()=> {
 }
 
 let addQuantifiers = () => {
-    $('.quantifier').remove();
+    $('.quantifierHolder').remove();
     $(".simple-grid .grid-item").each(function (i, val){
-        $(`<div class="quantifier disable" value="q">.<br>.<br>.</div>`).insertAfter($(this));
+        let quant=1;
+        $(`<div class="quantifierHolder"><input type='number' class='howMany' value='${quant}' min='0' max='100'><div class="quantifier disable" value="q">.<br>.<br>.</div></div>`).insertAfter($(this));
     })
     quantifierEventListeners();
 }

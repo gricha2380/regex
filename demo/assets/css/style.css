@@ -241,6 +241,10 @@ body {
   display: block;
 }
 
+#hand .name {
+  color: rgba(0, 0, 0, 0.5);
+}
+
 #enemies {
   font-size: 4rem;
   min-height: 4rem;
@@ -354,6 +358,7 @@ body {
   background: rgba(0, 0, 0, 0.8);
   color: white;
   font-size: 1.5rem;
+  z-index: 1;
 }
 
 .modal .inner {
@@ -791,11 +796,17 @@ body {
   opacity: 1;
 }
 
+.quantifier.wide {
+  width: 2.5rem;
+  margin-right: 5px;
+}
+
 .quantifierHolder {
   position: relative;
 }
 
 .howMany {
+  display: none;
   position: absolute;
   width: 2.5rem;
   text-align: center;
