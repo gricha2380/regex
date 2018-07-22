@@ -29,7 +29,7 @@ let loadActiveCategory = ()=> {
     for (card in deckData[gameState.activeCategory]) {
         $("#cards").append(`
             <div class="cardHolder">
-                <button class="card" value="${deckData[gameState.activeCategory][card].nickname}" id="${card}" data-name="${card}">
+                <button class="card" value="${deckData[gameState.activeCategory][card].nickname}" id="${card}" data-name="${card}" data-category="${gameState.activeCategory}">
                     <span class="name">${deckData[gameState.activeCategory][card].name}</span>
                     <span>${deckData[gameState.activeCategory][card].nickname}</span>
                     ${deckData[gameState.activeCategory][card].type == "auto" ? 
@@ -45,29 +45,22 @@ let loadActiveCategory = ()=> {
 
 let categoryEventListeners = ()=>{
     $("#categories li").on("click", function(e){
-        console.log("you clicked a list itemm",this.getAttribute("value"));
-        // find value attr
+        // remove active class from li & set to new li
         $("#categories li").removeClass("active");
         this.classList.add("active");
         gameState.activeCategory = this.getAttribute("value"); // set gameState.activeCategory to whatver category was clicked
         loadActiveCategory();
         processCards();
-        // remove active class from li & set to new li
     })
 }
 
 let infoButtonListener = (category) => {
-    $(".infoIcon").off();
     $(".infoIcon").on("click",function(){
         console.log("you clickedon info");
         let cardName = $(this).prev().attr("data-name");
-        if (category) {
-            let card = deckData[category][cardName];
-            generateInfoModal(card);
-        } else {
-            let card = deckData[gameState.activeCategory][cardName];
-            generateInfoModal(card);
-        }
+        let cardCategory = $(this).prev().attr("data-category");
+        let card = deckData[cardCategory][cardName];
+        generateInfoModal(card);
     })
 
     $(".infoIcon").hover(function(){
@@ -100,8 +93,16 @@ let generateInfoModal = (card)=>{
         </div>
         <div class="modalBG"></div>`
     document.querySelector("body").appendChild(newDiv);
-    $(".modalBG").on("click",()=>{
+    $(".modalBG").on("click",function(event){
         document.querySelector('body').removeChild(document.querySelector("#infoModal"));
+        $(document).off();
+    })
+    $(document).on("keydown", function(event){
+        console.log(event.which)
+        if (event.which === 27) {
+            document.querySelector('body').removeChild(document.querySelector("#infoModal"));
+            $(document).off();
+        }
     })
 }
 
@@ -123,7 +124,8 @@ let quantifierEventListeners = ()=> {
     // values = disabled, one or more +, x times {x}, x times or more {x,}, optional optional ?
     $(".quantifier").on("click", function (event){
         howManyEventListener();
-        infoButtonListener("quantifiers");
+        $(".infoIcon").off();
+        infoButtonListener();
         let currentValue = $(this).attr("value");
         if (currentValue === "disable") {
             // if disabled
@@ -179,7 +181,7 @@ let addQuantifiers = () => {
     $('.quantifierHolder').remove();
     $(".simple-grid .grid-item").each(function (i, val){
         let quant=1;
-        $(`<div class="quantifierHolder"><input type='number' class='howMany' value='${quant}' min='0' max='100'><div class="quantifier disable" value="disable">.<br>.<br>.</div><div class="infoIcon">?</div></div>`).insertAfter($(this));
+        $(`<div class="quantifierHolder"><input type='number' class='howMany' value='${quant}' min='0' max='100'><div class="quantifier disable" value="disable" data-category="quantifiers">.<br>.<br>.</div><div class="infoIcon">?</div></div>`).insertAfter($(this));
     })
     quantifierEventListeners();
 }
