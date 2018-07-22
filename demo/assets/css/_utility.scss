@@ -1,0 +1,14 @@
+.plain {text-decoration: none;}
+.capitalize{text-transform: capitalize;}
+.center{text-align: center;}
+.auto {margin: auto;}
+.static {position: static!important;}
+.relative {position: relative;}
+.mbot5 {margin-bottom: 5rem!important}
+.disabled{
+    opacity: .5;
+    &:hover {
+        cursor: not-allowed;
+    }
+}
+.flex{display: flex;}
