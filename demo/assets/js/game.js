@@ -29,7 +29,6 @@ let loadGameState = ()=>{
         counter = gameState.mode[currentMode].levels[currentLevel].tutorial.counter;
     })
 }
-loadGameState();
 
 let resetHealth = () => {
     gameState.current.health = 100;
@@ -52,10 +51,39 @@ let increaseScore = (increase) => {
 let random = ()=>{
     document.querySelector('#enemies').innerText = '';
     let enemyTotal = Math.floor(Math.random()*2) + 1; // number of words between 1 & 3
+    enemiesDefault = '';
     for (let i = 0; i < enemyTotal; i++) {
-        $("#enemies").append(Math.random().toString(36).slice(6)+" "); // 6 random alphanumeric characters per word
+        enemiesDefault += Math.random().toString(36).slice(6)+" "; // 6 random alphanumeric characters per word
+        // $("#enemies").append(Math.random().toString(36).slice(6)+" "); // 6 random alphanumeric characters per word
     }
-    enemiesDefault = document.querySelector('#enemies').innerText;
+    // enemiesDefault = document.querySelector('#enemies').innerText;
+    console.log("These are your enemies", enemiesDefault, enemiesDefault.length);
+    
+    let enemyImages = '';
+    for (i=0;i<enemiesDefault.length;i++) {
+        if (enemiesDefault[i] === " ") {
+            console.log("current blank space", enemiesDefault[i])
+            enemyImages += `<div class="enemyImageHolder blank"><span class="enemyImg blank"></span></div>`;
+        }
+        else if (!isNaN(enemiesDefault[i])) {
+            console.log("current number", enemiesDefault[i])
+            enemyImages += `<div class="enemyImageHolder"><img src="assets/images/numbers/${enemiesDefault[i]}.svg" class="enemyImg number ${enemiesDefault[i]}" data-value="${enemiesDefault[i]}" /></div>`
+        }
+        else if (enemiesDefault[i] === enemiesDefault[i].toUpperCase()) {
+            console.log("current capital letter", enemiesDefault[i])
+            enemyImages += `<div class="enemyImageHolder"><img src="assets/images/letters/upper/${enemiesDefault[i]}.svg" class="enemyImg upper letter ${enemiesDefault[i]}" data-value="${enemiesDefault[i]}"/></div>`
+        }
+        else if (enemiesDefault[i] === enemiesDefault[i].toLowerCase()) {
+            console.log("current lowercase letter", enemiesDefault[i])
+            enemyImages += `<div class="enemyImageHolder"><img src="assets/images/letters/lower/${enemiesDefault[i]}.svg" class="enemyImg lower letter ${enemiesDefault[i]}" data-value="${enemiesDefault[i]}"/></div>`
+        }
+        else {
+            console.log("current symbol", enemiesDefault[i])
+            enemyImages += `<div class="enemyImageHolder"><img src="assets/images/symbols/${enemiesDefault[i]}.svg" class="enemyImg symbol ${enemiesDefault[i]}" data-value="${enemiesDefault[i]}"/></div>`
+        }
+    }
+    let enemyImageHolder = `<div id="enemyImageHolder">${enemyImages}</div>`;
+    $("#enemies").append(enemyImageHolder);
 }
 
 let resetLevels = () => {

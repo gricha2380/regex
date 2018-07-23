@@ -844,3 +844,57 @@ body {
     padding: 0 0 .5rem;
   }
 }
+
+/* Enemy characters */
+#enemyImageHolder {
+  text-align: center;
+}
+
+#enemyImageHolder .enemyImageHolder {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#enemyImageHolder .enemyImageHolder.matched::before {
+  position: absolute;
+  content: "";
+  top: -1rem;
+  left: 1rem;
+  width: 50px;
+  height: 50px;
+  background: url(../images/matched.svg) no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+
+#enemyImageHolder .enemyImageHolder.matched .enemyImg {
+  filter: saturate(292%) brightness(70%) hue-rotate(103deg);
+}
+
+#enemyImageHolder .enemyImageHolder.attacking::before {
+  position: absolute;
+  content: "Attacking";
+  top: -1rem;
+  left: 1rem;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  z-index: 1;
+  font-size: 1rem;
+}
+
+#enemyImageHolder .enemyImageHolder.attacking .enemyImg {
+  filter: saturate(450%) brightness(100%) invert(1);
+}
+
+#enemyImageHolder .enemyImg {
+  max-height: 4rem;
+  position: relative;
+  transition: 0.5s;
+}
+
+#enemyImageHolder .enemyImg.blank {
+  height: 1rem;
+  display: block;
+}

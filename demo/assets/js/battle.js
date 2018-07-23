@@ -77,16 +77,17 @@ document.querySelector("#attack").addEventListener("click", e=>{
 
 // produce regex to match enemies
 let matchEnemies = ()=> {
+    $("#enemyImageHolder .enemyImageHolder").removeClass("matched");
     gameState.holdPoints = 0; // holds points awarded each turn
-    let enemies = document.querySelector("#enemies").innerText; // hold text based enemy string
-    console.log("enemies value",enemies);
-    let enemyArray = document.querySelector("#enemies").innerText.split(""); // e.g.:["a", "b", "e", "1", "3", "3"]
+    let enemyArray = enemiesDefault.split(""); // e.g.:["a", "b", "e", "1", "3", "3"]
     console.log("enemyArray content",enemyArray);
     let playerPattern = new RegExp(computeValues(),"g"); //let playerPattern = /\d/g; // static test
     console.log("playerpattern",playerPattern); //  e.g.:/\d/g
-    let enemyMatch = enemies.match(playerPattern); // match enemy string with player's regex pattern
+    let enemyMatch = enemiesDefault.match(playerPattern); // match enemy string with player's regex pattern
     if (!enemyMatch) {
-        document.querySelector('#enemies').innerText = enemiesDefault;// set dom to regex results
+        //document.querySelector('#enemies').innerText = enemiesDefault;// set dom to regex results
+        //TODO: Do I need a variable to hold HTML version of #enemy content?
+
         alert.innerText = "No matches...";
         clearAlert();
         return;
@@ -110,15 +111,17 @@ let matchEnemies = ()=> {
                     gameState.holdPoints += enemyData[enemyType].points.normal; // points to be awarded for matching enemy
                     console.log("points added",enemyData[enemyType].points.normal)
                     enemyArray[x] = `<b>${currentLetter}</b>`; // flag enemy as matched
+                    let currentMatch = $("#enemyImageHolder .enemyImageHolder").get(x); 
+                    $(currentMatch).addClass("matched");
                 }
             }
             console.log("About to add enemyArray[x]",enemyArray[x])
         });
     })
     console.log("all of enemyArray",enemyArray);
-    enemies = enemyArray.toString().replace(/,+/g,''); //convert array to string and remove commas
-    console.log("returning enemies", enemies)
-    document.querySelector('#enemies').innerHTML = enemies;
+    let matchedEnemies = enemyArray.toString().replace(/,+/g,''); //convert array to string and remove commas
+    console.log("matched enemies", matchedEnemies)
+    // document.querySelector('#enemies').innerHTML = enemies;
     document.querySelector("#attack").disabled = false;
 }    
 
@@ -128,16 +131,30 @@ let endTurn = ()=>{
 }
 
 let clearEnemies = (totalEnemyMatch)=> {
-    
+    //TODO: Rewrite to check for .matched class instead of <b> tags
+
     $("#hand .simple-grid").html(""); // clear hand
-    totalEnemyMatch = document.querySelector("#enemies").innerHTML; // use ("#enemies").innerText for plain characters
-    let matched = new RegExp("<b>(.*?)<\/b>","g");
+    // totalEnemyMatch = document.querySelector("#enemies").innerHTML; // use ("#enemies").innerText for plain characters
+    let remainingEnemies = '';
+    gameState.current.counter.enemies += $("#enemies .enemyImageHolder.matched").length;
+    totalEnemyMatch = $("#enemies .enemyImageHolder").each(function(){
+        if($(this).hasClass("matched")) {
+            $(this).remove();
+            gameState.current.counter.enemies ++; // save into global enemy counter
+        } else {
+            let dataValue = $(this).find(".enemyImg").attr("data-value");
+            if (dataValue) {remainingEnemies += dataValue}
+        }
+    })
+
+    // let matched = new RegExp("<b>(.*?)<\/b>","g");
     // console.log("match formula", matched)
-    let remainingEnemies = totalEnemyMatch.replace(matched, ""); //remove matched enemies
-    gameState.current.counter.enemies += totalEnemyMatch.match(matched).length; // save into global enemy counter
+    // let remainingEnemies = totalEnemyMatch.replace(matched, ""); //remove matched enemies
+    // gameState.current.counter.enemies += totalEnemyMatch.match(matched).length; // save into global enemy counter
     console.log('regex results', remainingEnemies,remainingEnemies.length);
-    document.querySelector('#enemies').innerText = remainingEnemies;// set dom to regex results
-    enemiesDefault = document.querySelector('#enemies').innerText;
+    // document.querySelector('#enemies').innerText = remainingEnemies;// set dom to regex results
+    enemiesDefault = remainingEnemies;
+    
 
     // check for end of level conditions
     if (remainingEnemies=='' || remainingEnemies==' ') {
@@ -153,11 +170,12 @@ let clearEnemies = (totalEnemyMatch)=> {
 
 // enemy attacks player
 let enemyAttack = ()=>{
-    let enemyString = document.querySelector("#enemies").innerText.replace(/\s/g, ''); // remove blank spaces
+    // let enemyString = document.querySelector("#enemies").innerText.replace(/\s/g, ''); // remove blank spaces
+    let enemyString = enemiesDefault;
     
     // loop through each character
     // custom loop to allow timeout
-    console.log("enemy string length", enemyString.length);
+    console.log("enemy string length", enemyString, enemyString.length);
     var i = 0;
     function f() {
         if( i < enemyString.length ){
@@ -166,7 +184,8 @@ let enemyAttack = ()=>{
         else {
             console.log("loop finisheed")
             clearAlert();
-            document.querySelector("#enemies").innerHTML = enemyString;
+            // document.querySelector("#enemies").innerHTML = enemyString;
+            $("#enemies .enemyImageHolder").removeClass("attacking");
             let returnMessage = "Your Turn!";
             alertMessage(returnMessage);
             autoText(returnMessage);
@@ -178,10 +197,13 @@ let enemyAttack = ()=>{
             console.log("enemystring[i]",enemyString[i])
             console.log("full enemystring",enemyString)
             // split & mend string to place style on current character
-            let split = `${enemyString.substring(0,i)}<span style="color:blue">${enemyString[i]}</span>${enemyString.substring(i+1)}`;
-            console.log("split",split)
+            // let split = `${enemyString.substring(0,i)}<span style="color:blue">${enemyString[i]}</span>${enemyString.substring(i+1)}`;
+            // console.log("split",split)
             console.log("i value", i)
-            document.querySelector("#enemies").innerHTML = split;
+            // document.querySelector("#enemies").innerHTML = split;
+            $("#enemies .enemyImageHolder").removeClass("attacking");
+            let currentEnemy = $("#enemies .enemyImageHolder").not(".blank").get(i);
+            $(currentEnemy).addClass("attacking");
     
             // determine enemy damage based on character type min & max
             let enemyType = enemyData.enemies[enemyString[i]].type;
