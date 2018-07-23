@@ -113,8 +113,10 @@ let howManyEventListener = function () {
         let currentValue = $(this).siblings(".quantifier").attr("value");
         if (/{\d+}/g.test(currentValue)) {
             $(this).siblings(".quantifier").attr("value", `{${e.target.value}}`).text(`{${e.target.value}}`);
+            matchEnemies();
         } else if (/{\d+,}/g.test(currentValue)) {
             $(this).siblings(".quantifier").attr("value", `{${e.target.value},}`).text(`{${e.target.value},}`);
+            matchEnemies();
         }
     })
 }
