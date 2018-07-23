@@ -56,7 +56,6 @@ let random = ()=>{
         enemiesDefault += Math.random().toString(36).slice(6)+" "; // 6 random alphanumeric characters per word
         // $("#enemies").append(Math.random().toString(36).slice(6)+" "); // 6 random alphanumeric characters per word
     }
-    // enemiesDefault = document.querySelector('#enemies').innerText;
     console.log("These are your enemies", enemiesDefault, enemiesDefault.length);
     
     let enemyImages = '';
@@ -84,6 +83,7 @@ let random = ()=>{
     }
     let enemyImageHolder = `<div id="enemyImageHolder">${enemyImages}</div>`;
     $("#enemies").append(enemyImageHolder);
+    enemiesDefaultHTML = $("#enemies").html();
 }
 
 let resetLevels = () => {

@@ -1,4 +1,5 @@
-let enemiesDefault = document.querySelector('#enemies').innerText; //holds original enemy array to allow resetting
+let enemiesDefault; //holds original enemy array as text to allow resetting
+let enemiesDefaultHTML; //holds original enemy array HTML
 let alert = document.querySelector("#alert"); // notification field
 
 // dev tool: produce random enemy
@@ -66,7 +67,7 @@ let removeListener = () => {
 $(".clear").on("click touchstart", function(e){
     alert.innerText = "";
     $("#hand .simple-grid").html("");
-    document.querySelector('#enemies').innerText = enemiesDefault;
+    $("#enemies").html(enemiesDefaultHTML);
 })
 
 // event listener for attack button
@@ -85,9 +86,7 @@ let matchEnemies = ()=> {
     console.log("playerpattern",playerPattern); //  e.g.:/\d/g
     let enemyMatch = enemiesDefault.match(playerPattern); // match enemy string with player's regex pattern
     if (!enemyMatch) {
-        //document.querySelector('#enemies').innerText = enemiesDefault;// set dom to regex results
-        //TODO: Do I need a variable to hold HTML version of #enemy content?
-
+        $("#enemies").html(enemiesDefaultHTML);
         alert.innerText = "No matches...";
         clearAlert();
         return;
@@ -147,14 +146,9 @@ let clearEnemies = (totalEnemyMatch)=> {
         }
     })
 
-    // let matched = new RegExp("<b>(.*?)<\/b>","g");
-    // console.log("match formula", matched)
-    // let remainingEnemies = totalEnemyMatch.replace(matched, ""); //remove matched enemies
-    // gameState.current.counter.enemies += totalEnemyMatch.match(matched).length; // save into global enemy counter
     console.log('regex results', remainingEnemies,remainingEnemies.length);
-    // document.querySelector('#enemies').innerText = remainingEnemies;// set dom to regex results
     enemiesDefault = remainingEnemies;
-    
+    enemiesDefaultHTML = $("#enemies").html();
 
     // check for end of level conditions
     if (remainingEnemies=='' || remainingEnemies==' ') {
@@ -184,7 +178,6 @@ let enemyAttack = ()=>{
         else {
             console.log("loop finisheed")
             clearAlert();
-            // document.querySelector("#enemies").innerHTML = enemyString;
             $("#enemies .enemyImageHolder").removeClass("attacking");
             let returnMessage = "Your Turn!";
             alertMessage(returnMessage);
@@ -192,15 +185,7 @@ let enemyAttack = ()=>{
         }
         if (enemyData.enemies[enemyString[i]]) {
 
-            console.log("0,i position",enemyString.substring(0,i))
-            console.log("i+2 position",enemyString.substring(i+2))
-            console.log("enemystring[i]",enemyString[i])
-            console.log("full enemystring",enemyString)
-            // split & mend string to place style on current character
-            // let split = `${enemyString.substring(0,i)}<span style="color:blue">${enemyString[i]}</span>${enemyString.substring(i+1)}`;
-            // console.log("split",split)
             console.log("i value", i)
-            // document.querySelector("#enemies").innerHTML = split;
             $("#enemies .enemyImageHolder").removeClass("attacking");
             let currentEnemy = $("#enemies .enemyImageHolder").not(".blank").get(i);
             $(currentEnemy).addClass("attacking");

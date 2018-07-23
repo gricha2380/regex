@@ -235,6 +235,7 @@
 
 #tutorial .container.auto {
   background: none;
+  text-align: center;
 }
 
 #tutorial .container .pagination {
