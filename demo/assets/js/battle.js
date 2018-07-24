@@ -85,13 +85,15 @@ let matchEnemies = ()=> {
     let playerPattern = new RegExp(computeValues(),"g"); //let playerPattern = /\d/g; // static test
     console.log("playerpattern",playerPattern); //  e.g.:/\d/g
     let enemyMatch = enemiesDefault.match(playerPattern); // match enemy string with player's regex pattern
-    if (!enemyMatch) {
+    let joined = enemyMatch.join(" ");
+    if (!enemyMatch || /^\s+$/.test(joined)) {
         $("#enemies").html(enemiesDefaultHTML);
         alert.innerText = "No matches...";
         clearAlert();
         return;
     }
     console.log("enemyMatch",enemyMatch); // e.g.:["1", "3", "3"]
+    console.log("enemyMatch regex test",enemyMatch.join(" "), enemyMatch.join(" ").length)
     
     // match each word and tag the matches
     enemyMatch.forEach(currentWord=>{
@@ -106,7 +108,7 @@ let matchEnemies = ()=> {
                     // go into game object, find score value for enemry type, call increaseScore(passvalue)
                     console.log(`currentLetter type is"${currentLetter}".`)
                     console.log("currentLetter at index",enemyData.enemies[currentLetter])
-                    let enemyType = enemyData.enemies[currentLetter].type.toLowerCase(); // enemy classification
+                    let enemyType = enemyData.enemies[currentLetter].typeShort; // enemy classification
                     gameState.holdPoints += enemyData[enemyType].points.normal; // points to be awarded for matching enemy
                     console.log("points added",enemyData[enemyType].points.normal)
                     enemyArray[x] = `<b>${currentLetter}</b>`; // flag enemy as matched
@@ -192,8 +194,7 @@ let enemyAttack = ()=>{
             $(currentEnemy).addClass("attacking");
     
             // determine enemy damage based on character type min & max
-            let enemyType = enemyData.enemies[enemyString[i]].type;
-            enemyType = enemyType.toLowerCase();
+            let enemyType = enemyData.enemies[enemyString[i]].typeShort;
             console.log("enemy type is", enemyType);
             let damageRange = enemyData[enemyType].damage;
             let damage = doDamage(damageRange.min,damageRange.max);
