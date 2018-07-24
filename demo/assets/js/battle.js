@@ -149,6 +149,7 @@ let clearEnemies = (totalEnemyMatch)=> {
     console.log('regex results', remainingEnemies,remainingEnemies.length);
     enemiesDefault = remainingEnemies;
     enemiesDefaultHTML = $("#enemies").html();
+    inspectEnemyListener();
 
     // check for end of level conditions
     if (remainingEnemies=='' || remainingEnemies==' ') {
@@ -226,6 +227,49 @@ let checkHealth = ()=>{
     console.log("checking health");
     if (gameState.damage >= gameState.health) gameOver();
 }
+
+let inspectEnemyListener = ()=>{
+    $(".enemyImageHolder").off();
+    $(".enemyImageHolder").on("click touchstart", function(){
+        if ($(this).find(".enemyImg").attr("data-value")) {
+            let imgVal = $(this).find(".enemyImg").attr("data-value");
+            // import enemies data.json
+            generateEnemyModal(enemyData["enemies"][imgVal]);
+        }
+    })
+}
+
+// enemy info modal
+let generateEnemyModal = (enemy)=>{
+    $("#tutorial").hide();
+    
+    let newDiv = document.createElement('div');
+    let modalName = "enemyModal";
+    newDiv.id = modalName;
+    newDiv.classList.add("modal");
+    newDiv.innerHTML =
+        `<div class="inner styled">
+            <div class="enemyName title">${enemy.name}</div>
+            <div class="enemyImage">${enemy.typeShort == "number" ? '<img src="assets/images/numbers/'+enemy.nameShort+'.svg">':'<img src="assets/images/letters/'+enemy.typeShort+'/'+enemy.nameShort+'.svg">'}</div>
+            <div class="enemyType"><span class="label">Type:</span> ${enemy.type}</div>
+            <div class="enemyPoints"><span class="label">Points:</span> ${enemyData[enemy.typeShort].points.normal}</div>
+            <div class="infoDescription">${/*enemy.description*/ bobRoss()}</div>
+        </div>
+        <div class="modalBG"></div>`
+    document.querySelector("body").appendChild(newDiv);
+    $(".modalBG").on("click",function(event){
+        document.querySelector('body').removeChild(document.querySelector("#"+modalName));
+        $(document).off();
+    })
+    $(document).on("keydown", function(event){
+        console.log(event.which)
+        if (event.which === 27) {
+            document.querySelector('body').removeChild(document.querySelector("#"+modalName));
+            $(document).off();
+        }
+    })
+}
+
 
 // clear notification area
 let clearAlert = ()=> {

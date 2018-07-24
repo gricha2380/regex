@@ -16,6 +16,24 @@
         margin: auto;    
         z-index: 1;
 
+        &.styled {
+            padding: 1rem;
+            background: #D8D8D8;
+            border: 2px solid #979797;
+            color: $grey;
+
+            .infoDescription {
+                margin-top: 1.5rem;
+            }
+            .title {
+                font-weight: bold;
+                color: $main;
+                font-size: 2rem;
+                text-align: center;
+                text-transform: none;
+            }
+        }
+
         label {
             width: 14rem;
             display: inline-block;
@@ -59,16 +77,7 @@
 
 #infoModal {
     .inner {
-        padding: 1rem;
-        background: #D8D8D8;
-        border: 2px solid #979797;
-        .infoName {
-            font-weight: bold;
-            color: $main;
-            text-transform: uppercase;
-            font-size: 2rem;
-            text-align: center;
-        }
+        
         .infoNickname {
             text-transform: initial;
             color: $grey;
@@ -79,10 +88,7 @@
             color: $grey;
         }
         .matchesWord {padding: 0 3rem;}
-        .infoDescription {
-            color: $grey;
-            margin-top: 1.5rem;
-        }
+        
         .infoExamples {
             color: $grey;
             margin-top: 2rem;
@@ -92,6 +98,14 @@
             color: $main;
             text-decoration: underline;
         }
+    }
+}
+
+#enemyModal {
+    .inner {width: 500px;}
+    .enemyImage {
+        float: right;
+        img {max-height: 7rem;}
     }
 }
 

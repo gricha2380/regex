@@ -82,8 +82,8 @@ let generateInfoModal = (card)=>{
     newDiv.id = "infoModal";
     newDiv.classList.add("modal");
     newDiv.innerHTML =
-        `<div class="inner">
-            <div class="infoName">${card.name} <span class="infoNickname">${card.nickname}</span></div>
+        `<div class="inner styled">
+            <div class="infoName title">${card.name} <span class="infoNickname">${card.nickname}</span></div>
             <div class="infoDescription">${card.description}</div>
             ${card.tips ? '<div class="infoTips">'+card.tips+'</div>' : ''}
             <div class="row infoExamples">

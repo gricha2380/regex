@@ -70,11 +70,11 @@ let random = ()=>{
         }
         else if (enemiesDefault[i] === enemiesDefault[i].toUpperCase()) {
             console.log("current capital letter", enemiesDefault[i])
-            enemyImages += `<div class="enemyImageHolder"><img src="assets/images/letters/upper/${enemiesDefault[i]}.svg" class="enemyImg upper letter ${enemiesDefault[i]}" data-value="${enemiesDefault[i]}"/></div>`
+            enemyImages += `<div class="enemyImageHolder"><img src="assets/images/letters/uppercase/${enemiesDefault[i]}.svg" class="enemyImg upper letter ${enemiesDefault[i]}" data-value="${enemiesDefault[i]}"/></div>`
         }
         else if (enemiesDefault[i] === enemiesDefault[i].toLowerCase()) {
             console.log("current lowercase letter", enemiesDefault[i])
-            enemyImages += `<div class="enemyImageHolder"><img src="assets/images/letters/lower/${enemiesDefault[i]}.svg" class="enemyImg lower letter ${enemiesDefault[i]}" data-value="${enemiesDefault[i]}"/></div>`
+            enemyImages += `<div class="enemyImageHolder"><img src="assets/images/letters/lowercase/${enemiesDefault[i]}.svg" class="enemyImg lower letter ${enemiesDefault[i]}" data-value="${enemiesDefault[i]}"/></div>`
         }
         else {
             console.log("current symbol", enemiesDefault[i])
@@ -84,6 +84,7 @@ let random = ()=>{
     let enemyImageHolder = `<div id="enemyImageHolder">${enemyImages}</div>`;
     $("#enemies").append(enemyImageHolder);
     enemiesDefaultHTML = $("#enemies").html();
+    inspectEnemyListener();
 }
 
 let resetLevels = () => {
@@ -316,7 +317,7 @@ let tutorialToggle = ()=>{
         $("#tutorial").toggle();
     })
 }
-tutorialToggle();
+// tutorialToggle();
 
 /* Utilities */
 let calculateTime = (start, end, pretty) => {
@@ -339,4 +340,20 @@ let addZero = (x)=> {
 
 let goHome = () => {
     // window.location.href = "index.html";
+}
+
+let bobRoss = ()=> {
+    let set = [
+        "Let that brush dance around there and play. Clouds are free they come and go as they please. Isn't that fantastic?",
+        "Let's give him a friend too. Everybody needs a friend. Let's put some happy little clouds in our world.",
+        "All you need to paint is a few tools, a little instruction, and a vision in your mind. You need the dark in order to show the light. The light is your friend. Preserve it.",
+        "Trees cover up a multitude of sins. Just make little strokes like that. There comes a nice little fluffer.",
+        "Every highlight needs it's own personal shadow. This is gonna be a happy little seascape. The more we do this - the more it will do good things to our heart.",
+        "You have freedom here. The only guide is your heart.",
+        "It is a lot of fun. This is your world. Just relax and let it flow. That easy.",
+        "The only prerequisite is that it makes you happy. If it makes you happy then it's good.",
+        "It's a very cold picture, I may have to go get my coat. It’s about to freeze me to death.",
+        "You want your tree to have some character. Make it special."
+    ]
+    return set[Math.floor(Math.random()*set.length) + 1];
 }

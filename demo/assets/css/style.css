@@ -57,6 +57,25 @@
   z-index: 1;
 }
 
+.modal .inner.styled {
+  padding: 1rem;
+  background: #D8D8D8;
+  border: 2px solid #979797;
+  color: grey;
+}
+
+.modal .inner.styled .infoDescription {
+  margin-top: 1.5rem;
+}
+
+.modal .inner.styled .title {
+  font-weight: bold;
+  color: #D82262;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: none;
+}
+
 .modal .inner label {
   width: 14rem;
   display: inline-block;
@@ -101,20 +120,6 @@
   position: absolute;
 }
 
-#infoModal .inner {
-  padding: 1rem;
-  background: #D8D8D8;
-  border: 2px solid #979797;
-}
-
-#infoModal .inner .infoName {
-  font-weight: bold;
-  color: #D82262;
-  text-transform: uppercase;
-  font-size: 2rem;
-  text-align: center;
-}
-
 #infoModal .inner .infoNickname {
   text-transform: initial;
   color: grey;
@@ -130,11 +135,6 @@
   padding: 0 3rem;
 }
 
-#infoModal .inner .infoDescription {
-  color: grey;
-  margin-top: 1.5rem;
-}
-
 #infoModal .inner .infoExamples {
   color: grey;
   margin-top: 2rem;
@@ -143,6 +143,18 @@
 #infoModal .inner m {
   color: #D82262;
   text-decoration: underline;
+}
+
+#enemyModal .inner {
+  width: 500px;
+}
+
+#enemyModal .enemyImage {
+  float: right;
+}
+
+#enemyModal .enemyImage img {
+  max-height: 7rem;
 }
 
 #gameModes {
@@ -898,4 +910,9 @@ body {
 #enemyImageHolder .enemyImg.blank {
   height: 1rem;
   display: block;
+}
+
+#enemyImageHolder .enemyImg:hover {
+  filter: saturate(191%);
+  cursor: pointer;
 }

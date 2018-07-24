@@ -56,5 +56,10 @@
         &.matched {
             
         }
+
+        &:hover {
+            filter: saturate(191%);
+            cursor: pointer;
+        }
     }
 }

@@ -39,601 +39,826 @@
         "a":{
             "image":"",
             "animation":"",
-            "description":"",
+            "name":"Lowercase a",
+            "nameShort": "a",
+            "description":"This is an A",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "b":{
             "image":"",
             "animation":"",
+            "name":"Lowercase b",
+            "nameShort":"b",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "c":{
             "image":"",
             "animation":"",
+            "name":"Lowercase c",
+            "nameShort":"c",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "d":{
             "image":"",
             "animation":"",
+            "name":"Lowercase d",
+            "nameShort":"d",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "e":{
             "image":"",
             "animation":"",
+            "name":"Lowercase e",
+            "nameShort":"e",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "f":{
             "image":"",
             "animation":"",
+            "name":"Lowercase f",
+            "nameShort":"f",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "g":{
             "image":"",
             "animation":"",
+            "name":"Lowercase g",
+            "nameShort":"g",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "h":{
             "image":"",
             "animation":"",
+            "name":"Lowercase h",
+            "nameShort":"h",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "i":{
             "image":"",
             "animation":"",
+            "name":"Lowercase i",
+            "nameShort":"i",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "j":{
             "image":"",
             "animation":"",
+            "name":"Lowercase j",
+            "nameShort":"j",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "k":{
             "image":"",
             "animation":"",
+            "name":"Lowercase k",
+            "nameShort":"k",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "l":{
             "image":"",
             "animation":"",
+            "name":"Lowercase l",
+            "nameShort":"l",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "m":{
             "image":"",
             "animation":"",
+            "name":"Lowercase m",
+            "nameShort":"m",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "n":{
             "image":"",
             "animation":"",
+            "name":"Lowercase n",
+            "nameShort":"n",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "o":{
             "image":"",
             "animation":"",
+            "name":"Lowercase o",
+            "nameShort":"o",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "p":{
             "image":"",
             "animation":"",
+            "name":"Lowercase p",
+            "nameShort":"p",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "q":{
             "image":"",
             "animation":"",
+            "name":"Lowercase q",
+            "nameShort":"q",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "r":{
             "image":"",
             "animation":"",
+            "name":"Lowercase r",
+            "nameShort":"r",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "s":{
             "image":"",
             "animation":"",
+            "name":"Lowercase s",
+            "nameShort":"s",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "t":{
             "image":"",
             "animation":"",
+            "name":"Lowercase t",
+            "nameShort":"t",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "u":{
             "image":"",
             "animation":"",
+            "name":"Lowercase u",
+            "nameShort":"u",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "v":{
             "image":"",
             "animation":"",
+            "name":"Lowercase v",
+            "nameShort":"v",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "w":{
             "image":"",
             "animation":"",
+            "name":"Lowercase w",
+            "nameShort":"w",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "x":{
             "image":"",
             "animation":"",
+            "name":"Lowercase x",
+            "nameShort":"x",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "y":{
             "image":"",
             "animation":"",
+            "name":"Lowercase y",
+            "nameShort":"y",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "z":{
             "image":"",
             "animation":"",
+            "name":"Lowercase z",
+            "nameShort":"z",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Lowercase"
+            "typeShort":"lowercase",
+            "type":"Alphabetical Lowercase"
         },
         "A":{
             "image":"",
             "animation":"",
+            "name":"Uppercase A",
+            "nameShort":"A",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "B":{
             "image":"",
             "animation":"",
+            "name":"Uppercase B",
+            "nameShort":"B",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "C":{
             "image":"",
             "animation":"",
+            "name":"Uppercase C",
+            "nameShort":"C",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "D":{
             "image":"",
             "animation":"",
+            "name":"Uppercase D",
+            "nameShort":"D",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "E":{
             "image":"",
             "animation":"",
+            "name":"Uppercase E",
+            "nameShort":"E",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "F":{
             "image":"",
             "animation":"",
+            "name":"Uppercase F",
+            "nameShort":"F",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "G":{
             "image":"",
             "animation":"",
+            "name":"Uppercase G",
+            "nameShort":"G",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "H":{
             "image":"",
             "animation":"",
+            "name":"Uppercase H",
+            "nameShort":"H",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "I":{
             "image":"",
             "animation":"",
+            "name":"Uppercase I",
+            "nameShort":"I",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "J":{
             "image":"",
             "animation":"",
+            "name":"Uppercase J",
+            "nameShort":"J",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "K":{
             "image":"",
             "animation":"",
+            "name":"Uppercase K",
+            "nameShort":"K",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "L":{
             "image":"",
             "animation":"",
+            "name":"Uppercase L",
+            "nameShort":"L",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "M":{
             "image":"",
             "animation":"",
+            "name":"Uppercase M",
+            "nameShort":"M",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "N":{
             "image":"",
             "animation":"",
+            "name":"Uppercase N",
+            "nameShort":"N",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "O":{
             "image":"",
             "animation":"",
+            "name":"Uppercase O",
+            "nameShort":"O",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "P":{
             "image":"",
             "animation":"",
+            "name":"Uppercase P",
+            "nameShort":"P",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "Q":{
             "image":"",
             "animation":"",
+            "name":"Uppercase Q",
+            "nameShort":"Q",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "R":{
             "image":"",
             "animation":"",
+            "name":"Uppercase R",
+            "nameShort":"R",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "S":{
             "image":"",
             "animation":"",
+            "name":"Uppercase S",
+            "nameShort":"S",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "T":{
             "image":"",
             "animation":"",
+            "name":"Uppercase T",
+            "nameShort":"T",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "U":{
             "image":"",
             "animation":"",
+            "name":"Uppercase U",
+            "nameShort":"U",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "V":{
             "image":"",
             "animation":"",
+            "name":"Uppercase V",
+            "nameShort":"V",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "W":{
             "image":"",
             "animation":"",
+            "name":"Uppercase W",
+            "nameShort":"W",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "X":{
             "image":"",
             "animation":"",
+            "name":"Uppercase X",
+            "nameShort":"X",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "Y":{
             "image":"",
             "animation":"",
+            "name":"Uppercase Y",
+            "nameShort":"Y",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "Z":{
             "image":"",
             "animation":"",
+            "name":"Uppercase Z",
+            "nameShort":"Z",
             "description":"",
             "height":50,
             "width":50,
-            "type":"Uppercase"
+            "typeShort":"uppercase",
+            "type":"Alphabetical Uppercase"
         },
         "0":{
             "image":"",
             "animation":"",
+            "name":"Zero",
+            "nameShort":"0",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"number",
             "type":"Number"
         },
         "1":{
             "image":"",
             "animation":"",
+            "name":"One",
+            "nameShort":"0",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"number",
             "type":"Number"
         },
         "2":{
             "image":"",
             "animation":"",
+            "name":"Two",
+            "nameShort":"2",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"number",
             "type":"Number"
         },
         "3":{
             "image":"",
             "animation":"",
+            "name":"Three",
+            "nameShort":"3",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"number",
             "type":"Number"
         },
         "4":{
             "image":"",
             "animation":"",
+            "name":"Four",
+            "nameShort":"4",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"number",
             "type":"Number"
         },
         "5":{
             "image":"",
             "animation":"",
+            "name":"Five",
+            "nameShort":"5",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"number",
             "type":"Number"
         },
         "6":{
             "image":"",
             "animation":"",
+            "name":"Six",
+            "nameShort":"6",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"number",
             "type":"Number"
         },
         "7":{
             "image":"",
             "animation":"",
+            "name":"Seven",
+            "nameShort":"7",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"number",
             "type":"Number"
         },
         "8":{
             "image":"",
             "animation":"",
+            "name":"Eight",
+            "nameShort":"8",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"number",
             "type":"Number"
         },
         "9":{
             "image":"",
             "animation":"",
+            "name":"Nine",
+            "nameShort":"9",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"number",
             "type":"Number"
         },
         "!":{
             "image":"",
             "animation":"",
+            "name":"",
+            "nameShort":"",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"symbol",
             "type":"Symbol"
         },
         "@":{
             "image":"",
             "animation":"",
+            "name":"At",
+            "nameShort":"@",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"symbol",
             "type":"Symbol"
         },
         ".":{
             "image":"",
             "animation":"",
+            "name":"Period",
+            "nameShort":".",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"symbol",
             "type":"Symbol"
         },
         "?":{
             "image":"",
             "animation":"",
+            "name":"Question Mark",
+            "nameShort":"?",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"symbol",
             "type":"Symbol"
         },
         "$":{
             "image":"",
             "animation":"",
+            "name":"Dollar Sign",
+            "nameShort":"$",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"symbol",
             "type":"Symbol"
         },
         "#":{
             "image":"",
             "animation":"",
+            "name":"Pound Sign",
+            "nameShort":"#",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"symbol",
             "type":"Symbol"
         },
         "&":{
             "image":"",
             "animation":"",
+            "name":"",
+            "nameShort":"",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"symbol",
             "type":"Symbol"
         },
         "'":{
             "image":"",
             "animation":"",
+            "name":"",
+            "nameShort":"",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"symbol",
             "type":"Symbol"
         },
         "\"":{
             "image":"",
             "animation":"",
+            "name":"",
+            "nameShort":"",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"symbol",
             "type":"Symbol"
         },
         "+":{
             "image":"",
             "animation":"",
+            "name":"",
+            "nameShort":"",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"symbol",
             "type":"Symbol"
         },
         "-":{
             "image":"",
             "animation":"",
+            "name":"",
+            "nameShort":"",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"symbol",
             "type":"Symbol"
         },
         ":":{
             "image":"",
             "animation":"",
+            "name":"",
+            "nameShort":"",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"symbol",
             "type":"Symbol"
         },
         ";":{
             "image":"",
             "animation":"",
+            "name":"",
+            "nameShort":"",
             "description":"",
             "height":50,
             "width":50,
+            "typeShort":"symbol",
             "type":"Symbol"
         }
     }
