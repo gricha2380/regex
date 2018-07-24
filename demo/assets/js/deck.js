@@ -29,7 +29,7 @@ let loadActiveCategory = ()=> {
     for (card in deckData[gameState.activeCategory]) {
         $("#cards").append(`
             <div class="cardHolder">
-                <button class="card" value="${deckData[gameState.activeCategory][card].nickname}" id="${card}" data-name="${card}" data-category="${gameState.activeCategory}">
+                <button class="card" value="${deckData[gameState.activeCategory][card].nickname}" data-name="${card}" data-category="${gameState.activeCategory}">
                     <span class="name">${deckData[gameState.activeCategory][card].name}</span>
                     <span>${deckData[gameState.activeCategory][card].nickname}</span>
                     ${deckData[gameState.activeCategory][card].type == "auto" ? 

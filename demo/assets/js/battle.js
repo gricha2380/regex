@@ -19,7 +19,7 @@ let alertMessage=(message)=> {
 // load value for selected card
 let processCards = (cardValue) => {
     $(".card").on("click touchstart", function(e){
-        let cardName = $(this)[0].id; // jquery stores $(this) as an array
+        let cardName = $(this).attr("data-name"); // jquery stores $(this) as an array
         let mode = $(this).find(".cardClass").attr("value");
         if ($(this).find(".cardClass").attr("value")=="manual") {
             // manual cards require user input
@@ -122,8 +122,8 @@ let matchEnemies = ()=> {
     console.log("all of enemyArray",enemyArray);
     let matchedEnemies = enemyArray.toString().replace(/,+/g,''); //convert array to string and remove commas
     console.log("matched enemies", matchedEnemies)
-    // document.querySelector('#enemies').innerHTML = enemies;
     document.querySelector("#attack").disabled = false;
+    inspectEnemyListener();
 }    
 
 let endTurn = ()=>{
@@ -132,10 +132,8 @@ let endTurn = ()=>{
 }
 
 let clearEnemies = (totalEnemyMatch)=> {
-    //TODO: Rewrite to check for .matched class instead of <b> tags
 
     $("#hand .simple-grid").html(""); // clear hand
-    // totalEnemyMatch = document.querySelector("#enemies").innerHTML; // use ("#enemies").innerText for plain characters
     let remainingEnemies = '';
     gameState.current.counter.enemies += $("#enemies .enemyImageHolder.matched").length;
     totalEnemyMatch = $("#enemies .enemyImageHolder").each(function(){
