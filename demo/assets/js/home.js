@@ -32,4 +32,11 @@ let clickClose= ()=> {
         $("#gameModes").removeClass("showModes");
     })
 }
-// clickClose();
+
+
+// set game mode to data-mode of clicked link
+$(".play").on("click", function(event){
+    event.preventDefault();
+    window.localStorage.setItem('gameMode', JSON.stringify($(this).attr("data-mode")));
+    window.location = `battle.html`;
+})

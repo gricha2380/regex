@@ -26,7 +26,7 @@
                 {
                     "name":"1",
                     "number":0,
-                    "description":"Humble Beginnings...",
+                    "description":"Warm Up...",
                     "tutorial": {
                         "enabled": true,
                         "counter":  0,
@@ -57,13 +57,21 @@
                 }
             ]
         },
-        "tutorial":{
+        "story":{
             "levels":[
                 {
                     "name":"1",
                     "number":0,
                     "description":"Humble Beginnings...",
-                    "tutorial":[],
+                    "tutorial": {
+                        "enabled": true,
+                        "counter":  0,
+                        "dialogue":[
+                            "Use your deck of PATTERNS to match as many monsters as you can in a single turn.",
+                            "Click any pattern to add it to your hand.",
+                            "When you're ready, press ATTACK. The remaining enemies will have a chance to retaliate!"
+                        ]
+                    },
                     "cutScene":{
                         "enabled":true,
                         "dialogue":[
@@ -72,7 +80,7 @@
                     },
                     "randomizeEnemies":true,
                     "enemyMax":0,
-                    "enemies":[],
+                    "enemies":["hello world","welcome"],
                     "cards":{
                         "available": 0,
                         "categories": 0

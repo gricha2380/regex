@@ -17,16 +17,35 @@ let loadGameState = ()=>{
     .then( (res) => {
         gameState = res;
         console.log("gameState here", enemyData);
-        resetLevels();
     }).then(res => {
-        resetHealth();
-        resetScore();
-        gameState.current.timer.global.start = new Date();
-        console.log("start timetamp",gameState.current.timer.global.start) // remove later
-        random();
+        // look in localstorge for current level
+        // if present set gameState.current.level = localstorage
+        // elsewhere... when level completed, add new level to localstorage
+        findGameMode();
+        if (window.localStorage.getItem('currentLevel')) {
+            currentLevel = window.localStorage.getItem('currentLevel');
+        }
+        if (!currentLevel || currentLevel===0) {
+            resetLevels();
+            resetHealth();
+            resetScore();
+            gameState.current.timer.global.start = new Date();
+            console.log("start timetamp",gameState.current.timer.global.start) // remove later   
+            eraseSavedLevelProgress();
+        }
+        document.querySelector("#level .value").innerHTML = `${gameState.current.level.name}: ${gameState.current.level.description}`;
         tutorialText();
         dialogue = gameState.mode[currentMode].levels[currentLevel].tutorial.dialogue;
         counter = gameState.mode[currentMode].levels[currentLevel].tutorial.counter;
+
+        if (gameState.current.mode == "arcade"){
+            random();
+        }
+        else if (gameState.current.mode == "story"){
+            // load level specific words
+            loadLevelEnemies();
+        }
+
     })
 }
 
@@ -39,7 +58,6 @@ let resetHealth = () => {
 
 let resetScore = () => {
     gameState.current.score = 0;
-    // gameState.current.level = 0;
     document.querySelector("#score .value").innerText = 0;
 }
 
@@ -87,15 +105,69 @@ let random = ()=>{
     inspectEnemyListener();
 }
 
+let loadLevelEnemies = ()=>{
+    let enemyArray = gameState.mode[gameState.current.mode].levels[currentLevel].enemies;
+    console.log("these are your opponents",enemyArray);
+    document.querySelector('#enemies').innerText = ''; // do I still need this?
+    enemiesDefault = '';
+    if (gameState.mode[gameState.current.mode].levels[currentLevel].randomizeEnemies) {
+        enemiesDefault = enemyArray[Math.floor((Math.random() * enemyArray.length) + 0)];
+    } else {
+        enemiesDefault = enemyArray[0];
+    }
+    let enemyImages = '';
+    for (i=0;i<enemiesDefault.length;i++) {
+        if (enemiesDefault[i] === " ") {
+            console.log("current blank space", enemiesDefault[i])
+            enemyImages += `<div class="enemyImageHolder blank"><span class="enemyImg blank"></span></div>`;
+        }
+        else if (!isNaN(enemiesDefault[i])) {
+            console.log("current number", enemiesDefault[i])
+            enemyImages += `<div class="enemyImageHolder"><img src="assets/images/numbers/${enemiesDefault[i]}.svg" class="enemyImg number ${enemiesDefault[i]}" data-value="${enemiesDefault[i]}" /></div>`
+        }
+        else if (enemiesDefault[i] === enemiesDefault[i].toUpperCase()) {
+            console.log("current capital letter", enemiesDefault[i])
+            enemyImages += `<div class="enemyImageHolder"><img src="assets/images/letters/uppercase/${enemiesDefault[i]}.svg" class="enemyImg upper letter ${enemiesDefault[i]}" data-value="${enemiesDefault[i]}"/></div>`
+        }
+        else if (enemiesDefault[i] === enemiesDefault[i].toLowerCase()) {
+            console.log("current lowercase letter", enemiesDefault[i])
+            enemyImages += `<div class="enemyImageHolder"><img src="assets/images/letters/lowercase/${enemiesDefault[i]}.svg" class="enemyImg lower letter ${enemiesDefault[i]}" data-value="${enemiesDefault[i]}"/></div>`
+        }
+        else {
+            console.log("current symbol", enemiesDefault[i])
+            enemyImages += `<div class="enemyImageHolder"><img src="assets/images/symbols/${enemiesDefault[i]}.svg" class="enemyImg symbol ${enemiesDefault[i]}" data-value="${enemiesDefault[i]}"/></div>`
+        }
+    }
+    let enemyImageHolder = `<div id="enemyImageHolder">${enemyImages}</div>`;
+    $("#enemies").append(enemyImageHolder);
+    enemiesDefaultHTML = $("#enemies").html();
+    inspectEnemyListener();
+}
+
 let resetLevels = () => {
-    // restart from first level
-    gameState.current.mode = "arcade"; //TODO: Let user pick mode from start screen
-    gameState.current.level = gameState.mode[gameState.current.mode].levels[0];
-    document.querySelector("#level .value").innerHTML = `${gameState.current.level.name}: ${gameState.current.level.description}`;
+    currentLevel = 0;
+    gameState.current.level = gameState.mode[gameState.current.mode].levels[0]; // restart from first level
+}
+
+let eraseSavedLevelProgress = ()=>{
+    window.localStorage.removeItem('currentLevel');
 }
 
 let restartLevel = ()=> {
     //restart current level
+}
+
+let findGameMode = ()=> {
+    if (window.localStorage.getItem('gameMode')) {
+        gameState.current.mode = JSON.parse(window.localStorage.getItem('gameMode'));
+        console.log('Found existing gameMode from localStorage.',gameState.current.mode);
+    } 
+    else {
+        console.log('No game mode, defaulting to arcade.');
+        gameState.current.mode = "arcade";
+    }
+    
+    $(".gameType").text(`${gameState.current.mode} mode`);
 }
 
 //level cleared
@@ -141,7 +213,8 @@ let beatLevel = ()=> {
     document.querySelector("#goHomeModal").addEventListener("click", (event)=>{
         console.log("going home");
         event.preventDefault();
-        saveSession();
+        // saveSession(); TODO: Replace with a version that saves info without resetting
+        continueSession();
         window.location.href = "index.html";
     })
 }
@@ -234,11 +307,6 @@ else {
 let saveSession = () => {
     console.log("saving game data");
     
-    // gameState.current.timer.global.end = new Date();
-    // console.log("end time", gameState.current.timer.global.end)
-
-    // calculate game duration
-    
     // look for game mode inside savedSessions
     console.log("is there a savedsession for category?", gameState.current.mode,savedSessions,typeof savedSessions, savedSessions[gameState.current.mode], typeof savedSessions[gameState.current.mode])
     if (!savedSessions[gameState.current.mode]) {
@@ -258,6 +326,12 @@ let saveSession = () => {
         }
     )
     window.localStorage.setItem('savedSessions', JSON.stringify(savedSessions));
+    eraseSavedLevelProgress();
+}
+
+let continueSession = ()=>{
+    currentLevel++;
+    window.localStorage.setItem('currentLevel',[gameState.current.level]+1);
 }
 
 let tutorialText = () => {
