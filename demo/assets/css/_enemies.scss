@@ -7,6 +7,10 @@
         position: relative;
         transition: $transitionSpeed;
 
+        &.blank {
+            display: block;
+        }
+
         &.matched {
 
             &::before {

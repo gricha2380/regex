@@ -880,6 +880,10 @@ body {
   transition: 0.5s;
 }
 
+#enemyImageHolder .enemyImageHolder.blank {
+  display: block;
+}
+
 #enemyImageHolder .enemyImageHolder.matched::before {
   position: absolute;
   content: "";
