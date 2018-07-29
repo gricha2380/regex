@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="54px" viewBox="0 0 42 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>locked</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M25.0606061,66.2 L54.9393939,66.2 L57,66.2 L57,64.1 L57,39.95 L57,37.325 L54.9393939,37.325 L51.3333333,37.325 L51.3333333,31.55 C51.3333333,25.180175 46.2484444,20 40,20 C33.7496667,20 28.6666667,25.180175 28.6666667,31.55 L28.6666667,37.325 L25.0606061,37.325 L23,37.325 L23,38.9 L23,64.1 L23,66.2 L25.0606061,66.2 Z M37.1111111,47.0073529 C37.1111111,45.3196941 38.4551111,43.95 40.1111111,43.95 C41.7641111,43.95 43.1111111,45.3196941 43.1111111,47.0073529 C43.1111111,48.1324588 42.5021111,49.1108118 41.6111111,49.6366765 L41.6111111,57.7080882 C41.6111111,58.5488603 40.9361111,59.2367647 40.1111111,59.2367647 C39.2831111,59.2367647 38.6111111,58.5488603 38.6111111,57.7080882 L38.6111111,49.6366765 C37.7171111,49.1108118 37.1111111,48.1324588 37.1111111,47.0073529 L37.1111111,47.0073529 Z M40,23.48125 C44.6103167,23.48125 48.3611111,26.9466642 48.3611111,31.2062036 L48.3611111,37.3300018 L31.6388889,37.3300018 L31.6388889,31.2062036 C31.6388889,26.9466642 35.3880111,23.48125 40,23.48125 Z" id="path-1"></path>
+        <filter x="-20.6%" y="-10.8%" width="141.2%" height="130.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="deck/card-...-locked" transform="translate(-17.000000, -15.000000)">
+            <g id="locked" transform="translate(-2.000000, -3.000000)">
+                <g>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#00ABFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
