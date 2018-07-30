@@ -294,6 +294,7 @@ body {
   height: 70px;
   width: 70px;
   vertical-align: bottom;
+  position: relative;
 }
 
 .cardHolder .card span {
@@ -308,6 +309,23 @@ body {
 .cardHolder .card:hover, .cardHolder .card.hover {
   cursor: pointer;
   background: #cccc00;
+}
+
+.cardHolder .card.locked::before {
+  content: "";
+  background: url("../images/locked.svg");
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-position: center 15px;
+  left: 0;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+}
+
+.cardHolder .card.locked:hover {
+  cursor: not-allowed;
 }
 
 .infoIcon {
@@ -536,6 +554,11 @@ body {
 
 #buttonHolder a {
   margin: auto;
+}
+
+#buttonHolder a button {
+  margin: .5rem 0;
+  width: 10rem;
 }
 
 #buttonHolder #play {

@@ -37,7 +37,7 @@
                         ]
                     },
                     "cutScene":{
-                        "enabled":true,
+                        "enabled":false,
                         "dialogue":[
                             {"title":"","description":""}
                         ]
@@ -52,7 +52,8 @@
                     "deck":{
                         "max":0,
                         "default":"",
-                        "active":[]
+                        "active":[],
+                        "locked":["Any Char","Any Word"]
                     }
                 }
             ]
@@ -75,12 +76,12 @@
                     "cutScene":{
                         "enabled":true,
                         "dialogue":[
-                            {"title":"","description":""}
+                            {"title":"","description":"","image":"gregor"}
                         ]
                     },
                     "randomizeEnemies":true,
                     "enemyMax":0,
-                    "enemies":["hello world","welcome"],
+                    "enemies":[{"enemies":"hello world","goal":""},{"enemies":"welcome","goal":""}],
                     "cards":{
                         "available": 0,
                         "categories": 0
@@ -88,7 +89,40 @@
                     "deck":{
                         "max":0,
                         "default":"",
-                        "active":[]
+                        "active":[],
+                        "locked":["Any Word","Any Char","Not White Space","White Space"]
+                    }
+                },
+                {
+                    "name":"2",
+                    "number":1,
+                    "description":"Humble Beginnings...",
+                    "tutorial": {
+                        "enabled": true,
+                        "counter":  0,
+                        "dialogue":[
+                            "Goal: Match first word only!",
+                            "Use your ANCHORS"
+                        ]
+                    },
+                    "cutScene":{
+                        "enabled":false,
+                        "dialogue":[
+                            {"title":"","description":"","image":"gregor"}
+                        ]
+                    },
+                    "randomizeEnemies":true,
+                    "enemyMax":0,
+                    "enemies":[{"enemies":"double trouble","goal":"trouble"},{"enemies":"first things first","goal":"things first"}],
+                    "cards":{
+                        "available": 0,
+                        "categories": 0
+                    },
+                    "deck":{
+                        "max":0,
+                        "default":"",
+                        "active":[],
+                        "locked":[]
                     }
                 }
             ]
