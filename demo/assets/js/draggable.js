@@ -54,18 +54,22 @@ $("#hand").on("lmddbeforestart", ()=>{
 $("#computeValues").on("click", ()=> {
     // grab value field from all div's in .simple-grid, including quantifiers
     // 
-    computeValues();
+    computeHand();
     // compute Values and send to regex processor?
 })
 
 
-let computeValues = () => {
+let computeHand = () => {
     let values = '';
-    $(".simple-grid .include").each(function (i, val){
-        let value = $(this).attr("value");
-        console.log("grid item value", value)
-        values += value;
-    })   
-    console.log("all values",values);
-    return values;
+    if ($(".simple-grid .include")) {
+        $(".simple-grid .include").each(function (i, val){
+            let value = $(this).attr("value");
+            console.log("grid item value", value)
+            values += value;
+        })   
+        console.log("Values in player hand",values);
+        return values;
+    } else {
+        return '';
+    }
 }

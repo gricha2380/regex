@@ -18,7 +18,7 @@ let alertMessage=(message)=> {
 
 // load value for selected card
 let processCards = (cardValue) => {
-    $(".card").on("click touchstart", function(e){
+    $(".card:not(.locked)").on("click touchstart", function(e){
         let cardName = $(this).attr("data-name"); // jquery stores $(this) as an array
         let mode = $(this).find(".cardClass").attr("value");
         if ($(this).find(".cardClass").attr("value")=="manual") {
@@ -59,7 +59,7 @@ let removeListener = () => {
         console.log("this is my parent", $(this).parent())
         $(this).parent().remove();
         addQuantifiers();
-        matchEnemies();
+        matchEnemies(); // currently caues infinite loop
     })
 }
 
@@ -80,51 +80,78 @@ document.querySelector("#attack").addEventListener("click", e=>{
 let matchEnemies = ()=> {
     $("#enemyImageHolder .enemyImageHolder").removeClass("matched");
     gameState.holdPoints = 0; // holds points awarded each turn
-    let enemyArray = enemiesDefault.split(""); // e.g.:["a", "b", "e", "1", "3", "3"]
-    console.log("enemyArray content",enemyArray);
-    let playerPattern = new RegExp(computeValues(),"g"); //let playerPattern = /\d/g; // static test
-    console.log("playerpattern",playerPattern); //  e.g.:/\d/g
-    let enemyMatch = enemiesDefault.match(playerPattern); // match enemy string with player's regex pattern
-    let joined = enemyMatch.join(" ");
-    if (!enemyMatch || /^\s+$/.test(joined)) {
+
+    // let enemiesDefault = "hello world"; //temp variable
+    // let playerPattern = /^hello w/igm; //temp variable
+    // let playerPattern = new RegExp("[a-e]?","gim");
+    let playerPattern = new RegExp(computeHand(),"g"); // gim = expression flags. global, case insensitive, multiline
+    console.log("playerPattern regex",playerPattern)
+    let matchSet = [];
+    let resultArray = enemiesDefault.split("");
+    
+   console.log("current value of enemiesDefault",enemiesDefault)
+   console.log("playerPattern source",playerPattern.source,playerPattern.source.length)
+    if (playerPattern.source.length > 0 && playerPattern.source !== "(?:)") {
+        let counter = 0; // to prevent infinite loop
+        
+        // iterate through each 
+        while ((match = playerPattern.exec(enemiesDefault)) != null) {
+            console.log("in while loop",match,match.index);
+            console.log("match char", match[0]);
+            if (match[0] !== " ") {
+                console.log("not blank, pushing to matchSet...");
+                
+                matchSet.push({"start":match.index,"end":playerPattern.lastIndex});
+            }
+            console.log("counter value", counter);
+            counter++;
+            if (counter >=20) {
+                console.log("Too many loops. Aborting.");
+                break
+            }
+        }
+        
+    } else {
+        console.log("there was no playerPattern",playerPattern,playerPattern.length)
+    }
+
+    console.log("pattern matches", matchSet, matchSet.length); // matchSet e.g.: [{start: 0, end: 5}]
+    if (matchSet.length==0 || !matchSet) {
         $("#enemies").html(enemiesDefaultHTML);
         alert.innerText = "No matches...";
         clearAlert();
         return;
     }
-    console.log("enemyMatch",enemyMatch); // e.g.:["1", "3", "3"]
-    console.log("enemyMatch regex test",enemyMatch.join(" "), enemyMatch.join(" ").length)
-    
-    // match each word and tag the matches
-    enemyMatch.forEach(currentWord=>{
-        console.log("currentWord contents",currentWord,currentWord.length);
-        console.log("enemy array before action",enemyArray,enemyArray.length)
-        
-        // parse each character in the current word
-        enemyArray.forEach((currentLetter,x) => {
-            for(let i=0;i<currentWord.length;i++) {
-                // find current character in enemy array
-                if(currentWord[i]===enemyArray[x] && enemyArray[x]!==" "){
-                    // go into game object, find score value for enemry type, call increaseScore(passvalue)
-                    console.log(`currentLetter type is"${currentLetter}".`)
-                    console.log("currentLetter at index",enemyData.enemies[currentLetter])
+    else {
+        // attach matched tag to matching enemies
+        console.log("resultArray",resultArray, resultArray.length) // e.g.: ["w", "e", "l", "c", "o", "m", "e"]
+        for (let i=0;i<resultArray.length;i++) {
+            // if index of current resultArray value is present in any of the ranges from matchSet array
+
+            // do for loop for each item in matchSet
+           console.log("matchSet here",matchSet)
+           for (matchRange in matchSet) {
+                console.log("matchset start mostly",matchSet[matchRange])
+                console.log("current matchSet start + end",matchSet[matchRange].start,matchSet[matchRange].end)
+
+                if (i >= matchSet[matchRange].start && i < matchSet[matchRange].end && resultArray[i] !== ' ') {
+                    console.log("match found",resultArray[i],matchSet[matchRange].start, matchSet[matchRange].end);
+                    let currentMatch = $("#enemyImageHolder .enemyImageHolder").get(i); 
+
+                    $(currentMatch).addClass("matched");
+                    console.log("here is currentmatch",currentMatch)
+                    let currentLetter = $(currentMatch).find("img").attr("data-value");
+                    console.log("currentLetter",currentLetter);
                     let enemyType = enemyData.enemies[currentLetter].typeShort; // enemy classification
                     gameState.holdPoints += enemyData[enemyType].points.normal; // points to be awarded for matching enemy
-                    console.log("points added",enemyData[enemyType].points.normal)
-                    enemyArray[x] = `<b>${currentLetter}</b>`; // flag enemy as matched
-                    let currentMatch = $("#enemyImageHolder .enemyImageHolder").get(x); 
-                    $(currentMatch).addClass("matched");
+                    console.log("points added",enemyData[enemyType].points.normal);
                 }
-            }
-            console.log("About to add enemyArray[x]",enemyArray[x])
-        });
-    })
-    console.log("all of enemyArray",enemyArray);
-    let matchedEnemies = enemyArray.toString().replace(/,+/g,''); //convert array to string and remove commas
-    console.log("matched enemies", matchedEnemies)
-    document.querySelector("#attack").disabled = false;
-    inspectEnemyListener();
-}    
+           }
+        }
+        document.querySelector("#attack").disabled = false;
+        inspectEnemyListener();
+    }
+}  
 
 let endTurn = ()=>{
     clearEnemies();
@@ -148,17 +175,36 @@ let clearEnemies = (totalEnemyMatch)=> {
 
     console.log('regex results', remainingEnemies,remainingEnemies.length);
     enemiesDefault = remainingEnemies;
+    console.log("enemiesDefault is now",enemiesDefault);
     enemiesDefaultHTML = $("#enemies").html();
     inspectEnemyListener();
 
     // check for end of level conditions
+
+
     if (remainingEnemies=='' || remainingEnemies==' ') {
-        console.log("no enemies left")
-        document.querySelector("#enemies").innerText = "All Clear!";
-        setTimeout(function() {
-            document.querySelector("#enemies").innerText = "";
-            beatLevel();
-          }, 1000);
+
+        console.log("no enemies left");
+        console.log("checking for other waves");
+
+        if (currentWave+1 == enemyArray.length) {
+            
+            document.querySelector("#enemies").innerText = "All Clear!";
+            setTimeout(function() {
+                document.querySelector("#enemies").innerText = "";
+                beatLevel();
+            }, 1000);
+        }
+        else {
+            document.querySelector("#enemies").innerText = "All Clear!";
+            setTimeout(function() {
+                alertMessage("Prepare for next wave...");
+                document.querySelector("#enemies").innerText = "";
+                currentWave++;
+                loadLevelEnemies();
+            }, 1000);
+            
+        }
     }
     else {enemyAttack()} // otherwise let enemies attack
 }
@@ -227,6 +273,7 @@ let checkHealth = ()=>{
     if (gameState.damage >= gameState.health) gameOver();
 }
 
+// had to move this to bott0om of game.js for unknown reasons..
 let inspectEnemyListener = ()=>{
     $(".enemyImageHolder").off();
     $(".enemyImageHolder").on("click touchstart", function(){

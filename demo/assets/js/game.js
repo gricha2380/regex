@@ -1,7 +1,7 @@
 let gameState = {};
-let enemyData = {};
+let enemyData = {}, enemyArray;
 let savedSessions = [];
-let currentMode, currentLevel;
+let currentMode, currentLevel, currentWave;
 let dialogue, counter;
 
 fetch("../enemies/data.json")
@@ -23,9 +23,12 @@ let loadGameState = ()=>{
         // elsewhere... when level completed, add new level to localstorage
         findGameMode();
         if (window.localStorage.getItem('currentLevel')) {
-            currentLevel = window.localStorage.getItem('currentLevel');
+            // currentLevel = window.localStorage.getItem('currentLevel');
+            currentLevel = JSON.parse(window.localStorage.getItem('currentLevel'));
+            console.log("I found a current level",currentLevel)
         }
         if (!currentLevel || currentLevel===0) {
+            console.log("starting level fresh...")
             resetLevels();
             resetHealth();
             resetScore();
@@ -42,6 +45,7 @@ let loadGameState = ()=>{
             random();
         }
         else if (gameState.current.mode == "story"){
+            currentWave = gameState.mode[gameState.current.mode].levels[currentLevel].currentWave;
             // load level specific words
             loadLevelEnemies();
         }
@@ -106,16 +110,25 @@ let random = ()=>{
 }
 
 let loadLevelEnemies = ()=>{
-    let enemyArray = gameState.mode[gameState.current.mode].levels[currentLevel].enemies;
-    console.log("these are your opponents",enemyArray);
-    document.querySelector('#enemies').innerText = ''; // do I still need this?
+    enemyArray = gameState.mode[gameState.current.mode].levels[currentLevel].waves;
+    console.log("these are your enemyArray opponents",enemyArray);
+    document.querySelector('#enemies').innerText = ''; // clear previous enemies from screen
     enemiesDefault = '';
+
+    
+    // choose random enemy if toggle is on
     if (gameState.mode[gameState.current.mode].levels[currentLevel].randomizeEnemies) {
-        enemiesDefault = enemyArray[Math.floor((Math.random() * enemyArray.length) + 0)];
+        enemiesDefault = enemyArray[currentWave].enemies[Math.floor((Math.random() * enemyArray.length) + 0)].enemy; 
+        console.log("randomize is on. enemiesDefault", enemiesDefault)
     } else {
-        enemiesDefault = enemyArray[0];
+        enemiesDefault = enemyArray[currentWave].enemies[0].enemy;
+        console.log("randomize is off. enemiesDefault", enemiesDefault)
     }
+
+    console.log("enemiesDefault before loop",enemiesDefault);
+
     let enemyImages = '';
+
     for (i=0;i<enemiesDefault.length;i++) {
         if (enemiesDefault[i] === " ") {
             console.log("current blank space", enemiesDefault[i])
@@ -141,6 +154,7 @@ let loadLevelEnemies = ()=>{
     let enemyImageHolder = `<div id="enemyImageHolder">${enemyImages}</div>`;
     $("#enemies").append(enemyImageHolder);
     enemiesDefaultHTML = $("#enemies").html();
+    // console.log("HTML enemies",enemiesDefaultHTML);
     inspectEnemyListener();
 }
 
@@ -331,17 +345,18 @@ let saveSession = () => {
 
 let continueSession = ()=>{
     currentLevel++;
-    window.localStorage.setItem('currentLevel',[gameState.current.level]+1);
+    window.localStorage.setItem('currentLevel',JSON.stringify([gameState.current.level]+1));
 }
 
 let tutorialText = () => {
     currentMode = gameState.current.mode;
     currentLevel = gameState.current.level.number;
-    console.log("current mode is", currentMode);
+    console.log("current level",currentLevel)
+    console.log("current mode is", currentMode,gameState.mode[currentMode]);
     dialogue = gameState.mode[currentMode].levels[currentLevel].tutorial.dialogue;
     counter = gameState.mode[currentMode].levels[currentLevel].tutorial.counter;
     enabled = gameState.mode[currentMode].levels[currentLevel].tutorial.enabled;
-    console.log("dialouge length", dialogue, dialogue.length)
+    // console.log("dialouge length", dialogue, dialogue.length)
     if (dialogue.length && enabled == true) {
         $("#tutorial").show();
         tutorialToggle();
@@ -349,7 +364,7 @@ let tutorialText = () => {
         for (let i=0;i<dialogue.length;i++) {
             i == counter ? dots += `<span class="active">&#8226; </span>` : dots += `&#8226; `;
         }
-        console.log("all of dots", dots)
+        // console.log("all of dots", dots)
         $("#tutorial .pagination").html(dots)
         $("#tutorial .message").text(dialogue[counter]);
         $("#tutorial .container").removeClass("auto");

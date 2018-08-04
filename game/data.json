@@ -1,491 +1,634 @@
 {
-    "current":{
-        "score":0,
-        "health":100,
-        "damage":0,
-        "level":{},
-        "mode":"",
-        "counter":{
-            "enemies":0,
-            "patterns":0
-        },
-        "timer":{
-            "global": {
-                "start":0,
-                "end":0
-            },
-            "current": {
-                "start":0,
-                "end":0
-            }
-        }
-    },
-    "mode":{
-        "arcade":{
-            "levels":[
-                {
-                    "name":"1",
-                    "number":0,
-                    "description":"Warm Up...",
-                    "tutorial": {
-                        "enabled": true,
-                        "counter":  0,
-                        "dialogue":[
-                            "Use your deck of PATTERNS to match as many monsters as you can in a single turn.",
-                            "Click any pattern to add it to your hand.",
-                            "When you're ready, press ATTACK. The remaining enemies will have a chance to retaliate!"
-                        ]
-                    },
-                    "cutScene":{
-                        "enabled":false,
-                        "dialogue":[
-                            {"title":"","description":""}
-                        ]
-                    },
-                    "randomizeEnemies":true,
-                    "enemyMax":0,
-                    "enemies":[],
-                    "cards":{
-                        "available": 0,
-                        "categories": 0
-                    },
-                    "deck":{
-                        "max":0,
-                        "default":"",
-                        "active":[],
-                        "locked":["Any Char","Any Word"]
-                    }
-                }
-            ]
-        },
-        "story":{
-            "levels":[
-                {
-                    "name":"1",
-                    "number":0,
-                    "description":"Humble Beginnings...",
-                    "tutorial": {
-                        "enabled": true,
-                        "counter":  0,
-                        "dialogue":[
-                            "Use your deck of PATTERNS to match as many monsters as you can in a single turn.",
-                            "Click any pattern to add it to your hand.",
-                            "When you're ready, press ATTACK. The remaining enemies will have a chance to retaliate!"
-                        ]
-                    },
-                    "cutScene":{
-                        "enabled":true,
-                        "dialogue":[
-                            {"title":"","description":"","image":"gregor"}
-                        ]
-                    },
-                    "randomizeEnemies":true,
-                    "enemyMax":0,
-                    "enemies":[{"enemies":"hello world","goal":"hello"},{"enemies":"welcome","goal":"welcome"}],
-                    "cards":{
-                        "available": 0,
-                        "categories": 0
-                    },
-                    "deck":{
-                        "max":0,
-                        "default":"",
-                        "active":[],
-                        "locked":["Any Word","Any Char","Not White Space","White Space","Exclude Set","Set", "Not a Word"]
-                    }
-                },
-                {
-                    "name":"2",
-                    "number":1,
-                    "description":"Humble Beginnings...",
-                    "tutorial": {
-                        "enabled": true,
-                        "counter":  0,
-                        "dialogue":[
-                            "Goal: Match first word only!",
-                            "Use your ANCHORS",
-                            "Internal Tip: A rabbit's favorite vegetable"
-                        ]
-                    },
-                    "cutScene":{
-                        "enabled":false,
-                        "dialogue":[
-                            {"title":"","description":"","image":"gregor"}
-                        ]
-                    },
-                    "randomizeEnemies":true,
-                    "enemyMax":0,
-                    "enemies":[{"enemies":"double trouble","goal":"trouble"},{"enemies":"first things first","goal":"things first"}],
-                    "cards":{
-                        "available": 0,
-                        "categories": 0
-                    },
-                    "deck":{
-                        "max":0,
-                        "default":"",
-                        "active":[],
-                        "locked":["Any Word","Any Char","Not White Space","White Space","Exclude Set","Set", "Not a Word"]
-                    }
-                },
-                {
-                    "name":"3",
-                    "number":2,
-                    "description":"Escape route",
-                    "tutorial": {
-                        "enabled": true,
-                        "counter":  0,
-                        "dialogue":[
-                            "Goal: Match the last word and the punctuation mark",
-                            "Don't include any other words!",
-                            "Pro Tip: Use the reference icon for useful tips"
-                        ]
-                    },
-                    "cutScene":{
-                        "enabled":false,
-                        "dialogue":[
-                            {"title":"","description":"","image":"gregor"}
-                        ]
-                    },
-                    "randomizeEnemies":true,
-                    "enemyMax":0,
-                    "enemies":[{"enemies":"Shall we play a game?","goal":"game?"},{"enemies":"What's in the box?","goal":"box?"},{"enemies":"You want the truth?","goal":"truth?"},{"enemies":"You talkin' to me?","goal":"me?"},{"enemies":"Who ya gonna call?","goal":"call?"},{"enemies":"Who's on first?","goal":"first?"}],
-                    "cards":{
-                        "available": 0,
-                        "categories": 0
-                    },
-                    "deck":{
-                        "max":0,
-                        "default":"",
-                        "active":[],
-                        "locked":["Any Word","Any Char","Not White Space","White Space","Exclude Set","Set", "Not a Word"]
-                    }
-                },
-                {
-                    "name":"4",
-                    "number":3,
-                    "description":"The world is not enough",
-                    "tutorial": {
-                        "enabled": true,
-                        "counter":  0,
-                        "dialogue":[
-                            "Goal: Match everything!"
-                        ]
-                    },
-                    "cutScene":{
-                        "enabled":false,
-                        "dialogue":[
-                            {"title":"","description":"","image":"gregor"}
-                        ]
-                    },
-                    "randomizeEnemies":true,
-                    "enemyMax":0,
-                    "enemies":[{"enemies":"The world is not enough!","goal":""},{"enemies":"I want it all!","goal":""}],
-                    "cards":{
-                        "available": 0,
-                        "categories": 0
-                    },
-                    "deck":{
-                        "max":0,
-                        "default":"",
-                        "active":[],
-                        "locked":[]
-                    }
-                },
-                {
-                    "name":"5",
-                    "number":4,
-                    "description":"Number 1 rule...",
-                    "tutorial": {
-                        "enabled": true,
-                        "counter":  0,
-                        "dialogue":[
-                            "Goal: Match all numbers in the string",
-                            "Pro Tip: Ranges, character sets, exclusions..."
-                        ]
-                    },
-                    "cutScene":{
-                        "enabled":false,
-                        "dialogue":[
-                            {"title":"","description":"","image":"gregor"}
-                        ]
-                    },
-                    "randomizeEnemies":true,
-                    "enemyMax":0,
-                    "enemies":[{"enemies":"42 mice saved the world","goal":"mice saved the world"},{"enemies":"2 heads, 3 arms, 1 heart of gold","goal":"heads, arms, heart of gold"}],
-                    "cards":{
-                        "available": 0,
-                        "categories": 0
-                    },
-                    "deck":{
-                        "max":0,
-                        "default":"",
-                        "active":[],
-                        "locked":[]
-                    }
-                },
-                {
-                    "name":"6",
-                    "number":5,
-                    "description":"Repeat Stuff",
-                    "tutorial": {
-                        "enabled": true,
-                        "counter":  0,
-                        "dialogue":[
-                            "Goal: Eliminate all repeated characters",
-                            "Pro Tip: Ranges, character sets, exclusions..."
-                        ]
-                    },
-                    "cutScene":{
-                        "enabled":false,
-                        "dialogue":[
-                            {"title":"","description":"","image":"gregor"}
-                        ]
-                    },
-                    "randomizeEnemies":true,
-                    "enemyMax":0,
-                    "enemies":[{"enemies":"42 mice saved the world","goal":"mice saved the world"},{"enemies":"2 heads, 3 arms, 1 heart of gold","goal":"heads, arms, heart of gold"}],
-                    "cards":{
-                        "available": 0,
-                        "categories": 0
-                    },
-                    "deck":{
-                        "max":0,
-                        "default":"",
-                        "active":[],
-                        "locked":[]
-                    }
-                },
-                {
-                    "name":"7",
-                    "number":6,
-                    "description":"Find the time stamps",
-                    "tutorial": {
-                        "enabled": true,
-                        "counter":  0,
-                        "dialogue":[
-                            "Goal: Eliminate all repeated characters",
-                            "Pro Tip: Ranges, character sets, exclusions..."
-                        ]
-                    },
-                    "cutScene":{
-                        "enabled":true,
-                        "dialogue":[
-                            {"title":"Time to get Practical!","description":"You're doing great! Now we'll step it up a notch","image":"gregor"}
-                        ]
-                    },
-                    "randomizeEnemies":true,
-                    "enemyMax":0,
-                    "enemies":[{"enemies":"42 mice saved the world","goal":"mice saved the world"},{"enemies":"2 heads, 3 arms, 1 heart of gold","goal":"heads, arms, heart of gold"}],
-                    "cards":{
-                        "available": 0,
-                        "categories": 0
-                    },
-                    "deck":{
-                        "max":0,
-                        "default":"",
-                        "active":[],
-                        "locked":[]
-                    }
-                },
-                {
-                    "name":"8",
-                    "number":7,
-                    "description":"Find the time stamps",
-                    "tutorial": {
-                        "enabled": true,
-                        "counter":  0,
-                        "dialogue":[
-                            "Goal: Eliminate all repeated characters",
-                            "Pro Tip: Ranges, character sets, exclusions..."
-                        ]
-                    },
-                    "cutScene":{
-                        "enabled":true,
-                        "dialogue":[
-                            {"title":"Time to get Practical!","description":"You're doing great! Now we'll step it up a notch","image":"gregor"}
-                        ]
-                    },
-                    "randomizeEnemies":true,
-                    "enemyMax":0,
-                    "enemies":[{"enemies":"42 mice saved the world","goal":"mice saved the world"},{"enemies":"2 heads, 3 arms, 1 heart of gold","goal":"heads, arms, heart of gold"}],
-                    "cards":{
-                        "available": 0,
-                        "categories": 0
-                    },
-                    "deck":{
-                        "max":0,
-                        "default":"",
-                        "active":[],
-                        "locked":[]
-                    }
-                },
-                {
-                    "name":"9",
-                    "number":8,
-                    "description":"Serial Numbers",
-                    "tutorial": {
-                        "enabled": true,
-                        "counter":  0,
-                        "dialogue":[
-                            "Goal: Ditch the labels and store the serial numbers",
-                            "Pro Tip: Ranges, character sets, exclusions..."
-                        ]
-                    },
-                    "cutScene":{
-                        "enabled":true,
-                        "dialogue":[
-                            {"title":"Time to get Practical!","description":"You're doing great! Now we'll step it up a notch","image":"gregor"}
-                        ]
-                    },
-                    "randomizeEnemies":true,
-                    "enemyMax":0,
-                    "enemies":[{"enemies":"42 mice saved the world","goal":"mice saved the world"},{"enemies":"2 heads, 3 arms, 1 heart of gold","goal":"heads, arms, heart of gold"}],
-                    "cards":{
-                        "available": 0,
-                        "categories": 0
-                    },
-                    "deck":{
-                        "max":0,
-                        "default":"",
-                        "active":[],
-                        "locked":[]
-                    }
-                },
-                {
-                    "name":"10",
-                    "number":9,
-                    "description":"Web URL",
-                    "tutorial": {
-                        "enabled": true,
-                        "counter":  0,
-                        "dialogue":[
-                            "Goal: Match the following web URLs",
-                            "Pro Tip: Use your reference icon if needed"
-                        ]
-                    },
-                    "cutScene":{
-                        "enabled":true,
-                        "dialogue":[
-                            {"title":"Time to get Practical!","description":"You're doing great! Now we'll step it up a notch","image":"gregor"}
-                        ]
-                    },
-                    "randomizeEnemies":true,
-                    "enemyMax":0,
-                    "enemies":[{"enemies":"URL: www.apple.com<br>URL:www.regex.org<br>www.monsters.co","goal":""}],
-                    "cards":{
-                        "available": 0,
-                        "categories": 0
-                    },
-                    "deck":{
-                        "max":0,
-                        "default":"",
-                        "active":[],
-                        "locked":[]
-                    }
-                },
-                {
-                    "name":"11",
-                    "number":10,
-                    "description":"You've got mail",
-                    "tutorial": {
-                        "enabled": true,
-                        "counter":  0,
-                        "dialogue":[
-                            "Goal: Find all email addresses in the string",
-                            "Pro Tip: Use your reference icon if needed"
-                        ]
-                    },
-                    "cutScene":{
-                        "enabled":true,
-                        "dialogue":[
-                            {"title":"Time to get Practical!","description":"You're doing great! Now we'll step it up a notch","image":"gregor"}
-                        ]
-                    },
-                    "randomizeEnemies":true,
-                    "enemyMax":0,
-                    "enemies":[{"enemies":"URL: www.apple.com<br>URL:www.regex.org<br>www.monsters.co","goal":""}],
-                    "cards":{
-                        "available": 0,
-                        "categories": 0
-                    },
-                    "deck":{
-                        "max":0,
-                        "default":"",
-                        "active":[],
-                        "locked":[]
-                    }
-                },
-                {
-                    "name":"12",
-                    "number":11,
-                    "description":"IP hunt",
-                    "tutorial": {
-                        "enabled": true,
-                        "counter":  0,
-                        "dialogue":[
-                            "Goal: Extract the IP addressess in the following strings",
-                            "Pro Tip: Use your reference icon if needed"
-                        ]
-                    },
-                    "cutScene":{
-                        "enabled":true,
-                        "dialogue":[
-                            {"title":"Time to get Practical!","description":"You're doing great! Now we'll step it up a notch","image":"gregor"}
-                        ]
-                    },
-                    "randomizeEnemies":true,
-                    "enemyMax":0,
-                    "enemies":[{"enemies":"URL: www.apple.com<br>URL:www.regex.org<br>www.monsters.co","goal":""}],
-                    "cards":{
-                        "available": 0,
-                        "categories": 0
-                    },
-                    "deck":{
-                        "max":0,
-                        "default":"",
-                        "active":[],
-                        "locked":[]
-                    }
-                }
-            ]
-        },
-        "countdown":{},
-        "quiz":{},
-        "workshop":{}
-    },
-    "achievements":{
-        "highscores":{
-            "arcade":[],
-            "tutorial":[]
-        },
-        "quotes":[
-            "*** trembles in awe at your pattern matching abilities.",
-            "*** hesitates to show its face when it knows you're matching digit sets.",
-            "No text string is safe while you're on duty.",
-            "*** isn't fast enough to escape your deck building prowess."
-        ],
-        "names":[
-            {"name":"Capital letter A","image":"./assets/images/letters/c.png"},
-            {"name":"Capital letter E","image":"./assets/images/letters/t.png"},
-            {"name":"Number 7","image":"./assets/images/letters/c.png"},
-            {"name":"Number 2","image":"./assets/images/letters/t.png"},
-            {"name":"Lowercase p","image":"./assets/images/letters/c.png"},
-            {"name":"Lowercase g","image":"./assets/images/letters/t.png"}
-        ],
-        "achievements":[
-            {
-                "name":"One card is all I need",
-                "description":"coming soon...",
-                "progress":0,
-                "type":"",
-                "difficulty":"easy"
-            },
-            {
-                "name":"Email matching champ",
-                "description":"eventually...",
-                "progress":0,
-                "type":"",
-                "difficulty":"medium"
-            }
-        ]
-    }
+	"current":{
+		"score":0,
+		"health":100,
+		"damage":0,
+		"level":{},
+		"mode":"",
+		"counter":{
+			"enemies":0,
+			"patterns":0
+		},
+		"timer":{
+			"global": {
+				"start":0,
+				"end":0
+			},
+			"current": {
+				"start":0,
+				"end":0
+			}
+		}
+	},
+	"mode":{
+		"arcade":{
+			"levels":[
+				{
+					"name":"1",
+					"number":0,
+					"description":"Warm Up...",
+					"tutorial": {
+						"enabled": true,
+						"counter":  0,
+						"dialogue":[
+							"Use your deck of PATTERNS to match as many monsters as you can in a single turn.",
+							"When you're ready, press ATTACK. The remaining enemies will have a chance to retaliate!"
+						],
+						"tips":[
+							{
+								"tip":"Click any PATTERN to add it to your hand.",
+								"arrow": 
+								{
+									"direction":"down",
+									"position-x":"50",
+									"position-y":"50"
+								}
+							}
+						]
+					},
+					"cutScene":{
+						"enabled":false,
+						"dialogue":[
+							{
+								"title":"",
+								"description":"",
+								"background":"",
+								"backgroundChar":"",
+								"foreground":""
+							}
+						]
+					},
+					"randomizeEnemies":true,
+					"enemyMax":0,
+					"enemies":{
+						"waves":
+						[
+							{
+								"enemies":"hello world",
+								"goal":"hello",
+								"dialogue":{
+									"intro":"",
+									"completion":"",
+									"failed":""
+								}
+							},
+							{
+								"enemies":"welcome",
+								"goal":"welcome"
+							}
+						]
+					},
+					"cards":{
+						"available": 0,
+						"categories": 0
+					},
+					"deck":{
+						"max":0,
+						"default":"",
+						"active":[],
+						"locked":["Any Word","Any Char","Not White Space","White Space","Exclude Set","Set", "Not a Word"]
+					}
+				}
+			]
+		},
+		"story":{
+			"levels":[
+				{
+					"name":"1",
+					"number":0,
+					"description":"Characters & Sets",
+					"tutorial": {
+						"enabled": true,
+						"counter":  0,
+						"dialogue":[
+							"Use your deck of PATTERNS to match as many monsters as you can in a single turn.",
+							"When you're ready, press ATTACK. The remaining enemies will have a chance to retaliate!"
+						],
+						"tips":[
+							{
+								"tip":"Click any PATTERN to add it to your hand.",
+								"arrow": 
+								{
+									"direction":"down",
+									"position-x":"50",
+									"position-y":"50"
+								}
+							},
+							{
+								"tip":"Click any PATTERN to add it to your hand.",
+								"arrow": 
+								{
+									"direction":"down",
+									"position-x":"50",
+									"position-y":"50"
+								}
+							}
+						]
+					},
+					"cutScene":{
+						"enabled":true,
+						"dialogue":[
+							{
+								"title":"Agent Gricha",
+								"description":"The world is under attack! These creatures came out of nowhere, and they're so many of them! Ladies and gentlemen this might be the end...",
+								"background":"grass",
+								"backgroundChar":"",
+								"foreground":"gregor"
+							},
+							{
+								"title":"Software Engineer",
+								"description":"Wait! Look closely. The monsters... don't you see? They're all shaped like ASCII characters. That's their weakness. We can go after them with pattern matching.",
+								"background":"grass",
+								"backgroundChar":"lowercaseE",
+								"foreground":"engineer"
+							},
+							{
+								"title":"Agent Gricha",
+								"description":"Oky, so how do we do it?",
+								"background":"grass",
+								"backgroundChar":"",
+								"foreground":"gregor"
+							},
+							{
+								"title":"Software Engineer",
+								"description":"We'll use regular expressions. But not just anyone can do this. They'll need to be the best.",
+								"background":"grass",
+								"backgroundChar":"",
+								"foreground":"engineer"
+							},
+							{
+								"title":"Agent Gricha",
+								"description":"I see! So saving the world would be like playing...",
+								"background":"grass",
+								"backgroundChar":"",
+								"foreground":"engineer"
+							},
+							{
+								"title":"BOTH",
+								"description":"REGEX - THE GAME!",
+								"background":"grass",
+								"backgroundChar":"",
+								"foreground":"engineer gricha"
+							}
+						]
+					},
+					"randomizeEnemies":true,
+					"enemyMax":0,
+					"currentWave":0,
+					"waves":[	
+						{
+							"enemies":[{"enemy":"hello world","goal":"hello"},{"enemy":"welcome","goal":"welcome"}],
+							"dialogue":{
+								"intro":"Use character patterns to remove the first word",
+								"completion":"Great! Characters let you explicitly match",
+								"failed":"That wasn't a character card!"
+							}
+						},
+						{
+							"enemies":[{"enemy":"hello world2","goal":"hello"},{"enemy":"hello world22","goal":"hello"}],
+							"dialogue":{
+								"intro":"Now try with SET pattern",
+								"completion":"Great! SET patterns find the characters anywhere in the string",
+								"failed":"That wasn't a character card!"
+							}
+						}
+					],
+					"cards":{
+						"available": 0,
+						"categories": 0
+					},
+					"deck":{
+						"max":0,
+						"default":"",
+						"active":[],
+						"locked":["Any Word","Any Char","Not White Space","White Space","Exclude Set","Set", "Not a Word"]
+					}
+				},
+				{
+					"name":"2",
+					"number":1,
+					"description":"Humble Beginnings...",
+					"tutorial": {
+						"enabled": true,
+						"counter":  0,
+						"dialogue":[
+							"Goal: Match first word only!",
+							"Use your ANCHORS",
+							"Internal Tip: A rabbit's favorite vegetable"
+						]
+					},
+					"cutScene":{
+						"enabled":false,
+						"dialogue":[
+							{"title":"","description":"","image":"gregor"}
+						]
+					},
+					"randomizeEnemies":true,
+					"enemyMax":0,
+					"enemies":[{"enemies":"double trouble","goal":"trouble"},{"enemies":"first things first","goal":"things first"}],
+					"cards":{
+						"available": 0,
+						"categories": 0
+					},
+					"deck":{
+						"max":0,
+						"default":"",
+						"active":[],
+						"locked":["Any Word","Any Char","Not White Space","White Space","Exclude Set","Set", "Not a Word"]
+					}
+				},
+				{
+					"name":"3",
+					"number":2,
+					"description":"Escape route",
+					"tutorial": {
+						"enabled": true,
+						"counter":  0,
+						"dialogue":[
+							"Goal: Match the last word and the punctuation mark",
+							"Don't include any other words!",
+							"Pro Tip: Use the reference icon for useful tips"
+						]
+					},
+					"cutScene":{
+						"enabled":false,
+						"dialogue":[
+							{"title":"","description":"","image":"gregor"}
+						]
+					},
+					"randomizeEnemies":true,
+					"enemyMax":0,
+					"enemies":[{"enemies":"Shall we play a game?","goal":"game?"},{"enemies":"What's in the box?","goal":"box?"},{"enemies":"You want the truth?","goal":"truth?"},{"enemies":"You talkin' to me?","goal":"me?"},{"enemies":"Who ya gonna call?","goal":"call?"},{"enemies":"Who's on first?","goal":"first?"}],
+					"cards":{
+						"available": 0,
+						"categories": 0
+					},
+					"deck":{
+						"max":0,
+						"default":"",
+						"active":[],
+						"locked":["Any Word","Any Char","Not White Space","White Space","Exclude Set","Set", "Not a Word"]
+					}
+				},
+				{
+					"name":"4",
+					"number":3,
+					"description":"Alternating frequencies",
+					"tutorial": {
+						"enabled": true,
+						"counter":  0,
+						"dialogue":[
+							"Goal: Match every other word",
+							"Pro Tip: Use the reference icon for useful tips"
+						]
+					},
+					"cutScene":{
+						"enabled":false,
+						"dialogue":[
+							{"title":"","description":"","image":"gregor"}
+						]
+					},
+					"randomizeEnemies":true,
+					"enemyMax":0,
+					"enemies":[{"enemies":"Alternating frequencies","goal":""}],
+					"cards":{
+						"available": 0,
+						"categories": 0
+					},
+					"deck":{
+						"max":0,
+						"default":"",
+						"active":[],
+						"locked":["Any Word","Any Char","Not White Space","White Space","Exclude Set","Set", "Not a Word"]
+					}
+				},
+				{
+					"name":"4",
+					"number":3,
+					"description":"The world is not enough",
+					"tutorial": {
+						"enabled": true,
+						"counter":  0,
+						"dialogue":[
+							"Goal: Match everything!"
+						]
+					},
+					"cutScene":{
+						"enabled":false,
+						"dialogue":[
+							{"title":"","description":"","image":"gregor"}
+						]
+					},
+					"randomizeEnemies":true,
+					"enemyMax":0,
+					"enemies":[{"enemies":"The world is not enough!","goal":""},{"enemies":"I want it all!","goal":""}],
+					"cards":{
+						"available": 0,
+						"categories": 0
+					},
+					"deck":{
+						"max":0,
+						"default":"",
+						"active":[],
+						"locked":[]
+					}
+				},
+				{
+					"name":"5",
+					"number":4,
+					"description":"Number 1 rule...",
+					"tutorial": {
+						"enabled": true,
+						"counter":  0,
+						"dialogue":[
+							"Goal: Match all numbers in the string",
+							"Pro Tip: Ranges, character sets, exclusions..."
+						]
+					},
+					"cutScene":{
+						"enabled":false,
+						"dialogue":[
+							{"title":"","description":"","image":"gregor"}
+						]
+					},
+					"randomizeEnemies":true,
+					"enemyMax":0,
+					"enemies":[{"enemies":"42 mice saved the world","goal":"mice saved the world"},{"enemies":"2 heads, 3 arms, 1 heart of gold","goal":"heads, arms, heart of gold"}],
+					"cards":{
+						"available": 0,
+						"categories": 0
+					},
+					"deck":{
+						"max":0,
+						"default":"",
+						"active":[],
+						"locked":[]
+					}
+				},
+				{
+					"name":"6",
+					"number":5,
+					"description":"Repeat Stuff",
+					"tutorial": {
+						"enabled": true,
+						"counter":  0,
+						"dialogue":[
+							"Goal: Eliminate all repeated characters",
+							"Pro Tip: Ranges, character sets, exclusions..."
+						]
+					},
+					"cutScene":{
+						"enabled":false,
+						"dialogue":[
+							{"title":"","description":"","image":"gregor"}
+						]
+					},
+					"randomizeEnemies":true,
+					"enemyMax":0,
+					"enemies":[{"enemies":"42 mice saved the world","goal":"mice saved the world"},{"enemies":"2 heads, 3 arms, 1 heart of gold","goal":"heads, arms, heart of gold"}],
+					"cards":{
+						"available": 0,
+						"categories": 0
+					},
+					"deck":{
+						"max":0,
+						"default":"",
+						"active":[],
+						"locked":[]
+					}
+				},
+				{
+					"name":"7",
+					"number":6,
+					"description":"Find the time stamps",
+					"tutorial": {
+						"enabled": true,
+						"counter":  0,
+						"dialogue":[
+							"Goal: Eliminate all repeated characters",
+							"Pro Tip: Ranges, character sets, exclusions..."
+						]
+					},
+					"cutScene":{
+						"enabled":true,
+						"dialogue":[
+							{"title":"Time to get Practical!","description":"You're doing great! Now we'll step it up a notch","image":"gregor"}
+						]
+					},
+					"randomizeEnemies":true,
+					"enemyMax":0,
+					"enemies":[{"enemies":"42 mice saved the world","goal":"mice saved the world"},{"enemies":"2 heads, 3 arms, 1 heart of gold","goal":"heads, arms, heart of gold"}],
+					"cards":{
+						"available": 0,
+						"categories": 0
+					},
+					"deck":{
+						"max":0,
+						"default":"",
+						"active":[],
+						"locked":[]
+					}
+				},
+				{
+					"name":"8",
+					"number":7,
+					"description":"Find the time stamps",
+					"tutorial": {
+						"enabled": true,
+						"counter":  0,
+						"dialogue":[
+							"Goal: Eliminate all repeated characters",
+							"Pro Tip: Ranges, character sets, exclusions..."
+						]
+					},
+					"cutScene":{
+						"enabled":true,
+						"dialogue":[
+							{"title":"Time to get Practical!","description":"You're doing great! Now we'll step it up a notch","image":"gregor"}
+						]
+					},
+					"randomizeEnemies":true,
+					"enemyMax":0,
+					"enemies":[{"enemies":"42 mice saved the world","goal":"mice saved the world"},{"enemies":"2 heads, 3 arms, 1 heart of gold","goal":"heads, arms, heart of gold"}],
+					"cards":{
+						"available": 0,
+						"categories": 0
+					},
+					"deck":{
+						"max":0,
+						"default":"",
+						"active":[],
+						"locked":[]
+					}
+				},
+				{
+					"name":"9",
+					"number":8,
+					"description":"Serial Numbers",
+					"tutorial": {
+						"enabled": true,
+						"counter":  0,
+						"dialogue":[
+							"Goal: Ditch the labels and store the serial numbers",
+							"Pro Tip: Ranges, character sets, exclusions..."
+						]
+					},
+					"cutScene":{
+						"enabled":true,
+						"dialogue":[
+							{"title":"Time to get Practical!","description":"You're doing great! Now we'll step it up a notch","image":"gregor"}
+						]
+					},
+					"randomizeEnemies":true,
+					"enemyMax":0,
+					"enemies":[{"enemies":"42 mice saved the world","goal":"mice saved the world"},{"enemies":"2 heads, 3 arms, 1 heart of gold","goal":"heads, arms, heart of gold"}],
+					"cards":{
+						"available": 0,
+						"categories": 0
+					},
+					"deck":{
+						"max":0,
+						"default":"",
+						"active":[],
+						"locked":[]
+					}
+				},
+				{
+					"name":"10",
+					"number":9,
+					"description":"Web URL",
+					"tutorial": {
+						"enabled": true,
+						"counter":  0,
+						"dialogue":[
+							"Goal: Match the following web URLs",
+							"Pro Tip: Use your reference icon if needed"
+						]
+					},
+					"cutScene":{
+						"enabled":true,
+						"dialogue":[
+							{"title":"Time to get Practical!","description":"You're doing great! Now we'll step it up a notch","image":"gregor"}
+						]
+					},
+					"randomizeEnemies":true,
+					"enemyMax":0,
+					"enemies":[{"enemies":"URL: www.apple.com<br>URL:www.regex.org<br>www.monsters.co","goal":""}],
+					"cards":{
+						"available": 0,
+						"categories": 0
+					},
+					"deck":{
+						"max":0,
+						"default":"",
+						"active":[],
+						"locked":[]
+					}
+				},
+				{
+					"name":"11",
+					"number":10,
+					"description":"You've got mail",
+					"tutorial": {
+						"enabled": true,
+						"counter":  0,
+						"dialogue":[
+							"Goal: Find all email addresses in the string",
+							"Pro Tip: Use your reference icon if needed"
+						]
+					},
+					"cutScene":{
+						"enabled":true,
+						"dialogue":[
+							{"title":"Time to get Practical!","description":"You're doing great! Now we'll step it up a notch","image":"gregor"}
+						]
+					},
+					"randomizeEnemies":true,
+					"enemyMax":0,
+					"enemies":[{"enemies":"URL: www.apple.com<br>URL:www.regex.org<br>www.monsters.co","goal":""}],
+					"cards":{
+						"available": 0,
+						"categories": 0
+					},
+					"deck":{
+						"max":0,
+						"default":"",
+						"active":[],
+						"locked":[]
+					}
+				},
+				{
+					"name":"12",
+					"number":11,
+					"description":"IP hunt",
+					"tutorial": {
+						"enabled": true,
+						"counter":  0,
+						"dialogue":[
+							"Goal: Extract the IP addressess in the following strings",
+							"Pro Tip: Use your reference icon if needed"
+						]
+					},
+					"cutScene":{
+						"enabled":true,
+						"dialogue":[
+							{"title":"Time to get Practical!","description":"You're doing great! Now we'll step it up a notch","image":"gregor"}
+						]
+					},
+					"randomizeEnemies":true,
+					"enemyMax":0,
+					"enemies":[{"enemies":"URL: www.apple.com<br>URL:www.regex.org<br>www.monsters.co","goal":""}],
+					"cards":{
+						"available": 0,
+						"categories": 0
+					},
+					"deck":{
+						"max":0,
+						"default":"",
+						"active":[],
+						"locked":[]
+					}
+				}
+			]
+		},
+		"countdown":{},
+		"quiz":{},
+		"workshop":{}
+	},
+	"achievements":{
+		"highscores":{
+			"arcade":[],
+			"tutorial":[]
+		},
+		"quotes":[
+			"*** trembles in awe at your pattern matching abilities.",
+			"*** hesitates to show its face when it knows you're matching digit sets.",
+			"No text string is safe while you're on duty.",
+			"*** isn't fast enough to escape your deck building prowess."
+		],
+		"names":[
+			{"name":"Capital letter A","image":"./assets/images/letters/c.png"},
+			{"name":"Capital letter E","image":"./assets/images/letters/t.png"},
+			{"name":"Number 7","image":"./assets/images/letters/c.png"},
+			{"name":"Number 2","image":"./assets/images/letters/t.png"},
+			{"name":"Lowercase p","image":"./assets/images/letters/c.png"},
+			{"name":"Lowercase g","image":"./assets/images/letters/t.png"}
+		],
+		"achievements":[
+			{
+				"name":"One card is all I need",
+				"description":"coming soon...",
+				"progress":0,
+				"type":"",
+				"difficulty":"easy"
+			},
+			{
+				"name":"Email matching champ",
+				"description":"eventually...",
+				"progress":0,
+				"type":"",
+				"difficulty":"medium"
+			}
+		]
+	}
 }
