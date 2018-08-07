@@ -273,38 +273,6 @@
 				{
 					"name":"4",
 					"number":3,
-					"description":"Alternating frequencies",
-					"tutorial": {
-						"enabled": true,
-						"counter":  0,
-						"dialogue":[
-							"Goal: Match every other word",
-							"Pro Tip: Use the reference icon for useful tips"
-						]
-					},
-					"cutScene":{
-						"enabled":false,
-						"dialogue":[
-							{"title":"","description":"","image":"gregor"}
-						]
-					},
-					"randomizeEnemies":true,
-					"enemyMax":0,
-					"enemies":[{"enemies":"Alternating frequencies","goal":""}],
-					"cards":{
-						"available": 0,
-						"categories": 0
-					},
-					"deck":{
-						"max":0,
-						"default":"",
-						"active":[],
-						"locked":["Any Word","Any Char","Not White Space","White Space","Exclude Set","Set", "Not a Word"]
-					}
-				},
-				{
-					"name":"4",
-					"number":3,
 					"description":"The world is not enough",
 					"tutorial": {
 						"enabled": true,
