@@ -46,8 +46,8 @@ let loadGameState = ()=>{
         }
         else if (gameState.current.mode == "story"){
             currentWave = gameState.mode[gameState.current.mode].levels[currentLevel].currentWave;
-            // load level specific words
-            loadLevelEnemies();
+            checkForCutScene();
+            loadLevelEnemies(); // load level specific words
         }
 
     })
@@ -158,6 +158,66 @@ let loadLevelEnemies = ()=>{
     inspectEnemyListener();
 }
 
+let checkForCutScene = ()=> {
+    console.log("checking for cut scene...")
+    console.log("level current body", gameState.current.level);
+    let counter = 0;
+    let dialogue;
+    // look to gameState.current... if cutScene.enabled == true
+    if (gameState.current.level.cutScene.enabled == true){
+        dialogue = gameState.current.level.cutScene.dialogue;
+        console.log("there's a cut scene!", dialogue);
+        // show overlay
+        // for length of dialouge, compose each scene based on elements described within
+        // what's the best loop for manual ittertion?
+        // for (let i=0;i<dialogue.length;i++) {
+        // }
+    }
+    else {
+        console.log("cutScenes are disabled");
+    }
+    let loadScene = ()=>{
+        if (counter < dialogue.length) {
+            let background = dialogue[counter].background;
+            let backgroundChar = dialogue[counter].backgroundChar;
+            let description = dialogue[counter].description;
+            let foregroundChar = dialogue[counter].foreground;
+            let title = dialogue[counter].title;
+            let div = 
+            `<div id="cutScene" style="background-image:url(assets/images/backgrounds/${background});">
+                <div id="cutSceneForegroundChar" style="background-image:url(assets/images/characters/${foregroundChar});"></div>
+                <div id="cutSceneBackgroundChar"></div>
+                <div id="cutSceneDescription">
+                    <div id="cutSceneTitle">${title}</div> 
+                    ${description}
+                </div>
+            </div>`;
+            // background: url(../images/matched.svg) no-repeat;
+            //     background-size: contain;
+            $("body").prepend(div);
+            $("#cutScene").on("click", function(){
+                // cutSceneIncrementor();
+                console.log("cutscene clicked...");
+                counter++;
+                $(this).remove();
+                // $("#cutScene").off("click",cutSceneIncrementor())
+                loadScene();
+            });    
+        } else if ($("#cutScene")){
+            console.log("last cut scene shown. Now removing")
+            $("#cutScene").remove();
+        }
+    }
+    let cutSceneIncrementor =  function(){
+        // console.log("bye bye");
+        // counter++;
+        // // $(this).remove();
+        // // $("#cutScene").off("click",cutSceneIncrementor())
+        // loadScene();
+    }
+    loadScene();
+}
+
 let resetLevels = () => {
     currentLevel = 0;
     gameState.current.level = gameState.mode[gameState.current.mode].levels[0]; // restart from first level
@@ -235,7 +295,10 @@ let beatLevel = ()=> {
 
 let nextLevel = ()=> {
     gameState.current.level = gameState.mode[gameState.mode].levels[gameState.current.level.number+1];
+    console.log(`advancing to level ${gameState.current.level.number}`);
     document.querySelector("#level .value").innerText = gameState.current.level.name;
+    checkForCutScene();
+    loadLevelEnemies(); // load level specific words
 }
 
 let newGame = ()=> {

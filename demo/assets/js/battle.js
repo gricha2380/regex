@@ -71,7 +71,7 @@ $(".clear").on("click touchstart", function(e){
 })
 
 // event listener for attack button
-document.querySelector("#attack").addEventListener("click", e=>{
+    document.querySelector("#attack").addEventListener("click", e=>{
     increaseScore(gameState.holdPoints);
     endTurn();  
 })
@@ -129,22 +129,32 @@ let matchEnemies = ()=> {
             // if index of current resultArray value is present in any of the ranges from matchSet array
 
             // do for loop for each item in matchSet
-           console.log("matchSet here",matchSet)
+           console.log("matchSet here",matchSet);
+            console.log("All enemyHolders from DOM",$("#enemyImageHolder .enemyImageHolder:not('.blank')"))
+           // strip blanks from enemy string before entering matchSet
+
            for (matchRange in matchSet) {
                 console.log("matchset start mostly",matchSet[matchRange])
                 console.log("current matchSet start + end",matchSet[matchRange].start,matchSet[matchRange].end)
 
-                if (i >= matchSet[matchRange].start && i < matchSet[matchRange].end && resultArray[i] !== ' ') {
+                if (i >= matchSet[matchRange].start && i < matchSet[matchRange].end) {
                     console.log("match found",resultArray[i],matchSet[matchRange].start, matchSet[matchRange].end);
-                    let currentMatch = $("#enemyImageHolder .enemyImageHolder").get(i); 
-
-                    $(currentMatch).addClass("matched");
+                    let currentMatch = $("#enemyImageHolder .enemyImageHolder:not('.blank')").get(i); //was using .not(".blank")
+                    // try .blank again. 
                     console.log("here is currentmatch",currentMatch)
-                    let currentLetter = $(currentMatch).find("img").attr("data-value");
-                    console.log("currentLetter",currentLetter);
-                    let enemyType = enemyData.enemies[currentLetter].typeShort; // enemy classification
-                    gameState.holdPoints += enemyData[enemyType].points.normal; // points to be awarded for matching enemy
-                    console.log("points added",enemyData[enemyType].points.normal);
+                    console.log("here is i",i)
+
+                    if (!$(currentMatch).hasClass("blank")) {
+                        console.log("no blank class")
+                        $(currentMatch).addClass("matched");
+                        let currentLetter = $(currentMatch).find("img").attr("data-value");
+                        if (currentLetter) {
+                            console.log("currentLetter",currentLetter);
+                            let enemyType = enemyData.enemies[currentLetter].typeShort; // enemy classification
+                            gameState.holdPoints += enemyData[enemyType].points.normal; // points to be awarded for matching enemy
+                            console.log("points added",enemyData[enemyType].points.normal);
+                        }
+                    }
                 }
            }
         }

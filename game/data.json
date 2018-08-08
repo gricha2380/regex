@@ -131,9 +131,9 @@
 							{
 								"title":"Agent Gricha",
 								"description":"The world is under attack! These creatures came out of nowhere, and they're so many of them! Ladies and gentlemen this might be the end...",
-								"background":"grass",
+								"background":"grass.jpg",
 								"backgroundChar":"",
-								"foreground":"gregor"
+								"foreground":"gregor.svg"
 							},
 							{
 								"title":"Software Engineer",

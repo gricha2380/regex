@@ -265,6 +265,50 @@
   color: white;
 }
 
+#cutScene {
+  width: 100%;
+  height: 100%;
+  background-color: green;
+  position: fixed;
+  z-index: 2;
+  padding: 1rem;
+  background-size: cover;
+}
+
+#cutScene #cutSceneForegroundChar {
+  height: 300px;
+  height: 320px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  min-width: 270px;
+  bottom: 242px;
+}
+
+#cutScene #cutSceneTitle {
+  background-color: #D82262;
+  display: inline-block;
+  padding: .5rem;
+  color: white;
+  font-weight: bold;
+  border-radius: .5rem;
+  border: .25rem #4B4B4B solid;
+  margin-top: -4rem;
+  position: absolute;
+  font-size: 1.3rem;
+}
+
+#cutScene #cutSceneDescription {
+  background: #D8D8D8;
+  position: absolute;
+  left: 0;
+  padding: 3rem 1rem;
+  color: #4B4B4B;
+  font-weight: bold;
+  bottom: 0;
+  height: 150px;
+}
+
 body {
   background: #4EEDD9;
   font-family: sans-serif;
@@ -326,6 +370,7 @@ body {
 
 .cardHolder .card.locked:hover {
   cursor: not-allowed;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .infoIcon {
