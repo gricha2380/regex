@@ -40,8 +40,8 @@
 								"arrow": 
 								{
 									"direction":"down",
-									"position-x":"50",
-									"position-y":"50"
+									"positionX":"50",
+									"positionY":"50"
 								}
 							}
 						]
@@ -97,30 +97,35 @@
 					"name":"1",
 					"number":0,
 					"description":"Characters & Sets",
-					"tutorial": {
+					"tip": {
 						"enabled": true,
-						"counter":  0,
+						"counter": 0,
 						"dialogue":[
-							"Use your deck of PATTERNS to match as many monsters as you can in a single turn.",
-							"When you're ready, press ATTACK. The remaining enemies will have a chance to retaliate!"
-						],
-						"tips":[
+							"Goal: Match first word using CHARACTER card.",
+							"Click card from the deck to place it in your hand.",
+							"When you're ready, press ATTACK."
+						]
+					},
+					"tutorial":{
+						"enabled": true,
+						"counter": 0,
+						"dialogue":[
 							{
-								"tip":"Click any PATTERN to add it to your hand.",
+								"task":"Welcome to REGEX: THE GAME!",
 								"arrow": 
 								{
 									"direction":"down",
-									"position-x":"50",
-									"position-y":"50"
+									"positionX":"50",
+									"positionY":"50"
 								}
 							},
 							{
-								"tip":"Click any PATTERN to add it to your hand.",
+								"task":"Click any PATTERN to add it to your hand.",
 								"arrow": 
 								{
-									"direction":"down",
-									"position-x":"50",
-									"position-y":"50"
+									"direction":"up",
+									"positionX":"30",
+									"positionY":"80"
 								}
 							}
 						]
@@ -132,43 +137,43 @@
 								"title":"Agent Gricha",
 								"description":"The world is under attack! These creatures came out of nowhere, and they're so many of them! Ladies and gentlemen this might be the end...",
 								"background":"grass.jpg",
-								"backgroundChar":"",
-								"foreground":"gregor.svg"
+								"backgroundChar":"4.svg",
+								"foregroundChar":"gregor.svg"
 							},
 							{
 								"title":"Software Engineer",
-								"description":"Wait! Look closely. The monsters... don't you see? They're all shaped like ASCII characters. That's their weakness. We can go after them with pattern matching.",
-								"background":"grass",
+								"description":"Wait! Look closely. The monsters... don't you see? They're all shaped like ASCII characters. That's their weakness! We can go after them with pattern matching.",
+								"background":"grass.jpg",
 								"backgroundChar":"lowercaseE",
-								"foreground":"engineer"
+								"foreground":"engineer.svg"
 							},
 							{
 								"title":"Agent Gricha",
 								"description":"Oky, so how do we do it?",
-								"background":"grass",
+								"background":"grass.jpg",
 								"backgroundChar":"",
-								"foreground":"gregor"
+								"foregroundChar":"gregor.svg"
 							},
 							{
 								"title":"Software Engineer",
-								"description":"We'll use regular expressions. But not just anyone can do this. They'll need to be the best.",
-								"background":"grass",
+								"description":"We'll use regular expressions. But not just anyone can do this. We'll need the best of the best. Someone who can match strings of text using",
+								"background":"grass.jpg",
 								"backgroundChar":"",
-								"foreground":"engineer"
+								"foreground":"engineer.svg"
 							},
 							{
 								"title":"Agent Gricha",
 								"description":"I see! So saving the world would be like playing...",
-								"background":"grass",
+								"background":"grass.jpg",
 								"backgroundChar":"",
-								"foreground":"engineer"
+								"foregroundChar":"gregor.svg"
 							},
 							{
 								"title":"BOTH",
 								"description":"REGEX - THE GAME!",
-								"background":"grass",
+								"background":"grass.jpg",
 								"backgroundChar":"",
-								"foreground":"engineer gricha"
+								"foreground":"engineerAndgricha.svg"
 							}
 						]
 					},

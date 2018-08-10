@@ -297,7 +297,7 @@ let inspectEnemyListener = ()=>{
 
 // enemy info modal
 let generateEnemyModal = (enemy)=>{
-    $("#tutorial").hide();
+    $("#tip").hide();
     
     let newDiv = document.createElement('div');
     let modalName = "enemyModal";

@@ -150,7 +150,7 @@
     }
 }
 
-#tutorial {
+#tip {
     display: none;
     position: fixed;
     width: 100%;
@@ -218,15 +218,25 @@
     z-index: 2;
     padding: 1rem;
     background-size: cover;
+    background-image: url(../images/backgrounds/grass.jpg);
 
     #cutSceneForegroundChar {
-        height: 300px;
         height: 320px;
         background-size: contain;
         background-repeat: no-repeat;
         position: absolute;
         min-width: 270px;
         bottom: 242px;
+    }
+    
+    #cutSceneBackgroundChar {
+        height: 220px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        min-width: 270px;
+        top: 10%;
+        right: 100px;
     }
 
     #cutSceneTitle {
@@ -251,5 +261,36 @@
         font-weight: bold;
         bottom: 0;
         height: 150px;
+        width: inherit;
+    }
+}
+
+#tutorialOverlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 123, 204, 0.4);
+    position: fixed;
+    z-index: 2;
+    padding: 1rem;
+
+    #tutorialArrow {
+        background: url(../images/arrow.svg) no-repeat;
+        height: 50px;
+        width: 50px;
+        background-size: contain;
+        position: absolute;
+        
+        &.downArrow {
+            transform: rotate(180deg);
+        }
+        &.upArrow {
+            transform: rotate(0deg);
+        }
+        &.leftArrow {
+            transform: rotate(45deg);
+        }
+        &.rightArrow {
+            transform: rotate(-45deg);
+        }
     }
 }

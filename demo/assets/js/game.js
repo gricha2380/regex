@@ -37,9 +37,9 @@ let loadGameState = ()=>{
             eraseSavedLevelProgress();
         }
         document.querySelector("#level .value").innerHTML = `${gameState.current.level.name}: ${gameState.current.level.description}`;
-        tutorialText();
-        dialogue = gameState.mode[currentMode].levels[currentLevel].tutorial.dialogue;
-        counter = gameState.mode[currentMode].levels[currentLevel].tutorial.counter;
+        tipText();
+        dialogue = gameState.mode[currentMode].levels[currentLevel].tip.dialogue;
+        counter = gameState.mode[currentMode].levels[currentLevel].tip.counter;
 
         if (gameState.current.mode == "arcade"){
             random();
@@ -163,59 +163,93 @@ let checkForCutScene = ()=> {
     console.log("level current body", gameState.current.level);
     let counter = 0;
     let dialogue;
-    // look to gameState.current... if cutScene.enabled == true
-    if (gameState.current.level.cutScene.enabled == true){
-        dialogue = gameState.current.level.cutScene.dialogue;
-        console.log("there's a cut scene!", dialogue);
-        // show overlay
-        // for length of dialouge, compose each scene based on elements described within
-        // what's the best loop for manual ittertion?
-        // for (let i=0;i<dialogue.length;i++) {
-        // }
-    }
-    else {
-        console.log("cutScenes are disabled");
-    }
+    
     let loadScene = ()=>{
         if (counter < dialogue.length) {
             let background = dialogue[counter].background;
             let backgroundChar = dialogue[counter].backgroundChar;
             let description = dialogue[counter].description;
-            let foregroundChar = dialogue[counter].foreground;
+            let foregroundChar = dialogue[counter].foregroundChar;
             let title = dialogue[counter].title;
             let div = 
             `<div id="cutScene" style="background-image:url(assets/images/backgrounds/${background});">
                 <div id="cutSceneForegroundChar" style="background-image:url(assets/images/characters/${foregroundChar});"></div>
-                <div id="cutSceneBackgroundChar"></div>
+                <div id="cutSceneBackgroundChar" style="background-image:url(assets/images/characters/${backgroundChar});"></div>
                 <div id="cutSceneDescription">
                     <div id="cutSceneTitle">${title}</div> 
                     ${description}
                 </div>
             </div>`;
-            // background: url(../images/matched.svg) no-repeat;
-            //     background-size: contain;
             $("body").prepend(div);
             $("#cutScene").on("click", function(){
-                // cutSceneIncrementor();
                 console.log("cutscene clicked...");
                 counter++;
                 $(this).remove();
-                // $("#cutScene").off("click",cutSceneIncrementor())
                 loadScene();
             });    
         } else if ($("#cutScene")){
             console.log("last cut scene shown. Now removing")
             $("#cutScene").remove();
+            checkForTutorial();
         }
     }
-    let cutSceneIncrementor =  function(){
-        // console.log("bye bye");
-        // counter++;
-        // // $(this).remove();
-        // // $("#cutScene").off("click",cutSceneIncrementor())
-        // loadScene();
+
+    // look to gameState.current... if cutScene.enabled == true
+    if (gameState.current.level.cutScene.enabled == true){
+        dialogue = gameState.current.level.cutScene.dialogue;
+        console.log("there's a cut scene!", dialogue);
+        loadScene(); //
     }
-    loadScene();
+    else {
+        console.log("cutScenes are disabled");
+    }
+}
+
+
+let checkForTutorial = ()=>{
+    // 
+    console.log("checking for tutorial scene...")
+    console.log("level current body", gameState.current.level);
+    let counter = 0;
+    let dialogue;
+
+    // adapated from loadCutScene. nEed to change code
+    let loadTutorial = ()=>{
+        if (counter < dialogue.length) {
+            // will be standard looking modal
+            // but will have arrow images to point to things
+            let arrow = dialogue[counter].arrow.direction;
+            let description = dialogue[counter].task;
+            let positionX = dialogue[counter].arrow.positionX;
+            let positionY = dialogue[counter].arrow.positionY;
+            let div = 
+            `<div id="tutorialOverlay">
+                <div id="tutorialArrow" class="${arrow}Arrow" style="top:${positionY}%;left:${positionX}%"></div>
+                <div id="tutorialDescription">${description}</div>
+            </div>`;
+            $("body").prepend(div);
+            $("#tutorialOverlay").on("click", function(){
+                console.log("tutorial clicked...");
+                counter++;
+                $(this).remove();
+                loadTutorial();
+            });    
+        } else if ($("#tutorialOverlay")){
+            console.log("last tutorial shown. Now removing")
+            $("#tutorialOverlay").remove();
+        }
+    }
+
+    // look to gameState.current... if cutScene.enabled == true
+    if (gameState.current.level.tutorial.enabled == true){
+        dialogue = gameState.current.level.tutorial.dialogue;
+        console.log("there's a tutorial!", dialogue);
+        loadTutorial(); //
+    }
+    else {
+        console.log("tutorials are disabled");
+    }
+
 }
 
 let resetLevels = () => {
@@ -246,7 +280,7 @@ let findGameMode = ()=> {
 
 //level cleared
 let beatLevel = ()=> {
-    $("#tutorial").hide();
+    $("#tip").hide();
     console.log("level cleared!");
 
     gameState.current.timer.global.end = new Date();
@@ -308,7 +342,7 @@ newGame();
 
 
 let gameOver = ()=> {
-    $("#tutorial").hide();
+    $("#tip").hide();
     console.log("game over!");
     saveSession();
     let newDiv = document.createElement('div');
@@ -411,36 +445,36 @@ let continueSession = ()=>{
     window.localStorage.setItem('currentLevel',JSON.stringify([gameState.current.level]+1));
 }
 
-let tutorialText = () => {
+let tipText = () => {
     currentMode = gameState.current.mode;
     currentLevel = gameState.current.level.number;
     console.log("current level",currentLevel)
     console.log("current mode is", currentMode,gameState.mode[currentMode]);
-    dialogue = gameState.mode[currentMode].levels[currentLevel].tutorial.dialogue;
-    counter = gameState.mode[currentMode].levels[currentLevel].tutorial.counter;
-    enabled = gameState.mode[currentMode].levels[currentLevel].tutorial.enabled;
-    // console.log("dialouge length", dialogue, dialogue.length)
+    dialogue = gameState.mode[currentMode].levels[currentLevel].tip.dialogue;
+    counter = gameState.mode[currentMode].levels[currentLevel].tip.counter;
+    enabled = gameState.mode[currentMode].levels[currentLevel].tip.enabled;
+    console.log("dialouge length", dialogue, dialogue.length)
     if (dialogue.length && enabled == true) {
-        $("#tutorial").show();
-        tutorialToggle();
+        $("#tip").show();
+        tipToggle();
         let dots = '';
         for (let i=0;i<dialogue.length;i++) {
             i == counter ? dots += `<span class="active">&#8226; </span>` : dots += `&#8226; `;
         }
         // console.log("all of dots", dots)
-        $("#tutorial .pagination").html(dots)
-        $("#tutorial .message").text(dialogue[counter]);
-        $("#tutorial .container").removeClass("auto");
+        $("#tip .pagination").html(dots)
+        $("#tip .message").text(dialogue[counter]);
+        $("#tip .container").removeClass("auto");
     }
 }
 
 let autoText = (message) => {
-    $("#tutorial .container").addClass("auto");
-    $("#tutorial .pagination").html(``);
-    $("#tutorial .message").text(message);
+    $("#tip .container").addClass("auto");
+    $("#tip .pagination").html(``);
+    $("#tip .message").text(message);
 }
 
-$("#tutorial .container").on("click touchstart", ()=>{
+$("#tip .container").on("click touchstart", ()=>{
     currentMode = gameState.current.mode;
     currentLevel = gameState.current.level.number;
     counter++
@@ -458,18 +492,18 @@ $("#tutorial .container").on("click touchstart", ()=>{
     for (let i=0;i<dialogue.length;i++) {
         i == counter ? dots += `<span class="active">&#8226; </span>` : dots += `&#8226; `;
     }
-    $("#tutorial .pagination").html(dots)
-    $("#tutorial .message").text(dialogue[counter]);
+    $("#tip .pagination").html(dots)
+    $("#tip .message").text(dialogue[counter]);
 })
 
-let tutorialToggle = ()=>{
+let tipToggle = ()=>{
     console.log("tutoriaToggle activated")
-    $("#tutorialToggle,.closeButton").on("click touchstart", ()=>{
-        console.log("you clicked tutorial toggle")
-        $("#tutorial").toggle();
+    $("#tipToggle,.closeButton").on("click touchstart", ()=>{
+        console.log("you clicked tip toggle")
+        $("#tip").toggle();
     })
 }
-// tutorialToggle();
+// tipToggle();
 
 /* Utilities */
 let calculateTime = (start, end, pretty) => {
