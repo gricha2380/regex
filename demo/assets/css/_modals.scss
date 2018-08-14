@@ -268,10 +268,19 @@
 #tutorialOverlay {
     width: 100%;
     height: 100%;
-    background-color: rgba(44, 123, 204, 0.4);
+    background-color: rgba(44, 123, 204, 0.7);
     position: fixed;
     z-index: 2;
     padding: 1rem;
+
+    #tutorialDescription {
+        text-align: center;
+        color: white;
+        text-shadow: 2px 2px 3px black;
+        font-size: 3rem;
+        font-weight: bold;
+        margin-top: 6rem;
+    }
 
     #tutorialArrow {
         background: url(../images/arrow.svg) no-repeat;
@@ -279,7 +288,7 @@
         width: 50px;
         background-size: contain;
         position: absolute;
-        
+
         &.downArrow {
             transform: rotate(180deg);
         }
@@ -287,10 +296,10 @@
             transform: rotate(0deg);
         }
         &.leftArrow {
-            transform: rotate(45deg);
+            transform: rotate(-90deg);
         }
         &.rightArrow {
-            transform: rotate(-45deg);
+            transform: rotate(90deg);
         }
     }
 }

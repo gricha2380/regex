@@ -144,8 +144,8 @@
 								"title":"Software Engineer",
 								"description":"Wait! Look closely. The monsters... don't you see? They're all shaped like ASCII characters. That's their weakness! We can go after them with pattern matching.",
 								"background":"grass.jpg",
-								"backgroundChar":"lowercaseE",
-								"foreground":"engineer.svg"
+								"backgroundChar":"e.svg",
+								"foregroundChar":"engineer.svg"
 							},
 							{
 								"title":"Agent Gricha",
@@ -159,7 +159,7 @@
 								"description":"We'll use regular expressions. But not just anyone can do this. We'll need the best of the best. Someone who can match strings of text using",
 								"background":"grass.jpg",
 								"backgroundChar":"",
-								"foreground":"engineer.svg"
+								"foregroundChar":"engineer.svg"
 							},
 							{
 								"title":"Agent Gricha",

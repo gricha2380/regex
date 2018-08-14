@@ -35,6 +35,8 @@
 }
 
 .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -45,6 +47,8 @@
   left: 0;
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background: rgba(0, 0, 0, 0.8);
   color: white;
@@ -179,6 +183,8 @@
 }
 
 #gameModes.showModes {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -237,6 +243,7 @@
   text-align: left;
   position: relative;
   padding: 1rem 0 1rem 3rem;
+  -webkit-transition: .5s;
   transition: .5s;
   overflow: hidden;
 }
@@ -323,10 +330,19 @@
 #tutorialOverlay {
   width: 100%;
   height: 100%;
-  background-color: rgba(44, 123, 204, 0.4);
+  background-color: rgba(44, 123, 204, 0.7);
   position: fixed;
   z-index: 2;
   padding: 1rem;
+}
+
+#tutorialOverlay #tutorialDescription {
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 3px black;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 6rem;
 }
 
 #tutorialOverlay #tutorialArrow {
@@ -338,19 +354,23 @@
 }
 
 #tutorialOverlay #tutorialArrow.downArrow {
-  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 #tutorialOverlay #tutorialArrow.upArrow {
-  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 
 #tutorialOverlay #tutorialArrow.leftArrow {
-  transform: rotate(45deg);
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 
 #tutorialOverlay #tutorialArrow.rightArrow {
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 body {
@@ -371,7 +391,9 @@ body {
 }
 
 .cardHolder {
-  flex: 0 0 auto;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
   margin-right: .5rem;
   text-align: center;
 }
@@ -439,6 +461,7 @@ body {
   background: rgba(0, 0, 0, 0.8);
   color: white;
   margin-top: 0px;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -462,6 +485,7 @@ body {
   position: absolute;
   left: 0;
   z-index: 0;
+  -webkit-transition: .5s;
   transition: .5s;
 }
 
@@ -480,8 +504,11 @@ body {
   height: 6rem;
   width: 100%;
   text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -530,11 +557,15 @@ body {
 }
 
 .actionButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .actionButtons #attack {
-  flex-grow: 2;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
 }
 
 .actionButtons #attack:hover {
@@ -551,7 +582,9 @@ body {
 }
 
 .actionButtons .clear {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .button:hover {
@@ -574,8 +607,12 @@ body {
 }
 
 #categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   list-style: none;
   text-align: left;
   margin-bottom: .5rem;
@@ -637,6 +674,8 @@ body {
 }
 
 #buttonHolder {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 200px;
 }
@@ -818,9 +857,16 @@ body {
 }
 
 .simple-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   width: 100%;
   margin: auto;
 }
@@ -836,7 +882,8 @@ body {
   border: 3px solid white;
   cursor: move;
   position: relative;
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
 }
 
 .grid-item:hover .remove {
@@ -849,6 +896,7 @@ body {
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
   padding: .1rem 0;
+  -webkit-transition: .5s;
   transition: .5s;
   bottom: 0;
 }
@@ -897,7 +945,8 @@ body {
 .quantifier {
   width: initial;
   border: none;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   color: black;
   font-size: 2rem;
   padding: 27px 0;
@@ -989,6 +1038,7 @@ body {
 #enemyImageHolder .enemyImageHolder {
   display: inline-block;
   position: relative;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -1009,7 +1059,8 @@ body {
 }
 
 #enemyImageHolder .enemyImageHolder.matched .enemyImg {
-  filter: saturate(292%) brightness(70%) hue-rotate(103deg);
+  -webkit-filter: saturate(292%) brightness(70%) hue-rotate(103deg);
+          filter: saturate(292%) brightness(70%) hue-rotate(103deg);
 }
 
 #enemyImageHolder .enemyImageHolder.attacking::before {
@@ -1025,12 +1076,14 @@ body {
 }
 
 #enemyImageHolder .enemyImageHolder.attacking .enemyImg {
-  filter: saturate(450%) brightness(100%) invert(1);
+  -webkit-filter: saturate(450%) brightness(100%) invert(1);
+          filter: saturate(450%) brightness(100%) invert(1);
 }
 
 #enemyImageHolder .enemyImg {
   max-height: 4rem;
   position: relative;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -1040,6 +1093,8 @@ body {
 }
 
 #enemyImageHolder .enemyImg:hover {
-  filter: saturate(191%);
+  -webkit-filter: saturate(191%);
+          filter: saturate(191%);
   cursor: pointer;
 }
+/*# sourceMappingURL=style.css.map */
