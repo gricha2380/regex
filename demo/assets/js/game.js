@@ -37,14 +37,13 @@ let loadGameState = ()=>{
             eraseSavedLevelProgress();
         }
         document.querySelector("#level .value").innerHTML = `${gameState.current.level.name}: ${gameState.current.level.description}`;
-        tipText();
-        dialogue = gameState.mode[currentMode].levels[currentLevel].tip.dialogue;
-        counter = gameState.mode[currentMode].levels[currentLevel].tip.counter;
-
         if (gameState.current.mode == "arcade"){
             random();
         }
         else if (gameState.current.mode == "story"){
+            tipText();
+            dialogue = gameState.mode[currentMode].levels[currentLevel].tip.dialogue;
+            counter = gameState.mode[currentMode].levels[currentLevel].tip.counter;
             currentWave = gameState.mode[gameState.current.mode].levels[currentLevel].currentWave;
             checkForCutScene();
             loadLevelEnemies(); // load level specific words

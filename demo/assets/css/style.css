@@ -35,8 +35,6 @@
 }
 
 .flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -47,8 +45,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   background: rgba(0, 0, 0, 0.8);
   color: white;
@@ -183,8 +179,6 @@
 }
 
 #gameModes.showModes {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -243,7 +237,6 @@
   text-align: left;
   position: relative;
   padding: 1rem 0 1rem 3rem;
-  -webkit-transition: .5s;
   transition: .5s;
   overflow: hidden;
 }
@@ -290,7 +283,7 @@
   height: 320px;
   min-width: 270px;
   position: absolute;
-  width: 500px; 
+  width: 500px;
 }
 
 #cutScene #cutSceneBackgroundChar {
@@ -355,23 +348,19 @@
 }
 
 #tutorialOverlay #tutorialArrow.downArrow {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 #tutorialOverlay #tutorialArrow.upArrow {
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 #tutorialOverlay #tutorialArrow.leftArrow {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 
 #tutorialOverlay #tutorialArrow.rightArrow {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 body {
@@ -392,9 +381,7 @@ body {
 }
 
 .cardHolder {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  flex: 0 0 auto;
   margin-right: .5rem;
   text-align: center;
 }
@@ -462,7 +449,6 @@ body {
   background: rgba(0, 0, 0, 0.8);
   color: white;
   margin-top: 0px;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -486,12 +472,19 @@ body {
   position: absolute;
   left: 0;
   z-index: 0;
-  -webkit-transition: .5s;
   transition: .5s;
 }
 
 #health .healthText {
   position: relative;
+}
+
+#health.shake {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  animation-iteration-count: infinite;
 }
 
 #deck {
@@ -505,11 +498,8 @@ body {
   height: 6rem;
   width: 100%;
   text-align: left;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -558,15 +548,11 @@ body {
 }
 
 .actionButtons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .actionButtons #attack {
-  -webkit-box-flex: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
+  flex-grow: 2;
 }
 
 .actionButtons #attack:hover {
@@ -583,9 +569,7 @@ body {
 }
 
 .actionButtons .clear {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
 }
 
 .button:hover {
@@ -608,12 +592,8 @@ body {
 }
 
 #categories {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   list-style: none;
   text-align: left;
   margin-bottom: .5rem;
@@ -675,8 +655,6 @@ body {
 }
 
 #buttonHolder {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   height: 200px;
 }
@@ -858,16 +836,9 @@ body {
 }
 
 .simple-grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-flow: row wrap;
+  justify-content: flex-start;
   width: 100%;
   margin: auto;
 }
@@ -883,8 +854,7 @@ body {
   border: 3px solid white;
   cursor: move;
   position: relative;
-  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
 }
 
 .grid-item:hover .remove {
@@ -897,7 +867,6 @@ body {
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
   padding: .1rem 0;
-  -webkit-transition: .5s;
   transition: .5s;
   bottom: 0;
 }
@@ -946,8 +915,7 @@ body {
 .quantifier {
   width: initial;
   border: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   color: black;
   font-size: 2rem;
   padding: 27px 0;
@@ -1039,7 +1007,6 @@ body {
 #enemyImageHolder .enemyImageHolder {
   display: inline-block;
   position: relative;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -1060,8 +1027,7 @@ body {
 }
 
 #enemyImageHolder .enemyImageHolder.matched .enemyImg {
-  -webkit-filter: saturate(292%) brightness(70%) hue-rotate(103deg);
-          filter: saturate(292%) brightness(70%) hue-rotate(103deg);
+  filter: saturate(292%) brightness(70%) hue-rotate(103deg);
 }
 
 #enemyImageHolder .enemyImageHolder.attacking::before {
@@ -1077,14 +1043,12 @@ body {
 }
 
 #enemyImageHolder .enemyImageHolder.attacking .enemyImg {
-  -webkit-filter: saturate(450%) brightness(100%) invert(1);
-          filter: saturate(450%) brightness(100%) invert(1);
+  filter: saturate(450%) brightness(100%) invert(1);
 }
 
 #enemyImageHolder .enemyImg {
   max-height: 4rem;
   position: relative;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -1094,8 +1058,21 @@ body {
 }
 
 #enemyImageHolder .enemyImg:hover {
-  -webkit-filter: saturate(191%);
-          filter: saturate(191%);
+  filter: saturate(191%);
   cursor: pointer;
 }
-/*# sourceMappingURL=style.css.map */
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

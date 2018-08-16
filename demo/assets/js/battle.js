@@ -239,6 +239,7 @@ let enemyAttack = ()=>{
             let returnMessage = "Your Turn!";
             alertMessage(returnMessage);
             autoText(returnMessage);
+            document.querySelector("#health").classList.remove("shake"); // remove healthbar shake. Shake added in doDamage()
         }
         if (enemyData.enemies[enemyString[i]]) {
 
@@ -269,6 +270,7 @@ let doDamage = (min,max)=> {
     // damage is subtracted from player health
     gameState.current.damage += damage;
     document.querySelector("#health .value").innerText = gameState.current.health - gameState.current.damage;
+    document.querySelector("#health").classList.add("shake");
     document.querySelector("#health .healthBar").setAttribute("style", `width:${gameState.current.health - gameState.current.damage}%`);
 
     // TODO: install Vue.js & have health bar synced for free
