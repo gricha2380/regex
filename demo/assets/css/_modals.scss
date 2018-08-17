@@ -263,6 +263,11 @@
         padding: 3rem 1rem;
         position: absolute;
         width: inherit;
+        max-width: calc(100% - 3rem);
+
+        .descriptionText {
+            max-width: 50rem;
+        }
     }
 }
 
@@ -274,13 +279,22 @@
     z-index: 2;
     padding: 1rem;
 
+    #tutorialAnimation {
+        text-align: center;
+
+        img {
+            max-width: 300px;
+        }
+    }
+
     #tutorialDescription {
         text-align: center;
         color: white;
         text-shadow: 2px 2px 3px black;
-        font-size: 3rem;
         font-weight: bold;
-        margin-top: 6rem;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+        font-size: 2rem;
     }
 
     #tutorialArrow {

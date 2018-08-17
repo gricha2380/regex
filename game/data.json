@@ -111,12 +111,13 @@
 						"counter": 0,
 						"dialogue":[
 							{
-								"task":"Welcome to REGEX: THE GAME!",
+								"task":"Welcome to REGEX: THE GAME!<br>Use your deck of patterns to match the enemies on screen.",
+								"animation":"welcome.gif",
 								"arrow": 
 								{
-									"direction":"down",
-									"positionX":"50",
-									"positionY":"50"
+									"direction":"left",
+									"positionX":"61",
+									"positionY":"46"
 								}
 							},
 							{

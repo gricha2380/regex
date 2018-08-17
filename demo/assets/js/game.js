@@ -176,7 +176,7 @@ let checkForCutScene = ()=> {
                 <div id="cutSceneBackgroundChar" style="background-image:url(assets/images/characters/${backgroundChar});"></div>
                 <div id="cutSceneDescription">
                     <div id="cutSceneTitle">${title}</div> 
-                    ${description}
+                    <div class="descriptionText">${description}</div>
                 </div>
             </div>`;
             $("body").prepend(div);
@@ -221,12 +221,21 @@ let checkForTutorial = ()=>{
             let description = dialogue[counter].task;
             let positionX = dialogue[counter].arrow.positionX;
             let positionY = dialogue[counter].arrow.positionY;
+            let animation = dialogue[counter].animation;
             let div = 
             `<div id="tutorialOverlay">
-                <div id="tutorialArrow" class="${arrow}Arrow" style="top:${positionY}%;left:${positionX}%"></div>
                 <div id="tutorialDescription">${description}</div>
             </div>`;
             $("body").prepend(div);
+
+            if (arrow) {
+                $().append(`<div id="tutorialArrow" class="${arrow}Arrow" style="top:${positionY}%;left:${positionX}%"></div>`);
+            }
+
+            if (animation) {
+                $("#tutorialOverlay").append(`<div id="tutorialAnimation"><img src="assets/images/tutorials/${animation}"></div>`);
+            }
+
             $("#tutorialOverlay").on("click", function(){
                 console.log("tutorial clicked...");
                 counter++;
