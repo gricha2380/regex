@@ -181,7 +181,7 @@
 					"randomizeEnemies":true,
 					"enemyMax":0,
 					"currentWave":0,
-					"waves":[	
+					"waves":[
 						{
 							"enemies":[{"enemy":"hello world","goal":"hello"},{"enemy":"welcome","goal":"welcome"}],
 							"dialogue":{
@@ -231,7 +231,7 @@
 					},
 					"randomizeEnemies":true,
 					"enemyMax":0,
-					"enemies":[{"enemies":"double trouble","goal":"trouble"},{"enemies":"first things first","goal":"things first"}],
+					"enemies":[{"enemies":"double trouble double","goal":"trouble double"},{"enemies":"first things first","goal":"things first"}],
 					"cards":{
 						"available": 0,
 						"categories": 0
@@ -374,7 +374,7 @@
 				{
 					"name":"7",
 					"number":6,
-					"description":"Find the time stamps",
+					"description":"Find the time",
 					"tutorial": {
 						"enabled": true,
 						"counter":  0,
