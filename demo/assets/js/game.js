@@ -1,7 +1,7 @@
 let gameState = {};
 let enemyData = {}, enemyArray;
 let savedSessions = [];
-let currentMode, currentLevel, currentWave;
+let currentMode, currentLevel, currentWave, currentGoal;
 let dialogue, counter;
 
 fetch("../enemies/data.json")
@@ -117,8 +117,11 @@ let loadLevelEnemies = ()=>{
     
     // choose random enemy if toggle is on
     if (gameState.mode[gameState.current.mode].levels[currentLevel].randomizeEnemies) {
-        enemiesDefault = enemyArray[currentWave].enemies[Math.floor((Math.random() * enemyArray.length) + 0)].enemy; 
-        console.log("randomize is on. enemiesDefault", enemiesDefault)
+        let randomNumber = Math.floor((Math.random() * enemyArray.length) + 0);
+        enemiesDefault = enemyArray[currentWave].enemies[randomNumber].enemy;
+        currentGoal =  enemyArray[currentWave].enemies[randomNumber].goal;
+        console.log("randomize is on. enemiesDefault", enemiesDefault);
+        console.log("current goal", currentGoal);
     } else {
         enemiesDefault = enemyArray[currentWave].enemies[0].enemy;
         console.log("randomize is off. enemiesDefault", enemiesDefault)

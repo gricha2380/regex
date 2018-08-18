@@ -183,7 +183,7 @@
 					"currentWave":0,
 					"waves":[
 						{
-							"enemies":[{"enemy":"hello world","goal":"hello"},{"enemy":"welcome","goal":"welcome"}],
+							"enemies":[{"enemy":"hello world","goal":"hello"},{"enemy":"welcome world","goal":"welcome"}],
 							"dialogue":{
 								"intro":"Use character patterns to remove the first word",
 								"completion":"Great! Characters let you explicitly match",

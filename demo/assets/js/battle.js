@@ -76,7 +76,7 @@ $(".clear").on("click touchstart", function(e){
     endTurn();  
 })
 
-// produce regex to match enemies
+// produce regex to match enemies. The meat and potatoes of the engine!
 let matchEnemies = ()=> {
     $("#enemyImageHolder .enemyImageHolder").removeClass("matched");
     gameState.holdPoints = 0; // holds points awarded each turn
@@ -139,14 +139,14 @@ let matchEnemies = ()=> {
 
                 if (i >= matchSet[matchRange].start && i < matchSet[matchRange].end) {
                     console.log("match found",resultArray[i],matchSet[matchRange].start, matchSet[matchRange].end);
-                    let currentMatch = $("#enemyImageHolder .enemyImageHolder:not('.blank')").get(i); //was using .not(".blank")
+                    let currentMatch = $("#enemyImageHolder .enemyImageHolder").get(i); //was using :not('.blank')
                     // try .blank again. 
                     console.log("here is currentmatch",currentMatch)
                     console.log("here is i",i)
 
                     if (!$(currentMatch).hasClass("blank")) {
                         console.log("no blank class")
-                        $(currentMatch).addClass("matched");
+                        $(currentMatch).addClass("matched"); // visually mark div with checkmark
                         let currentLetter = $(currentMatch).find("img").attr("data-value");
                         if (currentLetter) {
                             console.log("currentLetter",currentLetter);
@@ -189,34 +189,62 @@ let clearEnemies = (totalEnemyMatch)=> {
     enemiesDefaultHTML = $("#enemies").html();
     inspectEnemyListener();
 
-    // check for end of level conditions
-
-
-    if (remainingEnemies=='' || remainingEnemies==' ') {
-
-        console.log("no enemies left");
-        console.log("checking for other waves");
-
-        if (currentWave+1 == enemyArray.length) {
-            
-            document.querySelector("#enemies").innerText = "All Clear!";
-            setTimeout(function() {
-                document.querySelector("#enemies").innerText = "";
-                beatLevel();
-            }, 1000);
-        }
-        else {
-            document.querySelector("#enemies").innerText = "All Clear!";
-            setTimeout(function() {
-                alertMessage("Prepare for next wave...");
-                document.querySelector("#enemies").innerText = "";
-                currentWave++;
-                loadLevelEnemies();
-            }, 1000);
-            
+    let checkGoalCompletion = ()=>{
+        if (remainingEnemies == currentGoal) {
+            // next level function
+            checkForNewWave();
+        } else if (remainingEnemies=='' || remainingEnemies==' ') {
+            // check if results 
+            // find way to determine when results should be compared with goal
+            // it can't show game over at every end turn check
+            // how to know when enemyArray is ready to be checked?
+            // maybe only check when all enemies are gone?
+            // question is kind of important for gameplay
+            console.log("object not met. game over");
+            gameOver();
+        } else{
+            enemyAttack(); // otherwise let enemies attack
         }
     }
-    else {enemyAttack()} // otherwise let enemies attack
+
+    // check at every clearing to see if level goal is met 
+    if (gameState.current.mode == "story") {
+        checkGoalCompletion();
+    }
+    // check for end of level conditions
+    else if (gameState.current.mode == "story" && remainingEnemies=='' || remainingEnemies==' ') {
+        console.log("no enemies left");
+        console.log("verifying level goals");
+        checkForNewWave();
+    }
+    else {enemyAttack()} 
+    
+}
+
+
+let checkForNewWave = ()=> {
+    console.log("checking for other waves");
+    // if current wave is last wave
+    if (currentWave+1 == enemyArray.length) {
+        
+        document.querySelector("#enemies").innerText = "All Clear!";
+        setTimeout(function() {
+            document.querySelector("#enemies").innerText = "";
+            beatLevel();
+        }, 1000);
+    }
+    // if multiple waves of enemies
+    else {
+        document.querySelector("#enemies").innerText = "All Clear!";
+        setTimeout(function() {
+            alertMessage("First wave complete!");
+            alertMessage("Prepare for next wave...");
+            document.querySelector("#enemies").innerText = "";
+            currentWave++;
+            loadLevelEnemies();
+        }, 1000);
+        
+    }
 }
 
 // enemy attacks player
