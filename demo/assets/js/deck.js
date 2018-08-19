@@ -40,6 +40,14 @@ let loadActiveCategory = ()=> {
             </div>
         `)
     }
+    // sort deck with locked cards at end
+    console.log("now sorting cards...");
+    
+    let sortDeck = (a, b) => {
+        return ($(b).find('button').attr('class')) < ($(a).find('button').attr('class')) ? 1 : -1;
+    }
+    $("#cards .cardHolder").sort(sortDeck).appendTo('#cards'); // append again to the list
+    
     infoButtonListener();
 }
 
