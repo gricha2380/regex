@@ -111,19 +111,22 @@
 						"counter": 0,
 						"dialogue":[
 							{
-								"task":"Welcome to REGEX: THE GAME!<br>Use your deck of patterns to match the enemies on screen.",
+								"task":"Welcome to REGEX: THE GAME!<br>Press any PATTERN to add it to your hand.",
 								"animation":"welcome.gif",
 								"arrow": 
 								{
+									"enabled":false,
 									"direction":"left",
 									"positionX":"61",
 									"positionY":"46"
 								}
 							},
 							{
-								"task":"Click any PATTERN to add it to your hand.",
+								"task":"When ready,<br>press END TURN",
+								"animation":"endTurn.gif",
 								"arrow": 
 								{
+									"enabled":false,
 									"direction":"up",
 									"positionX":"30",
 									"positionY":"80"

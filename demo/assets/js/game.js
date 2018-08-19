@@ -231,11 +231,13 @@ let checkForTutorial = ()=>{
             </div>`;
             $("body").prepend(div);
 
-            if (arrow) {
-                $().append(`<div id="tutorialArrow" class="${arrow}Arrow" style="top:${positionY}%;left:${positionX}%"></div>`);
+            if (arrow && dialogue[counter].arrow.enabled) {
+                console.log("showing arrow");
+                $("#tutorialOverlay").append(`<div id="tutorialArrow" class="${arrow}Arrow" style="top:${positionY}%;left:${positionX}%"></div>`);
             }
-
+            
             if (animation) {
+                console.log("showing tutorial animation");
                 $("#tutorialOverlay").append(`<div id="tutorialAnimation"><img src="assets/images/tutorials/${animation}"></div>`);
             }
 
