@@ -101,7 +101,7 @@
 						"enabled": true,
 						"counter": 0,
 						"dialogue":[
-							"Goal: Match first word using CHARACTER card.",
+							"Goal: Use SINGLE CHAR to match the SECOND word",
 							"Click card from the deck to place it in your hand.",
 							"When you're ready, press ATTACK."
 						]
@@ -185,7 +185,7 @@
 						{
 							"enemies":[{"enemy":"hello world","goal":"hello"},{"enemy":"welcome world","goal":"welcome"}],
 							"dialogue":{
-								"intro":"Use character patterns to remove the first word",
+								"intro":"Use SINGLE CHAR to match the SECOND word",
 								"completion":"Great! Characters let you explicitly match",
 								"failed":"That wasn't a character card!"
 							}
@@ -210,28 +210,69 @@
 						"locked":["Any Word","Any Char","Not White Space","White Space","Exclude Set","Set", "Not a Word"]
 					}
 				},
+
 				{
 					"name":"2",
 					"number":1,
 					"description":"Humble Beginnings...",
-					"tutorial": {
+					"tip": {
 						"enabled": true,
-						"counter":  0,
+						"counter": 0,
 						"dialogue":[
 							"Goal: Match first word only!",
 							"Use your ANCHORS",
 							"Internal Tip: A rabbit's favorite vegetable"
 						]
 					},
+					"tutorial":{
+						"enabled": false,
+						"counter": 0,
+						"dialogue":[
+							{
+								"task":"This should not show...",
+								"animation":"welcome.gif",
+								"arrow": 
+								{
+									"direction":"left",
+									"positionX":"61",
+									"positionY":"46"
+								}
+							}
+						]
+					},
 					"cutScene":{
 						"enabled":false,
 						"dialogue":[
-							{"title":"","description":"","image":"gregor"}
+							{
+								"title":"Blank",
+								"description":"Nothing should show here...",
+								"background":"grass.jpg",
+								"backgroundChar":"4.svg",
+								"foregroundChar":"gregor.svg"
+							}
 						]
 					},
 					"randomizeEnemies":true,
 					"enemyMax":0,
-					"enemies":[{"enemies":"double trouble double","goal":"trouble double"},{"enemies":"first things first","goal":"things first"}],
+					"currentWave":0,
+					"waves":[
+						{
+							"enemies":[{"enemy":"double trouble double","goal":"trouble double"},{"enemy":"first things first","goal":"things first"}],
+							"dialogue":{
+								"intro":"Use ^ to match the FIRST word",
+								"completion":"Great! Characters let you explicitly match",
+								"failed":"That wasn't a character card!"
+							}
+						},
+						{
+							"enemies":[{"enemy":"hello world2","goal":"world2"},{"enemy":"hello world22","goal":"world22"}],
+							"dialogue":{
+								"intro":"One more time!",
+								"completion":"Great! SET patterns find the characters anywhere in the string",
+								"failed":"That wasn't a character card!"
+							}
+						}
+					],
 					"cards":{
 						"available": 0,
 						"categories": 0

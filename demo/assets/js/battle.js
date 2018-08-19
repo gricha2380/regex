@@ -240,7 +240,9 @@ let checkForNewWave = ()=> {
             alertMessage("First wave complete!");
             alertMessage("Prepare for next wave...");
             document.querySelector("#enemies").innerText = "";
+            document.querySelector("#attack").disabled = true;
             currentWave++;
+            autoText(enemyArray[currentWave].dialogue.intro);
             loadLevelEnemies();
         }, 1000);
         

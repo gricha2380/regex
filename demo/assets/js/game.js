@@ -109,14 +109,14 @@ let random = ()=>{
 }
 
 let loadLevelEnemies = ()=>{
-    enemyArray = gameState.mode[gameState.current.mode].levels[currentLevel].waves;
+    enemyArray = gameState.mode[currentMode].levels[currentLevel].waves;
     console.log("these are your enemyArray opponents",enemyArray);
     document.querySelector('#enemies').innerText = ''; // clear previous enemies from screen
     enemiesDefault = '';
 
     
     // choose random enemy if toggle is on
-    if (gameState.mode[gameState.current.mode].levels[currentLevel].randomizeEnemies) {
+    if (gameState.mode[currentMode].levels[currentLevel].randomizeEnemies) {
         let randomNumber = Math.floor((Math.random() * enemyArray.length) + 0);
         enemiesDefault = enemyArray[currentWave].enemies[randomNumber].enemy;
         currentGoal =  enemyArray[currentWave].enemies[randomNumber].goal;
@@ -326,24 +326,36 @@ let beatLevel = ()=> {
     document.querySelector("#continueGameModal").addEventListener("click", (event)=>{
         console.log("continue game...");
         event.preventDefault();
-        newGame();
+        continueSession();
         document.querySelector('body').removeChild(document.querySelector("#beatLevel"));
     })
     document.querySelector("#goHomeModal").addEventListener("click", (event)=>{
         console.log("going home");
         event.preventDefault();
         // saveSession(); TODO: Replace with a version that saves info without resetting
-        continueSession();
+        newGame();
         window.location.href = "index.html";
     })
 }
 
 let nextLevel = ()=> {
-    gameState.current.level = gameState.mode[gameState.mode].levels[gameState.current.level.number+1];
-    console.log(`advancing to level ${gameState.current.level.number}`);
-    document.querySelector("#level .value").innerText = gameState.current.level.name;
-    checkForCutScene();
-    loadLevelEnemies(); // load level specific words
+    currentLevel++;
+
+    if (currentMode == "arcade"){
+        random();
+    }
+    else if (currentMode == "story"){
+        gameState.current.level = gameState.mode[currentMode].levels[gameState.current.level.number+1];
+        console.log(`advancing to level ${gameState.current.level.number}`);
+        document.querySelector("#level .value").innerText = gameState.current.level.name;
+        tipText();
+        dialogue = gameState.mode[currentMode].levels[currentLevel].tip.dialogue;
+        counter = gameState.mode[currentMode].levels[currentLevel].tip.counter;
+        currentWave = gameState.mode[gameState.current.mode].levels[currentLevel].currentWave;
+        checkForCutScene();
+        loadLevelEnemies(); // load level specific words
+    }
+
 }
 
 let newGame = ()=> {
@@ -452,8 +464,8 @@ let saveSession = () => {
 }
 
 let continueSession = ()=>{
-    currentLevel++;
     window.localStorage.setItem('currentLevel',JSON.stringify([gameState.current.level]+1));
+    nextLevel();
 }
 
 let tipText = () => {
@@ -514,7 +526,6 @@ let tipToggle = ()=>{
         $("#tip").toggle();
     })
 }
-// tipToggle();
 
 /* Utilities */
 let calculateTime = (start, end, pretty) => {
