@@ -260,7 +260,7 @@ let checkForNewWave = ()=> {
 // enemy attacks player
 let enemyAttack = ()=>{
     document.querySelector("#attack").disabled = true; // disable end turn button
-    
+
     // let enemyString = document.querySelector("#enemies").innerText.replace(/\s/g, ''); // remove blank spaces
     let enemyString = enemiesDefault;
     
@@ -322,7 +322,9 @@ let doDamage = (min,max)=> {
 // make sure player's still alive
 let checkHealth = ()=>{
     console.log("checking health");
-    if (gameState.damage >= gameState.health) gameOver();
+    console.log("current damage", gameState.damage);
+    console.log("current health", gameState.health);
+    if (gameState.current.damage >= gameState.current.health) gameOver();
 }
 
 // had to move this to bott0om of game.js for unknown reasons..
