@@ -1,5 +1,6 @@
 let gameState = {};
 let gameModes = '';
+let gameModesLocal = ["quiz","reference"];
 
 let loadGameState = ()=>{
     fetch("../game/data.json")
@@ -13,9 +14,13 @@ let loadGameState = ()=>{
 loadGameState();
 
 let loadGameModes = ()=>{
-    for (mode in gameState.mode) {
-        gameModes += `<div class="mode">${mode}</div>`;
+    // for (mode in gameState.mode) {
+    //     gameModes += `<div class="mode">${mode}</div>`;
+    // }
+    for (mode in gameModesLocal) {
+        gameModes += `<div class="mode">${gameModesLocal[mode]}</div>`;
     }
+
     $("#gameModes").html(gameModes);
     $("#gameModes").append(`<div class="closeModes"></div>`)
 }

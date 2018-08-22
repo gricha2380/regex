@@ -130,7 +130,7 @@ let matchEnemies = ()=> {
 
             // do for loop for each item in matchSet
            console.log("matchSet here",matchSet);
-            console.log("All enemyHolders from DOM",$("#enemyImageHolder .enemyImageHolder:not('.blank')"));
+            console.log("All enemyHolders from DOM",$("#enemyImageHolder .enemyImageHolder"));
            // strip blanks from enemy string before entering matchSet
 
            for (matchRange in matchSet) {
@@ -139,12 +139,12 @@ let matchEnemies = ()=> {
 
                 if (i >= matchSet[matchRange].start && i <= matchSet[matchRange].end) {
                     console.log("match found",resultArray[i],matchSet[matchRange].start, matchSet[matchRange].end);
-                    let currentMatch = $("#enemyImageHolder .enemyImageHolder:not('.blank')").get(i); //was using :not('.blank')
+                    let currentMatch = $("#enemyImageHolder .enemyImageHolder").get(i); //was using :not('.blank')
                     // try .blank again. 
                     console.log("here is currentmatch",currentMatch)
                     console.log("here is i",i)
 
-                    // if (!$(currentMatch).hasClass("blank")) {
+                    if (!$(currentMatch).hasClass("blank")) {
                         console.log("no blank class")
                         $(currentMatch).addClass("matched"); // visually mark div with checkmark
                         let currentLetter = $(currentMatch).find("img").attr("data-value");
@@ -154,7 +154,7 @@ let matchEnemies = ()=> {
                             gameState.holdPoints += enemyData[enemyType].points.normal; // points to be awarded for matching enemy
                             console.log("points added",enemyData[enemyType].points.normal);
                         }
-                    // }
+                    }
                 }
            }
         }
@@ -168,6 +168,7 @@ let endTurn = ()=>{
     gameState.holdPoints = 0;
 }
 
+// check for goal completion and remove enemies 
 let clearEnemies = (totalEnemyMatch)=> {
 
     $("#hand .simple-grid").html(""); // clear hand
@@ -217,6 +218,13 @@ let clearEnemies = (totalEnemyMatch)=> {
         console.log("verifying level goals");
         checkForNewWave();
     }
+    else if (gameState.current.mode == "arcade" && remainingEnemies=='' || remainingEnemies==' ') {
+        document.querySelector("#enemies").innerText = "All Clear!";
+        setTimeout(function() {
+            document.querySelector("#enemies").innerText = "";
+            beatLevel();
+        }, 1000);
+    }
     else {enemyAttack()} 
     
 }
@@ -225,7 +233,7 @@ let clearEnemies = (totalEnemyMatch)=> {
 let checkForNewWave = ()=> {
     console.log("checking for other waves");
     // if current wave is last wave
-    if (currentWave+1 == enemyArray.length) {
+    if (currentWave && currentWave+1 == enemyArray.length) {
         
         document.querySelector("#enemies").innerText = "All Clear!";
         setTimeout(function() {

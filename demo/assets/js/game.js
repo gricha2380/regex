@@ -397,8 +397,10 @@ let gameOver = ()=> {
                     <span class="record">New Record!</span>
                 </div>
             </div>
-            <a><button id="newGameModal">New Game</button></a>
-            <a><button id="goHomeModal">Home</button></a>
+            <div class="actions">
+                <a><button id="newGameModal">New Game</button></a>
+                <a><button id="goHomeModal">Home</button></a>
+            </div>
         </div>`
     document.querySelector("body").appendChild(newDiv);
     document.querySelector("#newGameModal").addEventListener("click", ()=>{
