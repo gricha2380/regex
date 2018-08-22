@@ -25,7 +25,7 @@ let loadGameState = ()=>{
         if (window.localStorage.getItem('currentLevel')) {
             // currentLevel = window.localStorage.getItem('currentLevel');
             currentLevel = JSON.parse(window.localStorage.getItem('currentLevel'));
-            console.log("I found a current level",currentLevel)
+            console.log("I found a current level",currentLevel, typeof currentLevel)
         }
         if (!currentLevel || currentLevel===0) {
             console.log("starting level fresh...")
@@ -38,6 +38,8 @@ let loadGameState = ()=>{
         }
         document.querySelector("#level .value").innerHTML = `${gameState.current.level.name}: ${gameState.current.level.description}`;
         if (gameState.current.mode == "arcade"){
+            currentMode = gameState.current.mode;
+            document.querySelector("#level .value").innerText = currentLevel+1;
             random();
         }
         else if (gameState.current.mode == "story"){
@@ -71,6 +73,7 @@ let increaseScore = (increase) => {
 
 let random = ()=>{
     document.querySelector('#enemies').innerText = '';
+    document.querySelector("#attack").disabled = true; // disable end turn button
     let enemyTotal = Math.floor(Math.random()*2) + 1; // number of words between 1 & 3
     enemiesDefault = '';
     for (let i = 0; i < enemyTotal; i++) {
@@ -341,9 +344,14 @@ let beatLevel = ()=> {
 }
 
 let nextLevel = ()=> {
-    currentLevel++;
+    console.log(typeof currentLevel);
+    console.log(`incrimenting level from ${currentLevel} to ${currentLevel+1}`);
+    currentLevel = currentLevel+1;
+    console.log(`current level is now ${currentLevel}`);
 
     if (currentMode == "arcade"){
+        console.log("arcade level. You get a random...")
+        document.querySelector("#level .value").innerText = currentLevel+1;
         random();
     }
     else if (currentMode == "story"){
@@ -467,8 +475,11 @@ let saveSession = () => {
     eraseSavedLevelProgress();
 }
 
+// save level progress if window is closed
 let continueSession = ()=>{
-    window.localStorage.setItem('currentLevel',JSON.stringify([gameState.current.level]+1));
+    console.log("saving session to local storage");
+    window.localStorage.setItem('currentLevel',JSON.stringify(gameState.current.level.number)); 
+    // currentLevel = window.localStorage.getItem('currentLevel');
     nextLevel();
 }
 
