@@ -307,7 +307,7 @@ let beatLevel = ()=> {
     newDiv.classList.add("modal");
     newDiv.innerHTML =
         `<div class="inner center">
-            <div class="title">Level ${gameState.current.level.number+1} Cleared!</div>
+            <div class="title">Level ${currentLevel+1} Cleared!</div>
             <div class="row" id="timeModal">
                 <label>Time Spent</label>
                 <div class="holder">
@@ -337,7 +337,7 @@ let beatLevel = ()=> {
     document.querySelector("#goHomeModal").addEventListener("click", (event)=>{
         console.log("going home");
         event.preventDefault();
-        // saveSession(); TODO: Replace with a version that saves info without resetting
+        // saveSessionResults(); TODO: Replace with a version that saves info without resetting
         newGame();
         window.location.href = "index.html";
     })
@@ -377,7 +377,7 @@ newGame();
 let gameOver = ()=> {
     $("#tip").hide();
     console.log("game over!");
-    saveSession();
+    // saveSessionResults();
     let newDiv = document.createElement('div');
     newDiv.id = "gameOver";
     newDiv.classList.add("modal");
@@ -414,14 +414,14 @@ let gameOver = ()=> {
     document.querySelector("#newGameModal").addEventListener("click", ()=>{
         console.log("new game");
         event.preventDefault();
-        saveSession();
+        saveSessionResults();
         document.querySelector('body').removeChild(document.querySelector("#gameOver"));
         newGame();
     })
     document.querySelector("#goHomeModal").addEventListener("click", (event)=>{
         console.log("going home");
         event.preventDefault();
-        saveSession();
+        saveSessionResults();
         window.location.href = "index.html";
     });
     // give oh no message
@@ -449,8 +449,8 @@ else {
     savedSessions = {};
 }
 
-
-let saveSession = () => {
+// save data for high score list
+let saveSessionResults = () => {
     console.log("saving game data");
     
     // look for game mode inside savedSessions

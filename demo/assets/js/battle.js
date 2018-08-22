@@ -23,7 +23,7 @@ let processCards = (cardValue) => {
         let mode = $(this).find(".cardClass").attr("value");
         if ($(this).find(".cardClass").attr("value")=="manual") {
             // manual cards require user input
-            cardValue = prompt(`Type your input. Example:${deckData[gameState.activeCategory][cardName].examples[0].pattern}`);
+            cardValue = prompt(`Type your input. Example:${deckData[gameState.activeCategory][cardName].examples[0].pattern}`,`${deckData[gameState.activeCategory][cardName].examples[0].pattern}`);
             console.log("cardValue",cardValue)
             if (!cardValue) return; // if user cancels
         } else {
@@ -259,6 +259,8 @@ let checkForNewWave = ()=> {
 
 // enemy attacks player
 let enemyAttack = ()=>{
+    document.querySelector("#attack").disabled = true; // disable end turn button
+    
     // let enemyString = document.querySelector("#enemies").innerText.replace(/\s/g, ''); // remove blank spaces
     let enemyString = enemiesDefault;
     
