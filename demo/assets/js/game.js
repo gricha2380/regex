@@ -387,7 +387,7 @@ let gameOver = ()=> {
             <div class="row" id="levelsModal">
                 <label>Levels Completed</label>
                 <div class="holder">
-                    <div class="value">${gameState.current.level.number}</div>
+                    <div class="value">${currentLevel}</div>
                     <span class="record">New Record!</span>
                 </div>
             </div>
@@ -411,6 +411,15 @@ let gameOver = ()=> {
             </div>
         </div>`
     document.querySelector("body").appendChild(newDiv);
+    gameOverEventListener();
+    
+    // give oh no message
+    // showScoreScreen()
+    // save score data
+    // return to main menu
+}
+
+let gameOverEventListener = () => {
     document.querySelector("#newGameModal").addEventListener("click", ()=>{
         console.log("new game");
         event.preventDefault();
@@ -424,10 +433,6 @@ let gameOver = ()=> {
         saveSessionResults();
         window.location.href = "index.html";
     });
-    // give oh no message
-    // showScoreScreen()
-    // save score data
-    // return to main menu
 }
 
 let restart = ()=> {

@@ -86,9 +86,10 @@ let loadScores = () => {
                 rows[category] += `<div class="row"><div class="num">${i+1}.</div><div class="score">${savedSessions[category][i].score}</div><div class="date">${new Date(savedSessions[category][i].date).toLocaleDateString('en-US',{year:'numeric',day:'numeric',month:'long'})}</div></div>`;
             }
         }
-        $("#scoresBody h1").text(`${currentmode} Mode`)
+        // $("#scoresBody h1").text(`${currentmode} Mode`);
+        $("#scoresBody h1").text(`${currentmode} Mode`);
         $("#scoresBody .left").html(rows[currentmode]);
-        $("#gameModes").html(categoryHeaders);
+        $("#scoreType").html(categoryHeaders);
         listeners();
     }
     

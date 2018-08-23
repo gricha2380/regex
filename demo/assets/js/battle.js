@@ -235,7 +235,7 @@ let checkForNewWave = ()=> {
     // if current wave is last wave
     if (currentWave && currentWave+1 == enemyArray.length) {
         
-        document.querySelector("#enemies").innerText = "All Clear!";
+        document.querySelector("#enemies").innerText = "Level Cleared!";
         setTimeout(function() {
             document.querySelector("#enemies").innerText = "";
             beatLevel();
@@ -243,7 +243,7 @@ let checkForNewWave = ()=> {
     }
     // if multiple waves of enemies
     else {
-        document.querySelector("#enemies").innerText = "All Clear!";
+        document.querySelector("#enemies").innerText = "Objective Complete!";
         setTimeout(function() {
             alertMessage("First wave complete!");
             alertMessage("Prepare for next wave...");
