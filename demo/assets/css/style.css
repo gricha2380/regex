@@ -722,24 +722,25 @@ body {
   padding-top: 1rem;
 }
 
-#achievementsContainer #gameModes {
+#achievementsContainer #scoreType {
   text-transform: capitalize;
 }
 
-#achievementsContainer #gameModes .achievementCategory {
+#achievementsContainer #scoreType .achievementCategory {
   display: inline-block;
   padding: 0 2rem 0 0;
-}
-
-#achievementsContainer #gameModes .achievementCategory:hover {
-  cursor: pointer;
-}
-
-#achievementsContainer #gameModes .achievementCategory.active {
   color: grey;
 }
 
-#achievementsContainer #gameModes .achievementCategory.active:hover {
+#achievementsContainer #scoreType .achievementCategory:hover {
+  cursor: pointer;
+}
+
+#achievementsContainer #scoreType .achievementCategory.active {
+  color: black;
+}
+
+#achievementsContainer #scoreType .achievementCategory.active:hover {
   cursor: initial;
 }
 
@@ -747,6 +748,7 @@ body {
   position: relative;
   text-align: left;
   margin-bottom: 2rem;
+  color: grey;
 }
 
 #achievementsContainer .nav div:hover {
@@ -754,7 +756,7 @@ body {
 }
 
 #achievementsContainer .nav .active {
-  color: grey;
+  color: black;
 }
 
 #achievementsContainer .nav .active:hover {
@@ -869,6 +871,25 @@ body {
 
 #achievementsContainer #achievementsBody .left .row .achievementPercent {
   float: right;
+}
+
+#achievementsContainer #scoreType {
+  text-align: left;
+}
+
+#achievementsContainer #scoreType div {
+  display: inline-block;
+  font-size: .8rem;
+  padding: 0 1rem;
+  text-transform: uppercase;
+}
+
+#achievementsContainer #scoreType div:first-of-type {
+  padding-left: 0;
+}
+
+#achievementsContainer #scoreType div:hover {
+  cursor: pointer;
 }
 
 .simple-grid {

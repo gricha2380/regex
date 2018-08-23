@@ -37,8 +37,8 @@ else {
 
 let listeners = ()=>{
     $(".achievementCategory").not(".active").on("click",(event)=>{
-        console.log("current mode is now", event.target.attributes.value.nodeValue)
         currentmode = event.target.attributes.value.nodeValue;
+        console.log("current mode is now", currentmode);
         loadScores();
         // loadAchievements();
         randomCaptions();
@@ -70,22 +70,28 @@ let loadScores = () => {
         $("#scoresBody .left").html(`No sessions found. <br><a href="battle.html"><button id="play" class="main button" >Start Playing!</button></a>`);
     }
     else {
+        console.log(`loading scores for ${currentmode}`)
         savedSessions[currentmode].sort((a,b)=> b.score - a.score);
         console.log("values after sort", savedSessions)
         // dive into each category
         categoryHeaders='';
         for (category in savedSessions) {
+            rows[category] = '';
             if (category == currentmode) {
                 categoryHeaders+= `<div class="achievementCategory active" value="${category}">${category}</div>`;
+                console.log("current category is", category)
+                for (let i = 0;i<savedSessions[category].length;i++) {
+                    console.log("saved session category value",savedSessions[category][i])
+                    console.log("saved session category score",savedSessions[category][i].score)
+                    rows[category] += `<div class="row"><div class="num">${i+1}.</div><div class="score">${savedSessions[category][i].score}</div><div class="date">${new Date(savedSessions[category][i].date).toLocaleDateString('en-US',{year:'numeric',day:'numeric',month:'long'})}</div></div>`;
+                }
+                console.log("entire row category after loop",rows[currentmode])
             } else {
                 categoryHeaders+= `<div class="achievementCategory" value="${category}">${category}</div>`;
             }
-            rows[category] = '';
-            console.log("current category is", category)
-            for (let i = 0;i<savedSessions[category].length && i<20;i++) {
-                rows[category] += `<div class="row"><div class="num">${i+1}.</div><div class="score">${savedSessions[category][i].score}</div><div class="date">${new Date(savedSessions[category][i].date).toLocaleDateString('en-US',{year:'numeric',day:'numeric',month:'long'})}</div></div>`;
-            }
         }
+        console.log("this is rows within loop", rows)
+        console.log("entire row category after big loop",rows[currentmode])
         // $("#scoresBody h1").text(`${currentmode} Mode`);
         $("#scoresBody h1").text(`${currentmode} Mode`);
         $("#scoresBody .left").html(rows[currentmode]);
@@ -118,13 +124,14 @@ let randomCaptions = () => {
 
 let loadAchievements = () => {
     console.log('inside load acheivement processor')
-    rows = '';
+    rows = {};
+    rows.achievements = '';
     for (entry in gameState.achievements.achievements) {
         console.log("this is entry", entry)
-        rows += `<div class="row achievement"><div class="achievementName">${gameState.achievements.achievements[entry].name}</div><div class="achievementPercent">${gameState.achievements.achievements[entry].progress}%</div></div>`
+        rows.achievements += `<div class="row achievement"><div class="achievementName">${gameState.achievements.achievements[entry].name}</div><div class="achievementPercent">${gameState.achievements.achievements[entry].progress}%</div></div>`
     }
-    console.log("this is rows",rows)
-    $("#achievementsBody .left").html(rows);
+    console.log("this is rows",rows.achievements)
+    $("#achievementsBody .left").html(rows.achievements);
 }
 
 // todo: generate list for each category...

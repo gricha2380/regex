@@ -337,8 +337,8 @@ let beatLevel = ()=> {
     document.querySelector("#goHomeModal").addEventListener("click", (event)=>{
         console.log("going home");
         event.preventDefault();
-        // saveSessionResults(); TODO: Replace with a version that saves info without resetting
-        newGame();
+        saveSessionResults(); //TODO: Replace with a version that saves info without resetting
+        // newGame();
         window.location.href = "index.html";
     })
 }
