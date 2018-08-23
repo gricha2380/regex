@@ -153,7 +153,7 @@
 							},
 							{
 								"title":"Agent Gricha",
-								"description":"Oky, so how do we do it?",
+								"description":"Okay, so how do we do it?",
 								"background":"grass.jpg",
 								"backgroundChar":"",
 								"foregroundChar":"gregor.svg"
@@ -188,7 +188,7 @@
 						{
 							"enemies":[{"enemy":"hello world","goal":"hello"},{"enemy":"welcome world","goal":"welcome"}],
 							"dialogue":{
-								"intro":"Use SINGLE CHAR to match the SECOND word",
+								"intro":"Use SINGLE CHARS to match the SECOND word",
 								"completion":"Great! Characters let you explicitly match",
 								"failed":"That wasn't a character card!"
 							}
@@ -270,7 +270,7 @@
 						{
 							"enemies":[{"enemy":"hello world2","goal":"world2"},{"enemy":"hello world22","goal":"world22"}],
 							"dialogue":{
-								"intro":"One more time!",
+								"intro":"Remove FIRST word again!",
 								"completion":"Great! SET patterns find the characters anywhere in the string",
 								"failed":"That wasn't a character card!"
 							}

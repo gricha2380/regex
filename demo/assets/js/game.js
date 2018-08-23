@@ -18,17 +18,16 @@ let loadGameState = ()=>{
         gameState = res;
         console.log("gameState here", enemyData);
     }).then(res => {
-        // look in localstorge for current level
-        // if present set gameState.current.level = localstorage
-        // elsewhere... when level completed, add new level to localstorage
-        findGameMode();
-        if (window.localStorage.getItem('currentLevel')) {
-            // currentLevel = window.localStorage.getItem('currentLevel');
-            currentLevel = JSON.parse(window.localStorage.getItem('currentLevel'));
-            console.log("I found a current level",currentLevel, typeof currentLevel)
+        findGameMode(); // grab from local storage
+        // if saved game data exists, load it
+        if (window.localStorage.getItem('gameState')) {
+            gameState.current = JSON.parse(window.localStorage.getItem('gameState'));
+            currentLevel = gameState.current.level.number;
+            // currentLevel = JSON.parse(window.localStorage.getItem('currentLevel'));
+            console.log("I found a current level",gameState.current)
         }
         if (!currentLevel || currentLevel===0) {
-            console.log("starting level fresh...")
+            console.log("no current level found. Starting level fresh...");
             resetLevels();
             resetHealth();
             resetScore();
@@ -443,7 +442,7 @@ let restart = ()=> {
 }
 
 
-// if saved game data exits, load it
+// if high score data exits, load it
 if (window.localStorage.getItem('savedSessions')) {
     savedSessions = JSON.parse(window.localStorage.getItem('savedSessions'));
     console.log('Found existing localstorage values.',savedSessions);
@@ -453,6 +452,7 @@ else {
     console.log('No local storage, starting fresh.');
     savedSessions = {};
 }
+
 
 // save data for high score list
 let saveSessionResults = () => {
@@ -480,12 +480,11 @@ let saveSessionResults = () => {
     eraseSavedLevelProgress();
 }
 
-// save level progress if window is closed
+// save level progress
 let continueSession = ()=>{
-    console.log("saving session to local storage");
-    window.localStorage.setItem('currentLevel',JSON.stringify(gameState.current.level.number)); 
-    // currentLevel = window.localStorage.getItem('currentLevel');
     nextLevel();
+    console.log("save saving current gameState and level to local storage");
+    window.localStorage.setItem('gameState',JSON.stringify(gameState.current)); 
 }
 
 let tipText = () => {

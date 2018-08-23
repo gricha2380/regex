@@ -1087,11 +1087,18 @@ body {
   filter: saturate(292%) brightness(70%) hue-rotate(103deg);
 }
 
+#enemyImageHolder .enemyImageHolder.attacking {
+  animation: bounce 0.5s linear both;
+  animation-iteration-count: infinite;
+}
+
 #enemyImageHolder .enemyImageHolder.attacking::before {
   position: absolute;
   content: "Attacking";
   top: -1rem;
-  left: 1rem;
+  left: calc(-50% + 10px);
+  color: #D82262;
+  font-weight: bold;
   width: 50px;
   height: 50px;
   background-size: contain;
@@ -1131,5 +1138,14 @@ body {
   }
   40%, 60% {
     transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
   }
 }

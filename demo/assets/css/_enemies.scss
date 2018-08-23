@@ -30,11 +30,16 @@
         }
         &.attacking {
 
+            animation: bounce 0.5s linear both;
+            animation-iteration-count:infinite;
+
             &::before {
                 position: absolute;
                 content: "Attacking";
                 top: -1rem;
-                left: 1rem;
+                left: calc(-50% + 10px);
+                color: $main;
+                font-weight: bold;
                 width: 50px;
                 height: 50px;
                 // background: url(../images/matched.svg) no-repeat;

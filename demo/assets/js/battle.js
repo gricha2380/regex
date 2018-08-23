@@ -191,7 +191,8 @@ let clearEnemies = (totalEnemyMatch)=> {
     inspectEnemyListener();
 
     let checkGoalCompletion = ()=>{
-        if (remainingEnemies == currentGoal) {
+        // if remaining enemies matches current goal without spaces
+        if (remainingEnemies == currentGoal.replace(/\s/g, '')) {
             // next level function
             checkForNewWave();
         } else if (remainingEnemies=='' || remainingEnemies==' ') {

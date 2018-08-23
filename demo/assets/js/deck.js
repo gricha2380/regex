@@ -1,5 +1,8 @@
 let deckRender = $("#deck");
 let deckData = {};
+if (!gameState) {
+    let gameState = {};
+}
 
 fetch("../categories/data.json")
 .then((resp) => resp.json())
@@ -33,8 +36,8 @@ let loadActiveCategory = ()=> {
                     <span class="name">${deckData[gameState.activeCategory][card].name}</span>
                     <span>${deckData[gameState.activeCategory][card].nickname}</span>
                     ${deckData[gameState.activeCategory][card].type == "auto" ? 
-                            '<span class="cardClass" value="auto">⚡️</span>' :
-                            '<span class="cardClass" value="manual">...</span>'}
+                        '<span class="cardClass" value="auto">⚡️</span>' :
+                        '<span class="cardClass" value="manual">...</span>'}
                 </button>
                 <div class="infoIcon">?</div>
             </div>

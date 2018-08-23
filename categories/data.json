@@ -102,8 +102,8 @@
                 }
             ]
         },
-        "Single Char":{
-            "name": "Single Char",
+        "Single Chars":{
+            "name": "Single Chars",
             "nickname": "x",
             "type":"manual",
             "description":"Explicitly match the given characters",
