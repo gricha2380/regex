@@ -33,7 +33,7 @@ let loadActiveCategory = ()=> {
         $("#cards").append(`
             <div class="cardHolder">
                 <button class="${gameState.current.level.deck.locked.indexOf(card) >=0 && gameState.current.mode == "story" ? 'card locked' : 'card'}" value="${deckData[gameState.activeCategory][card].nickname}" data-name="${card}" data-category="${gameState.activeCategory}">
-                    <span class="name">${deckData[gameState.activeCategory][card].name}</span>
+                    <div class="name"><div class="nameInner">${deckData[gameState.activeCategory][card].name}</div></div>
                     <span>${deckData[gameState.activeCategory][card].nickname}</span>
                     ${deckData[gameState.activeCategory][card].type == "auto" ? 
                         '<span class="cardClass" value="auto">⚡️</span>' :

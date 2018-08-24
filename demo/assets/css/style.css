@@ -49,7 +49,7 @@
   background: rgba(0, 0, 0, 0.8);
   color: white;
   font-size: 1.5rem;
-  z-index: 1;
+  z-index: 4;
 }
 
 .modal .inner {
@@ -231,7 +231,7 @@
   color: white;
   bottom: 0;
   text-align: center;
-  z-index: 1;
+  z-index: 3;
 }
 
 #tip .closeButton {
@@ -265,6 +265,7 @@
 
 #tip .container:hover {
   padding: 2rem 0 2rem 3rem;
+  cursor: pointer;
 }
 
 #tip .container.auto {
@@ -294,8 +295,9 @@
   height: 100%;
   padding: 1rem;
   position: fixed;
+  top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 4;
 }
 
 #cutScene #cutSceneForegroundChar {
@@ -349,12 +351,16 @@
 }
 
 #tutorialOverlay {
-  width: 100%;
-  height: 100%;
   background-color: rgba(44, 123, 204, 0.9);
-  position: fixed;
-  z-index: 2;
+  height: 100%;
   padding: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
 }
 
 #tutorialOverlay #tutorialAnimation {
@@ -373,6 +379,10 @@
   margin-top: 2rem;
   margin-bottom: 4rem;
   font-size: 2rem;
+}
+
+#tutorialOverlay #tutorialDescription .title {
+  color: #D82262;
 }
 
 #tutorialOverlay #tutorialArrow {
@@ -399,10 +409,28 @@
   transform: rotate(90deg);
 }
 
+html {
+  min-height: 100%;
+}
+
 body {
-  background: #4EEDD9;
+  background-color: #4EEDD9;
   font-family: sans-serif;
   margin: 0;
+  background-image: url(../images/backgrounds/grass.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body.battle {
+  background-image: url(../images/backgrounds/battle1.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+body.achievements {
+  background: #4EEDD9;
 }
 
 .container {
@@ -410,6 +438,15 @@ body {
   margin: auto;
   text-align: center;
   position: relative;
+}
+
+.logo {
+  background-image: url(../images/logo.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 150px;
+  width: 293px;
+  margin: 1rem auto 0;
 }
 
 .lowerNav a {
@@ -423,21 +460,19 @@ body {
 }
 
 .cardHolder .card {
-  background: yellow;
-  color: #D82262;
+  background: #2AA14F;
+  border-radius: .5rem;
   height: 70px;
   width: 70px;
   vertical-align: bottom;
   position: relative;
+  padding-top: 2rem;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .cardHolder .card span {
   display: block;
   height: 13px;
-}
-
-.cardHolder .card span.name {
-  height: 1.8rem;
 }
 
 .cardHolder .card:hover, .cardHolder .card.hover {
@@ -446,21 +481,45 @@ body {
 }
 
 .cardHolder .card.locked::before {
-  content: "";
-  background: url("../images/locked.svg");
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background-position: center 15px;
-  left: 0;
-  background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0.5);
+  background-position: center 15px;
+  background-repeat: no-repeat;
+  background-image: url("../images/locked.svg");
+  border-radius: .5rem;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
   top: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 .cardHolder .card.locked:hover {
   cursor: not-allowed;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cardHolder .card .name {
+  height: 1.8rem;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  margin: auto;
+  border-radius: .5rem .5rem 0 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  vertical-align: middle;
+}
+
+.cardHolder .card .name .nameInner {
+  max-width: 61px;
+  margin: auto;
 }
 
 .infoIcon {
@@ -482,33 +541,56 @@ body {
 #alert {
   position: absolute;
   width: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.7);
   color: white;
   margin-top: 0px;
+  transition: .5s;
+  text-align: center;
+  z-index: 2;
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 1px black;
   transition: 0.5s;
 }
 
 #alert.active {
-  padding: 1rem 0;
+  padding: 1rem;
   text-align: center;
 }
 
 #health {
-  background: grey;
-  padding: 0;
-  color: white;
-  font-size: .9rem;
+  float: right;
   position: relative;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.42);
+  color: white;
+  padding: .3rem .5rem .3rem 1.5rem;
+  border-radius: .5rem;
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  min-height: 1.2rem;
+  min-width: 2rem;
+}
+
+#health:before {
+  background-image: url(../images/ui/health.svg);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  height: 37px;
+  left: -19px;
+  position: absolute;
+  top: -2px;
+  width: 42px;
 }
 
 #health .healthBar {
-  background: #D82262;
-  width: 100%;
   height: 1rem;
-  position: absolute;
   left: 0;
-  z-index: 0;
+  position: absolute;
   transition: .5s;
+  width: 100%;
+  z-index: 0;
 }
 
 #health .healthText {
@@ -516,60 +598,73 @@ body {
 }
 
 #health.shake {
+  animation-iteration-count: infinite;
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
-  animation-iteration-count: infinite;
+  transform: translate3d(0, 0, 0);
 }
 
 #deck {
   background: #D8D8D8;
   border: 2px solid #979797;
-  padding: 1rem;
+  min-height: 138px;
   overflow-x: auto;
+  padding: 1rem;
 }
 
 #deck #cards {
-  height: 6rem;
-  width: 100%;
-  text-align: left;
+  -webkit-overflow-scrolling: touch;
   display: flex;
   flex-wrap: nowrap;
-  -webkit-overflow-scrolling: touch;
+  height: 6rem;
+  text-align: left;
+  width: 100%;
 }
 
 .main {
   background: #D82262;
+  border: none;
   color: white;
   padding: .5rem 4rem;
-  border: none;
 }
 
 .clear {
   background: #4B4B4B;
+  border: none;
   color: rgba(255, 255, 255, 0.5);
   padding: .5rem 1rem;
-  border: none;
 }
 
 #arena {
-  border: 2px dashed #151aa7;
   background: rgba(29, 59, 129, 0.5);
+  border: 2px dashed #151aa7;
   min-height: 110px;
 }
 
 #hand {
   color: white;
-  font-weight: bold;
-  font-size: 1rem;
-  padding: .5rem 1rem;
   display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: .5rem 1rem;
 }
 
 #hand .name {
-  color: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: .5rem .5rem 0 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
   height: 2rem;
+  justify-content: center;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  text-transform: uppercase;
+  top: 0;
+  vertical-align: middle;
+  width: 100%;
 }
 
 #enemies {
@@ -613,9 +708,9 @@ body {
 }
 
 .smallLink {
-  padding: 1rem 0;
+  color: white;
   font-size: .8rem;
-  color: rgba(0, 0, 0, 0.5);
+  padding: 1rem 0;
   text-decoration: none;
 }
 
@@ -629,11 +724,11 @@ body {
 
 #categories {
   display: flex;
+  font-weight: bold;
   justify-content: space-between;
   list-style: none;
-  text-align: left;
   margin-bottom: .5rem;
-  font-weight: bold;
+  text-align: left;
 }
 
 #categories li {
@@ -656,33 +751,70 @@ body {
 }
 
 #score {
+  background: rgba(0, 0, 0, 0.42);
+  border-radius: .5rem;
+  color: white;
   float: right;
-  padding: 1rem 0;
-  font-size: .8rem;
-  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.2rem;
+  min-height: 1.2rem;
+  min-width: 2rem;
+  padding: .3rem 1rem .3rem 1.5rem;
+  position: relative;
+  text-align: center;
   text-decoration: none;
+}
+
+#score:before {
+  background-image: url(../images/ui/score.svg);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  height: 37px;
+  left: -20px;
+  position: absolute;
+  top: -2px;
+  width: 42px;
 }
 
 #level {
+  color: #D82262;
   display: inline-block;
-  padding: 1rem 0;
-  font-size: .8rem;
-  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0;
+  position: relative;
   text-decoration: none;
+  text-shadow: 1px 1px black;
+  text-transform: uppercase;
+}
+
+#level .value {
+  display: block;
+  text-transform: none;
+  color: white;
+  text-shadow: -3px -1px 0px black;
 }
 
 .gameType {
-  width: 2rem;
-  display: inline-block;
-  line-height: .5rem;
-  text-transform: uppercase;
+  color: #D82262;
+  display: block;
+  float: left;
   font-size: .5rem;
-  margin-left: .5rem;
   font-weight: bold;
-  opacity: .5;
+  left: -3rem;
+  line-height: .5rem;
+  position: absolute;
+  text-shadow: 1px 1px black;
+  text-transform: uppercase;
+  top: 4px;
+  max-width: 4rem;
+  text-align: right;
 }
 
 #header {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
   text-align: left;
 }
 
@@ -900,29 +1032,41 @@ body {
   margin: auto;
 }
 
+.simple-grid:empty::after {
+  content: "Select a card below!";
+  width: 100%;
+  line-height: 100px;
+}
+
 .grid-item {
   text-align: center;
   vertical-align: middle;
   margin: 5px;
   width: 78px;
   height: 78px;
-  color: white;
   font-size: 15px;
   border: 3px solid white;
   cursor: move;
   position: relative;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+  border-radius: .5rem;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .grid-item:hover .remove {
   display: block;
 }
 
+.grid-item .innerBlock {
+  padding-top: 2rem;
+}
+
 .remove {
   display: none;
   position: absolute;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
   padding: .1rem 0;
   transition: .5s;
   bottom: 0;
@@ -930,7 +1074,6 @@ body {
 
 .remove:hover {
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.8);
 }
 
 .deep-purple {
@@ -1084,7 +1227,7 @@ body {
 }
 
 #enemyImageHolder .enemyImageHolder.matched .enemyImg {
-  filter: saturate(292%) brightness(70%) hue-rotate(103deg);
+  filter: saturate(0%) brightness(64%) hue-rotate(103deg);
 }
 
 #enemyImageHolder .enemyImageHolder.attacking {

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="20px" viewBox="0 0 22 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>heart</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-4.8%" y="-8.3%" width="105.8%" height="116.7%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="-1" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Gameplay-Portrait-v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="No-Cards-Selected-fancy-Copy" transform="translate(-260.000000, -8.000000)" fill="#D82262" fill-rule="nonzero" stroke="#FFFFFF">
+            <g id="health" filter="url(#filter-1)" transform="translate(262.000000, 9.000000)">
+                <path d="M18.407428,2.90577024 C17.611686,1.27271763 15.319474,-0.0634163242 12.6531444,0.714510556 C11.3790426,1.08253456 10.2674116,1.87177163 9.49986831,2.95327723 C8.73232498,1.87177163 7.620694,1.08253456 6.34659218,0.714510556 C3.67432427,-0.0515395779 1.38805061,1.27271763 0.592308614,2.90577024 C-0.524105535,5.1920439 -0.060912431,7.76335946 1.97001118,10.5484565 C3.56149518,12.7278394 5.83589209,14.9369142 9.13762755,17.5022914 C9.35231291,17.6697321 9.65336208,17.6697321 9.86804745,17.5022914 C13.1638445,14.9428526 15.4441798,12.7515929 17.0356638,10.5484565 C19.0606491,7.76335946 19.5238422,5.1920439 18.407428,2.90577024 Z" id="heart"></path>
+            </g>
+        </g>
+    </g>
+</svg>

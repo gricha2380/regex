@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="18px" viewBox="0 0 20 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Star</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-4.2%" y="-8.3%" width="105.0%" height="111.1%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="-1" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Gameplay-Portrait-v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="No-Cards-Selected-fancy-Copy" transform="translate(-194.000000, -9.000000)" fill="#EEBC1F" fill-rule="nonzero" stroke="#FFFFFF">
+            <g id="score" filter="url(#filter-1)" transform="translate(195.000000, 9.000000)">
+                <polygon id="Star" points="9.5 14.25 3.9160401 17.1856614 4.98248155 10.9678307 0.464963095 6.56433855 6.70802005 5.65716928 9.5 0 12.2919799 5.65716928 18.5350369 6.56433855 14.0175185 10.9678307 15.0839599 17.1856614"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

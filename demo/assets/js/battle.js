@@ -35,6 +35,7 @@ let processCards = (cardValue) => {
         addQuantifiers(); // add quantifiers between cards
         removeListener(); // event listener for removing cards
         matchEnemies(); // highlight matched enemies
+        inspectEnemyListener(); // event listener for displaying card info
     })
 }
 
@@ -42,7 +43,7 @@ let processCards = (cardValue) => {
 let generateCard = (cardValue, cardName, mode)=>{
     $("#hand .simple-grid")
     .append(`
-        <div class="${"lime"} z-depth-3 grid-item include" value="${cardValue}">
+        <div class="${"light-blue"} z-depth-3 grid-item include" value="${cardValue}">
             <div class="remove">remove</div>
             <div class="innerBlock auto">
                 <div class="name">${cardName}</div>
@@ -53,13 +54,14 @@ let generateCard = (cardValue, cardName, mode)=>{
     )
 }
 
-// event listener to remove card
+// event listener to remove card from hand
 let removeListener = () => {
     $(".remove").on("click touchstart", function() {
         console.log("this is my parent", $(this).parent())
         $(this).parent().remove();
         addQuantifiers();
         matchEnemies(); // currently caues infinite loop
+        inspectEnemyListener();
     })
 }
 
@@ -90,24 +92,24 @@ let matchEnemies = ()=> {
     let resultArray = enemiesDefault.split("");
     
    console.log("current value of enemiesDefault",enemiesDefault)
+   enemiesDefault = enemiesDefault.replace(/\s/g,""); // removing blank spaces
    console.log("playerPattern source",playerPattern.source,playerPattern.source.length)
     if (playerPattern.source.length > 0 && playerPattern.source !== "(?:)") {
         let counter = 0; // to prevent infinite loop
         
         // iterate through each 
-        while ((match = playerPattern.exec(enemiesDefault)) != null) {
+        while (match = playerPattern.exec(enemiesDefault)) {
             console.log("in while loop",match,match.index);
             console.log("match char", match[0]);
-            if (match[0] !== " ") {
-                console.log("not blank, pushing to matchSet...");
-                
+            // if (/\S/.test(match[0])) { // is this a redundant check? Maybe...
+                // console.log("not blank, pushing to matchSet...");
                 matchSet.push({"start":match.index,"end":playerPattern.lastIndex});
-            }
+            // }
             console.log("counter value", counter);
             counter++;
-            if (counter >=20) {
+            if (counter >=30) {
                 console.log("Too many loops. Aborting.");
-                break
+                break;
             }
         }
         
@@ -134,17 +136,17 @@ let matchEnemies = ()=> {
            // strip blanks from enemy string before entering matchSet
 
            for (matchRange in matchSet) {
-                console.log("matchset start mostly",matchSet[matchRange])
+                console.log("current matchSet object",matchSet[matchRange])
                 console.log("current matchSet start + end",matchSet[matchRange].start,matchSet[matchRange].end)
 
-                if (i >= matchSet[matchRange].start && i <= matchSet[matchRange].end) {
+                if (i >= matchSet[matchRange].start && i < matchSet[matchRange].end) {
                     console.log("match found",resultArray[i],matchSet[matchRange].start, matchSet[matchRange].end);
-                    let currentMatch = $("#enemyImageHolder .enemyImageHolder").get(i); //was using :not('.blank')
+                    let currentMatch = $("#enemyImageHolder .enemyImageHolder:not('.blank')").get(i); //was using :not('.blank')
                     // try .blank again. 
                     console.log("here is currentmatch",currentMatch)
                     console.log("here is i",i)
 
-                    if (!$(currentMatch).hasClass("blank")) {
+                    // if (!$(currentMatch).hasClass("blank")) {
                         console.log("no blank class")
                         $(currentMatch).addClass("matched"); // visually mark div with checkmark
                         let currentLetter = $(currentMatch).find("img").attr("data-value");
@@ -154,7 +156,7 @@ let matchEnemies = ()=> {
                             gameState.holdPoints += enemyData[enemyType].points.normal; // points to be awarded for matching enemy
                             console.log("points added",enemyData[enemyType].points.normal);
                         }
-                    }
+                    // }
                 }
            }
         }
@@ -330,6 +332,7 @@ let checkHealth = ()=>{
 
 // had to move this to bott0om of game.js for unknown reasons..
 let inspectEnemyListener = ()=>{
+    console.log("listening for inspect enemy clicks")
     $(".enemyImageHolder").off();
     $(".enemyImageHolder").on("click touchstart", function(){
         if ($(this).find(".enemyImg").attr("data-value")) {

@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="assets/css/style.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/images/logo.png" />
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
     <title>Regex Battle</title>
 </head>
-<body>
+<body class="battle">
     <div id="tip"><div class="closeButton"></div><div class="container auto"><div class="message"></div><div class="pagination"></div></div></div>
     <div class="container static mbot5">
-        <div id="health">
-            <span class="healthBar"></span>
-            <div class="healthText">
-                <span class="value"></span>/<span class="max"></span>
-            </div>
-        </div>
-        <div class="relative">
-            <div id="alert"></div>
-        </div>
         <div id="header">
-            <div id="level">Level <span class="value"></span><span class="gameType"></span></div>
-            <div id="score">Score: <span class="value"></span></div>
+            <div id="health">
+                <span class="healthBar"></span>
+                <div class="healthText">
+                    <span class="value"></span>%<span class="max"></span>
+                </div>
+            </div>
+            <div id="level"><span class="name"></span><span class="value"></span><span class="gameType"></span></div>
+            <div id="score"><span class="value"></span></div>
+            <div class="relative">
+                <div id="alert"></div>
+            </div>
         </div>
         <div class="field">
             <div id="enemies"></div>

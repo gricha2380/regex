@@ -19,12 +19,19 @@ let loadGameState = ()=>{
         console.log("gameState here", enemyData);
     }).then(res => {
         findGameMode(); // grab from local storage
-        // if saved game data exists, load it
+        // if saved game data exists, load it and resume
         if (window.localStorage.getItem('gameState')) {
-            gameState.current = JSON.parse(window.localStorage.getItem('gameState'));
-            currentLevel = gameState.current.level.number;
-            // currentLevel = JSON.parse(window.localStorage.getItem('currentLevel'));
-            console.log("I found a current level",gameState.current)
+            let previousGame = JSON.parse(window.localStorage.getItem('gameState'));
+            if (!gameState.current.mode || previousGame.mode == gameState.current.mode) {
+                gameState.current = previousGame;
+                currentLevel = gameState.current.level.number;
+                setHealth();
+                setScore();
+                // currentLevel = JSON.parse(window.localStorage.getItem('currentLevel'));
+                console.log("I found a current level",gameState.current)
+            } else {
+                console.log("previous game was found but it's for a different game mode!")
+            }
         }
         if (!currentLevel || currentLevel===0) {
             console.log("no current level found. Starting level fresh...");
@@ -35,10 +42,12 @@ let loadGameState = ()=>{
             console.log("start timetamp",gameState.current.timer.global.start) // remove later   
             eraseSavedLevelProgress();
         }
-        document.querySelector("#level .value").innerHTML = `${gameState.current.level.name}: ${gameState.current.level.description}`;
+        document.querySelector("#level .name").innerHTML = `Level ${gameState.current.level.name}`;
+        document.querySelector("#level .value").innerHTML = `${gameState.current.level.description}`;
         if (gameState.current.mode == "arcade"){
             currentMode = gameState.current.mode;
-            document.querySelector("#level .value").innerText = currentLevel+1;
+            document.querySelector("#level .name").innerText = `Level ${currentLevel+1}`;
+            document.querySelector("#level .value").innerHTML = ``;
             random();
         }
         else if (gameState.current.mode == "story"){
@@ -56,13 +65,22 @@ let loadGameState = ()=>{
 let resetHealth = () => {
     gameState.current.health = 100;
     gameState.current.damage = 0;
-    document.querySelector("#health .max").innerText = gameState.current.health;
+    // document.querySelector("#health .max").innerText = gameState.current.health;
     document.querySelector("#health .value").innerText = gameState.current.health - gameState.current.damage;
 }
 
 let resetScore = () => {
     gameState.current.score = 0;
     document.querySelector("#score .value").innerText = 0;
+}
+
+let setHealth = () => {
+    // document.querySelector("#health .max").innerText = gameState.current.health;
+    document.querySelector("#health .value").innerText = gameState.current.health - gameState.current.damage;
+}
+
+let setScore = () => {
+    document.querySelector("#score .value").innerText = gameState.current.score;
 }
 
 let increaseScore = (increase) => {
@@ -290,7 +308,7 @@ let findGameMode = ()=> {
         gameState.current.mode = "arcade";
     }
     
-    $(".gameType").text(`${gameState.current.mode} mode`);
+    $(".gameType").html(`${gameState.current.mode}<br>mode`);
 }
 
 //level cleared
@@ -350,13 +368,14 @@ let nextLevel = ()=> {
 
     if (currentMode == "arcade"){
         console.log("arcade level. You get a random...")
-        document.querySelector("#level .value").innerText = currentLevel+1;
+        document.querySelector("#level .name").innerText = `Level ${currentLevel+1}`;
         random();
     }
     else if (currentMode == "story"){
         gameState.current.level = gameState.mode[currentMode].levels[gameState.current.level.number+1];
         console.log(`advancing to level ${gameState.current.level.number}`);
-        document.querySelector("#level .value").innerText = gameState.current.level.name;
+        document.querySelector("#level .name").innerHTML = `Level ${gameState.current.level.name}`;
+        document.querySelector("#level .value").innerHTML = `${gameState.current.level.description}`;
         tipText();
         dialogue = gameState.mode[currentMode].levels[currentLevel].tip.dialogue;
         counter = gameState.mode[currentMode].levels[currentLevel].tip.counter;
@@ -424,6 +443,7 @@ let gameOverEventListener = () => {
         event.preventDefault();
         saveSessionResults();
         document.querySelector('body').removeChild(document.querySelector("#gameOver"));
+        eraseSavedLevelProgress();
         newGame();
     })
     document.querySelector("#goHomeModal").addEventListener("click", (event)=>{

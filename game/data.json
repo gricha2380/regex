@@ -101,7 +101,7 @@
 						"enabled": true,
 						"counter": 0,
 						"dialogue":[
-							"Goal: Use SINGLE CHAR to match the SECOND word",
+							"Goal: Use SINGLE CHARS to match the SECOND word",
 							"Click card from the deck to place it in your hand.",
 							"When you're ready, press ATTACK."
 						]
@@ -124,6 +124,17 @@
 							{
 								"task":"When ready,<br>press END TURN",
 								"animation":"endTurn.gif",
+								"arrow": 
+								{
+									"enabled":false,
+									"direction":"up",
+									"positionX":"30",
+									"positionY":"80"
+								}
+							},
+							{
+								"task":"<span class='title'>Level Objective:</span><br>Use SINGLE CHARS card to match the SECOND word",
+								"position": "50%",
 								"arrow": 
 								{
 									"enabled":false,
@@ -222,7 +233,7 @@
 						"enabled": true,
 						"counter": 0,
 						"dialogue":[
-							"Goal: Match first word only!",
+							"Goal: Only match the FIRST word!",
 							"Use your ANCHORS",
 							"Internal Tip: A rabbit's favorite vegetable"
 						]
