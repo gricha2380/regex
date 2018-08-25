@@ -544,7 +544,6 @@ body.achievements {
   background: rgba(0, 0, 0, 0.7);
   color: white;
   margin-top: 0px;
-  transition: .5s;
   text-align: center;
   z-index: 2;
   font-size: 1.3rem;
@@ -1181,6 +1180,24 @@ body.achievements {
 
 .tipHolder {
   margin: 1rem 0;
+}
+
+#timerWarning {
+  display: none;
+  float: right;
+  right: 10rem;
+  width: 10rem;
+  top: 5rem;
+  color: white;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  margin-top: 0px;
+  text-align: center;
+  z-index: 2;
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 1px black;
+  transition: .5s;
+  padding: 1rem;
 }
 
 @media only screen and (max-width: 600px) {

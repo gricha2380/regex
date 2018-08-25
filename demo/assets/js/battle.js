@@ -283,6 +283,8 @@ let enemyAttack = ()=>{
             alertMessage(returnMessage);
             autoText(returnMessage);
             document.querySelector("#health").classList.remove("shake"); // remove healthbar shake. Shake added in doDamage()
+            
+            timerTrigger();
         }
         if (enemyData.enemies[enemyString[i]]) {
 

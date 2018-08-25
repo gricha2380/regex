@@ -60,6 +60,9 @@ $("#computeValues").on("click", ()=> {
 
 
 let computeHand = () => {
+    
+    timerTrigger();
+
     let values = '';
     if ($(".simple-grid .include")) {
         $(".simple-grid .include").each(function (i, val){

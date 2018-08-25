@@ -27,7 +27,6 @@ let loadGameState = ()=>{
                 currentLevel = gameState.current.level.number;
                 setHealth();
                 setScore();
-                // currentLevel = JSON.parse(window.localStorage.getItem('currentLevel'));
                 console.log("I found a current level",gameState.current)
             } else {
                 console.log("previous game was found but it's for a different game mode!")
@@ -59,6 +58,7 @@ let loadGameState = ()=>{
             loadLevelEnemies(); // load level specific words
         }
 
+        timerTrigger();
     })
 }
 
