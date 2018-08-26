@@ -1,5 +1,7 @@
+let warningAtTime = 20; //60 standard
+let timerCounter;
 let playerTimer = {
-  "limit": 60 * 5,
+  "limit": 60 * .5, //60 * 5 standard
   "current":0
 }; 
 
@@ -13,24 +15,45 @@ let startTimer = () => {
     console.log("time's up!");
     $("#timerWarning").hide();
     clearInterval(timerCounter);
+    // clearTimeout(timerCounter);
     endTurn();
     return;
   }
 
-  if (playerTimer.current <= 60) {
-    console.log("less than 60 seconds")
+  if (playerTimer.current <= warningAtTime) {
+    console.log(`less than ${warningAtTime} seconds`);
     $('#timerWarning').show();
     $("#timerWarning .time").text(`${playerTimer.current}`);
   }
 
 }
 
-let timerCounter;
-
 let timerTrigger = ()=> {
   $('#timerWarning').hide();
   clearInterval(timerCounter);
+  // clearTimeout(timerCounter);
   console.log("timer reset");
   playerTimer.current = playerTimer.limit;
   timerCounter = setInterval(startTimer, 1000);
+  // timerCounter = setTimeout(startTimer, 1000);
+}
+
+let clearAllIntervals = ()=>{
+  console.log("loop to clear inervals")
+  for (var i = 1; i < 50; i++) {
+    console.log("interval loop # "+i);
+    window.clearInterval(i);
+    clearInterval(timerCounter);
+  }
+}
+
+let checkHealthSetTimer = () => {
+  console.log("inside check health timer");
+  if (gameState.current.damage <= gameState.current.health) {
+    console.log("heath is okay, triggering timer")
+    timerTrigger();
+  } else {
+      console.log("no health left. ending timer");
+      clearInterval(timerCounter);
+  }
 }

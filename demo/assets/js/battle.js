@@ -1,6 +1,7 @@
 let enemiesDefault; //holds original enemy array as text to allow resetting
 let enemiesDefaultHTML; //holds original enemy array HTML
 let alert = document.querySelector("#alert"); // notification field
+let gameOverFlag = false;
 
 // dev tool: produce random enemy
 $("#random").on("click touchstart", function(event){
@@ -73,7 +74,7 @@ $(".clear").on("click touchstart", function(e){
 })
 
 // event listener for attack button
-    document.querySelector("#attack").addEventListener("click", e=>{
+document.querySelector("#attack").addEventListener("click", e=>{
     increaseScore(gameState.holdPoints);
     endTurn();  
 })
@@ -228,7 +229,9 @@ let clearEnemies = (totalEnemyMatch)=> {
             beatLevel();
         }, 1000);
     }
-    else {enemyAttack()} 
+    else {
+        enemyAttack();
+    } 
     
 }
 
@@ -284,26 +287,32 @@ let enemyAttack = ()=>{
             autoText(returnMessage);
             document.querySelector("#health").classList.remove("shake"); // remove healthbar shake. Shake added in doDamage()
             
-            timerTrigger();
+            checkHealthSetTimer(); // Set conditional check. If player is still alive
+        
         }
         if (enemyData.enemies[enemyString[i]]) {
-
-            console.log("i value", i)
-            $("#enemies .enemyImageHolder").removeClass("attacking");
-            let currentEnemy = $("#enemies .enemyImageHolder").not(".blank").get(i);
-            $(currentEnemy).addClass("attacking");
-    
-            // determine enemy damage based on character type min & max
-            let enemyType = enemyData.enemies[enemyString[i]].typeShort;
-            console.log("enemy type is", enemyType);
-            let damageRange = enemyData[enemyType].damage;
-            let damage = doDamage(damageRange.min,damageRange.max);
-            $(alert).addClass("active");
-            alert.innerText = `Enemy "${enemyString[i]}" did ${damage} damage!`;
-            console.log(`enemy ${enemyString[i]} did ${damage} damage!`,);
+            if (gameState.current.damage <= gameState.current.health) {
+                console.log("i value", i)
+                $("#enemies .enemyImageHolder").removeClass("attacking");
+                let currentEnemy = $("#enemies .enemyImageHolder").not(".blank").get(i);
+                $(currentEnemy).addClass("attacking");
+                
+                // determine enemy damage based on character type min & max
+                let enemyType = enemyData.enemies[enemyString[i]].typeShort;
+                console.log("enemy type is", enemyType);
+                let damageRange = enemyData[enemyType].damage;
+                let damage = doDamage(damageRange.min,damageRange.max);
+                $(alert).addClass("active");
+                alert.innerText = `Enemy "${enemyString[i]}" did ${damage} damage!`;
+                console.log(`enemy ${enemyString[i]} did ${damage} damage!`,);
+            } else {
+                if (!gameOverFlag) {
+                    console.log("no more heath. game over");
+                    gameOver();
+                }
+            }
         }
         i++;
-        
     }
     f();
 }
@@ -327,12 +336,11 @@ let doDamage = (min,max)=> {
 // make sure player's still alive
 let checkHealth = ()=>{
     console.log("checking health");
-    console.log("current damage", gameState.damage);
-    console.log("current health", gameState.health);
+    console.log("current damage", gameState.current.damage);
+    console.log("current health", gameState.current.health);
     if (gameState.current.damage >= gameState.current.health) gameOver();
 }
 
-// had to move this to bott0om of game.js for unknown reasons..
 let inspectEnemyListener = ()=>{
     console.log("listening for inspect enemy clicks")
     $(".enemyImageHolder").off();
@@ -375,7 +383,6 @@ let generateEnemyModal = (enemy)=>{
         }
     })
 }
-
 
 // clear notification area
 let clearAlert = ()=> {

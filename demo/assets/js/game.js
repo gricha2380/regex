@@ -313,6 +313,7 @@ let findGameMode = ()=> {
 
 //level cleared
 let beatLevel = ()=> {
+    // clearInterval(timerCounter);
     $("#tip").hide();
     console.log("level cleared!");
 
@@ -361,6 +362,7 @@ let beatLevel = ()=> {
 }
 
 let nextLevel = ()=> {
+    // clearInterval(timerCounter);
     console.log(typeof currentLevel);
     console.log(`incrimenting level from ${currentLevel} to ${currentLevel+1}`);
     currentLevel = currentLevel+1;
@@ -393,6 +395,10 @@ newGame();
 
 
 let gameOver = ()=> {
+    gameOverFlag = true;
+    console.log("gameover flag now true");
+    // clearAllIntervals();
+    clearInterval(timerCounter);
     $("#tip").hide();
     console.log("game over!");
     // saveSessionResults();
