@@ -53,17 +53,15 @@ $("#hand").on("lmddbeforestart", ()=>{
 
 $("#computeValues").on("click", ()=> {
     // grab value field from all div's in .simple-grid, including quantifiers
-    // 
     computeHand();
     // compute Values and send to regex processor?
 })
 
 
-let computeHand = () => {
-    
+let computeHand = () => { 
     timerTrigger();
-
     let values = '';
+
     if ($(".simple-grid .include")) {
         $(".simple-grid .include").each(function (i, val){
             let value = $(this).attr("value");

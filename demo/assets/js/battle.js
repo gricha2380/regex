@@ -266,6 +266,9 @@ let checkForNewWave = ()=> {
 // enemy attacks player
 let enemyAttack = ()=>{
     document.querySelector("#attack").disabled = true; // disable end turn button
+    // disable event listners for hand and deck cards
+    unbindPlayerControls();
+    
 
     // let enemyString = document.querySelector("#enemies").innerText.replace(/\s/g, ''); // remove blank spaces
     let enemyString = enemiesDefault;
@@ -288,7 +291,7 @@ let enemyAttack = ()=>{
             document.querySelector("#health").classList.remove("shake"); // remove healthbar shake. Shake added in doDamage()
             
             checkHealthSetTimer(); // Set conditional check. If player is still alive
-        
+            rebindPlayerControls();
         }
         if (enemyData.enemies[enemyString[i]]) {
             if (gameState.current.damage <= gameState.current.health) {
@@ -315,6 +318,20 @@ let enemyAttack = ()=>{
         i++;
     }
     f();
+    
+}
+
+let unbindPlayerControls = ()=>{
+    $(".card").unbind("click");
+    $("#categories li").unbind("click");
+    console.log("Preventing clicks now...");
+}
+
+// re-enable event listeners at the end of enemyAttack
+let rebindPlayerControls = ()=> {
+    processCards(); // listen for click on cards
+    categoryEventListeners(); 
+    console.log("clicking is okay again");
 }
 
 // random damage is calculated & sent back

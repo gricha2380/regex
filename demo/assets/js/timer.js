@@ -1,7 +1,7 @@
-let warningAtTime = 20; //60 standard
+let warningAtTime = 60; //60 standard
 let timerCounter;
 let playerTimer = {
-  "limit": 60 * .5, //60 * 5 standard
+  "limit": 60 * 5, //60 * 5 standard
   "current":0
 }; 
 
@@ -15,7 +15,6 @@ let startTimer = () => {
     console.log("time's up!");
     $("#timerWarning").hide();
     clearInterval(timerCounter);
-    // clearTimeout(timerCounter);
     endTurn();
     return;
   }
@@ -31,11 +30,9 @@ let startTimer = () => {
 let timerTrigger = ()=> {
   $('#timerWarning').hide();
   clearInterval(timerCounter);
-  // clearTimeout(timerCounter);
   console.log("timer reset");
   playerTimer.current = playerTimer.limit;
   timerCounter = setInterval(startTimer, 1000);
-  // timerCounter = setTimeout(startTimer, 1000);
 }
 
 let clearAllIntervals = ()=>{
