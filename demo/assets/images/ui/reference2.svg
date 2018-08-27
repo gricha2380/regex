@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="18px" viewBox="0 0 15 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Gameplay-Portrait-v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="No-Cards-Selected-fancy-Copy" transform="translate(-56.000000, -545.000000)">
+            <g id="Action-Bar" transform="translate(-5.000000, 396.000000)">
+                <g id="Reference" transform="translate(47.000000, 143.000000)">
+                    <g id="icon" transform="translate(14.000000, 6.000000)">
+                        <path d="M2.00438166,1.36527625 C2.01414828,1.36419879 10.8060185,1.36419879 14.9999652,1.36419879 L15,0 L2.04782748,0 C0.916672073,0 0,0.915594617 0,2.04622867 C0,2.23089079 0,11.5279142 0,15.7497011 C0,15.750709 0,15.750709 0,15.7518908 C0,16.8814126 0.913961054,17.7948523 2.04459511,17.7948523 C2.05269341,17.7948523 11.3762362,17.7948523 15,17.7948523 L15,2.72725061 L2.00438166,2.72725061 L2.00438166,2.72617315 C1.64756981,2.70337279 1.36468538,2.4079412 1.36468538,2.04626343 C1.36468538,1.68347344 1.64756981,1.38699916 2.00438166,1.36527625 Z" id="Reference" fill="#FFFFFF" fill-rule="nonzero"></path>
+                        <text id="i" font-family="ArialRoundedMTBold, Arial Rounded MT Bold" font-size="14" font-weight="normal" fill="#077DAB">
+                            <tspan x="6.28960061" y="15">i</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

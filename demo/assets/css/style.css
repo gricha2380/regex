@@ -449,6 +449,10 @@ body.achievements {
   margin: 1rem auto 0;
 }
 
+.lowerNav {
+  margin-top: 1rem;
+}
+
 .lowerNav a {
   color: initial;
 }
@@ -1198,6 +1202,7 @@ body.achievements {
   text-shadow: 1px 1px 1px black;
   transition: .5s;
   padding: 1rem;
+  line-height: 1.5rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -1308,4 +1313,149 @@ body.achievements {
   50% {
     transform: translateY(-5px);
   }
+}
+
+#referenceContainer {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+}
+
+#referenceContainer #referenceInner {
+  display: flex;
+  flex: 1;
+}
+
+#referenceContainer #referenceInner #referenceDetails {
+  border: none;
+  background: white;
+  flex: 1;
+  text-align: left;
+  margin: inherit;
+}
+
+#referenceContainer #referenceInner #referenceDetails #referenceCategoryDescription {
+  padding: 1rem;
+}
+
+#referenceFunctionList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#referenceFunctionList .referenceFunction {
+  padding: 1rem;
+}
+
+#referenceFunctionList .referenceFunction:hover {
+  cursor: pointer;
+  background: rgba(169, 164, 164, 0.15);
+}
+
+#referenceFunctionList .referenceFunction.active {
+  background: rgba(29, 59, 129, 0.5);
+}
+
+#referenceFunctionList .referenceFunction.active .referenceFunctionName {
+  color: white;
+}
+
+#referenceFunctionList .referenceFunction.active:hover {
+  background: rgba(29, 59, 129, 0.5);
+}
+
+#referenceFunctionList .referenceFunction .referenceFunctionName {
+  text-transform: uppercase;
+}
+
+#referenceFunctionList .referenceFunctionIcon {
+  float: right;
+  transition: .25s;
+}
+
+#referenceFunctionList .referenceFunctionIcon.rotate {
+  transform: rotate(90deg);
+}
+
+#referenceFunctionList .referenceFunctionDescription {
+  display: none;
+  padding: 1rem 0;
+}
+
+#referenceFunctionList .referenceFunctionDescription .examplesContent div {
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+#referenceFunctionList .referenceFunctionDescription .examplesContent m {
+  color: #D82262;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#referenceFunctionList .referenceFunctionDescription .examples {
+  line-height: 2rem;
+}
+
+#referenceBody {
+  background: #D8D8D8;
+  border: 2px solid #979797;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: inherit;
+  text-align: left;
+}
+
+#homepageReference {
+  background-image: url(../images/ui/reference.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: white;
+  font-weight: bold;
+  padding-left: 2rem;
+  text-align: left;
+  text-shadow: 1px 1px 2px black;
+  text-transform: uppercase;
+}
+
+#referenceTitleContainer {
+  color: white;
+  padding: .5rem;
+  background: #A9A4A4;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+}
+
+#referenceTitleContainer #referenceClose {
+  float: right;
+}
+
+#referenceSidebar {
+  flex: 0 0 10vw;
+  list-style: none;
+  margin: 0;
+  order: -1;
+  padding: 0;
+}
+
+#referenceSidebar li {
+  padding: 1rem 0 1rem 1rem;
+  text-transform: capitalize;
+}
+
+#referenceSidebar li:hover {
+  cursor: pointer;
+  background: rgba(169, 164, 164, 0.25);
+}
+
+#referenceSidebar li.active {
+  background: white;
+}
+
+#referenceSidebar li.active:hover {
+  background: white;
 }

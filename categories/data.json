@@ -9,7 +9,7 @@
             "examples":[
                 {
                     "pattern":"\\w", 
-                    "matches": "<m>Th!s</m> <m>w0nd3rfu1</m> <m>w0r1d</m>!"
+                    "matches": "<m>Th!s</m> <m>w0nd3rfu1</m> <m>w0r1d</m>GGG!"
                 },
                 {
                     "pattern":"\\w", 

@@ -45,3 +45,10 @@ $(".play").on("click", function(event){
     window.localStorage.setItem('gameMode', JSON.stringify($(this).attr("data-mode")));
     window.location = `battle.html`;
 })
+
+$(".reference").on("click", ()=>{
+    // create modal called referenceModal
+    // ajax contents to reference.html
+  })
+  
+  

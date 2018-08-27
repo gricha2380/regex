@@ -1,0 +1,149 @@
+#referenceContainer {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+  
+  #referenceInner {
+    display: flex;
+    flex: 1;
+
+    #referenceDetails {
+      border: none;
+      background: white;
+      flex: 1;
+      text-align: left;
+      margin: inherit;
+
+      #referenceCategoryDescription {
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+
+#referenceFunctionList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .referenceFunction {
+    padding: 1rem;
+    
+    &:hover {
+      cursor: pointer;
+      background: rgba(169,164,164,0.15);
+    }
+
+    &.active {
+      background: rgba(29,59,129,0.5);
+
+      .referenceFunctionName {
+        color:white;
+      }
+
+      &:hover {
+        background: rgba(29,59,129,0.5);
+      }
+    }
+
+
+    .referenceFunctionName {
+      text-transform: uppercase;
+    }
+  }
+
+  .referenceFunctionIcon {
+    float: right;
+    transition: .25s;
+    &.rotate {
+      transform: rotate(90deg);
+    }
+  }
+
+  .referenceFunctionDescription {
+    display: none;
+    padding: 1rem 0;
+
+    .examplesContent {
+      div {
+        display: inline-block;
+        padding: 0 1rem;
+      }
+
+      m {
+        color: #D82262;
+        text-decoration: underline;
+        font-weight: bold;
+      }
+    }
+
+    .examples {
+      line-height: 2rem;
+    }
+  }
+}
+
+#referenceBody {
+  background: #D8D8D8;
+  border: 2px solid #979797;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: inherit;
+  text-align: left;
+}
+
+#homepageReference {
+  background-image: url(../images/ui/reference.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: white;
+  font-weight: bold;
+  padding-left: 2rem;
+  text-align: left;
+  text-shadow: 1px 1px 2px black;
+  text-transform: uppercase;
+}
+
+#referenceTitleContainer {
+  color: white;
+  padding: .5rem;
+
+  background: #A9A4A4;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+
+  #referenceClose {
+    float: right;
+  }
+}
+
+#referenceSidebar {
+  flex: 0 0 10vw;
+  list-style: none;
+  margin: 0;
+  order: -1;
+  padding: 0;
+
+  li {
+    padding: 1rem 0 1rem 1rem;
+    text-transform: capitalize;
+    
+    &:hover {
+      cursor: pointer;
+      background: rgba(169, 164, 164, .25);
+    }
+    
+    &.active {
+      background: white;
+
+      &:hover {
+        background: white;
+      }
+    }
+  }
+
+}

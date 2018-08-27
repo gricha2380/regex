@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="15px" height="18px" viewBox="0 0 15 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="19px" height="22px" viewBox="0 0 19 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
-    <title>icon</title>
+    <title>reference</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
+    <defs>
+        <filter x="-26.7%" y="-11.1%" width="153.3%" height="144.4%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
     <g id="Gameplay-Portrait-v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="No-Cards-Selected-fancy-Copy" transform="translate(-56.000000, -545.000000)">
-            <g id="Action-Bar" transform="translate(-5.000000, 396.000000)">
-                <g id="Reference" transform="translate(47.000000, 143.000000)">
-                    <g id="icon" transform="translate(14.000000, 6.000000)">
-                        <path d="M2.00438166,1.36527625 C2.01414828,1.36419879 10.8060185,1.36419879 14.9999652,1.36419879 L15,0 L2.04782748,0 C0.916672073,0 0,0.915594617 0,2.04622867 C0,2.23089079 0,11.5279142 0,15.7497011 C0,15.750709 0,15.750709 0,15.7518908 C0,16.8814126 0.913961054,17.7948523 2.04459511,17.7948523 C2.05269341,17.7948523 11.3762362,17.7948523 15,17.7948523 L15,2.72725061 L2.00438166,2.72725061 L2.00438166,2.72617315 C1.64756981,2.70337279 1.36468538,2.4079412 1.36468538,2.04626343 C1.36468538,1.68347344 1.64756981,1.38699916 2.00438166,1.36527625 Z" id="Reference" fill="#FFFFFF" fill-rule="nonzero"></path>
-                        <text id="i" font-family="ArialRoundedMTBold, Arial Rounded MT Bold" font-size="14" font-weight="normal" fill="#077DAB">
-                            <tspan x="6.28960061" y="15">i</tspan>
-                        </text>
-                    </g>
-                </g>
+        <g id="Homepage---Portrait" transform="translate(-85.000000, -406.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="reference" filter="url(#filter-1)" transform="translate(87.000000, 406.000000)">
+                <path d="M2.00438166,1.36527625 C1.64756981,1.38699916 1.36468538,1.68347344 1.36468538,2.04626343 C1.36468538,2.4079412 1.64756981,2.70337279 2.00438166,2.72617315 L2.00438166,2.72725061 L15,2.72725061 L15,17.7948523 C11.3762362,17.7948523 2.05269341,17.7948523 2.04459511,17.7948523 C0.913961054,17.7948523 0,16.8814126 0,15.7518908 C0,15.750709 0,15.750709 0,15.7497011 C0,11.5279142 0,2.23089079 0,2.04622867 C0,0.915594617 0.916672073,0 2.04782748,0 L15,0 L14.9999652,1.36419879 C10.8060185,1.36419879 2.01414828,1.36419879 2.00438166,1.36527625 Z M9.11967873,8.64257812 C9.11967873,8.30989417 9.03081243,8.05013114 8.85307717,7.86328125 C8.6753419,7.67643136 8.44975822,7.58300781 8.17631936,7.58300781 C7.90288049,7.58300781 7.68071474,7.67643136 7.50981545,7.86328125 C7.33891616,8.05013114 7.25346779,8.32812315 7.25346779,8.69726562 L7.25346779,14.0361328 C7.25346779,14.400718 7.33891616,14.6809886 7.50981545,14.8769531 C7.68071474,15.0729176 7.90288049,15.1708984 8.17631936,15.1708984 C8.44975822,15.1708984 8.6753419,15.0751963 8.85307717,14.8837891 C9.03081243,14.6923819 9.11967873,14.4098326 9.11967873,14.0361328 L9.11967873,8.64257812 Z M8.19682717,6.71484375 C8.44747946,6.71484375 8.66394865,6.63395263 8.84624123,6.47216797 C9.02853381,6.31038331 9.11967873,6.08593894 9.11967873,5.79882812 C9.11967873,5.50260269 9.02625519,5.277019 8.83940529,5.12207031 C8.6525554,4.96712162 8.43836483,4.88964844 8.19682717,4.88964844 C7.94617487,4.88964844 7.72628775,4.9750968 7.5371592,5.14599609 C7.34803065,5.31689539 7.25346779,5.53450389 7.25346779,5.79882812 C7.25346779,6.09049625 7.34575203,6.31607993 7.53032326,6.47558594 C7.7148945,6.63509194 7.93706024,6.71484375 8.19682717,6.71484375 Z" id="Combined-Shape"></path>
             </g>
         </g>
     </g>

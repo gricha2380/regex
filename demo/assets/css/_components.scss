@@ -36,7 +36,10 @@ body {
     margin: 1rem auto 0;
 }
 
-.lowerNav a {color: initial;}
+.lowerNav {
+    margin-top: 1rem;
+    a {color: initial;}
+}
 
 .cardHolder {
     flex: 0 0 auto;
@@ -721,6 +724,7 @@ body {
     text-shadow: 1px 1px 1px black;
     transition: .5s;
     padding: 1rem;
+    line-height: 1.5rem;
 }
 
 @media only screen and (max-width: 600px) {
