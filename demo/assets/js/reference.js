@@ -30,7 +30,7 @@ let loadFunctionList = (referenceCategory) => {
 
   let referenceFunction = referenceCategories[refCat];
   console.log("referenceFunction items", referenceFunction);
-  $("#referenceCategoryDescription").text(`Category Descriptions coming soon, using {referenceCategories[descriptions][refCat]}`);
+  $("#referenceCategoryDescription").text(`${refCat} Category Descriptions coming soon, using {referenceCategories[descriptions][refCat]}`);
   $("#referenceFunctionList").html(``);
   let referenceFunctions = '';
   for (e in referenceFunction) {
@@ -44,7 +44,7 @@ let loadFunctionList = (referenceCategory) => {
     referenceFunctions += 
     `
     <li class="referenceFunction">
-      <div class="referenceFunctionName">${e}<div class="referenceFunctionIcon">></div></div>
+      <div class="referenceFunctionName">${e}<div class="referenceFunctionIcon"><img src="assets/images/ui/categoryArrow.svg"></div></div>
             <div class="referenceFunctionDescription">
               <div class="referenceFunctionDescriptionContainer">
                 <div class="description">
@@ -58,14 +58,6 @@ let loadFunctionList = (referenceCategory) => {
             </div>
     </li>
     `;
-/* 
-<div class="examples">
-  <div class="pattern">Pattern: ${referenceFunction[e].examples[0] ? referenceFunction[e].examples[0].pattern : ''}</div>
-  <div class="matches">Matches: ${referenceFunction[e].examples[0] ? referenceFunction[e].examples[0].matches : ''}</div>
-</div> 
-*/
-
-//<div class="examples">Full examples object... ${referenceFunction[e].examples ? referenceFunction[e].examples.forEach(processExamples) : ''}</div>
 
     function processExamples(patterns, matches) {
       let htmlExmaples = '';
@@ -77,8 +69,6 @@ let loadFunctionList = (referenceCategory) => {
         console.log("here are matches from loop",exampleMatches)
         htmlExmaples += `<div class="examplesContent"><div class="examplePatterns">${examplePatterns}</div><div class="matchesLabel">matches</div><div class="exampleMatches">${exampleMatches}</div></div>`
       })
-      // return patterns, matches;
-      // return "hello"
       return htmlExmaples;
     }
   }
@@ -92,22 +82,27 @@ let loadFunctionList = (referenceCategory) => {
 // listen for click on reference function name
 let referenceFunctionListener = ()=> {
   $(".referenceFunction").on("click", function(){
+    let functionDescription = $(this).find(".referenceFunctionDescription");
+    let descriptionOpen = functionDescription.is(":visible");
     $(".referenceFunction").removeClass("active");
     $(".referenceFunctionIcon").removeClass("rotate");
-    $(".referenceFunctionDescription").hide();
-    // $(this).hasClass("active") ? $(this).removeClass("active") : $(this).addClass("active");
-    $(this).addClass("active");
-    // let functionDescription = $(this).find(".referenceFunctionDescription");
-    // functionDescription.is(":visible") ? functionDescription.hide() : functionDescription.show();
-    $(this).find(".referenceFunctionDescription").toggle();
-    let rotate = $(this).find(".referenceFunctionIcon");
-    rotate.hasClass("rotate") ? rotate.removeClass("rotate") : rotate.addClass("rotate");
+    $(".referenceFunctionDescription").hide(); // works but remains open
+    if (descriptionOpen) {
+      $(this).removeClass("active");
+      functionDescription.hide();
+      $(this).find(".referenceFunctionIcon").removeClass("rotate");
+    }
+    else {
+      $(this).addClass("active");
+      functionDescription.show();
+      $(this).find(".referenceFunctionIcon").addClass("rotate");
+    }
   });
 }
-referenceFunctionListener();
+// referenceFunctionListener();
 
 // pull categories items from json 
-let loadCategories = ()=>{
+let loadReferenceCategories = ()=>{
   fetch("../../../categories/data.json")
   .then((resp) => resp.json())
   .then( (res) => {
@@ -118,7 +113,7 @@ let loadCategories = ()=>{
       loadFunctionList();
   })
 }
-loadCategories();
+// loadReferenceCategories();
 
 
 // generate category content

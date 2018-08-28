@@ -1315,6 +1315,26 @@ body.achievements {
   }
 }
 
+#referenceLink {
+  padding: 1rem 3rem;
+}
+
+#referenceModal {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#referenceModal .inner {
+  width: 800px;
+  padding: 0;
+  max-height: 580px;
+  overflow: hidden;
+}
+
+#referenceModal #referenceFunctionList {
+  max-height: 450px;
+  overflow: auto;
+}
+
 #referenceContainer {
   display: flex;
   min-height: 100vh;
@@ -1333,6 +1353,7 @@ body.achievements {
   flex: 1;
   text-align: left;
   margin: inherit;
+  min-height: fit-content;
 }
 
 #referenceContainer #referenceInner #referenceDetails #referenceCategoryDescription {
@@ -1377,9 +1398,11 @@ body.achievements {
 
 #referenceFunctionList .referenceFunctionIcon.rotate {
   transform: rotate(90deg);
+  filter: brightness(200%);
 }
 
 #referenceFunctionList .referenceFunctionDescription {
+  color: rgba(0, 0, 0, 0.8);
   display: none;
   padding: 1rem 0;
 }
@@ -1401,7 +1424,6 @@ body.achievements {
 
 #referenceBody {
   background: #D8D8D8;
-  border: 2px solid #979797;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -1430,7 +1452,12 @@ body.achievements {
   font-weight: bold;
 }
 
+#referenceTitleContainer #referenceTitle {
+  display: inline-block;
+}
+
 #referenceTitleContainer #referenceClose {
+  display: none;
   float: right;
 }
 

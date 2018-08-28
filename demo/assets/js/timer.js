@@ -35,6 +35,12 @@ let timerTrigger = ()=> {
   timerCounter = setInterval(startTimer, 1000);
 }
 
+let timerTriggerStop = ()=> {
+  $('#timerWarning').hide();
+  clearInterval(timerCounter);
+  console.log("timer is stopped");
+}
+
 let clearAllIntervals = ()=>{
   console.log("loop to clear inervals")
   for (var i = 1; i < 50; i++) {

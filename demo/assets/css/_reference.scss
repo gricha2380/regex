@@ -1,3 +1,23 @@
+#referenceLink {
+  padding: 1rem 3rem;
+}
+
+#referenceModal {
+  background: rgba(0,0,0,0.5);
+
+  .inner {
+    width: 800px;
+    padding: 0;
+    max-height: 580px;
+    overflow: hidden;
+  }
+
+  #referenceFunctionList {
+    max-height: 450px;
+    overflow: auto;
+  }
+}
+
 #referenceContainer {
   display: flex;
   min-height: 100vh;
@@ -14,6 +34,7 @@
       flex: 1;
       text-align: left;
       margin: inherit;
+      min-height: fit-content;
 
       #referenceCategoryDescription {
         padding: 1rem;
@@ -57,12 +78,17 @@
   .referenceFunctionIcon {
     float: right;
     transition: .25s;
+    // background-image: url(../images/ui/categoryArrow.svg);
+    // background-repeat: no-repeat;
+    // background-size: contain;
     &.rotate {
       transform: rotate(90deg);
+      filter: brightness(200%);
     }
   }
 
   .referenceFunctionDescription {
+    color: rgba(0, 0, 0, .8);
     display: none;
     padding: 1rem 0;
 
@@ -87,7 +113,6 @@
 
 #referenceBody {
   background: #D8D8D8;
-  border: 2px solid #979797;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -116,7 +141,12 @@
   text-align: center;
   font-weight: bold;
 
+  #referenceTitle {
+    display: inline-block;
+  }
+
   #referenceClose {
+    display: none;
     float: right;
   }
 }

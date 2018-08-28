@@ -422,3 +422,55 @@ $("#endGame").on("click touchstart", function(event){
 let endGame = ()=>{
     gameOver();
 }
+
+$("#referenceLink").on("click touchstart", function(event){
+    event.preventDefault();
+    // create new reference modal
+    // fetch ajax of reference.html
+    // set inner html of new modal to contents of ajax
+    fetchReferenceContent();
+})
+
+let fetchReferenceContent = (referenceContent)=> {
+    $.get("assets/partials/reference.html",function(response){
+        referenceContent = response;
+        generateReferenceModal(referenceContent);
+    });
+}
+
+let generateReferenceModal = (referenceContent)=> {
+    $("#tip").hide();
+
+    let newDiv = document.createElement('div');
+    let modalName = "referenceModal";
+    newDiv.id = modalName;
+    newDiv.classList.add("modal");
+    newDiv.innerHTML = 
+        `<div class="inner styled">
+            ${referenceContent}
+        </div>
+        <div class="modalBG"></div>`
+    document.querySelector("body").appendChild(newDiv);
+
+    referenceSidebarListener();
+    referenceFunctionListener();
+    loadReferenceCategories();
+    //someting to disable timer
+    timerTriggerStop();
+
+    $(".modalBG").on("click",function(event){
+        document.querySelector('body').removeChild(document.querySelector("#"+modalName));
+        $(document).off();
+        //reenable timer
+        timerTrigger();
+    })
+    $(document).on("keydown", function(event){
+        console.log(event.which)
+        if (event.which === 27) {
+            document.querySelector('body').removeChild(document.querySelector("#"+modalName));
+            $(document).off();
+            //reenable timer
+            timerTrigger();
+        }
+    })
+}
