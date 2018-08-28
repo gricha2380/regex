@@ -1,6 +1,6 @@
 let gameState = {};
 let gameModes = '';
-let gameModesLocal = ["quiz","reference"];
+let gameModesLocal = ["quiz"];
 
 let loadGameState = ()=>{
     fetch("../game/data.json")

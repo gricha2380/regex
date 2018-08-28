@@ -47,6 +47,7 @@ let loadGameState = ()=>{
             currentMode = gameState.current.mode;
             document.querySelector("#level .name").innerText = `Level ${currentLevel+1}`;
             document.querySelector("#level .value").innerHTML = ``;
+            $("#level").addClass("arcade");
             random();
         }
         else if (gameState.current.mode == "story"){
@@ -59,6 +60,7 @@ let loadGameState = ()=>{
         }
 
         timerTrigger();
+        $("body").show();
     })
 }
 
@@ -371,9 +373,11 @@ let nextLevel = ()=> {
     if (currentMode == "arcade"){
         console.log("arcade level. You get a random...")
         document.querySelector("#level .name").innerText = `Level ${currentLevel+1}`;
+        $("#level").addClass("arcade");
         random();
     }
     else if (currentMode == "story"){
+        checkForCutScene();
         gameState.current.level = gameState.mode[currentMode].levels[gameState.current.level.number+1];
         console.log(`advancing to level ${gameState.current.level.number}`);
         document.querySelector("#level .name").innerHTML = `Level ${gameState.current.level.name}`;
@@ -382,7 +386,6 @@ let nextLevel = ()=> {
         dialogue = gameState.mode[currentMode].levels[currentLevel].tip.dialogue;
         counter = gameState.mode[currentMode].levels[currentLevel].tip.counter;
         currentWave = gameState.mode[gameState.current.mode].levels[currentLevel].currentWave;
-        checkForCutScene();
         loadLevelEnemies(); // load level specific words
     }
 

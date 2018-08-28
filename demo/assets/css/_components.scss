@@ -13,6 +13,7 @@ body {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: bottom;
+        display: none;
     }
 
     &.achievements {
@@ -359,6 +360,13 @@ body {
     text-shadow: 1px 1px black;
     text-transform: uppercase;
 
+    &.arcade {
+        .name {
+            color: white;
+            text-shadow: -3px -1px 0px black;
+        }
+    }
+
     .value {
         display: block;
         text-transform: none;
@@ -394,15 +402,29 @@ body {
 }
 
 #homepageAchievements {
-    background-image: url(../images/ui/trophy.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
+    // background-image: url(../images/ui/trophyColor.svg);
+    // background-repeat: no-repeat;
+    // background-size: contain;
     color: white;
     font-weight: bold;
     padding-left: 1.5rem;
     text-align: left;
     text-shadow: 1px 1px 2px black;
     text-transform: uppercase;
+    display: inline-block;
+    line-height: 1.5rem;
+
+    &:before {
+        content: "";
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        background-image: url(../images/ui/trophyColor.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-left: -2rem;
+        margin-top: -.2rem;
+    }
 
     &:hover {
         cursor: pointer;

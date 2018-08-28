@@ -1,15 +1,15 @@
 /* Modals and Overlays */
 
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
     background: $modalBG;
     color: white;
+    display: flex;
     font-size: 1.5rem;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
     z-index: 4;
 
     .inner {
@@ -17,28 +17,28 @@
         z-index: 1;
 
         &.styled {
-            padding: 1rem;
             background: #D8D8D8;
             border: 2px solid #979797;
             color: $grey;
+            padding: 1rem;
 
             .infoDescription {
                 margin-top: 1.5rem;
             }
             .title {
-                font-weight: bold;
                 color: $main;
                 font-size: 2rem;
+                font-weight: bold;
                 text-align: center;
                 text-transform: none;
             }
         }
 
         label {
-            width: 8rem;
             display: inline-block;
-            text-align: right;
             margin-right: 1rem;
+            text-align: right;
+            width: 8rem;
         }
 
         .holder {
@@ -132,35 +132,36 @@
 }
 
 #gameModes {
-    display: none;
     background: $modalBG;
     color: white;
-    padding: 2rem 1rem 8rem;
-    width: 100%;
-    position: absolute;
+    display: none;
     left: -1rem;
+    padding: 2rem 1rem 8rem;
+    position: absolute;
     text-transform: capitalize;
+    width: 100%;
+    z-index: 1;
     &::after {
         content: 'coming soon...';
+        color: aqua;
+        font-size: 1.5rem;
+        left: 0rem;
         position: absolute;
         top: 5rem;
         width: 100%;
-        left: 0rem;
-        font-size: 1.5rem;
-        color: aqua;
     }
     &.showModes {
         display: flex;
     }
     
     .closeModes {
-        width: 15px;
-        height: 15px;
+        background-size: contain;
         background: url(../images/close.svg) no-repeat;
+        height: 18px;
         position: absolute;
         right: .5rem;
         top: .5rem;
-        background-size: contain;
+        width: 15px;
         &:hover {
             cursor: pointer;
         }
@@ -173,59 +174,60 @@
 }
 
 #tip {
+    background: rgba(0, 0, 0, .8);
+    bottom: 0;
+    color: white;
     display: none;
     position: fixed;
-    width: 100%;
-    background: rgba(0, 0, 0, .8);
-    color: white;
-    bottom: 0;
     text-align: center;
+    width: 100%;
     z-index: 3;
 
     .closeButton {
-        width: 15px;
-        height: 15px;
-        background: url(../images/close.svg) no-repeat;
+        background-image: url(../images/close.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: auto;
+        // height: 15px;
+        // margin: -.5rem;
+        padding: .5rem;
         position: absolute;
         right: .5rem;
         top: .5rem;
+        // width: 15px;
         z-index: 2;
-        padding: .5rem;
-        margin: -.5rem;
-        background-size: auto;
-        background-position: center center;
-        // background-size: contain;
         &:hover {
             cursor: pointer;
         }
     }
 
     .container {
-        background: url(../images/messageHead.png) no-repeat;
-        background-size: 35px;
+        background-image: url(../images/messageHead.png);
         background-position: left;
-        text-align: left;
-        position: relative;
-        padding: 1rem 0 1rem 3rem;
-        transition: .5s;
+        background-repeat: no-repeat;
+        background-size: 35px;
         overflow: hidden;
+        padding: 1rem 0 1rem 3rem;
+        position: relative;
+        text-align: left;
+        transition: .5s;
         &:hover {
-            padding: 2rem 0 2rem 3rem;
             cursor: pointer;
+            padding: 2rem 0 2rem 3rem;
         }
         &.auto {
             background: none;
             text-align: center;
         }
         .pagination {
-            position: absolute;
-            font-size: 1.5rem;
-            margin-top: -0.150rem;
-            width: 100%;
-            max-width: 500px;
-            text-align: center;
             color: grey;
+            font-size: 1.5rem;
             line-height: .8rem;
+            margin-top: -0.150rem;
+            max-width: 500px;
+            position: absolute;
+            text-align: center;
+            width: 100%;
             .active {
                 color: white;
             }
@@ -297,15 +299,15 @@
 
 #tutorialOverlay {
     background-color: rgba(44, 123, 204, 0.9);
+    display: flex;
+    flex-direction: column;
     height: 100%;
+    margin: auto;
     padding: 1rem;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 4;
-    display: flex;
-    margin: auto;
-    flex-direction: column;
 
     #tutorialAnimation {
         text-align: center;
@@ -316,13 +318,13 @@
     }
 
     #tutorialDescription {
-        text-align: center;
         color: white;
-        text-shadow: 2px 2px 3px black;
-        font-weight: bold;
-        margin-top: 2rem;
-        margin-bottom: 4rem;
         font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 4rem;
+        margin-top: 2rem;
+        text-align: center;
+        text-shadow: 2px 2px 3px black;
 
         .title {
             color: $main;
@@ -330,11 +332,11 @@
     }
 
     #tutorialArrow {
+        background-size: contain;
         background: url(../images/arrow.svg) no-repeat;
         height: 50px;
-        width: 50px;
-        background-size: contain;
         position: absolute;
+        width: 50px;
 
         &.downArrow {
             transform: rotate(180deg);

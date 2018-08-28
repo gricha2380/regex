@@ -1,5 +1,4 @@
 let referenceCategories;
-
 console.log("reference js loaded");
 
 // listen for click on reference sidebar
