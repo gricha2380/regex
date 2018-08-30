@@ -11,7 +11,7 @@ $("#random").on("click touchstart", function(event){
 })
 
 // method for displaying alerts
-let alertMessage=(message)=> {
+let alertMessage=function(message, callback) {
     $(alert).addClass("active");
     alert.innerText = message;
     clearAlert();
@@ -196,17 +196,12 @@ let clearEnemies = (totalEnemyMatch)=> {
     let checkGoalCompletion = ()=>{
         // if remaining enemies matches current goal without spaces
         if (remainingEnemies == currentGoal.replace(/\s/g, '')) {
+            alertMessage("Goal achieved!");
             // next level function
             checkForNewWave();
         } else if (remainingEnemies=='' || remainingEnemies==' ') {
-            // check if results 
-            // find way to determine when results should be compared with goal
-            // it can't show game over at every end turn check
-            // how to know when enemyArray is ready to be checked?
-            // maybe only check when all enemies are gone?
-            // question is kind of important for gameplay
-            console.log("object not met. game over");
-            gameOver();
+            alertMessage("Goal not achieved!"); //todo: have alertMessage run action after
+            setTimeout(()=>{gameOver()}, 3000);
         } else{
             enemyAttack(); // otherwise let enemies attack
         }

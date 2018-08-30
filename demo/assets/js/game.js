@@ -27,9 +27,10 @@ let loadGameState = ()=>{
                 currentLevel = gameState.current.level.number;
                 setHealth();
                 setScore();
-                console.log("I found a current level",gameState.current)
+                console.log("I found a current level. Resuming where you left off.",gameState.current)
             } else {
-                console.log("previous game was found but it's for a different game mode!")
+                console.log("previous game was found but it's for a different game mode!");
+                eraseSavedLevelProgress();
             }
         }
         if (!currentLevel || currentLevel===0) {

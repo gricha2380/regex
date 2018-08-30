@@ -1552,9 +1552,9 @@ body.achievements {
 }
 
 #referenceTitleContainer {
-  color: white;
+  color: #D82262;
   padding: .5rem;
-  background: #A9A4A4;
+  background: black;
   text-transform: uppercase;
   text-align: center;
   font-weight: bold;
