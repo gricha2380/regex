@@ -4,8 +4,9 @@
 
 #referenceModal {
   background: rgba(0,0,0,0.5);
-
+  
   .inner {
+    border: none;
     width: 800px;
     padding: 0;
     max-height: 580px;

@@ -1418,6 +1418,7 @@ body.achievements {
 }
 
 #referenceModal .inner {
+  border: none;
   width: 800px;
   padding: 0;
   max-height: 580px;

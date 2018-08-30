@@ -102,7 +102,8 @@ let referenceFunctionListener = ()=> {
 
 // pull categories items from json 
 let loadReferenceCategories = ()=>{
-  fetch("../../../categories/data.json")
+  // fetch("../../../categories/data.json")
+  fetch("/categories/data.json")
   .then((resp) => resp.json())
   .then( (res) => {
       referenceCategories = res;
