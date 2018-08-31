@@ -359,7 +359,6 @@ let beatLevel = ()=> {
         console.log("going home");
         event.preventDefault();
         saveSessionResults(); //TODO: Replace with a version that saves info without resetting
-        // newGame();
         window.location.href = "index.html";
     })
 }
@@ -397,7 +396,7 @@ let newGame = ()=> {
 }
 newGame();
 
-
+// show modal, stop counter, 
 let gameOver = ()=> {
     gameOverFlag = true;
     console.log("gameover flag now true");
@@ -443,10 +442,10 @@ let gameOver = ()=> {
     
     // give oh no message
     // showScoreScreen()
-    // save score data
-    // return to main menu
 }
 
+// save score data
+// return to main menu
 let gameOverEventListener = () => {
     document.querySelector("#newGameModal").addEventListener("click", ()=>{
         console.log("new game");

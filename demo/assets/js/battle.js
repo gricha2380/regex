@@ -200,7 +200,7 @@ let clearEnemies = (totalEnemyMatch)=> {
             // next level function
             checkForNewWave();
         } else if (remainingEnemies=='' || remainingEnemies==' ') {
-            alertMessage("Goal not achieved!"); //todo: have alertMessage run action after
+            alertMessage("Goal not achieved!");
             setTimeout(()=>{gameOver()}, 3000);
         } else{
             enemyAttack(); // otherwise let enemies attack
@@ -410,10 +410,7 @@ $("#endGame").on("click touchstart", function(event){
     endGame();
 })
 
-// endGame
-// capture current score
-// save in local storage (also add local storage code to regular end game process)
-// show end game screen
+// capture current score, show modal
 let endGame = ()=>{
     gameOver();
 }
@@ -456,16 +453,14 @@ let generateReferenceModal = (referenceContent)=> {
     $(".modalBG").on("click",function(event){
         document.querySelector('body').removeChild(document.querySelector("#"+modalName));
         $(document).off();
-        //reenable timer
-        timerTrigger();
+        timerTrigger(); //re-enable timer
     })
     $(document).on("keydown", function(event){
         console.log(event.which)
         if (event.which === 27) {
             document.querySelector('body').removeChild(document.querySelector("#"+modalName));
             $(document).off();
-            //reenable timer
-            timerTrigger();
+            timerTrigger(); //re-enable timer
         }
     })
 }
