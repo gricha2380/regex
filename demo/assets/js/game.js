@@ -611,5 +611,5 @@ let bobRoss = ()=> {
         "It's a very cold picture, I may have to go get my coat. It’s about to freeze me to death.",
         "You want your tree to have some character. Make it special."
     ]
-    return set[Math.floor(Math.random()*set.length) + 1];
+    return set[Math.floor(Math.random()*set.length)];
 }

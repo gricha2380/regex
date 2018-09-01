@@ -1,9 +1,9 @@
 {
     "Descriptions":{
-        "characters":"Characters get a description, too",
-        "anchors":"Anchors do stuff",
-        "quantifiers":"How to quantify this?",
-        "groups":"Group life",
+        "characters":"Character classes match letters numbers and symbols in the given set. This includes several predefined character classes along with custom ranges and sets.",
+        "anchors":"Anchors target the beginning or end of a set of a string or set of characters",
+        "quantifiers":"Quantifiers allow you to specify the number of occurrences to match against",
+        "groups":"Capture Groups allow you to treat multiple characters as a single unit",
         "how tos":"Snippets to accomplish some common regex tasks"
 
     },"how tos":{

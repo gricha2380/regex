@@ -1453,6 +1453,7 @@ body.achievements {
 
 #referenceContainer #referenceInner #referenceDetails #referenceCategoryDescription {
   padding: 1rem;
+  color: #00abff;
 }
 
 #referenceFunctionList {
