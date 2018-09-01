@@ -102,7 +102,7 @@
 						"counter": 0,
 						"dialogue":[
 							"Goal: Use SINGLE CHARS to match the SECOND word",
-							"Click card from the deck to place it in your hand.",
+							"If you match anything other than the goal you'll FAIL",
 							"When you're ready, press ATTACK."
 						]
 					},
@@ -201,7 +201,7 @@
 							"dialogue":{
 								"intro":"Use SINGLE CHARS to match the SECOND word",
 								"completion":"Great! Characters let you explicitly match",
-								"failed":"That wasn't a character card!"
+								"failed":"Try using the CHARS pattern!"
 							}
 						},
 						{

@@ -201,7 +201,8 @@ let clearEnemies = (totalEnemyMatch)=> {
             checkForNewWave();
         } else if (remainingEnemies=='' || remainingEnemies==' ') {
             alertMessage("Goal not achieved!");
-            setTimeout(()=>{gameOver()}, 3000);
+            setTimeout(()=>{alertMessage(enemyArray[currentWave].dialogue.failed)}, 2000);
+            setTimeout(()=>{gameOver()}, 6000);
         } else{
             enemyAttack(); // otherwise let enemies attack
         }
