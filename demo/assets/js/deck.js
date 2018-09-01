@@ -15,10 +15,12 @@ fetch("../categories/data.json")
 let loadCategories = (input) => {
     gameState.activeCategory = "characters";
     for (category in deckData) {
-        console.log(`category is ${category}`,category == gameState.activeCategory);
-        category == gameState.activeCategory ? 
-            $("#categories").append(`<li class="active" value="${category}">${category.charAt(0).toUpperCase()+category.substr(1)}</li>`) :
-            $("#categories").append(`<li value="${category}">${category.charAt(0).toUpperCase()+category.substr(1)}</li>`)
+        if (category !== "Descriptions" && category !== "how tos") {
+            console.log(`category is ${category}`,category == gameState.activeCategory);
+            category == gameState.activeCategory ? 
+                $("#categories").append(`<li class="active" value="${category}">${category.charAt(0).toUpperCase()+category.substr(1)}</li>`) :
+                $("#categories").append(`<li value="${category}">${category.charAt(0).toUpperCase()+category.substr(1)}</li>`)
+        }
     }
     
     loadActiveCategory();

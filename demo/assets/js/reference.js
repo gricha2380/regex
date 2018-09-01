@@ -29,7 +29,11 @@ let loadFunctionList = (referenceCategory) => {
 
   let referenceFunction = referenceCategories[refCat];
   console.log("referenceFunction items", referenceFunction);
-  $("#referenceCategoryDescription").text(`${refCat} Category Descriptions coming soon, using {referenceCategories[descriptions][refCat]}`);
+  console.log("this is referenceCategories[descriptions]",referenceCategories["Descriptions"]) //good
+  console.log("referencecat",refCat)
+  console.log("this is referenceCategories[refCat] complete",referenceCategories["Descriptions"][refCat])
+  // $("#referenceCategoryDescription").text(`${refCat} Category Descriptions coming soon, using {referenceCategories[descriptions][refCat]}`);
+  $("#referenceCategoryDescription").text(referenceCategories["Descriptions"][refCat]);
   $("#referenceFunctionList").html(``);
   let referenceFunctions = '';
   for (e in referenceFunction) {
@@ -102,16 +106,19 @@ let referenceFunctionListener = ()=> {
 
 // pull categories items from json 
 let loadReferenceCategories = ()=>{
-  // fetch("../../../categories/data.json")
-  fetch("../categories/data.json")
-  .then((resp) => resp.json())
-  .then( (res) => {
+
+  // let loadStandardCategories = () => {
+    fetch("../categories/data.json")
+    .then( (res) => res.json())
+    .then( (res) => {
       referenceCategories = res;
-  }).then( res => {
+    }).then( res => {
       populateCategories();
     }).then (res => {
       loadFunctionList();
-  })
+    })
+  // }
+  
 }
 // loadReferenceCategories();
 
@@ -122,8 +129,10 @@ let populateCategories = ()=> {
   let referenceSidebarItems = '';
 
   for (category in referenceCategories) {
-    console.log("this is category name", category);
-    referenceSidebarItems += `<li>${category}</li>`;
+    if (category !== "Descriptions") {
+      console.log("this is category name", category);
+      referenceSidebarItems += `<li>${category}</li>`;
+    }
   }
 
   $("#referenceSidebar").append(referenceSidebarItems);

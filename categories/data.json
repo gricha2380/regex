@@ -1,4 +1,16 @@
 {
+    "Descriptions":{
+        "characters":"Characters get a description, too",
+        "anchors":"Anchors do stuff",
+        "quantifiers":"How to quantify this?",
+        "groups":"Group life",
+        "how tos":"Snippets to accomplish some common regex tasks"
+
+    },"how tos":{
+        "email addresses":{
+            "name": "Match Email Address"
+        }
+    },
     "characters": {
         "Any Word":{
             "name": "Any Word",
