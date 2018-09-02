@@ -1,36 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="156px" height="210px" viewBox="0 0 156 210" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
-    <title>XMLID_645_</title>
+<svg width="283px" height="326px" viewBox="0 0 283 326" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>y</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="XMLID_613_" transform="translate(-691.000000, -814.000000)" fill-rule="nonzero">
-            <g id="XMLID_645_" transform="translate(691.000000, 814.000000)">
-                <g id="XMLID_660_" transform="translate(24.000000, 139.000000)" fill="#B07E09">
-                    <path d="M37.8,45.4 L0.5,25.1 C6.5,24.1 11.3,21.4 14.7,16.9 C18.1,12.4 19.8,7 19.8,0.4 L57.1,20.7 C57.1,27.2 55.4,32.7 52,37.2 C48.5,41.6 43.8,44.3 37.8,45.4 Z" id="XMLID_661_"></path>
+    <defs>
+        <filter x="-0.4%" y="-0.3%" width="100.7%" height="101.5%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <path d="M0,44 C15.3333333,18 28.3333333,5 39,5 C55,5 143,71 168,96 C200,49 207,21 226,5 C238.666667,-5.66666667 257.666667,2.33333333 283,29 L122,324 C94,322.666667 76.3333333,316 69,304 C58,286 141.5,202 141.5,140 C113.166667,125.333333 66,93.3333333 0,44 Z" id="path-2"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="letter/y" transform="translate(-78.000000, -12.000000)">
+            <g id="y" filter="url(#filter-1)" transform="translate(78.000000, 12.000000)">
+                <g id="Path-68">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="Mask" fill="#B6895D" xlink:href="#path-2"></use>
+                    <path d="M283,32 C257,8 237.666667,-3 225,-1" stroke="#000000" stroke-width="10" opacity="0.5" mask="url(#mask-3)"></path>
+                    <path d="M47,52 C27,25.3333333 10,8.33333333 -4,1" id="Path-68-Copy" stroke="#000000" stroke-width="10" opacity="0.5" mask="url(#mask-3)" transform="translate(21.500000, 26.500000) scale(-1, 1) translate(-21.500000, -26.500000) "></path>
                 </g>
-                <g id="XMLID_658_" transform="translate(9.000000, 164.000000)" fill="#B07E09">
-                    <path d="M37.5,20.3 L0.2,0 C3.6,1 8.7,1 15.4,0 L52.7,20.3 C46,21.3 40.9,21.3 37.5,20.3 Z" id="XMLID_659_"></path>
+                <g id="mouth" transform="translate(125.801434, 254.706207) rotate(-67.000000) translate(-125.801434, -254.706207) translate(53.301434, 238.706207)">
+                    <polygon id="Path-50" fill="#FFFFFF" points="136.322811 19 121.250795 32 121.250795 19"></polygon>
+                    <polygon id="Path-50-Copy" fill="#FFFFFF" points="117.901458 16 102.829443 29 102.829443 16"></polygon>
+                    <polygon id="Path-50-Copy-2" fill="#FFFFFF" points="99.4801057 14 84.4080899 27 84.4080899 14"></polygon>
+                    <polygon id="Path-50-Copy-3" fill="#FFFFFF" points="79.3840846 10 64.3120687 23 64.3120687 10"></polygon>
+                    <polygon id="Path-50-Copy-4" fill="#FFFFFF" points="62.6374003 7 47.5653844 20 47.5653844 7"></polygon>
+                    <polygon id="Path-50-Copy-5" fill="#FFFFFF" points="44.2160476 5 29.1440317 18 29.1440317 5"></polygon>
+                    <polygon id="Path-50-Copy-6" fill="#FFFFFF" points="27.4693633 3 12.3973474 16 12.3973474 3"></polygon>
+                    <path d="M0.541061267,0.523019597 C63.1510874,8.17433987 111.202785,15 144.696153,21" id="Path-49-Copy" stroke="#9F6100" stroke-width="3"></path>
                 </g>
-                <g id="XMLID_656_" transform="translate(7.000000, 164.000000)" fill="#986B29">
-                    <polygon id="XMLID_657_" points="37.5 44.2 0.3 24 2.3 0.1 39.5 20.3"></polygon>
-                </g>
-                <g id="XMLID_654_" transform="translate(60.000000, 4.000000)" fill="#B07E09">
-                    <polygon id="XMLID_655_" points="37.7 114 0.4 93.8 28.4 0.2 65.7 20.5"></polygon>
-                </g>
-                <g id="XMLID_652_" transform="translate(88.000000, 0.000000)" fill="#E0A810">
-                    <polygon id="XMLID_653_" points="37.7 24.5 0.4 4.2 30.5 0 67.7 20.2"></polygon>
-                </g>
-                <g id="XMLID_650_" transform="translate(0.000000, 12.000000)" fill="#E0A810">
-                    <polygon id="XMLID_651_" points="37.8 24.8 0.5 4.6 33.2 0 70.5 20.2"></polygon>
-                </g>
-                <g id="XMLID_648_" transform="translate(0.000000, 16.000000)" fill="#B07E09">
-                    <polygon id="XMLID_649_" points="81 143.7 43.8 123.4 0.5 0.6 37.8 20.8"></polygon>
-                </g>
-                <g id="XMLID_646_" transform="translate(37.000000, 20.000000)" fill="#FFF197">
-                    <path d="M118.7,0.2 L75.8,128 C73.6,135 71.3,141.8 68.9,148.5 C66.5,155.3 63.6,161.5 60.3,167.1 C57,172.6 52.9,177.3 47.9,181 C42.6,184.9 36.1,187.4 28.4,188.5 C21.3,189.5 14.3,189.4 7.4,188.1 L9.4,164.2 C12.8,165.2 17.9,165.2 24.6,164.2 C30.6,163.2 35.4,160.5 38.8,156 C42.2,151.5 43.9,146.1 43.9,139.5 L0.6,16.6 L33.3,12 L60.5,97.8 L88.5,4.2 L118.7,0.2 Z" id="XMLID_647_"></path>
-                </g>
+                <ellipse id="Oval" stroke="#A57A50" stroke-width="4" fill="#FFFFFF" cx="178.5" cy="124" rx="44.5" ry="40"></ellipse>
+                <circle id="Oval-2" fill="#030303" cx="179" cy="127" r="13"></circle>
+                <path d="M122,76 C120,91.3333333 121.333333,99 126,99 C130.666667,99 145.333333,100 170,102 L220,93 C228.666667,83 233,75.3333333 233,70 C233,62 183,84 170,84 C161.333333,84 145.333333,81.3333333 122,76 Z" id="Path-67" fill="#000000"></path>
             </g>
         </g>
     </g>

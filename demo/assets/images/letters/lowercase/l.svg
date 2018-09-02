@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="68px" height="204px" viewBox="0 0 68 204" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
-    <title>XMLID_920_</title>
+<svg width="87px" height="385px" viewBox="0 0 87 385" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>l</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="XMLID_613_" transform="translate(-595.000000, -298.000000)" fill-rule="nonzero">
-            <g id="XMLID_920_" transform="translate(595.000000, 298.000000)">
-                <g id="XMLID_925_" transform="translate(0.000000, 4.000000)" fill="#B07E09">
-                    <polygon id="XMLID_926_" points="37.6 199.6 0.4 179.4 0.7 0.5 37.9 20.8"></polygon>
+    <defs>
+        <filter x="-1.0%" y="-1.8%" width="108.1%" height="102.6%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="letter/l" transform="translate(-58.000000, -6.000000)">
+            <g id="l" filter="url(#filter-1)" transform="translate(58.000000, 5.000000)">
+                <path d="M5,51 C-10.1177644,120.854498 28,277 5,345 C-18,413 63,373 63,359 C63,351.432185 51.8962802,282.501708 47.6954605,213.810164 C44.1250175,155.4265 45.5412111,97.2154398 63,77 C101,33 18.8822356,-13.1455023 5,51 Z" id="Path-73" fill="#D8D8D8"></path>
+                <g id="eye" transform="translate(59.849670, 45.604991) rotate(16.000000) translate(-59.849670, -45.604991) translate(30.849670, 7.104991)">
+                    <path d="M26.9953668,69.3708016 C12.9030974,69.3708016 4.55632829,60.0214958 4.55632829,45.6601289 C4.55632829,38.8645713 7.57752878,34.5110704 13.2761621,32.2844936 C17.5259113,30.6240264 22.5084626,30.1689453 31.5483446,30.1689453 C31.9794304,30.1689453 32.3359212,30.1685338 33.0644284,30.1673891 C41.9714283,30.1533936 44.7954521,30.3824801 47.7762003,31.8819282 C51.6859136,33.8486869 53.3708016,37.7292707 53.3708016,44.3527743 C53.3708016,58.1962848 41.5373069,69.3708016 26.9953668,69.3708016 Z" id="eye-copy" stroke="#65646B" stroke-width="4" fill="#FFFFFF" transform="translate(28.963565, 49.768315) rotate(-33.000000) translate(-28.963565, -49.768315) "></path>
+                    <circle id="pupil" fill="#000000" cx="31.4049617" cy="45.7214634" r="8.17072354"></circle>
+                    <path d="M21.0050794,31.8407392 C26.9379062,11.4141386 33.8883415,1.79227089 41.8563851,2.97513593" id="Path-2" stroke="#030303" stroke-width="7" transform="translate(31.430732, 17.359377) rotate(18.000000) translate(-31.430732, -17.359377) "></path>
                 </g>
-                <g id="XMLID_923_" fill="#E0A810">
-                    <polygon id="XMLID_924_" points="37.9 24.8 0.7 4.5 30.3 0.4 67.6 20.6"></polygon>
-                </g>
-                <g id="XMLID_921_" transform="translate(37.000000, 20.000000)" fill="#FFF197">
-                    <polygon id="XMLID_922_" points="30.6 0.6 30.2 179.5 0.6 183.6 0.9 4.8"></polygon>
-                </g>
+                <path d="M32.0113173,70.9030693 C17.9190479,70.9030693 9.57227877,61.5537635 9.57227877,47.1923966 C9.57227877,32.9510692 19.6285441,22.088596 33.8079215,22.088596 C48.2596469,22.088596 58.3867521,31.9552684 58.3867521,45.885042 C58.3867521,59.7285525 46.5532574,70.9030693 32.0113173,70.9030693 Z" id="eye-copy" stroke="#65646B" stroke-width="4" fill="#FFFFFF"></path>
+                <circle id="pupil" fill="#000000" cx="31.6418183" cy="51.269928" r="8.17072354"></circle>
+                <path d="M16.631956,14.3698973 C21.0144013,0.629658095 31.7295677,1.71833132 48.7774551,17.635917" id="Path-3" stroke="#000000" stroke-width="7"></path>
+                <path d="M41,167 C41,163.395082 39.5977011,171.395082 36.7931034,191 L32.5862069,167 L28.3793103,194 L22.0689655,167 L22.0689655,194 L15.7586207,167 C8.74712644,195.666667 8.74712644,216 15.7586207,228 C19.9655172,213.333333 22.0689655,204.666667 22.0689655,202 L24.0689655,228 L28.3793103,206 L33.3793103,228 L35.5862069,203 L43,228 C47.6666667,214.666667 47,194.333333 41,167 Z" id="Path-74" stroke="#65646B" stroke-width="2" fill="#813333"></path>
+                <path d="M27,135 C27,135 16,148 23,148 C30,148 27,135 27,135 Z" id="Path-75" fill="#813333"></path>
+                <path d="M37,135 C37,135 26,148 33,148 C40,148 37,135 37,135 Z" id="Path-75-Copy" fill="#813333" transform="translate(34.154247, 141.500000) scale(-1, 1) translate(-34.154247, -141.500000) "></path>
             </g>
         </g>
     </g>

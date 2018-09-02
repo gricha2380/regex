@@ -1,28 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="143px" height="156px" viewBox="0 0 143 156" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
-    <title>XMLID_866_</title>
+<svg width="187px" height="231px" viewBox="0 0 187 231" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>n</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="XMLID_613_" transform="translate(-940.000000, -346.000000)" fill-rule="nonzero">
-            <g id="XMLID_866_" transform="translate(940.000000, 346.000000)">
-                <path d="M113,67.4 C112.9,63.3 112.1,59.7 110.8,56.5 C109.8,53 107.9,50.3 105.3,48.5 L68,28.2 C70.6,30.1 72.5,32.7 73.5,36.2 C74.8,39.4 75.6,43 75.7,47.1 C75.8,51.2 75.9,55.3 75.9,59.2 L75.8,124.8 L113.1,145.1 L113.2,79.5 C113.2,75.6 113.1,71.5 113,67.4 Z" id="XMLID_599_" fill="#986B29"></path>
-                <g id="XMLID_879_" transform="translate(67.000000, 28.000000)" fill="#000000">
-                    <path d="M0.6,0 L37.9,20.3 C38,20.4 38.2,20.4 38.3,20.5 L1,0.2 C0.9,0.1 0.8,0.1 0.6,0 Z" id="XMLID_880_"></path>
+    <defs>
+        <filter x="-0.5%" y="-0.4%" width="101.0%" height="101.7%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <path d="M56,207 C22.7922712,222.333333 6.18840684,222.333333 6.18840684,207 C6.18840684,184 -7.62318632,34 6.18840684,19 C15.3961356,9 32,9 56,19 C95.3333333,-5.66666667 128.666667,-5.66666667 156,19 C183.333333,43.6666667 189.666667,106.333333 175,207 C167,225 155,228 139,216 C115,198 150.63377,86 121,72 C91.3662303,58 64,32.15 64,72 C64,98.5666667 61.3333333,143.566667 56,207 Z" id="path-2"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="letter/n" transform="translate(-13.000000, -3.000000)">
+            <g id="n" filter="url(#filter-1)" transform="translate(13.000000, 3.000000)">
+                <g id="Path-78" transform="translate(0.000000, 5.000000)">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="Mask" fill="#808985" xlink:href="#path-2"></use>
+                    <ellipse id="Oval" fill="#D8D8D8" mask="url(#mask-3)" cx="16" cy="215" rx="7" ry="10"></ellipse>
+                    <ellipse id="Oval-Copy" fill="#D8D8D8" mask="url(#mask-3)" transform="translate(33.000000, 214.000000) rotate(-6.000000) translate(-33.000000, -214.000000) " cx="33" cy="214" rx="7" ry="10"></ellipse>
+                    <ellipse id="Oval-Copy-2" fill="#D8D8D8" mask="url(#mask-3)" transform="translate(49.000000, 209.000000) rotate(-6.000000) translate(-49.000000, -209.000000) " cx="49" cy="209" rx="7" ry="10"></ellipse>
+                    <path d="M183,49 C177.666667,61.6666667 165.666667,68 147,68" stroke="#D3D3D3" stroke-width="8" opacity="0.503515625" stroke-linecap="round" mask="url(#mask-3)"></path>
+                    <path d="M188,79 C182.666667,91.6666667 170.666667,98 152,98" id="Path-78-Copy" stroke="#D3D3D3" stroke-width="8" opacity="0.503515625" stroke-linecap="round" mask="url(#mask-3)" transform="translate(170.000000, 88.500000) rotate(10.000000) translate(-170.000000, -88.500000) "></path>
+                    <path d="M190,109 C184.666667,121.666667 172.666667,128 154,128" id="Path-78-Copy-2" stroke="#D3D3D3" stroke-width="8" opacity="0.503515625" stroke-linecap="round" mask="url(#mask-3)" transform="translate(172.000000, 118.500000) rotate(12.000000) translate(-172.000000, -118.500000) "></path>
+                    <path d="M190,139 C184.666667,151.666667 172.666667,158 154,158" id="Path-78-Copy-3" stroke="#D3D3D3" stroke-width="8" opacity="0.503515625" stroke-linecap="round" mask="url(#mask-3)" transform="translate(172.000000, 148.500000) rotate(12.000000) translate(-172.000000, -148.500000) "></path>
+                    <path d="M190,169 C184.666667,181.666667 172.666667,188 154,188" id="Path-78-Copy-4" stroke="#D3D3D3" stroke-width="8" opacity="0.503515625" stroke-linecap="round" mask="url(#mask-3)" transform="translate(172.000000, 178.500000) rotate(12.000000) translate(-172.000000, -178.500000) "></path>
+                    <path d="M190,195 C184.666667,207.666667 172.666667,214 154,214" id="Path-78-Copy-5" stroke="#D3D3D3" stroke-width="8" opacity="0.503515625" stroke-linecap="round" mask="url(#mask-3)" transform="translate(172.000000, 204.500000) rotate(12.000000) translate(-172.000000, -204.500000) "></path>
+                    <path d="M11,125 C17,121.666667 30.3333333,121.666667 51,125" id="Path-2" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round" mask="url(#mask-3)"></path>
+                    <path d="M11,121 C17,117.666667 30.3333333,117.666667 51,121" id="Path-2-Copy" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round" mask="url(#mask-3)"></path>
+                    <path d="M11,130 C17,126.666667 30.3333333,126.666667 51,130" id="Path-2-Copy-2" stroke="#3A3A3A" stroke-width="2" stroke-linecap="round" mask="url(#mask-3)" transform="translate(31.000000, 128.750000) rotate(3.000000) translate(-31.000000, -128.750000) "></path>
                 </g>
-                <path d="M89,3.5 C83.2,0.4 75.9,-0.6 67,0.5 C66.8,0.5 66.6,0.5 66.4,0.6 C51.2,2.7 38.9,11 29.6,25.3 L66.9,45.6 C76.2,31.3 88.5,23 103.7,20.9 C103.9,20.9 104.1,20.8 104.3,20.8 C113.2,19.7 120.5,20.7 126.3,23.8 L89,3.5 Z" id="XMLID_596_" fill="#E0A810"></path>
-                <g id="XMLID_873_" transform="translate(29.000000, 25.000000)" fill="#000000">
-                    <polygon id="XMLID_874_" points="37.4 20.6 0.1 0.3 0.6 0.3 37.8 20.5"></polygon>
+                <g id="horn" transform="translate(160.500000, 62.000000) rotate(-18.000000) translate(-160.500000, -62.000000) translate(128.000000, 38.000000)" fill="#FFFFFF">
+                    <path d="M65,0 C63,27.3333333 51.6666667,43 31,47 C2.00672812e-13,53 -5,26 5,18 C15,10 21.3469959,12.0689137 32.673498,18 C40.2244993,21.9540575 51,15.9540575 65,0 Z" id="Mask"></path>
                 </g>
-                <g id="XMLID_871_" transform="translate(1.000000, 8.000000)" fill="#E0A810">
-                    <polygon id="XMLID_872_" points="37.4 24.8 0.1 4.6 28.2 0.6 65.4 20.9"></polygon>
+                <g id="Group" transform="translate(104.000000, 0.000000)">
+                    <ellipse id="Oval-2" fill="#FFFFFF" cx="25" cy="17" rx="25" ry="17"></ellipse>
+                    <circle id="Oval-3" fill="#000000" cx="25.5" cy="18.5" r="7.5"></circle>
+                    <circle id="Oval-4" fill="#FFFFFF" cx="27.5" cy="13.5" r="2.5"></circle>
                 </g>
-                <g id="XMLID_869_" transform="translate(38.000000, 20.000000)" fill="#FFF197">
-                    <path d="M65.7,0.8 C65.9,0.8 66.1,0.7 66.3,0.7 C79.7,-1 89.6,2.1 95.9,10.1 C101.9,18.2 104.9,29.3 104.9,43.4 L104.8,120.9 L75.2,125.1 L75.3,59.5 C75.3,55.5 75.2,51.5 75.1,47.4 C75,43.3 74.2,39.7 72.9,36.5 C71.9,33 70,30.3 67.4,28.5 C64.6,26.8 60.8,26.3 56.1,27 C50.8,27.7 46.5,29.7 43.3,32.8 C40,36 37.4,39.8 35.3,44.2 C33.4,48.6 32,53.2 31.3,57.9 C30.4,62.8 30,67.3 29.9,71.4 L29.8,131.5 L0.2,135.7 L0.4,12.9 L28.5,9 L28.5,25.7 L28.9,25.6 C38.2,11.2 50.5,2.9 65.7,0.8 Z" id="XMLID_870_"></path>
-                </g>
-                <g id="XMLID_867_" transform="translate(0.000000, 12.000000)" fill="#B07E09">
-                    <polygon id="XMLID_868_" points="38.1 143.6 0.9 123.4 1.1 0.6 38.4 20.8"></polygon>
+                <g id="Group-Copy" transform="translate(63.000000, 20.000000)">
+                    <ellipse id="Oval-2" fill="#FFFFFF" cx="25" cy="17" rx="25" ry="17"></ellipse>
+                    <circle id="Oval-3" fill="#000000" cx="25.5" cy="18.5" r="7.5"></circle>
+                    <circle id="Oval-4" fill="#FFFFFF" cx="27.5" cy="13.5" r="2.5"></circle>
                 </g>
             </g>
         </g>

@@ -1,32 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="157px" height="160px" viewBox="0 0 157 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
-    <title>XMLID_662_</title>
+<svg width="399px" height="391px" viewBox="0 0 399 391" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>x</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="XMLID_613_" transform="translate(-523.000000, -814.000000)" fill-rule="nonzero">
-            <g id="XMLID_662_" transform="translate(523.000000, 814.000000)">
-                <g id="XMLID_675_" transform="translate(59.000000, 84.000000)" fill="#986B29">
-                    <polygon id="XMLID_676_" points="62.6 63.4 25.3 43.1 0 0.9 37.3 21.2"></polygon>
+    <defs>
+        <filter x="-0.2%" y="-0.5%" width="100.4%" height="101.6%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="letter/x" transform="translate(0.000000, -1.000000)">
+            <g id="x" filter="url(#filter-1)" transform="translate(-31.000000, 2.000000)">
+                <g id="spikes" transform="translate(273.000000, 49.000000)" fill="#A30404">
+                    <polygon id="Triangle" transform="translate(144.295485, 19.440162) rotate(132.000000) translate(-144.295485, -19.440162) " points="144.295485 4.44016238 156.795485 34.4401624 131.795485 34.4401624"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(124.295485, 29.440162) rotate(140.000000) translate(-124.295485, -29.440162) " points="124.295485 14.4401624 136.795485 44.4401624 111.795485 44.4401624"></polygon>
+                    <polygon id="Triangle-Copy-2" transform="translate(107.295485, 44.440162) rotate(150.000000) translate(-107.295485, -44.440162) " points="107.295485 29.4401624 119.795485 59.4401624 94.7954854 59.4401624"></polygon>
+                    <polygon id="Triangle-Copy-3" transform="translate(90.295485, 61.440162) rotate(150.000000) translate(-90.295485, -61.440162) " points="90.2954854 46.4401624 102.795485 76.4401624 77.7954854 76.4401624"></polygon>
+                    <polygon id="Triangle-Copy-4" transform="translate(70.295485, 71.440162) rotate(150.000000) translate(-70.295485, -71.440162) " points="70.2954854 56.4401624 82.7954854 86.4401624 57.7954854 86.4401624"></polygon>
+                    <polygon id="Triangle-Copy-5" transform="translate(53.295485, 89.440162) rotate(150.000000) translate(-53.295485, -89.440162) " points="53.2954854 74.4401624 65.7954854 104.440162 40.7954854 104.440162"></polygon>
+                    <polygon id="Triangle-Copy-6" transform="translate(34.295485, 102.440162) rotate(144.000000) translate(-34.295485, -102.440162) " points="34.2954854 87.4401624 46.7954854 117.440162 21.7954854 117.440162"></polygon>
+                    <polygon id="Triangle-Copy-7" transform="translate(19.295485, 121.440162) rotate(144.000000) translate(-19.295485, -121.440162) " points="19.2954854 106.440162 31.7954854 136.440162 6.79548545 136.440162"></polygon>
                 </g>
-                <g id="XMLID_673_" transform="translate(62.000000, 4.000000)" fill="#B07E09">
-                    <polygon id="XMLID_674_" points="37.4 63.8 0.2 43.5 22.1 0.4 59.4 20.7"></polygon>
+                <g id="spikes-copy-2" transform="translate(352.000000, 260.500000) scale(1, -1) rotate(-11.000000) translate(-352.000000, -260.500000) translate(270.000000, 190.000000)" fill="#A30404">
+                    <polygon id="Triangle" transform="translate(144.295485, 19.440162) rotate(132.000000) translate(-144.295485, -19.440162) " points="144.295485 4.44016238 156.795485 34.4401624 131.795485 34.4401624"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(124.295485, 29.440162) rotate(140.000000) translate(-124.295485, -29.440162) " points="124.295485 14.4401624 136.795485 44.4401624 111.795485 44.4401624"></polygon>
+                    <polygon id="Triangle-Copy-2" transform="translate(107.295485, 44.440162) rotate(150.000000) translate(-107.295485, -44.440162) " points="107.295485 29.4401624 119.795485 59.4401624 94.7954854 59.4401624"></polygon>
+                    <polygon id="Triangle-Copy-3" transform="translate(90.295485, 61.440162) rotate(150.000000) translate(-90.295485, -61.440162) " points="90.2954854 46.4401624 102.795485 76.4401624 77.7954854 76.4401624"></polygon>
+                    <polygon id="Triangle-Copy-4" transform="translate(70.295485, 71.440162) rotate(150.000000) translate(-70.295485, -71.440162) " points="70.2954854 56.4401624 82.7954854 86.4401624 57.7954854 86.4401624"></polygon>
+                    <polygon id="Triangle-Copy-5" transform="translate(53.295485, 89.440162) rotate(150.000000) translate(-53.295485, -89.440162) " points="53.2954854 74.4401624 65.7954854 104.440162 40.7954854 104.440162"></polygon>
+                    <polygon id="Triangle-Copy-6" transform="translate(34.295485, 102.440162) rotate(144.000000) translate(-34.295485, -102.440162) " points="34.2954854 87.4401624 46.7954854 117.440162 21.7954854 117.440162"></polygon>
+                    <polygon id="Triangle-Copy-7" transform="translate(19.295485, 121.440162) rotate(144.000000) translate(-19.295485, -121.440162) " points="19.2954854 106.440162 31.7954854 136.440162 6.79548545 136.440162"></polygon>
                 </g>
-                <g id="XMLID_671_" transform="translate(84.000000, 0.000000)" fill="#E0A810">
-                    <polygon id="XMLID_672_" points="37.4 24.7 0.1 4.4 31.5 0 68.7 20.2"></polygon>
+                <g id="spikes-copy-3" transform="translate(94.000000, 274.500000) scale(-1, -1) rotate(-11.000000) translate(-94.000000, -274.500000) translate(12.000000, 204.000000)" fill="#A30404">
+                    <polygon id="Triangle" transform="translate(144.295485, 19.440162) rotate(132.000000) translate(-144.295485, -19.440162) " points="144.295485 4.44016238 156.795485 34.4401624 131.795485 34.4401624"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(124.295485, 29.440162) rotate(140.000000) translate(-124.295485, -29.440162) " points="124.295485 14.4401624 136.795485 44.4401624 111.795485 44.4401624"></polygon>
+                    <polygon id="Triangle-Copy-2" transform="translate(107.295485, 44.440162) rotate(150.000000) translate(-107.295485, -44.440162) " points="107.295485 29.4401624 119.795485 59.4401624 94.7954854 59.4401624"></polygon>
+                    <polygon id="Triangle-Copy-3" transform="translate(90.295485, 61.440162) rotate(150.000000) translate(-90.295485, -61.440162) " points="90.2954854 46.4401624 102.795485 76.4401624 77.7954854 76.4401624"></polygon>
+                    <polygon id="Triangle-Copy-4" transform="translate(70.295485, 71.440162) rotate(150.000000) translate(-70.295485, -71.440162) " points="70.2954854 56.4401624 82.7954854 86.4401624 57.7954854 86.4401624"></polygon>
+                    <polygon id="Triangle-Copy-5" transform="translate(53.295485, 89.440162) rotate(150.000000) translate(-53.295485, -89.440162) " points="53.2954854 74.4401624 65.7954854 104.440162 40.7954854 104.440162"></polygon>
+                    <polygon id="Triangle-Copy-6" transform="translate(34.295485, 102.440162) rotate(144.000000) translate(-34.295485, -102.440162) " points="34.2954854 87.4401624 46.7954854 117.440162 21.7954854 117.440162"></polygon>
+                    <polygon id="Triangle-Copy-7" transform="translate(19.295485, 121.440162) rotate(144.000000) translate(-19.295485, -121.440162) " points="19.2954854 106.440162 31.7954854 136.440162 6.79548545 136.440162"></polygon>
                 </g>
-                <g id="XMLID_669_" transform="translate(0.000000, 69.000000)" fill="#B07E09">
-                    <polygon id="XMLID_670_" points="38.1 90.1 0.8 69.9 40 0 77.3 20.3"></polygon>
+                <g id="spikes-copy" transform="translate(93.000000, 127.500000) scale(-1, 1) rotate(-10.000000) translate(-93.000000, -127.500000) translate(11.000000, 57.000000)" fill="#A30404">
+                    <polygon id="Triangle" transform="translate(144.295485, 19.440162) rotate(132.000000) translate(-144.295485, -19.440162) " points="144.295485 4.44016238 156.795485 34.4401624 131.795485 34.4401624"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(126.728964, 32.915530) rotate(140.000000) translate(-126.728964, -32.915530) " points="126.728964 17.9155302 139.228964 47.9155302 114.228964 47.9155302"></polygon>
+                    <polygon id="Triangle-Copy-2" transform="translate(107.295485, 44.440162) rotate(150.000000) translate(-107.295485, -44.440162) " points="107.295485 29.4401624 119.795485 59.4401624 94.7954854 59.4401624"></polygon>
+                    <polygon id="Triangle-Copy-3" transform="translate(90.295485, 61.440162) rotate(150.000000) translate(-90.295485, -61.440162) " points="90.2954854 46.4401624 102.795485 76.4401624 77.7954854 76.4401624"></polygon>
+                    <polygon id="Triangle-Copy-4" transform="translate(70.295485, 71.440162) rotate(150.000000) translate(-70.295485, -71.440162) " points="70.2954854 56.4401624 82.7954854 86.4401624 57.7954854 86.4401624"></polygon>
+                    <polygon id="Triangle-Copy-5" transform="translate(53.642782, 87.470547) rotate(150.000000) translate(-53.642782, -87.470547) " points="53.6427818 72.4705469 66.1427818 102.470547 41.1427818 102.470547"></polygon>
+                    <polygon id="Triangle-Copy-6" transform="translate(34.295485, 102.440162) rotate(144.000000) translate(-34.295485, -102.440162) " points="34.2954854 87.4401624 46.7954854 117.440162 21.7954854 117.440162"></polygon>
+                    <polygon id="Triangle-Copy-7" transform="translate(19.295485, 121.440162) rotate(144.000000) translate(-19.295485, -121.440162) " points="19.2954854 106.440162 31.7954854 136.440162 6.79548545 136.440162"></polygon>
                 </g>
-                <g id="XMLID_667_" transform="translate(5.000000, 10.000000)" fill="#E0A810">
-                    <polygon id="XMLID_668_" points="37.3 25.8 0 5.5 34.9 0.6 72.2 20.9"></polygon>
+                <path d="M31,34 C42,9 42,0 92,0 C112,0 201,67 224,132 C243.333333,89.3333333 289.666667,45.3333333 363,0 C401.666667,0 424,14.6666667 430,44 C395,86 259,143.340273 285,193.340273 C311,243.340273 342,267 392,328 C428,345 364.872625,403.484191 342,382 C245.5,288 277.116536,324.283478 224,254 C167,328 108,382 79,382 C42,382 42,367 42,341 C125,254 133,254 151,195.340273 C151,117 52.9674719,106.73105 31,34 Z" id="Path-28" stroke="#979797" fill="#E87529"></path>
+                <g id="eye" transform="translate(156.000000, 156.000000)">
+                    <ellipse id="Oval-2" stroke="#000000" stroke-width="3" fill="#FFFFFF" cx="29" cy="31.5" rx="27.5" ry="30"></ellipse>
+                    <circle id="Oval-3" fill="#000000" cx="22" cy="28" r="9"></circle>
                 </g>
-                <g id="XMLID_665_" transform="translate(5.000000, 15.000000)" fill="#B07E09">
-                    <polygon id="XMLID_666_" points="72.3 74.3 35 54 0 0.5 37.3 20.8"></polygon>
+                <g id="eye-copy" transform="translate(237.000000, 187.500000) scale(-1, 1) translate(-237.000000, -187.500000) translate(208.000000, 156.000000)">
+                    <ellipse id="Oval-2" stroke="#000000" stroke-width="3" fill="#FFFFFF" cx="29" cy="31.5" rx="27.5" ry="30"></ellipse>
+                    <circle id="Oval-3" fill="#000000" cx="22" cy="28" r="9"></circle>
                 </g>
-                <g id="XMLID_663_" transform="translate(38.000000, 20.000000)" fill="#FFF197">
-                    <polygon id="XMLID_664_" points="114.7 0.2 80.6 63.4 118.9 122.4 83.6 127.4 58.3 85.2 32.6 134.6 0.1 139.1 39.3 69.3 4.3 15.8 39.2 10.9 61.4 47.8 83.4 4.7"></polygon>
+                <circle id="Oval" fill="#000000" opacity="0.42" cx="81.5" cy="43.5" r="11.5"></circle>
+                <circle id="Oval-Copy" fill="#000000" opacity="0.42" cx="117.5" cy="71.5" r="11.5"></circle>
+                <circle id="Oval-Copy-2" fill="#000000" opacity="0.42" cx="147.5" cy="101.5" r="11.5"></circle>
+                <circle id="Oval-Copy-3" fill="#000000" opacity="0.42" cx="170.5" cy="131.5" r="11.5"></circle>
+                <g id="Group" transform="translate(313.000000, 87.500000) scale(-1, 1) rotate(-7.000000) translate(-313.000000, -87.500000) translate(257.000000, 32.000000)" fill="#000000" opacity="0.42">
+                    <circle id="Oval-Copy-7" cx="11.5" cy="11.5" r="11.5"></circle>
+                    <circle id="Oval-Copy-6" cx="47.5" cy="39.5" r="11.5"></circle>
+                    <circle id="Oval-Copy-5" cx="77.5" cy="69.5" r="11.5"></circle>
+                    <circle id="Oval-Copy-4" cx="100.5" cy="99.5" r="11.5"></circle>
+                </g>
+                <g id="Group-Copy" transform="translate(124.798301, 292.447899) scale(-1, 1) rotate(-7.000000) translate(-124.798301, -292.447899) translate(77.798301, 230.947899)" fill="#000000" opacity="0.42">
+                    <circle id="Oval-Copy-7" cx="12.0794554" cy="11.6761327" r="11.5"></circle>
+                    <circle id="Oval-Copy-6" cx="29.5" cy="51.5" r="11.5"></circle>
+                    <circle id="Oval-Copy-5" cx="59.5" cy="81.5" r="11.5"></circle>
+                    <circle id="Oval-Copy-4" cx="82.5" cy="111.5" r="11.5"></circle>
+                </g>
+                <g id="Group-Copy-2" transform="translate(304.798301, 292.447899) rotate(-7.000000) translate(-304.798301, -292.447899) translate(257.798301, 230.947899)" fill="#000000" opacity="0.42">
+                    <circle id="Oval-Copy-7" cx="12.0794554" cy="11.6761327" r="11.5"></circle>
+                    <circle id="Oval-Copy-6" cx="29.5" cy="51.5" r="11.5"></circle>
+                    <circle id="Oval-Copy-5" cx="59.5" cy="81.5" r="11.5"></circle>
+                    <circle id="Oval-Copy-4" cx="82.5" cy="111.5" r="11.5"></circle>
                 </g>
             </g>
         </g>

@@ -1,30 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="133px" height="157px" viewBox="0 0 133 157" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
-    <title>XMLID_4_</title>
+<svg width="349px" height="351px" viewBox="0 0 349 351" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>z</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="XMLID_613_" transform="translate(-863.000000, -814.000000)" fill-rule="nonzero">
-            <g id="XMLID_4_" transform="translate(863.000000, 814.000000)">
-                <g id="XMLID_14_" transform="translate(36.000000, 97.000000)" fill="#E0A810">
-                    <polygon id="XMLID_582_" points="38.1 29.2 0.9 8.9 59.4 0.7 96.7 21"></polygon>
+    <defs>
+        <filter x="-0.3%" y="-0.3%" width="100.6%" height="101.1%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <path d="M15,19 C5,35 15,46 15,65 C15,84 162,81 202,81 C242,81 15,231 15,255 C15,279 -30.8635857,319 40,319 C110.863586,319 315,345 315,319 C315,293 353,255 315,255 C277,255 192,255 150,255 C108,255 284,141 315,111 C346,81 371,47 331,19 C291,-9 151.551014,-0.877679285 15,19 Z" id="path-2"></path>
+        <path d="M88,0 C85.2777754,37.1204769 69.8518358,58.3968477 41.7221813,63.8291126 C-0.472300395,71.97751 -7.27786196,35.3097219 6.33326117,24.4451921 C19.9443843,13.5806623 28.5833586,16.3903841 44,24.4451921 C54.2777609,29.815064 68.9444276,21.6666667 88,0 Z" id="path-4"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="letter/z" transform="translate(-50.000000, -20.000000)">
+            <g id="z" filter="url(#filter-1)" transform="translate(50.000000, 20.000000)">
+                <g id="Path-95" transform="translate(0.000000, 18.000000)">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="Mask" fill="#25C843" xlink:href="#path-2"></use>
+                    <path d="M175.128031,219.332015 L178.868262,220.351446 L145.345258,252.655492 L136.835519,208.895069 L174.924933,219.276659 L180.541112,166.850085 L219.615615,186.116201 L175.128031,219.332015 Z M256.014502,252.692789 L234.322872,287.935052 L198.353521,252.993417 L255.794062,252.332856 L253.998351,249.400831 L306.649915,255.041112 L281.383799,294.115615 L256.014502,252.692789 Z M349,72 L316,117 L306,65 L349,72 Z M314.615615,114.116201 L269.900831,147.501649 L275.541112,94.8500847 L314.615615,114.116201 Z M268.615615,149.116201 L223.900831,182.501649 L229.541112,129.850085 L268.615615,149.116201 Z M184.322872,291.935052 L144.353521,252.993417 L197.239191,250.327737 L184.322872,291.935052 Z M308.488259,291.731927 L313.192282,249.854248 L344.357926,266.593827 L308.488259,291.731927 Z" id="Combined-Shape" fill="#000000" opacity="0.4" mask="url(#mask-3)"></path>
                 </g>
-                <g id="XMLID_12_" transform="translate(0.000000, 109.000000)" fill="#B07E09">
-                    <polygon id="XMLID_13_" points="38.1 47.1 0.8 26.8 0.9 0.8 38.1 21.1"></polygon>
+                <ellipse id="Oval" fill="#000000" opacity="0.5" cx="36.5" cy="54.5" rx="4.5" ry="6.5"></ellipse>
+                <g id="horn" transform="translate(248.000000, 4.000000)">
+                    <mask id="mask-5" fill="white">
+                        <use xlink:href="#path-4"></use>
+                    </mask>
+                    <use id="Mask" fill="#EED082" xlink:href="#path-4"></use>
                 </g>
-                <g id="XMLID_10_" transform="translate(0.000000, 29.000000)" fill="#B07E09">
-                    <polygon id="XMLID_11_" points="38.1 101.1 0.9 80.8 58.7 0.7 95.9 21"></polygon>
-                </g>
-                <g id="XMLID_8_" transform="translate(3.000000, 12.000000)" fill="#B07E09">
-                    <polygon id="XMLID_9_" points="37.7 45.7 0.4 25.4 0.5 0.6 37.7 20.9"></polygon>
-                </g>
-                <g id="XMLID_6_" transform="translate(3.000000, 0.000000)" fill="#E0A810">
-                    <polygon id="XMLID_7_" points="37.7 32.9 0.5 12.6 90.6 0 127.9 20.2"></polygon>
-                </g>
-                <g id="XMLID_5_" transform="translate(38.000000, 20.000000)" fill="#FFF197">
-                    <polygon id="XMLID_16_" points="92.9 0.2 92.8 26.5 36.1 106.2 94.7 98 94.6 122.8 0.1 136.1 0.1 110.1 57.9 30 2.7 37.7 2.7 12.9"></polygon>
-                </g>
+                <path d="M24,77 C20.6666667,91 22.6666667,100.333333 30,105 C30,95.6666667 33,86.3333333 39,77 L24,77 Z" id="Path-94" fill="#FFFFFF"></path>
+                <path d="M53.7555464,78.7522892 C51.9442257,86.1610892 53.0310181,91.1002892 57.0159238,93.5698892 C57.0159238,88.6306892 58.6461124,83.6914892 61.9064898,78.7522892 L53.7555464,78.7522892 Z" id="Path-94-Copy" fill="#FFFFFF" transform="translate(57.406490, 86.161089) rotate(4.000000) translate(-57.406490, -86.161089) "></path>
+                <path d="M16,77 C42,75.6666667 65.3333333,77.6666667 86,83 C117,91 125.50053,70 158,70 C189.50053,70 197,74 214,83" id="Path-69" stroke="#126321" stroke-width="3" stroke-linecap="round"></path>
+                <ellipse id="Oval-22" fill="#FFFFFF" cx="206" cy="27.5" rx="22" ry="27.5"></ellipse>
+                <ellipse id="Oval-2" fill="#000000" cx="210" cy="33" rx="4" ry="13"></ellipse>
+                <ellipse id="Oval-3" fill="#FFFFFF" cx="212" cy="31" rx="2" ry="3"></ellipse>
             </g>
         </g>
     </g>

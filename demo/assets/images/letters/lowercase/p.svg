@@ -1,29 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="150px" height="206px" viewBox="0 0 150 206" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
-    <title>XMLID_828_</title>
+<svg width="171px" height="370px" viewBox="0 0 171 370" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>p</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="XMLID_613_" transform="translate(-197.000000, -578.000000)" fill-rule="nonzero">
-            <g id="XMLID_828_" transform="translate(197.000000, 578.000000)">
-                <g id="XMLID_845_" transform="translate(30.000000, 117.000000)" fill="#986B29">
-                    <path d="M49,29.4 L11.7,9.1 C8,7.1 4.4,4.1 0.8,0.2 L38.1,20.5 C41.7,24.4 45.3,27.4 49,29.4 Z" id="XMLID_846_"></path>
+    <defs>
+        <filter x="-0.6%" y="-0.3%" width="101.2%" height="101.1%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="letter/p" transform="translate(-14.000000, -2.000000)">
+            <g id="p" filter="url(#filter-1)" transform="translate(14.000000, 2.000000)">
+                <path d="M20,31 C-0.666666667,59.6666667 -5,74 7,74 C1,88 1.62153624e-12,101 11,107 C1,115 5,137 11,137 C1,156 7,173 16,179 C6,191 7.33333333,204.666667 20,220 C11.3333333,234.666667 10,246 16,254 C10,270 11.3333333,284.666667 20,298 C10.7959184,318.666667 9.46258503,331.666667 16,337 C7,347 13,366 20,366 C47.3333333,249.333333 47.3333333,137.666667 20,31 Z" id="spine" fill="#4AB980"></path>
+                <g id="teeth" transform="translate(61.000000, 42.000000)" fill="#FFFFFF">
+                    <circle id="tooth" cx="60.5" cy="16.5" r="5.5"></circle>
+                    <circle id="tooth-copy-2" transform="translate(49.500000, 9.500000) rotate(25.000000) translate(-49.500000, -9.500000) " cx="49.5" cy="9.5" r="5.5"></circle>
+                    <circle id="tooth-copy-3" transform="translate(36.500000, 7.500000) rotate(25.000000) translate(-36.500000, -7.500000) " cx="36.5" cy="7.5" r="5.5"></circle>
+                    <circle id="tooth-copy-4" transform="translate(24.500000, 11.500000) rotate(25.000000) translate(-24.500000, -11.500000) " cx="24.5" cy="11.5" r="5.5"></circle>
+                    <circle id="tooth-copy-9" transform="translate(21.500000, 63.500000) rotate(-152.000000) translate(-21.500000, -63.500000) " cx="21.5" cy="63.5" r="5.5"></circle>
+                    <circle id="tooth-copy-10" transform="translate(33.500000, 64.500000) rotate(-159.000000) translate(-33.500000, -64.500000) " cx="33.5" cy="64.5" r="5.5"></circle>
+                    <circle id="tooth-copy-11" transform="translate(46.500000, 64.500000) rotate(-165.000000) translate(-46.500000, -64.500000) " cx="46.5" cy="64.5" r="5.5"></circle>
+                    <circle id="tooth-copy-12" transform="translate(58.500000, 62.500000) rotate(-184.000000) translate(-58.500000, -62.500000) " cx="58.5" cy="62.5" r="5.5"></circle>
+                    <circle id="tooth-copy-13" transform="translate(65.500000, 50.500000) rotate(-210.000000) translate(-65.500000, -50.500000) " cx="65.5" cy="50.5" r="5.5"></circle>
+                    <circle id="tooth-copy-14" transform="translate(68.500000, 39.500000) rotate(-240.000000) translate(-68.500000, -39.500000) " cx="68.5" cy="39.5" r="5.5"></circle>
+                    <circle id="tooth-copy-15" transform="translate(66.500000, 28.500000) rotate(-240.000000) translate(-66.500000, -28.500000) " cx="66.5" cy="28.5" r="5.5"></circle>
                 </g>
-                <path d="M114.1,57.3 C112.3,53.6 109.8,50.7 106.6,48.8 C106.4,48.7 106.3,48.6 106.1,48.5 L68.8,28.2 C69,28.3 69.1,28.4 69.3,28.5 C72.5,30.4 75,33.3 76.8,37 C80,45 81.6,53.4 81.6,62.3 C81.6,66.4 81.3,70.9 80.7,75.5 C79.8,80.2 78.4,84.8 76.5,89.2 C74.7,93.3 72.2,96.8 69,99.8 C65.6,103 61.5,104.9 56.6,105.6 C52.4,106.2 48.7,105.7 45.7,104 L83,124.3 C86,125.9 89.6,126.4 93.9,125.9 C98.8,125.2 102.9,123.3 106.3,120.1 C109.6,117.1 112.1,113.6 113.8,109.5 C115.7,105.1 117.1,100.5 118,95.8 C118.6,91.1 118.9,86.7 118.9,82.6 C119,73.7 117.3,65.3 114.1,57.3 Z" id="XMLID_589_" fill="#986B29"></path>
-                <g id="XMLID_839_" transform="translate(29.000000, 26.000000)" fill="#000000">
-                    <polygon id="XMLID_840_" points="37.4 20.4 0.2 0.1 0.6 0 37.9 20.3"></polygon>
+                <path d="M18,368 C23.3333333,153.333333 23.3333333,41.6666667 18,33 C10,20 56,-7 63,13 C86,4 171,5 171,63 C171,121 134.069152,150 94.0345758,150 C54,150 66.8403866,103.013462 63,129 C51.3230987,208.013462 85,352 63,360 C48.3333333,365.333333 33.3333333,368 18,368 Z M95.489749,111 C115.101519,111 131,97.0888292 131,79.9285304 C131,62.7682316 115.101519,48.8570608 95.489749,48.8570608 C75.877979,48.8570608 72.1861469,62.7682316 72.1861469,79.9285304 C72.1861469,97.0888292 75.877979,111 95.489749,111 Z" id="Combined-Shape" fill="#8C43D1"></path>
+                <g id="Group" transform="translate(123.000000, 0.000000)">
+                    <ellipse id="Oval-2" fill="#FFFFFF" cx="15" cy="17" rx="15" ry="17"></ellipse>
+                    <circle id="Oval-3" fill="#000000" cx="17" cy="24" r="9"></circle>
+                    <circle id="Oval-4" fill="#FFFFFF" cx="14" cy="22" r="3"></circle>
                 </g>
-                <path d="M91.2,4.5 C84.3,0.7 75.6,-0.5 65,0.8 C47.8,3.7 36,12.1 29.6,26 L66.9,46.3 C73.3,32.4 85.1,24 102.3,21.1 C112.8,19.8 121.6,21 128.5,24.8 L91.2,4.5 Z" id="XMLID_588_" fill="#E0A810"></path>
-                <g id="XMLID_835_" transform="translate(0.000000, 12.000000)" fill="#B07E09">
-                    <polygon id="XMLID_836_" points="37.9 193.8 0.6 173.5 0.9 0.7 38.2 20.9"></polygon>
+                <g id="Group-Copy" transform="translate(68.000000, 0.000000)">
+                    <ellipse id="Oval-2" fill="#FFFFFF" cx="15" cy="17" rx="15" ry="17"></ellipse>
+                    <circle id="Oval-3" fill="#000000" cx="17" cy="24" r="9"></circle>
+                    <circle id="Oval-4" fill="#FFFFFF" cx="14" cy="22" r="3"></circle>
                 </g>
-                <g id="XMLID_831_" transform="translate(37.000000, 20.000000)" fill="#FFF197">
-                    <path d="M102.3,14.9 C109.5,26.3 113,40.7 112.8,58.2 C112.9,75.5 109.4,90.9 102.1,104.5 C94.6,118.4 82,126.8 64.3,129.6 C58.1,130.5 52.4,130.1 47.1,128.4 C41.7,126.8 36.3,123.1 31,117.3 L30.6,117.4 L30.5,181.5 L0.9,185.7 L1.2,12.8 L29.5,8.8 L29.5,26.2 L29.9,26.1 C36.3,12.2 48.1,3.8 65.3,0.9 C82.5,-1 94.9,3.6 102.3,14.9 Z M81,75.9 C81.6,71.2 81.9,66.8 81.9,62.7 C81.9,53.8 80.3,45.4 77.1,37.4 C75.3,33.7 72.8,30.8 69.6,28.9 C66.4,27 62.3,26.4 57.5,27 C48.1,28.6 41.3,34 37.1,43 C33,51.7 30.9,60.6 30.9,69.9 C30.7,79.1 32.7,87.6 36.8,95.3 C38.9,98.8 41.5,101.6 44.7,103.7 C47.9,106 52,106.7 56.9,106 C61.8,105.3 65.9,103.4 69.3,100.2 C72.6,97.2 75.1,93.7 76.8,89.6 C78.7,85.2 80.1,80.6 81,75.9 Z" id="XMLID_832_"></path>
-                </g>
-                <g id="XMLID_829_" transform="translate(0.000000, 8.000000)" fill="#E0A810">
-                    <polygon id="XMLID_830_" points="38.2 24.9 0.9 4.7 29.2 0.7 66.5 21"></polygon>
-                </g>
+                <path d="M126,140 C129.828488,144.041181 121,158 116,163 C118,157.638792 118,153.805459 116,151.5 C112,167.833333 107.333333,176 102,176 C107,163 104,153.340931 102.830857,153.340931 C104,157 100.808692,166.573923 100,169 C100,155 101,148 96,144 C91,140 112.168891,126 126,140 Z" id="Path-70" fill="#4AB980"></path>
             </g>
         </g>
     </g>

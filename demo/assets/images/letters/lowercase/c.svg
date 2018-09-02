@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="124px" height="151px" viewBox="0 0 124 151" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
-    <title>XMLID_1090_</title>
+<svg width="205px" height="235px" viewBox="0 0 205 235" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>c</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="XMLID_613_" transform="translate(-346.000000, -61.000000)" fill-rule="nonzero">
-            <g id="XMLID_1090_" transform="translate(346.000000, 61.000000)">
-                <path d="M84.6,95.7 C82.1,97.3 78.8,99 74.7,100.7 C70.4,102.7 66.2,104.1 61.9,104.7 C55.5,105.5 50.1,104.7 45.8,102.4 L83.1,122.7 C87.5,125.1 92.8,125.9 99.2,125 C103.5,124.4 107.7,123.1 112,121 C116.1,119.3 119.4,117.7 121.9,116 L84.6,95.7 Z" id="XMLID_605_" fill="#986B29"></path>
-                <path d="M84.1,1.9 C76.4,0.3 66.9,0.3 55.4,1.9 C37.7,4.5 24.2,12.6 14.7,26 C5.1,39.3 0.3,55.1 0.3,73.3 C0.3,92.2 5,107 14.6,117.5 C17.6,121 21,123.8 24.9,125.9 L62.2,146.2 C58.3,144.1 54.8,141.3 51.9,137.8 C42.3,127.2 37.6,112.5 37.6,93.6 C37.6,75.3 42.5,59.5 52,46.3 C61.4,32.9 75,24.9 92.7,22.2 C104.2,20.6 113.7,20.6 121.4,22.2 L84.1,1.9 Z" id="XMLID_604_" fill="#B07E09"></path>
-                <g id="XMLID_1091_" transform="translate(37.000000, 20.000000)" fill="#FFF197">
-                    <path d="M55.6,2.1 C67.1,0.5 76.6,0.5 84.3,2.1 L81.6,27.7 C79.1,26.6 76.3,25.9 73.2,25.5 C70,25.2 66.1,25.3 61.5,26 C52.4,27.4 45.1,32 39.8,39.5 C34.2,47.3 31.4,57.1 31.4,69.1 C31.4,80.5 33.9,89.6 39.1,96.4 C44.1,103.3 51.8,106.1 62.1,104.8 C66.4,104.2 70.6,102.9 74.9,100.8 C79,99.1 82.3,97.5 84.8,95.8 L86.1,122.1 C82,124.1 77.6,125.7 72.8,126.8 C68.1,128.2 62.6,129.4 56.5,130.3 C37.9,132.7 24,128.5 14.8,117.6 C5.2,107 0.5,92.3 0.5,73.4 C0.5,55.1 5.4,39.3 14.9,26.1 C24.4,12.8 38,4.8 55.6,2.1 Z" id="XMLID_1092_"></path>
+    <defs>
+        <filter x="-0.5%" y="-0.4%" width="101.0%" height="101.7%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <path d="M64,45 C146,10 155,75 180,58 C189,39 189,33.6359168 155,10 C121,-13.6359168 1,4 1,94 C1,184 -14,228 91,228 C196,228 221,188 196,169 C176,169 166,177 130,187 C94,197 50,206 37,173 C24,140 34.1683052,53.1359168 64,45 Z" id="path-2"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="letter/c" transform="translate(-12.000000, -2.000000)">
+            <g id="c" filter="url(#filter-1)" transform="translate(12.000000, -4.000000)">
+                <g id="teeth" transform="translate(45.000000, 41.000000)" fill="#FFFFFF">
+                    <polygon id="tooth" points="134 18 121 44 111 14"></polygon>
+                    <polygon id="tooth-copy" points="114 11 101 37 91 7"></polygon>
+                    <polygon id="tooth-copy-2" points="93 11 80 37 70 7"></polygon>
+                    <polygon id="tooth-copy-3" points="73 6 60 32 50 2"></polygon>
+                    <polygon id="tooth-copy-4" points="52 4 39 30 29 0"></polygon>
+                    <polygon id="tooth-copy-5" points="31 8 18 34 8 4"></polygon>
+                    <polygon id="tooth-copy-8" transform="translate(29.500000, 159.000000) rotate(-171.000000) translate(-29.500000, -159.000000) " points="41 148 28 174 18 144"></polygon>
+                    <polygon id="tooth-copy-9" transform="translate(48.500000, 162.000000) rotate(-183.000000) translate(-48.500000, -162.000000) " points="60 151 47 177 37 147"></polygon>
+                    <polygon id="tooth-copy-10" transform="translate(71.500000, 160.000000) rotate(-192.000000) translate(-71.500000, -160.000000) " points="83 149 70 175 60 145"></polygon>
+                    <polygon id="tooth-copy-11" transform="translate(94.500000, 158.000000) rotate(-198.000000) translate(-94.500000, -158.000000) " points="106 147 93 173 83 143"></polygon>
+                    <polygon id="tooth-copy-12" transform="translate(114.500000, 145.000000) rotate(-198.000000) translate(-114.500000, -145.000000) " points="126 134 113 160 103 130"></polygon>
+                    <polygon id="tooth-copy-13" transform="translate(135.500000, 139.000000) rotate(-198.000000) translate(-135.500000, -139.000000) " points="147 128 134 154 124 124"></polygon>
+                </g>
+                <g id="freckles" transform="translate(0.000000, 11.000000)">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="Mask" fill="#5737C9" xlink:href="#path-2"></use>
+                </g>
+                <g id="eye" transform="translate(154.142420, 31.005440) rotate(16.000000) translate(-154.142420, -31.005440) translate(130.019331, 6.882352)">
+                    <path d="M21.8586627,47.9271299 C36.2558796,47.9271299 47.9271299,36.9058225 47.9271299,23.3103509 C47.9271299,9.71487922 38.1772696,-4.54747351e-13 23.7800527,-4.54747351e-13 C9.38283584,-4.54747351e-13 -1.8189894e-12,11.1130382 -1.8189894e-12,24.7085098 C-1.8189894e-12,38.3039815 7.46144577,47.9271299 21.8586627,47.9271299 Z" fill="#3E1EB3"></path>
+                    <path d="M21.9953668,46.3708016 C35.4575477,46.3708016 46.3708016,36.0652797 46.3708016,23.3527743 C46.3708016,10.6402688 37.254152,1.55632829 23.7919711,1.55632829 C10.3297902,1.55632829 1.55632829,11.9476234 1.55632829,24.6601289 C1.55632829,37.3726344 8.53318594,46.3708016 21.9953668,46.3708016 Z" id="eye-copy" fill="#FFFFFF"></path>
+                    <circle id="pupil" fill="#000000" cx="26.4049617" cy="24.7214634" r="8.17072354"></circle>
+                </g>
+                <g id="eye-copy-2" transform="translate(122.873385, 30.962625) rotate(16.000000) translate(-122.873385, -30.962625) translate(98.750297, 6.450454)">
+                    <path d="M22.0339316,48.3062926 C36.4311485,48.3062926 48.1023989,37.2849852 48.1023989,23.6895136 C48.1023989,10.0940419 38.3525386,0.379162724 23.9553217,0.379162724 C9.5581048,0.379162724 0.17526896,11.4922009 0.17526896,25.0876725 C0.17526896,38.6831442 7.63671474,48.3062926 22.0339316,48.3062926 Z" id="eye" fill="#3E1EB3"></path>
+                    <path d="M22.1706358,46.7499643 C35.6328167,46.7499643 46.5460706,36.4444425 46.5460706,23.731937 C46.5460706,11.0194315 37.4294209,1.93549102 23.96724,1.93549102 C10.5050591,1.93549102 1.73159725,12.3267862 1.73159725,25.0392916 C1.73159725,37.7517971 8.7084549,46.7499643 22.1706358,46.7499643 Z" id="eye-copy" fill="#FFFFFF"></path>
+                    <circle id="pupil" fill="#000000" cx="26.5802307" cy="25.1006261" r="8.17072354"></circle>
                 </g>
             </g>
         </g>
