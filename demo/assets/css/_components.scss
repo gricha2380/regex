@@ -359,6 +359,9 @@ body {
     &.right {
         float: right;
     }
+    &#pause {
+        padding: 1rem 0 1rem 1rem;
+    }
 }
 
 #categories {
@@ -423,16 +426,18 @@ body {
 
     &.arcade {
         .name {
-            color: white;
-            text-shadow: -3px -1px 0px black;
+            color: #eebc1d;
+            filter: drop-shadow(1px 1px 0px #222);
+            text-shadow: 0px 2px 0px rgba(0, 0, 0, .4);
         }
     }
 
     .value {
+        color: #eebc1d;
         display: block;
+        filter: drop-shadow(1px 1px 0px #222);
+        text-shadow: 0px 2px 0px rgba(0, 0, 0, .4);
         text-transform: none;
-        color: white;
-        text-shadow: -3px -1px 0px black;
     }
 }
 
@@ -459,7 +464,7 @@ body {
 }
 
 #homeContainer {
-    min-height: 500px;
+    min-height: 600px;
 }
 
 #homepageAchievements {

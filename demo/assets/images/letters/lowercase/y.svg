@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="283px" height="326px" viewBox="0 0 283 326" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="216px" height="326px" viewBox="0 0 216 326" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
     <title>y</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <filter x="-0.4%" y="-0.3%" width="100.7%" height="101.5%" filterUnits="objectBoundingBox" id="filter-1">
+        <filter x="-0.5%" y="-0.3%" width="100.9%" height="101.5%" filterUnits="objectBoundingBox" id="filter-1">
             <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
             <feMerge>
@@ -12,19 +12,19 @@
                 <feMergeNode in="SourceGraphic"></feMergeNode>
             </feMerge>
         </filter>
-        <path d="M0,44 C15.3333333,18 28.3333333,5 39,5 C55,5 143,71 168,96 C200,49 207,21 226,5 C238.666667,-5.66666667 257.666667,2.33333333 283,29 L122,324 C94,322.666667 76.3333333,316 69,304 C58,286 141.5,202 141.5,140 C113.166667,125.333333 66,93.3333333 0,44 Z" id="path-2"></path>
+        <path d="M0,40 C15.3333333,14 28.3333333,1 39,1 C55,1 76,71 101,96 C133,49 140,21 159,5 C171.666667,-5.66666667 190.666667,2.33333333 216,29 L55,324 C27,322.666667 9.33333333,316 2,304 C-9,286 74.5,202 74.5,140 C46.1666667,125.333333 21.3333333,92 0,40 Z" id="path-2"></path>
     </defs>
     <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="letter/y" transform="translate(-78.000000, -12.000000)">
-            <g id="y" filter="url(#filter-1)" transform="translate(78.000000, 12.000000)">
+        <g id="letter/y" transform="translate(-145.000000, -12.000000)">
+            <g id="y" filter="url(#filter-1)" transform="translate(145.000000, 12.000000)">
                 <g id="Path-68">
                     <mask id="mask-3" fill="white">
                         <use xlink:href="#path-2"></use>
                     </mask>
                     <use id="Mask" fill="#B6895D" xlink:href="#path-2"></use>
-                    <path d="M283,32 C257,8 237.666667,-3 225,-1 L283,32 Z M-4,52 C16,25.3333333 33,8.33333333 47,1 L-4,52 Z" id="Combined-Shape" stroke="#000000" stroke-width="10" opacity="0.5" mask="url(#mask-3)"></path>
+                    <path d="M216,32 C190,8 170.666667,-3 158,-1 L216,32 Z M-2,44 C18,17.3333333 35,0.333333333 49,-7 L-2,44 Z" id="Combined-Shape" stroke="#000000" stroke-width="10" opacity="0.5" mask="url(#mask-3)"></path>
                 </g>
-                <g id="mouth" transform="translate(127.261686, 255.901573) rotate(-67.000000) translate(-127.261686, -255.901573) translate(54.761686, 240.401573)">
+                <g id="mouth" transform="translate(60.261686, 255.901573) rotate(-67.000000) translate(-60.261686, -255.901573) translate(-12.238314, 240.401573)">
                     <polygon id="Path-50" fill="#FFFFFF" points="136.322811 18 121.250795 31 121.250795 18"></polygon>
                     <polygon id="Path-50-Copy" fill="#FFFFFF" points="117.901458 15 102.829443 28 102.829443 15"></polygon>
                     <polygon id="Path-50-Copy-2" fill="#FFFFFF" points="99.4801057 13 84.4080899 26 84.4080899 13"></polygon>
@@ -34,9 +34,9 @@
                     <polygon id="Path-50-Copy-6" fill="#FFFFFF" points="27.4693633 2 12.3973474 15 12.3973474 2"></polygon>
                     <path d="M0.931792395,0.44352445 C63.2813311,7.48117482 111.202785,14 144.696153,20" id="Path-49-Copy" stroke="#9F6100" stroke-width="3" stroke-linecap="round"></path>
                 </g>
-                <ellipse id="Oval" stroke="#A57A50" stroke-width="4" fill="#FFFFFF" cx="178.5" cy="124" rx="44.5" ry="40"></ellipse>
-                <circle id="Oval-2" fill="#030303" cx="179" cy="127" r="13"></circle>
-                <path d="M122,76 C120,91.3333333 121.333333,99 126,99 C130.666667,99 145.333333,100 170,102 L220,93 C228.666667,83 233,75.3333333 233,70 C233,62 183,84 170,84 C161.333333,84 145.333333,81.3333333 122,76 Z" id="Path-67" fill="#000000"></path>
+                <ellipse id="Oval" stroke="#A57A50" stroke-width="4" fill="#FFFFFF" cx="111.5" cy="124" rx="44.5" ry="40"></ellipse>
+                <circle id="Oval-2" fill="#030303" cx="112" cy="127" r="13"></circle>
+                <path d="M55,76 C53,91.3333333 54.3333333,99 59,99 C63.6666667,99 78.3333333,100 103,102 L153,93 C161.666667,83 166,75.3333333 166,70 C166,62 116,84 103,84 C94.3333333,84 78.3333333,81.3333333 55,76 Z" id="Path-67" fill="#000000"></path>
             </g>
         </g>
     </g>

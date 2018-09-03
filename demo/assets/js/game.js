@@ -398,10 +398,9 @@ newGame();
 
 // show modal, stop counter, 
 let gameOver = ()=> {
+    timerTriggerStop();
     gameOverFlag = true;
     console.log("gameover flag now true");
-    // clearAllIntervals();
-    clearInterval(timerCounter);
     $("#tip").hide();
     console.log("game over!");
     // saveSessionResults();

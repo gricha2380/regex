@@ -787,6 +787,10 @@ body.achievements {
   float: right;
 }
 
+.smallLink#pause {
+  padding: 1rem 0 1rem 1rem;
+}
+
 #categories {
   display: flex;
   font-weight: bold;
@@ -855,15 +859,17 @@ body.achievements {
 }
 
 #level.arcade .name {
-  color: white;
-  text-shadow: -3px -1px 0px black;
+  color: #eebc1d;
+  filter: drop-shadow(1px 1px 0px #222);
+  text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.4);
 }
 
 #level .value {
+  color: #eebc1d;
   display: block;
+  filter: drop-shadow(1px 1px 0px #222);
+  text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.4);
   text-transform: none;
-  color: white;
-  text-shadow: -3px -1px 0px black;
 }
 
 .gameType {
@@ -889,7 +895,7 @@ body.achievements {
 }
 
 #homeContainer {
-  min-height: 500px;
+  min-height: 600px;
 }
 
 #homepageAchievements {
@@ -1470,7 +1476,7 @@ body.achievements {
 
 #referenceContainer #referenceInner #referenceDetails #referenceCategoryDescription {
   padding: 1rem;
-  color: #00abff;
+  color: #8e9dc0;
 }
 
 #referenceFunctionList {

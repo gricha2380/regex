@@ -466,3 +466,38 @@ let generateReferenceModal = (referenceContent)=> {
         }
     })
 }
+
+
+$("#pause").on("click", (event)=>{
+    console.log("pause clicked")
+    event.preventDefault();
+    generatePauseScreenModal();  
+})
+
+// enemy info modal
+let generatePauseScreenModal = ()=>{
+    timerTriggerStop();
+    let newDiv = document.createElement('div');
+    let modalName = "pauseModal";
+    newDiv.id = modalName;
+    newDiv.classList.add("modal");
+    newDiv.innerHTML =
+        `<div class="inner styled">
+            <div class="enemyName title">Game Now Paused</div>
+        </div>
+        <div class="modalBG"></div>`
+    document.querySelector("body").appendChild(newDiv);
+    $(".modalBG").on("click",function(event){
+        document.querySelector('body').removeChild(document.querySelector(`#${modalName}`));
+        $(document).off();
+        timerTrigger();
+    })
+    $(document).on("keydown", function(event){
+        console.log(event.which)
+        if (event.which === 27) {
+            document.querySelector('body').removeChild(document.querySelector(`#${modalName}`));
+            $(document).off();
+            timerTrigger();
+        }
+    })
+}
