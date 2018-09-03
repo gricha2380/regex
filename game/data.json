@@ -221,7 +221,7 @@
 						"max":0,
 						"default":"",
 						"active":[],
-						"locked":["Any Word","Any Char","Not White Space","White Space","Exclude Set","Set", "Not a Word"]
+						"locked":["Any Word","Any Char","Not White Space","White Space","Exclude Set", "Not a Word"]
 					}
 				},
 

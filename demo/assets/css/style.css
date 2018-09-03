@@ -415,11 +415,11 @@ html {
 
 body {
   background-color: #4EEDD9;
-  font-family: sans-serif;
-  margin: 0;
   background-image: url(../images/backgrounds/grass.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: sans-serif;
+  margin: 0;
 }
 
 body.battle {
@@ -1318,6 +1318,7 @@ body.achievements {
 /* Enemy characters */
 #enemyImageHolder {
   padding-top: 4rem;
+  padding-bottom: 1rem;
   text-align: center;
 }
 
@@ -1330,7 +1331,7 @@ body.achievements {
 
 #enemyImageHolder .enemyImageHolder.blank {
   display: block;
-  padding: .5rem 0;
+  padding: 0;
 }
 
 #enemyImageHolder .enemyImageHolder.matched::before {
@@ -1374,7 +1375,7 @@ body.achievements {
 
 #enemyImageHolder .enemyImg {
   filter: drop-shadow(1px 3px 1px rgba(0, 0, 0, 0.5));
-  max-height: 4rem;
+  height: 6rem;
   position: relative;
   transition: 0.5s;
 }
@@ -1390,15 +1391,15 @@ body.achievements {
 }
 
 #enemyImageHolder .enemyImg.q, #enemyImageHolder .enemyImg.p, #enemyImageHolder .enemyImg.y, #enemyImageHolder .enemyImg.g {
-  top: 2rem;
+  top: 3.5rem;
 }
 
-#enemyImageHolder .enemyImg.c, #enemyImageHolder .enemyImg.e, #enemyImageHolder .enemyImg.i, #enemyImageHolder .enemyImg.m, #enemyImageHolder .enemyImg.n, #enemyImageHolder .enemyImg.o, #enemyImageHolder .enemyImg.r, #enemyImageHolder .enemyImg.s, #enemyImageHolder .enemyImg.u, #enemyImageHolder .enemyImg.v, #enemyImageHolder .enemyImg.w, #enemyImageHolder .enemyImg.x, #enemyImageHolder .enemyImg.z {
-  height: 2.5rem;
-}
-
-#enemyImageHolder .enemyImg.t {
+#enemyImageHolder .enemyImg.a, #enemyImageHolder .enemyImg.c, #enemyImageHolder .enemyImg.e, #enemyImageHolder .enemyImg.m, #enemyImageHolder .enemyImg.n, #enemyImageHolder .enemyImg.o, #enemyImageHolder .enemyImg.r, #enemyImageHolder .enemyImg.s, #enemyImageHolder .enemyImg.u, #enemyImageHolder .enemyImg.v, #enemyImageHolder .enemyImg.w, #enemyImageHolder .enemyImg.x, #enemyImageHolder .enemyImg.z {
   height: 3rem;
+}
+
+#enemyImageHolder .enemyImg.t, #enemyImageHolder .enemyImg.i {
+  height: 4rem;
 }
 
 @keyframes shake {

@@ -1,6 +1,7 @@
 /* Enemy characters */
 #enemyImageHolder {
     padding-top: 4rem;
+    padding-bottom: 1rem;
     text-align: center;
     
     .enemyImageHolder {
@@ -11,7 +12,7 @@
 
         &.blank {
             display: block;
-            padding: .5rem 0;
+            padding: 0;
         }
 
         &.matched {
@@ -58,7 +59,8 @@
 
     .enemyImg {
         filter: drop-shadow(1px 3px 1px rgba(0,0,0,0.5));
-        max-height: 4rem;
+        // max-height: 4rem;
+        height: 6rem;
         position: relative;
         transition: $transitionSpeed;
 
@@ -76,14 +78,17 @@
         }
 
         &.q,&.p, &.y, &.g {
-            top: 2rem;
+            // top: 2rem;
+            top: 3.5rem;
         }
 
-        &.c, &.e, &.i,&.m,&.n,&.o, &.r, &.s, &.u, &.v, &.w, &.x, &.z{
-            height: 2.5rem;
-        }
-        &.t {
+        &.a, &.c, &.e, &.m,&.n,&.o, &.r, &.s, &.u, &.v, &.w, &.x, &.z{
+            // height: 2.5rem;
             height: 3rem;
+        }
+        &.t, &.i {
+            // height: 3rem;
+            height: 4rem;
         }
     }
 }

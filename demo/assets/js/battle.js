@@ -360,7 +360,6 @@ let inspectEnemyListener = ()=>{
     $(".enemyImageHolder").on("click touchstart", function(){
         if ($(this).find(".enemyImg").attr("data-value")) {
             let imgVal = $(this).find(".enemyImg").attr("data-value");
-            // import enemies data.json
             generateEnemyModal(enemyData["enemies"][imgVal]);
         }
     })
@@ -369,7 +368,7 @@ let inspectEnemyListener = ()=>{
 // enemy info modal
 let generateEnemyModal = (enemy)=>{
     $("#tip").hide();
-    
+    timerTriggerStop();
     let newDiv = document.createElement('div');
     let modalName = "enemyModal";
     newDiv.id = modalName;
@@ -387,12 +386,14 @@ let generateEnemyModal = (enemy)=>{
     $(".modalBG").on("click",function(event){
         document.querySelector('body').removeChild(document.querySelector("#"+modalName));
         $(document).off();
+        timerTrigger();
     })
     $(document).on("keydown", function(event){
         console.log(event.which)
         if (event.which === 27) {
             document.querySelector('body').removeChild(document.querySelector("#"+modalName));
             $(document).off();
+            timerTrigger();
         }
     })
 }

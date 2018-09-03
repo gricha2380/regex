@@ -46,13 +46,6 @@ $(".play").on("click", function(event){
     window.location = `battle.html`;
 })
 
-$(".reference").on("click", ()=>{
-    // create modal called referenceModal
-    // ajax contents to reference.html
-  })
-  
-  
-
   // load reference modal
   $("#homepageReference").on("click touchstart", function(event){
     event.preventDefault();
@@ -86,22 +79,16 @@ let generateReferenceModal = (referenceContent)=> {
     referenceSidebarListener();
     referenceFunctionListener();
     loadReferenceCategories();
-    //someting to disable timer
-    // timerTriggerStop();
 
     $(".modalBG").on("click",function(event){
         document.querySelector('body').removeChild(document.querySelector("#"+modalName));
         $(document).off();
-        //reenable timer
-        // timerTrigger();
     })
     $(document).on("keydown", function(event){
         console.log(event.which)
         if (event.which === 27) {
             document.querySelector('body').removeChild(document.querySelector("#"+modalName));
             $(document).off();
-            //reenable timer
-            timerTrigger();
         }
     })
 }

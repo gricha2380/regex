@@ -31,92 +31,92 @@
                     <mask id="mask-3" fill="white">
                         <use xlink:href="#path-2"></use>
                     </mask>
-                    <use id="Mask" fill="#4D1414" xlink:href="#path-2"></use>
-                    <g id="Group" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
+                    <use id="Mask" fill="#AA2424" xlink:href="#path-2"></use>
+                    <g id="Group" style="mix-blend-mode: multiply;" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
                         <g transform="translate(190.000000, -11.000000)">
                             <path d="M51,27 C42.3333333,31.6666667 36,39.3333333 32,50 C25,38.5 34,30 21,20" id="Path-52" fill="#979797" fill-rule="evenodd"></path>
                             <path d="M81.75,16.1333333 C58.2055556,26.5555556 41,43.6777778 30.1333333,67.5 C11.1166667,41.8166667 35.5666667,22.8333333 0.25,0.5" id="Path-52-Copy" fill="none" stroke-dasharray="4"></path>
                         </g>
                     </g>
-                    <g id="Group-Copy" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
+                    <g id="Group-Copy" style="mix-blend-mode: multiply;" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
                         <g transform="translate(181.000000, 3.000000) rotate(-7.000000) translate(-181.000000, -3.000000) translate(140.000000, -31.000000)">
                             <path d="M51,27 C42.3333333,31.6666667 36,39.3333333 32,50 C25,38.5 34,30 21,20" id="Path-52" fill="#979797" fill-rule="evenodd"></path>
                             <path d="M81.75,16.1333333 C58.2055556,26.5555556 41,43.6777778 30.1333333,67.5 C11.1166667,41.8166667 35.5666667,22.8333333 0.25,0.5" id="Path-52-Copy" fill="none" stroke-dasharray="4"></path>
                         </g>
                     </g>
-                    <g id="Group-Copy-2" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
+                    <g id="Group-Copy-2" style="mix-blend-mode: multiply;" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
                         <g transform="translate(129.000000, 3.000000) rotate(-7.000000) translate(-129.000000, -3.000000) translate(88.000000, -31.000000)">
                             <path d="M51,27 C42.3333333,31.6666667 36,39.3333333 32,50 C25,38.5 34,30 21,20" id="Path-52" fill="#979797" fill-rule="evenodd"></path>
                             <path d="M81.75,16.1333333 C58.2055556,26.5555556 41,43.6777778 30.1333333,67.5 C11.1166667,41.8166667 35.5666667,22.8333333 0.25,0.5" id="Path-52-Copy" fill="none" stroke-dasharray="4"></path>
                         </g>
                     </g>
-                    <g id="Group-Copy-3" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
+                    <g id="Group-Copy-3" style="mix-blend-mode: multiply;" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
                         <g transform="translate(49.000000, 8.000000) rotate(-61.000000) translate(-49.000000, -8.000000) translate(8.000000, -26.000000)">
                             <path d="M51,27 C42.3333333,31.6666667 36,39.3333333 32,50 C25,38.5 34,30 21,20" id="Path-52" fill="#979797" fill-rule="evenodd"></path>
                             <path d="M81.75,16.1333333 C58.2055556,26.5555556 41,43.6777778 30.1333333,67.5 C11.1166667,41.8166667 35.5666667,22.8333333 0.25,0.5" id="Path-52-Copy" fill="none" stroke-dasharray="4"></path>
                         </g>
                     </g>
-                    <g id="Group-Copy-4" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
+                    <g id="Group-Copy-4" style="mix-blend-mode: multiply;" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
                         <g transform="translate(19.000000, 59.000000) rotate(-91.000000) translate(-19.000000, -59.000000) translate(-22.000000, 25.000000)">
                             <path d="M51,27 C42.3333333,31.6666667 36,39.3333333 32,50 C25,38.5 34,30 21,20" id="Path-52" fill="#979797" fill-rule="evenodd"></path>
                             <path d="M81.75,16.1333333 C58.2055556,26.5555556 41,43.6777778 30.1333333,67.5 C11.1166667,41.8166667 35.5666667,22.8333333 0.25,0.5" id="Path-52-Copy" fill="none" stroke-dasharray="4"></path>
                         </g>
                     </g>
-                    <g id="Group-Copy-5" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
+                    <g id="Group-Copy-5" style="mix-blend-mode: multiply;" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
                         <g transform="translate(10.000000, 130.000000) rotate(-93.000000) translate(-10.000000, -130.000000) translate(-31.000000, 96.000000)">
                             <path d="M51,27 C42.3333333,31.6666667 36,39.3333333 32,50 C25,38.5 34,30 21,20" id="Path-52" fill="#979797" fill-rule="evenodd"></path>
                             <path d="M81.75,16.1333333 C58.2055556,26.5555556 41,43.6777778 30.1333333,67.5 C11.1166667,41.8166667 35.5666667,22.8333333 0.25,0.5" id="Path-52-Copy" fill="none" stroke-dasharray="4"></path>
                         </g>
                     </g>
-                    <g id="Group-Copy-6" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
+                    <g id="Group-Copy-6" style="mix-blend-mode: multiply;" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
                         <g transform="translate(8.000000, 192.000000) rotate(-102.000000) translate(-8.000000, -192.000000) translate(-33.000000, 158.000000)">
                             <path d="M51,27 C42.3333333,31.6666667 36,39.3333333 32,50 C25,38.5 34,30 21,20" id="Path-52" fill="#979797" fill-rule="evenodd"></path>
                             <path d="M81.75,16.1333333 C58.2055556,26.5555556 41,43.6777778 30.1333333,67.5 C11.1166667,41.8166667 35.5666667,22.8333333 0.25,0.5" id="Path-52-Copy" fill="none" stroke-dasharray="4"></path>
                         </g>
                     </g>
-                    <g id="Group-Copy-7" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
+                    <g id="Group-Copy-7" style="mix-blend-mode: multiply;" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
                         <g transform="translate(22.500000, 258.366025) rotate(-120.000000) translate(-22.500000, -258.366025) translate(-22.500000, 220.866025)">
                             <path d="M57,29.7 C47.4666667,34.8333333 40.5,43.2666667 36.1,55 C28.4,42.35 38.3,33 24,22" id="Path-52" fill="#979797" fill-rule="evenodd"></path>
                             <path d="M89.1339746,17.7666667 C63.4228635,29.2777778 44.6339746,48.1888889 32.7673079,74.5 C12.0006413,46.1333333 38.7006413,25.1666667 0.133974596,0.5" id="Path-52-Copy" fill="none" stroke-dasharray="4"></path>
                         </g>
                     </g>
-                    <g id="Group-Copy-8" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
+                    <g id="Group-Copy-8" style="mix-blend-mode: multiply;" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
                         <g transform="translate(64.500000, 310.366025) rotate(-158.000000) translate(-64.500000, -310.366025) translate(19.500000, 272.866025)">
                             <path d="M57,29.7 C47.4666667,34.8333333 40.5,43.2666667 36.1,55 C28.4,42.35 38.3,33 24,22" id="Path-52" fill="#979797" fill-rule="evenodd"></path>
                             <path d="M89.1339746,17.7666667 C63.4228635,29.2777778 44.6339746,48.1888889 32.7673079,74.5 C12.0006413,46.1333333 38.7006413,25.1666667 0.133974596,0.5" id="Path-52-Copy" fill="none" stroke-dasharray="4"></path>
                         </g>
                     </g>
-                    <g id="Group-Copy-9" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
+                    <g id="Group-Copy-9" style="mix-blend-mode: multiply;" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
                         <g transform="translate(134.500000, 326.366025) rotate(-194.000000) translate(-134.500000, -326.366025) translate(89.500000, 288.866025)">
                             <path d="M57,29.7 C47.4666667,34.8333333 40.5,43.2666667 36.1,55 C28.4,42.35 38.3,33 24,22" id="Path-52" fill="#979797" fill-rule="evenodd"></path>
                             <path d="M89.1339746,17.7666667 C63.4228635,29.2777778 44.6339746,48.1888889 32.7673079,74.5 C12.0006413,46.1333333 38.7006413,25.1666667 0.133974596,0.5" id="Path-52-Copy" fill="none" stroke-dasharray="4"></path>
                         </g>
                     </g>
-                    <g id="Group-Copy-10" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
+                    <g id="Group-Copy-10" style="mix-blend-mode: multiply;" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
                         <g transform="translate(194.500000, 309.366025) rotate(-225.000000) translate(-194.500000, -309.366025) translate(149.500000, 271.866025)">
                             <path d="M57,29.7 C47.4666667,34.8333333 40.5,43.2666667 36.1,55 C28.4,42.35 38.3,33 24,22" id="Path-52" fill="#979797" fill-rule="evenodd"></path>
                             <path d="M89.1339746,17.7666667 C63.4228635,29.2777778 44.6339746,48.1888889 32.7673079,74.5 C12.0006413,46.1333333 38.7006413,25.1666667 0.133974596,0.5" id="Path-52-Copy" fill="none" stroke-dasharray="4"></path>
                         </g>
                     </g>
-                    <g id="Group-Copy-11" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
+                    <g id="Group-Copy-11" style="mix-blend-mode: multiply;" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
                         <g transform="translate(231.500000, 255.366025) rotate(-276.000000) translate(-231.500000, -255.366025) translate(186.500000, 217.866025)">
                             <path d="M57,29.7 C47.4666667,34.8333333 40.5,43.2666667 36.1,55 C28.4,42.35 38.3,33 24,22" id="Path-52" fill="#979797" fill-rule="evenodd"></path>
                             <path d="M89.1339746,17.7666667 C63.4228635,29.2777778 44.6339746,48.1888889 32.7673079,74.5 C12.0006413,46.1333333 38.7006413,25.1666667 0.133974596,0.5" id="Path-52-Copy" fill="none" stroke-dasharray="4"></path>
                         </g>
                     </g>
-                    <g id="Group-Copy-12" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
+                    <g id="Group-Copy-12" style="mix-blend-mode: multiply;" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
                         <g transform="translate(213.500000, 193.366025) rotate(-303.000000) translate(-213.500000, -193.366025) translate(168.500000, 155.866025)">
                             <path d="M57,29.7 C47.4666667,34.8333333 40.5,43.2666667 36.1,55 C28.4,42.35 38.3,33 24,22" id="Path-52" fill="#979797" fill-rule="evenodd"></path>
                             <path d="M89.1339746,17.7666667 C63.4228635,29.2777778 44.6339746,48.1888889 32.7673079,74.5 C12.0006413,46.1333333 38.7006413,25.1666667 0.133974596,0.5" id="Path-52-Copy" fill="none" stroke-dasharray="4"></path>
                         </g>
                     </g>
-                    <g id="Group-Copy-13" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
+                    <g id="Group-Copy-13" style="mix-blend-mode: multiply;" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
                         <g transform="translate(158.500000, 154.366025) rotate(-351.000000) translate(-158.500000, -154.366025) translate(113.500000, 116.866025)">
                             <path d="M57,29.7 C47.4666667,34.8333333 40.5,43.2666667 36.1,55 C28.4,42.35 38.3,33 24,22" id="Path-52" fill="#979797" fill-rule="evenodd"></path>
                             <path d="M89.1339746,17.7666667 C63.4228635,29.2777778 44.6339746,48.1888889 32.7673079,74.5 C12.0006413,46.1333333 38.7006413,25.1666667 0.133974596,0.5" id="Path-52-Copy" fill="none" stroke-dasharray="4"></path>
                         </g>
                     </g>
-                    <g id="Group-Copy-14" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
+                    <g id="Group-Copy-14" style="mix-blend-mode: multiply;" mask="url(#mask-3)" stroke="#979797" stroke-width="2">
                         <g transform="translate(107.668172, 164.228650) rotate(-394.000000) translate(-107.668172, -164.228650) translate(68.668172, 134.228650)">
                             <path d="M45,14.7 C35.4666667,19.8333333 28.5,28.2666667 24.1,40 C16.4,27.35 26.3,18 12,7" id="Path-52" fill="#979797" fill-rule="evenodd"></path>
                             <path d="M77.1339746,2.76666667 C51.4228635,14.2777778 32.6339746,33.1888889 20.7673079,59.5 C0.000641262813,31.1333333 26.6390381,31.036368 0.138560947,0.581566735" id="Path-52-Copy" fill="none" stroke-dasharray="4"></path>
