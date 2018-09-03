@@ -22,18 +22,17 @@
                         <use xlink:href="#path-2"></use>
                     </mask>
                     <use id="Mask" fill="#B6895D" xlink:href="#path-2"></use>
-                    <path d="M283,32 C257,8 237.666667,-3 225,-1" stroke="#000000" stroke-width="10" opacity="0.5" mask="url(#mask-3)"></path>
-                    <path d="M47,52 C27,25.3333333 10,8.33333333 -4,1" id="Path-68-Copy" stroke="#000000" stroke-width="10" opacity="0.5" mask="url(#mask-3)" transform="translate(21.500000, 26.500000) scale(-1, 1) translate(-21.500000, -26.500000) "></path>
+                    <path d="M283,32 C257,8 237.666667,-3 225,-1 L283,32 Z M-4,52 C16,25.3333333 33,8.33333333 47,1 L-4,52 Z" id="Combined-Shape" stroke="#000000" stroke-width="10" opacity="0.5" mask="url(#mask-3)"></path>
                 </g>
-                <g id="mouth" transform="translate(125.801434, 254.706207) rotate(-67.000000) translate(-125.801434, -254.706207) translate(53.301434, 238.706207)">
-                    <polygon id="Path-50" fill="#FFFFFF" points="136.322811 19 121.250795 32 121.250795 19"></polygon>
-                    <polygon id="Path-50-Copy" fill="#FFFFFF" points="117.901458 16 102.829443 29 102.829443 16"></polygon>
-                    <polygon id="Path-50-Copy-2" fill="#FFFFFF" points="99.4801057 14 84.4080899 27 84.4080899 14"></polygon>
-                    <polygon id="Path-50-Copy-3" fill="#FFFFFF" points="79.3840846 10 64.3120687 23 64.3120687 10"></polygon>
-                    <polygon id="Path-50-Copy-4" fill="#FFFFFF" points="62.6374003 7 47.5653844 20 47.5653844 7"></polygon>
-                    <polygon id="Path-50-Copy-5" fill="#FFFFFF" points="44.2160476 5 29.1440317 18 29.1440317 5"></polygon>
-                    <polygon id="Path-50-Copy-6" fill="#FFFFFF" points="27.4693633 3 12.3973474 16 12.3973474 3"></polygon>
-                    <path d="M0.541061267,0.523019597 C63.1510874,8.17433987 111.202785,15 144.696153,21" id="Path-49-Copy" stroke="#9F6100" stroke-width="3"></path>
+                <g id="mouth" transform="translate(127.261686, 255.901573) rotate(-67.000000) translate(-127.261686, -255.901573) translate(54.761686, 240.401573)">
+                    <polygon id="Path-50" fill="#FFFFFF" points="136.322811 18 121.250795 31 121.250795 18"></polygon>
+                    <polygon id="Path-50-Copy" fill="#FFFFFF" points="117.901458 15 102.829443 28 102.829443 15"></polygon>
+                    <polygon id="Path-50-Copy-2" fill="#FFFFFF" points="99.4801057 13 84.4080899 26 84.4080899 13"></polygon>
+                    <polygon id="Path-50-Copy-3" fill="#FFFFFF" points="79.3840846 9 64.3120687 22 64.3120687 9"></polygon>
+                    <polygon id="Path-50-Copy-4" fill="#FFFFFF" points="62.6374003 6 47.5653844 19 47.5653844 6"></polygon>
+                    <polygon id="Path-50-Copy-5" fill="#FFFFFF" points="44.2160476 4 29.1440317 17 29.1440317 4"></polygon>
+                    <polygon id="Path-50-Copy-6" fill="#FFFFFF" points="27.4693633 2 12.3973474 15 12.3973474 2"></polygon>
+                    <path d="M0.931792395,0.44352445 C63.2813311,7.48117482 111.202785,14 144.696153,20" id="Path-49-Copy" stroke="#9F6100" stroke-width="3" stroke-linecap="round"></path>
                 </g>
                 <ellipse id="Oval" stroke="#A57A50" stroke-width="4" fill="#FFFFFF" cx="178.5" cy="124" rx="44.5" ry="40"></ellipse>
                 <circle id="Oval-2" fill="#030303" cx="179" cy="127" r="13"></circle>

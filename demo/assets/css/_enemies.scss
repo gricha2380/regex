@@ -1,14 +1,17 @@
 /* Enemy characters */
 #enemyImageHolder {
+    padding-top: 4rem;
     text-align: center;
     
     .enemyImageHolder {
         display: inline-block;
+        padding: 0 .25rem;
         position: relative;
         transition: $transitionSpeed;
 
         &.blank {
             display: block;
+            padding: .5rem 0;
         }
 
         &.matched {
@@ -16,10 +19,10 @@
             &::before {
                 position: absolute;
                 content: "";
-                top: -1rem;
-                left: 1rem;
-                width: 50px;
-                height: 50px;
+                top: -1.5rem;
+                left: 10%;
+                width: 40px;
+                height: 40px;
                 background: url(../images/matched.svg) no-repeat;
                 background-size: contain;
                 z-index: 1;
@@ -54,6 +57,7 @@
     }
 
     .enemyImg {
+        filter: drop-shadow(1px 3px 1px rgba(0,0,0,0.5));
         max-height: 4rem;
         position: relative;
         transition: $transitionSpeed;
@@ -67,8 +71,19 @@
         }
 
         &:hover {
-            filter: saturate(191%);
+            filter: saturate(191%) drop-shadow(3px 3px 1px rgba(0,0,0,0.5));
             cursor: pointer;
+        }
+
+        &.q,&.p, &.y, &.g {
+            top: 2rem;
+        }
+
+        &.c, &.e, &.i,&.m,&.n,&.o, &.r, &.s, &.u, &.v, &.w, &.x, &.z{
+            height: 2.5rem;
+        }
+        &.t {
+            height: 3rem;
         }
     }
 }

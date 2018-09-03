@@ -1317,26 +1317,29 @@ body.achievements {
 
 /* Enemy characters */
 #enemyImageHolder {
+  padding-top: 4rem;
   text-align: center;
 }
 
 #enemyImageHolder .enemyImageHolder {
   display: inline-block;
+  padding: 0 .25rem;
   position: relative;
   transition: 0.5s;
 }
 
 #enemyImageHolder .enemyImageHolder.blank {
   display: block;
+  padding: .5rem 0;
 }
 
 #enemyImageHolder .enemyImageHolder.matched::before {
   position: absolute;
   content: "";
-  top: -1rem;
-  left: 1rem;
-  width: 50px;
-  height: 50px;
+  top: -1.5rem;
+  left: 10%;
+  width: 40px;
+  height: 40px;
   background: url(../images/matched.svg) no-repeat;
   background-size: contain;
   z-index: 1;
@@ -1370,6 +1373,7 @@ body.achievements {
 }
 
 #enemyImageHolder .enemyImg {
+  filter: drop-shadow(1px 3px 1px rgba(0, 0, 0, 0.5));
   max-height: 4rem;
   position: relative;
   transition: 0.5s;
@@ -1381,8 +1385,20 @@ body.achievements {
 }
 
 #enemyImageHolder .enemyImg:hover {
-  filter: saturate(191%);
+  filter: saturate(191%) drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.5));
   cursor: pointer;
+}
+
+#enemyImageHolder .enemyImg.q, #enemyImageHolder .enemyImg.p, #enemyImageHolder .enemyImg.y, #enemyImageHolder .enemyImg.g {
+  top: 2rem;
+}
+
+#enemyImageHolder .enemyImg.c, #enemyImageHolder .enemyImg.e, #enemyImageHolder .enemyImg.i, #enemyImageHolder .enemyImg.m, #enemyImageHolder .enemyImg.n, #enemyImageHolder .enemyImg.o, #enemyImageHolder .enemyImg.r, #enemyImageHolder .enemyImg.s, #enemyImageHolder .enemyImg.u, #enemyImageHolder .enemyImg.v, #enemyImageHolder .enemyImg.w, #enemyImageHolder .enemyImg.x, #enemyImageHolder .enemyImg.z {
+  height: 2.5rem;
+}
+
+#enemyImageHolder .enemyImg.t {
+  height: 3rem;
 }
 
 @keyframes shake {

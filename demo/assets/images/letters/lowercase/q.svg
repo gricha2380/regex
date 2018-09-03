@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="167px" height="382px" viewBox="0 0 167 382" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="174px" height="384px" viewBox="0 0 174 384" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
     <title>q</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <filter x="-0.6%" y="-0.3%" width="101.2%" height="101.1%" filterUnits="objectBoundingBox" id="filter-1">
+        <filter x="-0.6%" y="-0.3%" width="101.1%" height="101.0%" filterUnits="objectBoundingBox" id="filter-1">
             <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
             <feMerge>
@@ -19,54 +19,45 @@
                 <ellipse id="Oval-2" fill="#FFFFFF" cx="62" cy="86" rx="29" ry="38"></ellipse>
                 <circle id="Oval-3" fill="#000000" cx="62.5" cy="90.5" r="14.5"></circle>
                 <circle id="Oval-3-Copy" fill="#FFFFFF" cx="55" cy="84" r="5"></circle>
-                <g id="Group" transform="translate(138.000000, 15.000000)" fill="#8C43D1">
-                    <polygon id="spike" points="26 0 29 9 21 9"></polygon>
-                    <polygon id="spike-copy" transform="translate(19.000000, 14.500000) rotate(7.000000) translate(-19.000000, -14.500000) " points="20 10 23 19 15 19"></polygon>
-                    <polygon id="spike-copy-2" transform="translate(14.000000, 23.500000) rotate(-4.000000) translate(-14.000000, -23.500000) " points="15 19 18 28 10 28"></polygon>
-                    <polygon id="spike-copy-3" transform="translate(9.000000, 33.500000) rotate(-4.000000) translate(-9.000000, -33.500000) " points="10 29 13 38 5 38"></polygon>
-                    <polygon id="spike-copy-4" transform="translate(5.000000, 41.500000) rotate(-4.000000) translate(-5.000000, -41.500000) " points="6 37 9 46 1 46"></polygon>
+                <g id="Group-Copy" transform="translate(152.610956, 37.769631) rotate(-3.000000) translate(-152.610956, -37.769631) translate(137.610956, 17.269631)" fill="#8C43D1">
+                    <polygon id="spike-copy-2" transform="translate(23.147213, 6.997469) rotate(-4.000000) translate(-23.147213, -6.997469) " points="24.5939138 0.48731546 28.9340163 13.5076228 17.3604098 13.5076228"></polygon>
+                    <polygon id="spike-copy-3" transform="translate(14.523051, 21.065712) rotate(-4.000000) translate(-14.523051, -21.065712) " points="15.9697517 14.5555588 20.3098541 27.5758661 8.73624762 27.5758661"></polygon>
+                    <polygon id="spike-copy-4" transform="translate(6.946825, 33.631212) rotate(-4.000000) translate(-6.946825, -33.631212) " points="8.39352557 27.1210586 12.733628 40.1413659 1.1600215 40.1413659"></polygon>
                 </g>
-                <g id="Group-Copy" transform="translate(134.558107, 88.913456) rotate(-16.000000) translate(-134.558107, -88.913456) translate(119.058107, 65.413456)" fill="#8C43D1">
-                    <polygon id="spike" points="28 0 31 9 23 9"></polygon>
-                    <polygon id="spike-copy" transform="translate(21.000000, 14.500000) rotate(7.000000) translate(-21.000000, -14.500000) " points="22 10 25 19 17 19"></polygon>
-                    <polygon id="spike-copy-2" transform="translate(16.000000, 23.500000) rotate(-4.000000) translate(-16.000000, -23.500000) " points="17 19 20 28 12 28"></polygon>
-                    <polygon id="spike-copy-3" transform="translate(10.038738, 33.224363) rotate(-4.000000) translate(-10.038738, -33.224363) " points="11.0387383 28.7243626 14.0387383 37.7243626 6.0387383 37.7243626"></polygon>
-                    <polygon id="spike-copy-4" transform="translate(4.801839, 41.909987) rotate(-4.000000) translate(-4.801839, -41.909987) " points="5.80183925 37.409987 8.80183925 46.409987 0.801839252 46.409987"></polygon>
+                <g id="Group-Copy-2" transform="translate(133.874470, 94.601807) rotate(-15.000000) translate(-133.874470, -94.601807) translate(112.374470, 61.101807)" fill="#8C43D1">
+                    <polygon id="spike" points="38.2314261 0.741180955 42.4311424 13.3403298 31.231899 13.3403298"></polygon>
+                    <polygon id="spike-copy" transform="translate(28.432088, 21.039810) rotate(7.000000) translate(-28.432088, -21.039810) " points="29.8319935 14.7402352 34.0317098 27.339384 22.8324664 27.339384"></polygon>
+                    <polygon id="spike-copy-2" transform="translate(20.466635, 33.380139) rotate(-4.000000) translate(-20.466635, -33.380139) " points="21.8665406 27.080565 26.0662569 39.6797138 14.8670135 39.6797138"></polygon>
+                    <polygon id="spike-copy-3" transform="translate(14.053284, 47.510966) rotate(-4.000000) translate(-14.053284, -47.510966) " points="15.4531896 41.2113911 19.6529059 53.81054 8.45366252 53.81054"></polygon>
+                    <polygon id="spike-copy-4" transform="translate(6.722121, 59.670018) rotate(-4.000000) translate(-6.722121, -59.670018) " points="8.12202625 53.3704438 12.3217425 65.9695926 1.12249912 65.9695926"></polygon>
                 </g>
-                <g id="Group-Copy-2" transform="translate(122.558107, 143.913456) rotate(-20.000000) translate(-122.558107, -143.913456) translate(107.058107, 120.413456)" fill="#8C43D1">
-                    <polygon id="spike" points="28 0 31 9 23 9"></polygon>
-                    <polygon id="spike-copy" transform="translate(21.000000, 14.500000) rotate(7.000000) translate(-21.000000, -14.500000) " points="22 10 25 19 17 19"></polygon>
-                    <polygon id="spike-copy-2" transform="translate(16.000000, 23.500000) rotate(-4.000000) translate(-16.000000, -23.500000) " points="17 19 20 28 12 28"></polygon>
-                    <polygon id="spike-copy-3" transform="translate(10.038738, 33.224363) rotate(-4.000000) translate(-10.038738, -33.224363) " points="11.0387383 28.7243626 14.0387383 37.7243626 6.0387383 37.7243626"></polygon>
-                    <polygon id="spike-copy-4" transform="translate(4.801839, 41.909987) rotate(-4.000000) translate(-4.801839, -41.909987) " points="5.80183925 37.409987 8.80183925 46.409987 0.801839252 46.409987"></polygon>
+                <g id="Group-Copy-3" transform="translate(119.009474, 168.194913) rotate(-25.000000) translate(-119.009474, -168.194913) translate(98.509474, 137.194913)" fill="#8C43D1">
+                    <polygon id="spike" points="36.8100569 0 40.7539916 11.831804 30.2368325 11.831804"></polygon>
+                    <polygon id="spike-copy" transform="translate(27.607543, 19.062351) rotate(7.000000) translate(-27.607543, -19.062351) " points="28.9221876 13.1464489 32.8661223 24.9782529 22.3489631 24.9782529"></polygon>
+                    <polygon id="spike-copy-2" transform="translate(21.034318, 30.894155) rotate(-4.000000) translate(-21.034318, -30.894155) " points="22.3489631 24.9782529 26.2928978 36.8100569 15.7757387 36.8100569"></polygon>
+                    <polygon id="spike-copy-3" transform="translate(13.197376, 43.678239) rotate(-4.000000) translate(-13.197376, -43.678239) " points="14.5120209 37.7623366 18.4559556 49.5941406 7.93879645 49.5941406"></polygon>
+                    <polygon id="spike-copy-4" transform="translate(6.312713, 55.096750) rotate(-4.000000) translate(-6.312713, -55.096750) " points="7.62735833 49.1808482 11.571293 61.0126522 1.05413388 61.0126522"></polygon>
                 </g>
-                <g id="Group-Copy-3" transform="translate(116.558107, 198.913456) rotate(-25.000000) translate(-116.558107, -198.913456) translate(101.058107, 175.413456)" fill="#8C43D1">
-                    <polygon id="spike" points="28 0 31 9 23 9"></polygon>
-                    <polygon id="spike-copy" transform="translate(21.000000, 14.500000) rotate(7.000000) translate(-21.000000, -14.500000) " points="22 10 25 19 17 19"></polygon>
-                    <polygon id="spike-copy-2" transform="translate(16.000000, 23.500000) rotate(-4.000000) translate(-16.000000, -23.500000) " points="17 19 20 28 12 28"></polygon>
-                    <polygon id="spike-copy-3" transform="translate(10.038738, 33.224363) rotate(-4.000000) translate(-10.038738, -33.224363) " points="11.0387383 28.7243626 14.0387383 37.7243626 6.0387383 37.7243626"></polygon>
-                    <polygon id="spike-copy-4" transform="translate(4.801839, 41.909987) rotate(-4.000000) translate(-4.801839, -41.909987) " points="5.80183925 37.409987 8.80183925 46.409987 0.801839252 46.409987"></polygon>
+                <g id="Group-Copy-4" transform="translate(111.252457, 242.773295) rotate(-20.000000) translate(-111.252457, -242.773295) translate(89.752457, 210.273295)" fill="#8C43D1">
+                    <polygon id="spike" points="38.492869 0 42.6171049 12.3727079 31.6191424 12.3727079"></polygon>
+                    <polygon id="spike-copy" transform="translate(28.869652, 19.933807) rotate(7.000000) translate(-28.869652, -19.933807) " points="30.244397 13.7474532 34.368633 26.1201611 23.3706704 26.1201611"></polygon>
+                    <polygon id="spike-copy-2" transform="translate(21.056233, 31.964495) rotate(-4.000000) translate(-21.056233, -31.964495) " points="22.4309778 25.7781409 26.5552138 38.1508488 15.5572512 38.1508488"></polygon>
+                    <polygon id="spike-copy-3" transform="translate(12.861016, 45.333017) rotate(-4.000000) translate(-12.861016, -45.333017) " points="14.2357612 39.146663 18.3599972 51.5193709 7.3620346 51.5193709"></polygon>
+                    <polygon id="spike-copy-4" transform="translate(6.601306, 57.615558) rotate(-4.000000) translate(-6.601306, -57.615558) " points="7.97605136 51.4292045 12.1002873 63.8019124 1.10232476 63.8019124"></polygon>
                 </g>
-                <g id="Group-Copy-4" transform="translate(107.558107, 253.913456) rotate(-20.000000) translate(-107.558107, -253.913456) translate(92.058107, 230.413456)" fill="#8C43D1">
-                    <polygon id="spike" points="28 0 31 9 23 9"></polygon>
-                    <polygon id="spike-copy" transform="translate(21.000000, 14.500000) rotate(7.000000) translate(-21.000000, -14.500000) " points="22 10 25 19 17 19"></polygon>
-                    <polygon id="spike-copy-2" transform="translate(16.000000, 23.500000) rotate(-4.000000) translate(-16.000000, -23.500000) " points="17 19 20 28 12 28"></polygon>
-                    <polygon id="spike-copy-3" transform="translate(10.038738, 33.224363) rotate(-4.000000) translate(-10.038738, -33.224363) " points="11.0387383 28.7243626 14.0387383 37.7243626 6.0387383 37.7243626"></polygon>
-                    <polygon id="spike-copy-4" transform="translate(4.801839, 41.909987) rotate(-4.000000) translate(-4.801839, -41.909987) " points="5.80183925 37.409987 8.80183925 46.409987 0.801839252 46.409987"></polygon>
-                </g>
-                <g id="Group-Copy-5" transform="translate(102.293591, 302.772441) rotate(-32.000000) translate(-102.293591, -302.772441) translate(89.293591, 283.772441)" fill="#8C43D1">
-                    <polygon id="spike" points="23 0 26 9 18 9"></polygon>
-                    <polygon id="spike-copy" transform="translate(16.000000, 14.500000) rotate(7.000000) translate(-16.000000, -14.500000) " points="17 10 20 19 12 19"></polygon>
-                    <polygon id="spike-copy-2" transform="translate(10.151952, 22.970081) rotate(-4.000000) translate(-10.151952, -22.970081) " points="11.1519519 18.4700807 14.1519519 27.4700807 6.1519519 27.4700807"></polygon>
-                    <polygon id="spike-copy-3" transform="translate(5.038738, 33.224363) rotate(-4.000000) translate(-5.038738, -33.224363) " points="6.0387383 28.7243626 9.0387383 37.7243626 1.0387383 37.7243626"></polygon>
+                <g id="Group-Copy-5" transform="translate(103.198114, 294.784582) rotate(-32.000000) translate(-103.198114, -294.784582) translate(85.198114, 268.784582)" fill="#8C43D1">
+                    <polygon id="spike" points="31.0468314 0 35.0964181 12.1487601 24.2975203 12.1487601"></polygon>
+                    <polygon id="spike-copy" transform="translate(21.597796, 19.573002) rotate(7.000000) translate(-21.597796, -19.573002) " points="22.947658 13.4986224 26.9972447 25.6473825 16.1983468 25.6473825"></polygon>
+                    <polygon id="spike-copy-2" transform="translate(13.703737, 31.006445) rotate(-4.000000) translate(-13.703737, -31.006445) " points="15.0535987 24.9320645 19.1031854 37.0808246 8.30428755 37.0808246"></polygon>
+                    <polygon id="spike-copy-3" transform="translate(6.801603, 44.848312) rotate(-4.000000) translate(-6.801603, -44.848312) " points="8.15146479 38.7739324 12.2010515 50.9226925 1.40215361 50.9226925"></polygon>
                 </g>
                 <path d="M23,136.380618 C17,151.559457 21.3333333,161.765918 36,167 C30.8823529,152.082865 36,143.446629 40,138.735955 C35.3333333,133.501873 29.6666667,132.71676 23,136.380618 Z" id="Path-92-Copy" fill="#DFC7C7" transform="translate(30.193548, 150.558824) rotate(5.000000) translate(-30.193548, -150.558824) "></path>
                 <polygon id="spike-copy-4" fill="#8C43D1" transform="translate(108.664418, 328.971519) rotate(-75.000000) translate(-108.664418, -328.971519) " points="109.664418 324.471519 112.664418 333.471519 104.664418 333.471519"></polygon>
-                <polygon id="spike-copy-5" fill="#8C43D1" points="119.914418 328.471519 123.664418 337.471519 113.664418 337.471519"></polygon>
-                <polygon id="spike-copy-6" fill="#8C43D1" points="128.914418 328.471519 132.664418 337.471519 122.664418 337.471519"></polygon>
-                <polygon id="spike-copy-7" fill="#8C43D1" points="137.914418 329.471519 141.664418 338.471519 131.664418 338.471519"></polygon>
-                <polygon id="spike-copy-8" fill="#8C43D1" transform="translate(146.664418, 334.971519) rotate(12.000000) translate(-146.664418, -334.971519) " points="147.914418 330.471519 151.664418 339.471519 141.664418 339.471519"></polygon>
-                <path d="M110,32 C118,24.6666667 122,16.3333333 122,7 C122,-7 180,4 162,21 C144,38 118,137 118,186 C118,235 77,335 122,335 C167,335 155,348 155,369 C155,390 86,378 69,355 C52,332 86,225 86,152 C62,168 -20,136 5,60 C21.6666667,9.33333333 56.6666667,1.687539e-13 110,32 Z M64.5,114 C80.2401154,114 83,102.135546 83,87.5 C83,72.8644541 80.2401154,61 64.5,61 C48.7598846,61 36,72.8644541 36,87.5 C36,102.135546 48.7598846,114 64.5,114 Z" id="Combined-Shape" fill="#BA4747"></path>
+                <polygon id="spike-copy-5" fill="#8C43D1" transform="translate(111.553307, 328.471519) rotate(29.000000) translate(-111.553307, -328.471519) " points="113.775529 320.471519 120.442196 336.471519 102.664418 336.471519"></polygon>
+                <polygon id="spike-copy-6" fill="#8C43D1" points="129.583083 319.489875 135.46357 336.012957 119.782272 336.012957"></polygon>
+                <polygon id="spike-copy-7" fill="#8C43D1" points="143.696252 321.325773 149.576739 337.848855 133.89544 337.848855"></polygon>
+                <polygon id="spike-copy-8" fill="#8C43D1" transform="translate(156.950241, 327.616039) rotate(-14.000000) translate(-156.950241, -327.616039) " points="161.801862 318.819336 164.619553 336.412741 149.280929 332.595695"></polygon>
+                <path d="M110,32 C118,24.6666667 122,16.3333333 122,7 C122,-7 180,4 162,21 C144,38 118,137 118,186 C118,235 73,348 134,335 C195,322 167,348 167,369 C167,390 83,385 64.5,354 C53,323 86,225 86,152 C62,168 -20,136 5,60 C21.6666667,9.33333333 56.6666667,1.17239551e-13 110,32 Z M64.5,114 C80.2401154,114 83,102.135546 83,87.5 C83,72.8644541 80.2401154,61 64.5,61 C48.7598846,61 36,72.8644541 36,87.5 C36,102.135546 48.7598846,114 64.5,114 Z" id="Combined-Shape" fill="#BA4747"></path>
                 <path d="M42,146.380618 C36,161.559457 40.3333333,171.765918 55,177 C49.8823529,162.082865 55,153.446629 59,148.735955 C54.3333333,143.501873 48.6666667,142.71676 42,146.380618 Z" id="Path-92" fill="#FFFFFF" transform="translate(49.193548, 160.558824) rotate(-7.000000) translate(-49.193548, -160.558824) "></path>
                 <path d="M40,50 C37.3333333,54.6666667 37.3333333,59 40,63 C44,69 85,68 90,56.5 C95,45 95,43 90,34 C78.6666667,49 62,54.3333333 40,50 Z" id="Path-93" fill="#000000"></path>
             </g>
