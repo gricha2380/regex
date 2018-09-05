@@ -23,6 +23,12 @@ let loadCategories = (input) => {
         }
     }
     
+    if (gameState.current.mode == "arcade") {
+        gameState.current.randomLock = ``;
+        console.log("You're in arcade mode. randomly locking cards now");
+        loadRandomLock();
+    }
+
     loadActiveCategory();
     categoryEventListeners();
     processCards(); // listen for click on cards in battle.js
@@ -31,19 +37,25 @@ let loadCategories = (input) => {
 
 let loadActiveCategory = ()=> {
     $("#cards").html('');
-    for (card in deckData[gameState.activeCategory]) {
-        $("#cards").append(`
-            <div class="cardHolder">
-                <button class="${gameState.current.level.deck.locked.indexOf(card) >=0 && gameState.current.mode == "story" ? 'card locked' : 'card'}" value="${deckData[gameState.activeCategory][card].nickname}" data-name="${card}" data-category="${gameState.activeCategory}">
-                    <div class="name"><div class="nameInner">${deckData[gameState.activeCategory][card].name}</div></div>
-                    <span>${deckData[gameState.activeCategory][card].nickname}</span>
-                    ${deckData[gameState.activeCategory][card].type == "auto" ? 
-                        '<span class="cardClass" value="auto">⚡️</span>' :
-                        '<span class="cardClass" value="manual">...</span>'}
-                </button>
-                <div class="infoIcon">?</div>
-            </div>
-        `)
+    //if arcade game and if mode is character
+    if (gameState.activeCategory == "characters" && gameState.current.mode == "arcade" && $("#randomLockLabel input").prop("checked")) {
+        console.log("you're looking at characters in arcade mode. applying randomly locked cards")
+        $("#cards").append(gameState.current.randomLock);
+    } else {
+        for (card in deckData[gameState.activeCategory]) {
+            $("#cards").append(`
+                <div class="cardHolder">
+                    <button class="${gameState.current.level.deck.locked.indexOf(card) >=0 && gameState.current.mode == "story" ? 'card locked' : 'card'}" value="${deckData[gameState.activeCategory][card].nickname}" data-name="${card}" data-category="${gameState.activeCategory}">
+                        <div class="name"><div class="nameInner">${deckData[gameState.activeCategory][card].name}</div></div>
+                        <span>${deckData[gameState.activeCategory][card].nickname}</span>
+                        ${deckData[gameState.activeCategory][card].type == "auto" ? 
+                            '<span class="cardClass" value="auto">⚡️</span>' :
+                            '<span class="cardClass" value="manual">...</span>'}
+                    </button>
+                    <div class="infoIcon">?</div>
+                </div>
+            `)
+        }
     }
     // sort deck with locked cards at end
     console.log("now sorting cards...");
@@ -52,9 +64,28 @@ let loadActiveCategory = ()=> {
         return ($(b).find('button').attr('class')) < ($(a).find('button').attr('class')) ? 1 : -1;
     }
     $("#cards .cardHolder").sort(sortDeck).appendTo('#cards'); // append again to the list
-    
+  
     infoButtonListener();
 }
+
+// randomly lock character cards in arcade mode
+let loadRandomLock = ()=>{
+    console.log("lock in progress")
+    for (card in deckData["characters"]) {
+        gameState.current.randomLock += `
+        <div class="cardHolder">
+            <button class="${Math.floor(Math.random()*2) + 1 == 1 ? 'card locked' : 'card'}" value="${deckData["characters"][card].nickname}" data-name="${card}" data-category="${"characters"}">
+                <div class="name"><div class="nameInner">${deckData["characters"][card].name}</div></div>
+                <span>${deckData["characters"][card].nickname}</span>
+                ${deckData["characters"][card].type == "auto" ? 
+                    '<span class="cardClass" value="auto">⚡️</span>' :
+                    '<span class="cardClass" value="manual">...</span>'}
+            </button>
+            <div class="infoIcon">?</div>
+        </div>
+        `;
+    }
+} 
 
 let categoryEventListeners = ()=>{
     $("#categories li").on("click", function(e){

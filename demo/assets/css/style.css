@@ -1283,7 +1283,17 @@ body.achievements {
 }
 
 .tipHolder {
+  clear: both;
   margin: 1rem 0;
+}
+
+#randomLockLabel {
+  padding-right: 1rem;
+}
+
+#randomLockLabel input {
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 #timerWarning {
@@ -1433,7 +1443,7 @@ body.achievements {
 }
 
 #referenceLink {
-  padding: 1rem 3rem;
+  padding: 1rem 0 1rem 2rem;
 }
 
 #referenceModal {

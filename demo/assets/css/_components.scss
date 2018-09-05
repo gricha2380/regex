@@ -809,7 +809,19 @@ body {
     z-index: 1;
 }
 
-.tipHolder {margin: 1rem 0;}
+.tipHolder {
+    clear: both;
+    margin: 1rem 0;
+}
+
+#randomLockLabel {
+    padding-right: 1rem;
+
+    input {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+}
 
 #timerWarning {
     display: none;
