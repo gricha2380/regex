@@ -25,16 +25,14 @@ let loadCategories = (input) => {
     
     if (gameState.current.mode == "arcade") {
         $("#randomLockLabel").show();
-        gameState.current.randomLockStatus = window.localStorage.getItem('randomLockStatus');
+        gameState.current.randomLockStatus = JSON.parse(window.localStorage.getItem('randomLockStatus'));
         if (gameState.current.randomLockStatus ==!"undefined") {
-            window.localStorage.getItem('randomLockStatus')
-            gameState.current.randomLockStatus = JSON.parse(randomLockStatus);
-            console.log('Found existing localstorage value for randomLock.',gameState.current.randomLock);
-            if (gameState.current.randomLockStatus) {
+            console.log('Found existing localstorage value for randomLock.',gameState.current.randomLockStatus);
+            if (gameState.current.randomLockStatus == "true") {
                 gameState.current.randomLock = ``;
                 loadRandomLock();
             } else {
-                $("#randomLockLabel input").prop("checked", "false");
+                $("#randomLockLabel input").prop("checked", false);
                 console.log("randomLockStatus set to false. Now unchecking the checkbox");
             }
         } else {
@@ -63,7 +61,7 @@ $("#randomLockLabel").on("click",()=>{
 let loadActiveCategory = ()=> {
     $("#cards").html('');
     //if arcade game and if mode is character
-    if (gameState.activeCategory == "characters" && gameState.current.mode == "arcade" && gameState.current.randomLockStatus == "true") {
+    if (gameState.activeCategory == "characters" && gameState.current.mode == "arcade" && gameState.current.randomLockStatus == true) {
         console.log("you're looking at characters in arcade mode. applying randomly locked cards")
         $("#cards").append(gameState.current.randomLock);
     } else {
