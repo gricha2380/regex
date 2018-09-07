@@ -97,6 +97,7 @@
 					"name":"1",
 					"number":0,
 					"description":"Characters & Sets",
+					"background":"1",
 					"tip": {
 						"enabled": true,
 						"counter": 0,
@@ -229,6 +230,7 @@
 					"name":"2",
 					"number":1,
 					"description":"Humble Beginnings...",
+					"background":"2",
 					"tip": {
 						"enabled": true,
 						"counter": 0,
@@ -302,6 +304,7 @@
 					"name":"3",
 					"number":2,
 					"description":"Escape route",
+					"background":"1",
 					"tutorial": {
 						"enabled": true,
 						"counter":  0,
@@ -335,6 +338,7 @@
 					"name":"4",
 					"number":3,
 					"description":"The world is not enough",
+					"background":"2",
 					"tutorial": {
 						"enabled": true,
 						"counter":  0,
@@ -366,6 +370,7 @@
 					"name":"5",
 					"number":4,
 					"description":"Number 1 rule...",
+					"background":"1",
 					"tutorial": {
 						"enabled": true,
 						"counter":  0,
@@ -398,6 +403,7 @@
 					"name":"6",
 					"number":5,
 					"description":"Repeat Stuff",
+					"background":"2",
 					"tutorial": {
 						"enabled": true,
 						"counter":  0,
@@ -430,6 +436,7 @@
 					"name":"7",
 					"number":6,
 					"description":"Find the time",
+					"background":"1",
 					"tutorial": {
 						"enabled": true,
 						"counter":  0,
@@ -462,6 +469,7 @@
 					"name":"8",
 					"number":7,
 					"description":"Find the time stamps",
+					"background":"2",
 					"tutorial": {
 						"enabled": true,
 						"counter":  0,
@@ -494,6 +502,7 @@
 					"name":"9",
 					"number":8,
 					"description":"Serial Numbers",
+					"background":"1",
 					"tutorial": {
 						"enabled": true,
 						"counter":  0,
@@ -526,6 +535,7 @@
 					"name":"10",
 					"number":9,
 					"description":"Web URL",
+					"background":"2",
 					"tutorial": {
 						"enabled": true,
 						"counter":  0,
@@ -558,6 +568,7 @@
 					"name":"11",
 					"number":10,
 					"description":"You've got mail",
+					"background":"1",
 					"tutorial": {
 						"enabled": true,
 						"counter":  0,
@@ -590,6 +601,7 @@
 					"name":"12",
 					"number":11,
 					"description":"IP hunt",
+					"background":"2",
 					"tutorial": {
 						"enabled": true,
 						"counter":  0,

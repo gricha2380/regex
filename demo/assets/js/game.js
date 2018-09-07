@@ -45,6 +45,10 @@ let loadGameState = ()=>{
         document.querySelector("#level .name").innerHTML = `Level ${gameState.current.level.name}`;
         document.querySelector("#level .value").innerHTML = `${gameState.current.level.description}`;
         if (gameState.current.mode == "arcade"){
+            // for random background
+            let randomImage = Math.floor(Math.random() * 2) + 1; 
+            $("body.battle").css("background-image",`url(assets/images/backgrounds/battle${randomImage}.svg)`);
+            
             currentMode = gameState.current.mode;
             document.querySelector("#level .name").innerText = `Level ${currentLevel+1}`;
             document.querySelector("#level .value").innerHTML = ``;
@@ -52,6 +56,9 @@ let loadGameState = ()=>{
             random();
         }
         else if (gameState.current.mode == "story"){
+            // for random background
+            if (gameState.current.level.background) {$("body.battle").css("background-image",`url(assets/images/backgrounds/battle${gameState.current.level.background}.svg)`)}
+
             tipText();
             dialogue = gameState.mode[currentMode].levels[currentLevel].tip.dialogue;
             counter = gameState.mode[currentMode].levels[currentLevel].tip.counter;

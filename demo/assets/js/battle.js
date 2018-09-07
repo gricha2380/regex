@@ -306,7 +306,7 @@ let enemyAttack = ()=>{
                 console.log(`enemy ${enemyString[i]} did ${damage} damage!`,);
             } else {
                 if (!gameOverFlag) {
-                    console.log("no more heath. game over");
+                    console.log("no more health. game over");
                     gameOver();
                 }
             }
