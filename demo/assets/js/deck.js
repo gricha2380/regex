@@ -38,6 +38,7 @@ let loadCategories = (input) => {
         } else {
             gameState.current.randomLock = ``;
             console.log("You're in arcade mode. randomly locking cards now");
+            gameState.current.randomLockStatus = true;
             loadRandomLock();
         }
     }
@@ -93,7 +94,7 @@ let loadActiveCategory = ()=> {
 
 // randomly lock character cards in arcade mode
 let loadRandomLock = ()=>{
-    console.log("lock in progress")
+    console.log("lock in progress");
     for (card in deckData["characters"]) {
         gameState.current.randomLock += `
         <div class="cardHolder">

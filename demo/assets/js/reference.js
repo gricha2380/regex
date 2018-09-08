@@ -47,7 +47,7 @@ let loadFunctionList = (referenceCategory) => {
     referenceFunctions += 
     `
     <li class="referenceFunction">
-      <div class="referenceFunctionName">${e}<div class="referenceFunctionIcon"><img src="assets/images/ui/categoryArrow.svg"></div></div>
+      <div class="referenceFunctionName">${referenceFunction[e].name}<div class="referenceFunctionIcon"><img src="assets/images/ui/categoryArrow.svg"></div></div>
             <div class="referenceFunctionDescription">
               <div class="referenceFunctionDescriptionContainer">
                 <div class="description">
@@ -55,8 +55,7 @@ let loadFunctionList = (referenceCategory) => {
                 </div>
                 
                 <div class="examples"><div class="examplesTitle">Examples</div> ${referenceFunction[e].examples ? processExamples() : ''}</div>
-                <div class="infoTips">tips</div>
-                <div class="infoRelated">related</div>
+                ${refCat=="how tos" ? '':'<div class="infoTips">Tips<br>'+referenceFunction[e].tips+'</div><div class="infoRelated">Related<br></div>'}
               </div>
             </div>
     </li>

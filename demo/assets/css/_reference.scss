@@ -21,25 +21,24 @@
 
 #referenceContainer {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
   margin: 0;
+  min-height: 100vh;
   
   #referenceInner {
     display: flex;
     flex: 1;
 
     #referenceDetails {
-      border: none;
       background: white;
+      border: none;
       flex: 1;
-      text-align: left;
       margin: inherit;
       min-height: fit-content;
+      text-align: left;
 
       #referenceCategoryDescription {
         padding: 1rem;
-        // color: $blue;
         color: #8e9dc0;;
       }
     }
@@ -99,17 +98,38 @@
       div {
         display: inline-block;
         padding: 0 1rem;
+        vertical-align: top;
       }
 
       m {
         color: #D82262;
-        text-decoration: underline;
         font-weight: bold;
+        text-decoration: underline;
+      }
+
+      .examplePatterns {
+        color: dimgrey;
+        display: block;
+        font-family: Courier, monospace;
+      }
+
+      .exampleMatches {
+        margin-bottom: 1rem;
       }
     }
 
     .examples {
       line-height: 2rem;
+      
+      .examplesTitle {
+        font-weight: bold;
+        margin-top: 1rem;
+      }
+    }
+
+    .infoTips {
+      font-weight: bold;
+      margin-top: 1rem;
     }
   }
 }
@@ -153,13 +173,12 @@
 }
 
 #referenceTitleContainer {
-  color: $main;
-  padding: .5rem;
-
   background: black;
-  text-transform: uppercase;
-  text-align: center;
+  color: $main;
   font-weight: bold;
+  padding: .5rem;
+  text-align: center;
+  text-transform: uppercase;
 
   #referenceTitle {
     display: inline-block;

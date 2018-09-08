@@ -4,11 +4,78 @@
         "anchors":"Anchors target the beginning or end of a set of a string or set of characters",
         "quantifiers":"Quantifiers allow you to specify the number of occurrences to match against",
         "groups":"Capture Groups allow you to treat multiple characters as a single unit",
-        "how tos":"Snippets to accomplish some common regex tasks"
+        "how tos":"Snippets to accomplish common regex tasks"
 
     },"how tos":{
         "email addresses":{
-            "name": "Match Email Address"
+            "name": "Match Email Address",
+            "description":"Email addresses can be challenging to match due to the variation in acceptable structures. The following will match most email addresses:",
+            "examples":[
+                {
+                    "pattern":"/[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}/",
+                    "matches":"<m>person@email.com</m>"
+                },
+                {
+                    "pattern":"/^.+@.+$/",
+                    "matches":"<m>person@email.com</m>"
+                }
+            ]
+        },
+        "find html tag":{
+            "name": "Find HTML Tags",
+            "description":"Regex can be used to match any HTML tag and it's contents, or to match text within a specific tag:",
+            "examples":[
+                {
+                    "pattern":"/<([a-z][a-z0-9]*)\b[^>]*>(.*?)</\\1>/",
+                    "matches":"<m>&lt;title&gt;important text here&lt;/title&gt;</m>"
+                },
+                {
+                    "pattern":"/&lt;title&gt;(.*?)&lt;\/title&gt;/",
+                    "matches":"&lt;title&gt;<m>important text here</m>&lt;/title&gt;"
+                }
+            ]
+        },
+        "optional characters":{
+            "name": "Optional Characters",
+            "description":"Regex makes it easy to search for optional characters within a string:",
+            "examples":[
+                {
+                    "pattern":"/neighbo?ur/",
+                    "matches":"Won't you be my <m>neighbour</m>?<br>Won't you be my <m>neighbor</m>?"
+                },
+                {
+                    "pattern":"/apologize || apologise/",
+                    "matches":"I want to <m>apologize</m> <br>I want to <m>apologise</m>"
+                },
+                {
+                    "pattern":"/Jan(uary)?/",
+                    "matches":"<m>Jan</m><br><m>January</m>"
+                }            
+            ]
+        },
+        "javascript":{
+            "name": "Javascript: Find and Replace",
+            "description":"Javascript uses regex in string.replace() method and .test():",
+            "examples":[
+                {
+                    "pattern":"'remove vowels'.replace(/[aeiouAEIOU]/);",
+                    "matches":"r<m>e</m>m<m>o</m>v<m>e</m> v<m>o</m>w<m>e</m>ls"
+                }           
+            ]
+        },
+        "numbers":{
+            "name": "Match Numbers",
+            "description":"Find one or more",
+            "examples":[
+                {
+                    "pattern":"/[1-9][0-9]/",
+                    "matches":"Find two digit matches. E.g.: <m>42</m> not <m>43</m>2"
+                },
+                {
+                    "pattern":"/[1-9]+/",
+                    "matches":"This matches one or more digits with a greedy selector. <m>123123123</m>"
+                }            
+            ]
         }
     },
     "characters": {
